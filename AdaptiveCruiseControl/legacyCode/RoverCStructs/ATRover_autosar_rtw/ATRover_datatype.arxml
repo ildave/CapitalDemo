@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Auto generated XML Component Description for model ATRover
+Model version                : 1.118
+Simulink Coder version       : Simulink Coder 8.13 (R2017b) 24-Jul-2017
+XML source code generated on : Tue Mar 26 16:05:10 2019
+Model Checksum               : 41535437 1629040772 1409030252 1624053192
+-->
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_4-2-2.xsd">
+    <AR-PACKAGES>
+        <AR-PACKAGE UUID="56e96d4e-4739-5abf-6595-f54544c33a36">
+            <SHORT-NAME>Rover_NoSF_v1_pkg</SHORT-NAME>
+            <AR-PACKAGES>
+                <AR-PACKAGE UUID="463b1537-4a28-5d2d-a8de-fc46ff4939cf">
+                    <SHORT-NAME>Rover_NoSF_v1_dt</SHORT-NAME>
+                    <ELEMENTS>
+                        <IMPLEMENTATION-DATA-TYPE UUID="45fbf64f-7012-564a-c6ea-935f5994c09c">
+                            <SHORT-NAME>Double</SHORT-NAME>
+                            <CATEGORY>VALUE</CATEGORY>
+                            <SW-DATA-DEF-PROPS>
+                                <SW-DATA-DEF-PROPS-VARIANTS>
+                                    <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                        <BASE-TYPE-REF DEST="SW-BASE-TYPE">/Rover_NoSF_v1_pkg/Rover_NoSF_v1_dt/SwBaseTypes/float64</BASE-TYPE-REF>
+                                    </SW-DATA-DEF-PROPS-CONDITIONAL>
+                                </SW-DATA-DEF-PROPS-VARIANTS>
+                            </SW-DATA-DEF-PROPS>
+                        </IMPLEMENTATION-DATA-TYPE>
+                    </ELEMENTS>
+                    <AR-PACKAGES>
+                        <AR-PACKAGE UUID="73ecad84-5951-5e8a-4661-38b673242a3f">
+                            <SHORT-NAME>Ground</SHORT-NAME>
+                            <ELEMENTS>
+                                <CONSTANT-SPECIFICATION UUID="a00e2348-2a86-59d4-4f7b-27a369a51d32">
+                                    <SHORT-NAME>DefaultInitValue_Double</SHORT-NAME>
+                                    <VALUE-SPEC>
+                                        <NUMERICAL-VALUE-SPECIFICATION>
+                                            <SHORT-LABEL>DefaultInitValue_Double</SHORT-LABEL>
+                                            <VALUE>0</VALUE>
+                                        </NUMERICAL-VALUE-SPECIFICATION>
+                                    </VALUE-SPEC>
+                                </CONSTANT-SPECIFICATION>
+                            </ELEMENTS>
+                        </AR-PACKAGE>
+                        <AR-PACKAGE UUID="766c2a47-a68a-5e3b-ab7d-22fa429161fd">
+                            <SHORT-NAME>SwBaseTypes</SHORT-NAME>
+                            <ELEMENTS>
+                                <SW-BASE-TYPE UUID="96db8a1f-d3b1-52de-90dd-866b1fdf8453">
+                                    <SHORT-NAME>float64</SHORT-NAME>
+                                    <CATEGORY>FIXED_LENGTH</CATEGORY>
+                                    <BASE-TYPE-SIZE>64</BASE-TYPE-SIZE>
+                                    <BASE-TYPE-ENCODING>IEEE754</BASE-TYPE-ENCODING>
+                                    <NATIVE-DECLARATION>float64</NATIVE-DECLARATION>
+                                </SW-BASE-TYPE>
+                            </ELEMENTS>
+                        </AR-PACKAGE>
+                    </AR-PACKAGES>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="81301a51-5ad5-5fb1-0246-2b4dbac65c66">
+                    <SHORT-NAME>Rover_NoSF_v1_imp</SHORT-NAME>
+                </AR-PACKAGE>
+            </AR-PACKAGES>
+        </AR-PACKAGE>
+    </AR-PACKAGES>
+</AUTOSAR>

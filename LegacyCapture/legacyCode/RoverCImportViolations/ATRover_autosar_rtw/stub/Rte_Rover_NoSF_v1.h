@@ -1,0 +1,124 @@
+/* This file contains stub implementations of the AUTOSAR RTE functions.
+   The stub implementations can be used for testing the generated code in
+   Simulink, for example, in SIL/PIL simulations of the component under
+   test. Note that this file should be replaced with an appropriate RTE
+   file when deploying the generated code outside of Simulink.
+
+   This file is generated for:
+   Atomic software component:  "Rover_NoSF_v1"
+   ARXML schema: "4.2"
+   File generated on: "26-Mar-2019 16:05:07"  */
+
+#ifndef Rte_Rover_NoSF_v1_h
+#define Rte_Rover_NoSF_v1_h
+#include "Rte_Type.h"
+#include "Compiler.h"
+#include "ATRover.h"
+
+/* Data access functions */
+#define Rte_IRead_Runnable_Step_r_Port7_Drive_Direct Rte_IRead_Rover_NoSF_v1_Runnable_Step_r_Port7_Drive_Direct
+
+Double Rte_IRead_Runnable_Step_r_Port7_Drive_Direct(Rte_Instance self);
+
+#define Rte_IStatus_Runnable_Step_r_Port7_Drive_Direct Rte_IStatus_Rover_NoSF_v1_Runnable_Step_r_Port7_Drive_Direct
+
+Std_ReturnType Rte_IStatus_Runnable_Step_r_Port7_Drive_Direct(Rte_Instance self);
+
+#define Rte_IRead_Runnable_Step_r_Port2_Sensor_BC Rte_IRead_Rover_NoSF_v1_Runnable_Step_r_Port2_Sensor_BC
+
+Double Rte_IRead_Runnable_Step_r_Port2_Sensor_BC(Rte_Instance self);
+
+#define Rte_IStatus_Runnable_Step_r_Port2_Sensor_BC Rte_IStatus_Rover_NoSF_v1_Runnable_Step_r_Port2_Sensor_BC
+
+Std_ReturnType Rte_IStatus_Runnable_Step_r_Port2_Sensor_BC(Rte_Instance self);
+
+#define Rte_IRead_Runnable_Step_r_Port1_Sensor_BL Rte_IRead_Rover_NoSF_v1_Runnable_Step_r_Port1_Sensor_BL
+
+Double Rte_IRead_Runnable_Step_r_Port1_Sensor_BL(Rte_Instance self);
+
+#define Rte_IStatus_Runnable_Step_r_Port1_Sensor_BL Rte_IStatus_Rover_NoSF_v1_Runnable_Step_r_Port1_Sensor_BL
+
+Std_ReturnType Rte_IStatus_Runnable_Step_r_Port1_Sensor_BL(Rte_Instance self);
+
+#define Rte_IRead_Runnable_Step_r_Port3_Sensor_BR Rte_IRead_Rover_NoSF_v1_Runnable_Step_r_Port3_Sensor_BR
+
+Double Rte_IRead_Runnable_Step_r_Port3_Sensor_BR(Rte_Instance self);
+
+#define Rte_IStatus_Runnable_Step_r_Port3_Sensor_BR Rte_IStatus_Rover_NoSF_v1_Runnable_Step_r_Port3_Sensor_BR
+
+Std_ReturnType Rte_IStatus_Runnable_Step_r_Port3_Sensor_BR(Rte_Instance self);
+
+#define Rte_IRead_Runnable_Step_r_Port5_Sensor_FC Rte_IRead_Rover_NoSF_v1_Runnable_Step_r_Port5_Sensor_FC
+
+Double Rte_IRead_Runnable_Step_r_Port5_Sensor_FC(Rte_Instance self);
+
+#define Rte_IStatus_Runnable_Step_r_Port5_Sensor_FC Rte_IStatus_Rover_NoSF_v1_Runnable_Step_r_Port5_Sensor_FC
+
+Std_ReturnType Rte_IStatus_Runnable_Step_r_Port5_Sensor_FC(Rte_Instance self);
+
+#define Rte_IRead_Runnable_Step_r_Port4_Sensor_FL Rte_IRead_Rover_NoSF_v1_Runnable_Step_r_Port4_Sensor_FL
+
+Double Rte_IRead_Runnable_Step_r_Port4_Sensor_FL(Rte_Instance self);
+
+#define Rte_IStatus_Runnable_Step_r_Port4_Sensor_FL Rte_IStatus_Rover_NoSF_v1_Runnable_Step_r_Port4_Sensor_FL
+
+Std_ReturnType Rte_IStatus_Runnable_Step_r_Port4_Sensor_FL(Rte_Instance self);
+
+#define Rte_IRead_Runnable_Step_r_Port6_Sensor_FR Rte_IRead_Rover_NoSF_v1_Runnable_Step_r_Port6_Sensor_FR
+
+Double Rte_IRead_Runnable_Step_r_Port6_Sensor_FR(Rte_Instance self);
+
+#define Rte_IStatus_Runnable_Step_r_Port6_Sensor_FR Rte_IStatus_Rover_NoSF_v1_Runnable_Step_r_Port6_Sensor_FR
+
+Std_ReturnType Rte_IStatus_Runnable_Step_r_Port6_Sensor_FR(Rte_Instance self);
+
+#define Rte_IRead_Runnable_Step_r_Port8_Turn_Direct Rte_IRead_Rover_NoSF_v1_Runnable_Step_r_Port8_Turn_Direct
+
+Double Rte_IRead_Runnable_Step_r_Port8_Turn_Direct(Rte_Instance self);
+
+#define Rte_IStatus_Runnable_Step_r_Port8_Turn_Direct Rte_IStatus_Rover_NoSF_v1_Runnable_Step_r_Port8_Turn_Direct
+
+Std_ReturnType Rte_IStatus_Runnable_Step_r_Port8_Turn_Direct(Rte_Instance self);
+
+#define Rte_IWrite_Runnable_Step_s_Port1_TR_Right Rte_IWrite_Rover_NoSF_v1_Runnable_Step_s_Port1_TR_Right
+
+void Rte_IWrite_Runnable_Step_s_Port1_TR_Right(Rte_Instance self, Double u);
+
+#define Rte_IWriteRef_Runnable_Step_s_Port1_TR_Right Rte_IWriteRef_Rover_NoSF_v1_Runnable_Step_s_Port1_TR_Right
+
+Double* Rte_IWriteRef_Runnable_Step_s_Port1_TR_Right(Rte_Instance self);
+
+#define Rte_IWrite_Runnable_Step_s_Port2_TR_Left Rte_IWrite_Rover_NoSF_v1_Runnable_Step_s_Port2_TR_Left
+
+void Rte_IWrite_Runnable_Step_s_Port2_TR_Left(Rte_Instance self, Double u);
+
+#define Rte_IWriteRef_Runnable_Step_s_Port2_TR_Left Rte_IWriteRef_Rover_NoSF_v1_Runnable_Step_s_Port2_TR_Left
+
+Double* Rte_IWriteRef_Runnable_Step_s_Port2_TR_Left(Rte_Instance self);
+
+#define Rte_IWrite_Runnable_Step_s_Port3_Lim_Speed_B Rte_IWrite_Rover_NoSF_v1_Runnable_Step_s_Port3_Lim_Speed_B
+
+void Rte_IWrite_Runnable_Step_s_Port3_Lim_Speed_B(Rte_Instance self, Double u);
+
+#define Rte_IWriteRef_Runnable_Step_s_Port3_Lim_Speed_B Rte_IWriteRef_Rover_NoSF_v1_Runnable_Step_s_Port3_Lim_Speed_B
+
+Double* Rte_IWriteRef_Runnable_Step_s_Port3_Lim_Speed_B(Rte_Instance self);
+
+#define Rte_IWrite_Runnable_Step_s_Port4_Lim_Speed_F Rte_IWrite_Rover_NoSF_v1_Runnable_Step_s_Port4_Lim_Speed_F
+
+void Rte_IWrite_Runnable_Step_s_Port4_Lim_Speed_F(Rte_Instance self, Double u);
+
+#define Rte_IWriteRef_Runnable_Step_s_Port4_Lim_Speed_F Rte_IWriteRef_Rover_NoSF_v1_Runnable_Step_s_Port4_Lim_Speed_F
+
+Double* Rte_IWriteRef_Runnable_Step_s_Port4_Lim_Speed_F(Rte_Instance self);
+
+/* Entry point functions */
+extern FUNC(void, Rover_NoSF_v1_CODE) Runnable_Init(Rte_Instance self);
+extern FUNC(void, Rover_NoSF_v1_CODE) Runnable_Step(Rte_Instance self);
+
+/* C-Typed Per Instance Memories */
+typedef DW_ATRover_T Rte_PimType_Rover_NoSF_v1_DW_ATRover_T_type;
+typedef Rte_PimType_Rover_NoSF_v1_DW_ATRover_T_type DW_ATRover_T_type;
+DW_ATRover_T_type* Rte_Pim_ATRover_DW(Rte_Instance self);
+
+#endif

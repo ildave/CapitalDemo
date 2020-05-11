@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MF0 version="1.1">
+    <ModelRefInfoRepo.ModelRefInfoRoot type="ModelRefInfoRepo.ModelRefInfoRoot" uuid="e3a11a46-1e86-4953-a8d6-c9044fcedd7e">
+        <dataDictionary>RoverDataDict.sldd</dataDictionary>
+        <dataTransferInfos>AAFJTQAAAAAOAAAAOAAAAAYAAAAIAAAAAgAAAAAAAAAFAAAACAAAAAAAAAABAAAAAQAAAAAAAAAFAAQAAQAAAAEAAAAAAAAA</dataTransferInfos>
+        <hasInlineVariantBlock>false</hasInlineVariantBlock>
+        <hasMachineDataAccess>false</hasMachineDataAccess>
+        <hasSigObjWithICDrivingRootOutport>false</hasSigObjWithICDrivingRootOutport>
+        <inports type="ModelRefInfoRepo.InportInformation" uuid="0e1f02dc-f1a7-4176-80d8-15f030764294">
+            <EMVCE/>
+            <originalPortNumber>0</originalPortNumber>
+        </inports>
+        <inports type="ModelRefInfoRepo.InportInformation" uuid="c4c5d0a6-5493-4a41-91c7-09480ecd629d">
+            <EMVCE/>
+            <originalPortNumber>1</originalPortNumber>
+        </inports>
+        <inports type="ModelRefInfoRepo.InportInformation" uuid="7122a223-eb92-4aa1-a75b-5945f8e21dec">
+            <EMVCE/>
+            <originalPortNumber>2</originalPortNumber>
+        </inports>
+        <inports type="ModelRefInfoRepo.InportInformation" uuid="62a8f7a6-d5b9-4273-9d27-83a4ddbd24f7">
+            <EMVCE/>
+            <originalPortNumber>3</originalPortNumber>
+        </inports>
+        <inports type="ModelRefInfoRepo.InportInformation" uuid="7ecd1627-5a84-4bc7-83c0-08f72881cf80">
+            <EMVCE/>
+            <originalPortNumber>4</originalPortNumber>
+        </inports>
+        <inports type="ModelRefInfoRepo.InportInformation" uuid="ee68243f-fe75-47d7-b4e5-6fac66528ece">
+            <EMVCE/>
+            <originalPortNumber>5</originalPortNumber>
+        </inports>
+        <inports type="ModelRefInfoRepo.InportInformation" uuid="22d92ea5-8c8e-4ff9-8af8-cdee8a6c229a">
+            <EMVCE/>
+            <originalPortNumber>6</originalPortNumber>
+        </inports>
+        <inports type="ModelRefInfoRepo.InportInformation" uuid="21fa143b-2245-4265-9b38-379526b3176e">
+            <EMVCE/>
+            <originalPortNumber>7</originalPortNumber>
+        </inports>
+        <isOrigInportVirtualBus>false</isOrigInportVirtualBus>
+        <isOrigInportVirtualBus>false</isOrigInportVirtualBus>
+        <isOrigInportVirtualBus>false</isOrigInportVirtualBus>
+        <isOrigInportVirtualBus>false</isOrigInportVirtualBus>
+        <isOrigInportVirtualBus>false</isOrigInportVirtualBus>
+        <isOrigInportVirtualBus>false</isOrigInportVirtualBus>
+        <isOrigInportVirtualBus>false</isOrigInportVirtualBus>
+        <isOrigInportVirtualBus>false</isOrigInportVirtualBus>
+        <isOrigOutportVirtualBus>false</isOrigOutportVirtualBus>
+        <isOrigOutportVirtualBus>false</isOrigOutportVirtualBus>
+        <isOrigOutportVirtualBus>false</isOrigOutportVirtualBus>
+        <isOrigOutportVirtualBus>false</isOrigOutportVirtualBus>
+        <needElapsedTime>false</needElapsedTime>
+        <outports type="ModelRefInfoRepo.OutportInformation" uuid="90f5bec2-a703-4c49-be5e-aa8e6fa9ff30">
+            <drivenByIRTActSrc>false</drivenByIRTActSrc>
+            <drivenByIRTWalkThruMergeBlock>false</drivenByIRTWalkThruMergeBlock>
+            <EMVCE/>
+            <originalPortNumber>0</originalPortNumber>
+        </outports>
+        <outports type="ModelRefInfoRepo.OutportInformation" uuid="b03be8c4-6697-4eef-bd84-ab18d20a0a16">
+            <drivenByIRTActSrc>false</drivenByIRTActSrc>
+            <drivenByIRTWalkThruMergeBlock>false</drivenByIRTWalkThruMergeBlock>
+            <EMVCE/>
+            <originalPortNumber>1</originalPortNumber>
+        </outports>
+        <outports type="ModelRefInfoRepo.OutportInformation" uuid="71f30ceb-df38-4e5f-93fd-2220b890e715">
+            <drivenByIRTActSrc>false</drivenByIRTActSrc>
+            <drivenByIRTWalkThruMergeBlock>false</drivenByIRTWalkThruMergeBlock>
+            <EMVCE/>
+            <originalPortNumber>2</originalPortNumber>
+        </outports>
+        <outports type="ModelRefInfoRepo.OutportInformation" uuid="a78379f3-2895-4f45-a505-86daf01d7468">
+            <drivenByIRTActSrc>false</drivenByIRTActSrc>
+            <drivenByIRTWalkThruMergeBlock>false</drivenByIRTWalkThruMergeBlock>
+            <EMVCE/>
+            <originalPortNumber>3</originalPortNumber>
+        </outports>
+        <userSpecifiedFixedStepSize>0</userSpecifiedFixedStepSize>
+        <zeroInternalMemoryAtStartupUnchecked>true</zeroInternalMemoryAtStartupUnchecked>
+        <FMUBlockMap type="ModelRefInfoRepo.FMUBlockInfo" uuid="ceab6cb1-2f4f-4930-90d9-fecf75244f26"/>
+        <periodicEventPortUnsupportedBlockInfo type="ModelRefInfoRepo.PeriodicEventPortUnsupportedBlockInfo" uuid="3b47cbf3-b93e-47c8-a78b-4f5834204257">
+            <hasHiddenDeterministicRTB>false</hasHiddenDeterministicRTB>
+        </periodicEventPortUnsupportedBlockInfo>
+        <simulinkFunctions type="ModelRefInfoRepo.SimulinkFunctions" uuid="d76e5ad0-d716-4912-8804-c80f8f53ffa8">
+            <compSimulinkFunctionCatalog>AAFJTQAAAAAOAAAAgAAAAAYAAAAIAAAAAgAAAAAAAAAFAAAACAAAAAEAAAABAAAAAQAAAAAAAAAFAAQADgAAAAEAAAAOAAAAQ29tcEZ1bmN0aW9ucwAAAA4AAAAwAAAABgAAAAgAAAAGAAAAAAAAAAUAAAAIAAAAAAAAAAAAAAABAAAAAAAAAAkAAAAAAAAA</compSimulinkFunctionCatalog>
+            <postPropHasAnyExportedFunction>false</postPropHasAnyExportedFunction>
+            <postPropHasAnyVariantExportedFunction>false</postPropHasAnyVariantExportedFunction>
+        </simulinkFunctions>
+    </ModelRefInfoRepo.ModelRefInfoRoot>
+</MF0>

@@ -1,0 +1,115 @@
+<html>
+  <head>
+    <title>Validation Report 
+        ACCImplementationSpec</title>
+    <style>
+        .footer{ 
+            position: fixed; 
+            text-align: center;
+            bottom: 0px;
+            width: 100%;
+        }
+        
+        html { font-family: Verdana, Arial, Helvetica, sans-serif; } h1 { color: #006487; } h2 { color: #147391; }
+        
+        added { color: #56a356;}
+        
+        removed { 
+            color: #FF00AB;
+            text-decoration: line-through;
+        }
+        
+        modified { color: #4076ed; }
+        
+        table.roundedCorners {
+            border: 2px solid;
+            border-color: #66b3ff;
+            border-radius: 13px;
+            border-spacing: 0px;
+        }
+        
+        table.roundedCorners td, 
+        table.roundedCorners th { 
+            border-bottom: 2px solid;
+            border-right: 2px solid;
+            border-color: #66b3ff;
+            padding: 10px; 
+        }
+        
+        tr:nth-child(even){background-color: #f2f2f2} 
+        
+        table.roundedCorners tr:last-child > td {
+            border-bottom: none;
+        }
+        
+        table.roundedCorners td:last-child {
+            border-right: none;
+        }
+        
+        table.roundedCorners th:last-child {
+            border-right: none;
+        }
+        
+        .underline {text-decoration: underline;}
+        </style>
+  </head>
+  <body>
+    <h2>Validation Report for 
+        ACCImplementationSpec</h2>
+    <table class="roundedCorners" width="95%" cellspacing="1">
+      <h3>Target - C</h3>
+      <tr>
+        <th>File Name</th>
+        <th>Block Name</th>
+        <th>Expected Function Signature</th>
+        <th>Actual Function Signature</th>
+        <th>Status</th>
+        <th>Information about mismatch</th>
+      </tr>
+      <block>
+        <tr>
+          <td rowspan="1">
+            <a href="C:/WCs/Z028b-ESD/CSD_2020/10-DemoProjects/AdaptiveCruiseControl/solutions/A_ACC/CodeRealization\Internal_A\ExternalC\driverUIWOEnums__impl.c">driverUIWOEnums__impl.c</a>
+          </td>
+          <td rowspan="1">driverUIWOEnums__impl</td>
+          <td>void driverUIWOEnums__impl_execute(void *___nothing, bool mode, double speedSetpoint, bool *enable)</td>
+          <td>void driverUIWOEnums__impl_execute( driverUIWOEnums__impl_data_t *___id,  bool mode,  double speedSetpoint,  bool *enable)</td>
+          <td>&#10005;</td>
+          <td> driverUIWOEnums__impl_data_t *___id found, while expected argument is void *___nothing. </td>
+        </tr>
+        
+        
+      </block>
+      <block>
+        <tr>
+          <td rowspan="1">
+            <a href="C:/WCs/Z028b-ESD/CSD_2020/10-DemoProjects/AdaptiveCruiseControl/solutions/A_ACC/CodeRealization\Internal_A\ExternalC\sensorFusion__impl.c">sensorFusion__impl.c</a>
+          </td>
+          <td rowspan="1">sensorFusion__impl</td>
+          <td>void sensorFusion__impl_execute(sensorFusion__impl_data_t *___id, double lidarMeasurement, double radarLRMeasurement, double radarSRMeasurement, double *fusedRange)</td>
+          <td>void sensorFusion__impl_execute(sensorFusion__impl_data_t *___id, double lidarMeasurement, double radarLRMeasurement, double radarSRMeasurement, double *fusedRange)</td>
+          <td>&#10004;</td>
+          <td></td>
+        </tr>
+        
+        
+      </block>
+    </table>
+    (Key: 
+    <i>
+      <added>Newly Added</added>
+      /
+      <removed>Removed entry</removed>
+      /
+      <modified>Modified/Renamed</modified>
+    </i>
+    )
+    
+    <div class="footer">
+      Last Validated by 
+      <i>eh6qym</i>
+       at 
+      <i>2020-03-06T16:49:02</i>
+    </div>
+  </body>
+</html>

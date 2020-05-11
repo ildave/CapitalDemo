@@ -1,0 +1,173 @@
+<html>
+  <head>
+    <title>Generation Report 
+        ACCImplSpecHomogeneous</title>
+    <style>
+        .footer{ 
+            position: fixed; 
+            text-align: center;
+            bottom: 0px;
+            width: 100%;
+        }
+        
+        html { font-family: Verdana, Arial, Helvetica, sans-serif; } h1 { color: #006487; } h2 { color: #147391; }
+        
+        added { color: #56a356;}
+        
+        removed { 
+            color: #FF00AB;
+            text-decoration: line-through;
+        }
+        
+        modified { color: #4076ed; }
+        
+        table.roundedCorners {
+            border: 2px solid;
+            border-color: #66b3ff;
+            border-radius: 13px;
+            border-spacing: 0px;
+        }
+        
+        table.roundedCorners td, 
+        table.roundedCorners th { 
+            border-bottom: 2px solid;
+            border-right: 2px solid;
+            border-color: #66b3ff;
+            padding: 10px; 
+        }
+        
+        tr:nth-child(even){background-color: #f2f2f2} 
+        
+        table.roundedCorners tr:last-child > td {
+            border-bottom: none;
+        }
+        
+        table.roundedCorners td:last-child {
+            border-right: none;
+        }
+        
+        table.roundedCorners th:last-child {
+            border-right: none;
+        }
+        
+        .underline {text-decoration: underline;}
+        </style>
+  </head>
+  <body>
+    <h2>Generation Report for 
+        ACCImplSpecHomogeneous</h2>
+    <table class="roundedCorners" width="95%" cellspacing="1">
+      <h3>Target - C</h3>
+      <tr>
+        <th>File Name</th>
+        <th>Block Name</th>
+        <th>Function Signature</th>
+        <th>New Function Signature</th>
+        <th>Structure Definition</th>
+      </tr>
+      <block>
+        <tr>
+          <td rowspan="1">
+            <a href="C:/WCs/Z028b-ESD/CSD_2020/10-DemoProjects/AdaptiveCruiseControl/solutions/A_ACC/CodeRealizationHomogeneousC\default_supplier\ExternalC\ACC_Architecture_Homo__impl.c">ACC_Architecture_Homo__impl.c</a>
+          </td>
+          <td rowspan="1">ACC_System_If__impl</td>
+          <td>void ACC_System_If__impl_execute(void *___nothing, double lidarMeasurement, ACCUserMode_t modeSelectionUser, double radarLRMeasurement, double radarSRMeasurement, double speedMeasuredWheels, double speedSetpointDriver, double *torqueDemandACC);</td>
+          <td>void ACC_System_If__impl_execute(void *___nothing, double lidarMeasurement, ACCUserMode_t modeSelectionUser, double radarLRMeasurement, double radarSRMeasurement, double speedMeasuredWheels, double speedSetpointDriver, double *torqueDemandACC);</td>
+          <td></td>
+        </tr>
+      </block>
+      <block>
+        <tr>
+          <td rowspan="1">
+            <a href="C:/WCs/Z028b-ESD/CSD_2020/10-DemoProjects/AdaptiveCruiseControl/solutions/A_ACC/CodeRealizationHomogeneousC\default_supplier\ExternalC\ACC_Architecture_Homo__impl.c">ACC_Architecture_Homo__impl.c</a>
+          </td>
+          <td rowspan="1">ACC_SystemNoEnum_If__impl</td>
+          <td>void ACC_SystemNoEnum_If__impl_execute(void *___nothing, double lidarMeasurement, bool modeSelectionUser, double radarLRMeasurement, double radarSRMeasurement, double speedMeasuredWheels, double speedSetpointDriver, double *torqueDemandACC);</td>
+          <td>void ACC_SystemNoEnum_If__impl_execute(void *___nothing, double lidarMeasurement, bool modeSelectionUser, double radarLRMeasurement, double radarSRMeasurement, double speedMeasuredWheels, double speedSetpointDriver, double *torqueDemandACC);</td>
+          <td></td>
+        </tr>
+      </block>
+      <block>
+        <tr>
+          <td rowspan="1">
+            <a href="C:/WCs/Z028b-ESD/CSD_2020/10-DemoProjects/AdaptiveCruiseControl/solutions/A_ACC/CodeRealizationHomogeneousC\default_supplier\ExternalC\ACC_Architecture_Homo__impl.c">ACC_Architecture_Homo__impl.c</a>
+          </td>
+          <td rowspan="1">driverUserInterface__impl</td>
+          <td>void driverUserInterface__impl_execute(driverUserInterface__impl_data_t *___id, ACCUserMode_t mode, double speedSetpoint, bool *enable);</td>
+          <td>void driverUserInterface__impl_execute(driverUserInterface__impl_data_t *___id, ACCUserMode_t mode, double speedSetpoint, bool *enable);</td>
+          <td></td>
+        </tr>
+      </block>
+      <block>
+        <tr>
+          <td rowspan="1">
+            <a href="C:/WCs/Z028b-ESD/CSD_2020/10-DemoProjects/AdaptiveCruiseControl/solutions/A_ACC/CodeRealizationHomogeneousC\default_supplier\ExternalC\ACC_Architecture_Homo__impl.c">ACC_Architecture_Homo__impl.c</a>
+          </td>
+          <td rowspan="1">sensorFusion__impl</td>
+          <td>void sensorFusion__impl_execute(sensorFusion__impl_data_t *___id, double lidarMeasurement, double radarLRMeasurement, double radarSRMeasurement, double *fusedRange);</td>
+          <td>void sensorFusion__impl_execute(sensorFusion__impl_data_t *___id, double lidarMeasurement, double radarLRMeasurement, double radarSRMeasurement, double *fusedRange);</td>
+          <td>struct sensorFusion__impl_data{<br/>--;<br/>double LongRangeRadarUpperLimit;<br/>double ShortRangeRadarUpperLimit;<br/>};</td>
+        </tr>
+      </block>
+      <block>
+        <tr>
+          <td rowspan="2">
+            <a href="C:/WCs/Z028b-ESD/CSD_2020/10-DemoProjects/AdaptiveCruiseControl/solutions/A_ACC/CodeRealizationHomogeneousC\default_supplier\ExternalC\ACC_Architecture_Homo__impl.c">ACC_Architecture_Homo__impl.c</a>
+          </td>
+          <td rowspan="2">speedDistanceRegulator__impl</td>
+          <td>void speedDistanceRegulator__impl_init(speedDistanceRegulator__impl_data_t *___id);</td>
+          <td>void speedDistanceRegulator__impl_init(speedDistanceRegulator__impl_data_t *___id);</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>void speedDistanceRegulator__impl_execute(speedDistanceRegulator__impl_data_t *___id, double distanceMeasured, bool enable, double speedMeasured, double speedSetpoint, double *torqueDemand);</td>
+          <td>void speedDistanceRegulator__impl_execute(speedDistanceRegulator__impl_data_t *___id, double distanceMeasured, bool enable, double speedMeasured, double speedSetpoint, double *torqueDemand);</td>
+          <td>struct speedDistanceRegulator__impl_data{<br/>--;<br/>double kp;<br/>double kd;<br/>double ki;<br/>};</td>
+        </tr>
+      </block>
+      <block>
+        <tr>
+          <td rowspan="2">
+            <a href="C:/WCs/Z028b-ESD/CSD_2020/10-DemoProjects/AdaptiveCruiseControl/solutions/A_ACC/CodeRealizationHomogeneousC\default_supplier\ExternalC\ACC_Architecture_Homo__impl.c">ACC_Architecture_Homo__impl.c</a>
+          </td>
+          <td rowspan="2">AnACC_System__impl_homogeneous</td>
+          <td>void AnACC_System__impl_homogeneous_init(AnACC_System__impl_homogeneous_data_t *___id);</td>
+          <td>void AnACC_System__impl_homogeneous_init(AnACC_System__impl_homogeneous_data_t *___id);</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>void AnACC_System__impl_homogeneous_execute(AnACC_System__impl_homogeneous_data_t *___id, double lidarMeasurement, bool modeSelectionUser, double radarLRMeasurement, double radarSRMeasurement, double speedMeasuredWheels, double speedSetpointDriver, double *torqueDemandACC);</td>
+          <td>void AnACC_System__impl_homogeneous_execute(AnACC_System__impl_homogeneous_data_t *___id, double lidarMeasurement, bool modeSelectionUser, double radarLRMeasurement, double radarSRMeasurement, double speedMeasuredWheels, double speedSetpointDriver, double *torqueDemandACC);</td>
+          <td></td>
+        </tr>
+      </block>
+      <block>
+        <tr>
+          <td rowspan="1">
+            <a href="C:/WCs/Z028b-ESD/CSD_2020/10-DemoProjects/AdaptiveCruiseControl/solutions/A_ACC/CodeRealizationHomogeneousC\default_supplier\ExternalC\ACC_Architecture_Homo__impl.c">ACC_Architecture_Homo__impl.c</a>
+          </td>
+          <td rowspan="1">driverUIWOEnums__impl</td>
+          <td>void driverUIWOEnums__impl_execute(driverUIWOEnums__impl_data_t *___id, bool mode, double speedSetpoint, bool *enable);</td>
+          <td>void driverUIWOEnums__impl_execute(driverUIWOEnums__impl_data_t *___id, bool mode, double speedSetpoint, bool *enable);</td>
+          <td></td>
+        </tr>
+      </block>
+    </table>
+    (Key: 
+    <i>
+      <added>Newly Added</added>
+      /
+      <removed>Removed entry</removed>
+      /
+      <modified>Modified/Renamed</modified>
+    </i>
+    )
+    
+    <div class="footer">
+      Last Generated by 
+      <i>eh6qym</i>
+       at 
+      <i>2020-03-16T14:36:53</i>
+    </div>
+  </body>
+</html>

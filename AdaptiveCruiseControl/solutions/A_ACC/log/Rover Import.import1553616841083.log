@@ -1,0 +1,8 @@
+2019/03/26 17:14:01 CET Importing files from project directory C:/WCs/ESDBusinessDevelopment/Product_Input/DemoModels/AdaptiveCruiseControl/legacyCode/Rover
+2019/03/26 17:14:05 CET ERROR:clangrdf.logger:C:\WCs\ESDBusinessDevelopment\Product_Input\DemoModels\AdaptiveCruiseControl\legacyCode\Rover\ATRover_autosar_rtw\ATRover.c:20:6: error: conflicting types for 'Runnable_Step'
+2019/03/26 17:14:07 CET Import completed
+2019/03/26 17:14:07 CET Total number of files 35
+2019/03/26 17:14:07 CET Total number of functions 11
+2019/03/26 17:14:07 CET Total number of global variables 12
+2019/03/26 17:14:07 CET Total number of static variables 0
+2019/03/26 17:14:07 CET Total time (in hh:mm:ss) 00:00:06

@@ -1,0 +1,8 @@
+2019/06/04 16:40:45 CEST Importing files from project directory C:/WCs/ESDBusinessDevelopment/Product_Input/DemoModels/AdaptiveCruiseControl/legacyCode/RoverCStructs
+2019/06/04 16:40:48 CEST ERROR:clangrdf.logger:C:\WCs\ESDBusinessDevelopment\Product_Input\DemoModels\AdaptiveCruiseControl\legacyCode\RoverCStructs\ATRover_autosar_rtw\ATRover.c:96:43: error: expected ')'
+2019/06/04 16:40:51 CEST Import completed
+2019/06/04 16:40:51 CEST Total number of files 35
+2019/06/04 16:40:51 CEST Total number of functions 23
+2019/06/04 16:40:51 CEST Total number of global variables 12
+2019/06/04 16:40:51 CEST Total number of static variables 0
+2019/06/04 16:40:51 CEST Total time (in hh:mm:ss) 00:00:05

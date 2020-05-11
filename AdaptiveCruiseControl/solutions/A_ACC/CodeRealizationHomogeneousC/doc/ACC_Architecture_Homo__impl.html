@@ -1,0 +1,949 @@
+<html>
+  <head>
+    <title>Documentation for ACC_Architecture_Homo__impl</title>
+    <style>
+        a.trace:visited {text-decoration: none; color: #a3f69e;}
+        a.trace:link {text-decoration: none; color:green}
+        a.trace:hover {text-decoration: underline; color: green;}
+        a.trace:active {text-decoration: underline; color: blue;}
+        
+        a:visited { text-decoration: none; color: #7e79ce; }
+        a:active { text-decoration: none; color: blue; }
+        a:link {text-decoration: none; color: blue;}
+        a:hover {text-decoration: underline; color: blue;}
+        
+        implements {background-color: #4ce8a4;}
+        exemplifies {background-color: #a09e8a;}
+        test {background-color: #1be0dd;}
+        
+        .external { color: #00bfff; }
+        ul { list-style-type:"\2720\0020"; }
+        
+        .TT-container {position: relative;}
+        
+        .TT-value {
+          font-size: 75%;  
+          display: none;
+          background-color: #edecda;
+          color: black;
+          padding: 2px 3px 2px px;
+          white-space: pre;
+          text-decoration: none;
+          z-index: 99;
+        }
+        
+        .TT-container:hover .TT-value {
+          position: absolute;
+          top: -45px;
+          left: 150px;
+          display: inline;
+        }
+        
+        </style>
+    <style>
+        .footer{ 
+            position: fixed; 
+            text-align: center;
+            bottom: 0px;
+            width: 100%;
+        }
+        
+        html { font-family: Verdana, Arial, Helvetica, sans-serif; } h1 { color: #006487; } h2 { color: #147391; }
+        
+        added { color: #56a356;}
+        
+        removed { 
+            color: #FF00AB;
+            text-decoration: line-through;
+        }
+        
+        modified { color: #4076ed; }
+        
+        table.roundedCorners {
+            border: 2px solid;
+            border-color: #66b3ff;
+            border-radius: 13px;
+            border-spacing: 0px;
+        }
+        
+        table.roundedCorners td, 
+        table.roundedCorners th { 
+            border-bottom: 2px solid;
+            border-right: 2px solid;
+            border-color: #66b3ff;
+            padding: 10px; 
+        }
+        
+        tr:nth-child(even){background-color: #f2f2f2} 
+        
+        table.roundedCorners tr:last-child > td {
+            border-bottom: none;
+        }
+        
+        table.roundedCorners td:last-child {
+            border-right: none;
+        }
+        
+        table.roundedCorners th:last-child {
+            border-right: none;
+        }
+        
+        .underline {text-decoration: underline;}
+        </style>
+  </head>
+  <body>
+    <h2>Documentation for ACC_Architecture_Homo__impl</h2>
+    <p>Blocks present in the implementation module are given below</p>
+    <hr />
+    <p>
+      <a name="ACC_System_If__impl"></a>
+      <h3>
+        <b>AtomicBlock Name: </b>
+        <b>ACC_System_If__impl</b>
+      </h3>
+      <b>ACC_System_If__impl</b>
+      <i>
+        realizes 
+        <a href="ACC_Architecture.html#ACC_System_If">ACC_System_If</a>
+      </i>
+      <h4>
+        <u>Documentation</u>
+      </h4>
+      <table class="roundedCorners" width="95%">
+        <caption>Data Properties</caption>
+        <tr>
+          <th>Name</th>
+          <th>DD</th>
+          <th>DD Owner</th>
+          <th>Access</th>
+          <th>Usage</th>
+          <th>Datatype</th>
+          <th>Unit</th>
+          <th>Constraints</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td>lidarMeasurement</td>
+          <td>lidarMeasurement</td>
+          <td>ACCData</td>
+          <td>lidarMeasurement</td>
+          <td>inport</td>
+          <td>double </td>
+          <td>m</td>
+          <td>range 0 m..150 m</td>
+          <td>Distance to car in front measured by Lidar</td>
+        </tr>
+        <tr>
+          <td>modeSelectionUser</td>
+          <td></td>
+          <td></td>
+          <td>modeSelectionUser</td>
+          <td>inport</td>
+          <td>enum</td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>radarLRMeasurement</td>
+          <td>radarLRMeasurement</td>
+          <td>ACCData</td>
+          <td>radarLRMeasurement</td>
+          <td>inport</td>
+          <td>double </td>
+          <td>m</td>
+          <td>range 0 m..350 m</td>
+          <td>Distance to car in front measured by long range radar</td>
+        </tr>
+        <tr>
+          <td>radarSRMeasurement</td>
+          <td>radarSRMeasurement</td>
+          <td>ACCData</td>
+          <td>radarSRMeasurement</td>
+          <td>inport</td>
+          <td>double </td>
+          <td>cm</td>
+          <td>range 0 cm..790 cm</td>
+          <td>Distance to car in front measured by short range radar</td>
+        </tr>
+        <tr>
+          <td>speedMeasuredWheels</td>
+          <td>speedMeasuredWheels</td>
+          <td>ACCData</td>
+          <td>speedMeasuredWheels</td>
+          <td>inport</td>
+          <td>double </td>
+          <td>kmh</td>
+          <td>range -30 kmh..280 kmh</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>speedSetpointDriver</td>
+          <td>speedSetpointDriver</td>
+          <td>ACCData</td>
+          <td>speedSetpointDriver</td>
+          <td>inport</td>
+          <td>double </td>
+          <td>kmh</td>
+          <td>range 0 kmh..200.0 kmh</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>torqueDemandACC</td>
+          <td>torqueDemandACC</td>
+          <td>ACCData</td>
+          <td>*torqueDemandACC</td>
+          <td>outport</td>
+          <td>double </td>
+          <td>Nm</td>
+          <td>range 0 Nm..1000 Nm</td>
+          <td>Calculated torque demand from ACC function</td>
+        </tr>
+      </table>
+      
+      
+      <p>
+        <i>Body Type: </i>
+        external implementation
+      </p>
+      <p>
+        <i>Implementation Language: </i>
+        C
+      </p>
+      
+      <p>
+        <a href="http://127.0.0.1:63320/node?ref=r%3A3a7acda9-e9c9-4dad-8f9c-2c2ccb980636%28A_ACC._51_ImplementationDefinitionHomogeneousC%29%2F8321407184102458786">Open ACC_System_If__impl in ESD</a>
+      </p>
+      <hr />
+    </p>
+    <p>
+      <a name="driverUserInterface__impl"></a>
+      <h3>
+        <b>AtomicBlock Name: </b>
+        <b>driverUserInterface__impl</b>
+      </h3>
+      <b>driverUserInterface__impl</b>
+      <i>
+        realizes 
+        <a href="ACC_Architecture.html#driverUserInterface">driverUserInterface</a>
+      </i>
+      <h4>
+        <u>Documentation</u>
+      </h4>
+      <table class="roundedCorners" width="95%">
+        <caption>Data Properties</caption>
+        <tr>
+          <th>Name</th>
+          <th>DD</th>
+          <th>DD Owner</th>
+          <th>Access</th>
+          <th>Usage</th>
+          <th>Datatype</th>
+          <th>Unit</th>
+          <th>Constraints</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td>enable</td>
+          <td></td>
+          <td></td>
+          <td>*enable</td>
+          <td>outport</td>
+          <td>boolean </td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>mode</td>
+          <td></td>
+          <td></td>
+          <td>mode</td>
+          <td>inport</td>
+          <td>enum</td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>speedSetpoint</td>
+          <td></td>
+          <td></td>
+          <td>speedSetpoint</td>
+          <td>inport</td>
+          <td>double </td>
+          <td>kmh</td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      
+      
+      <p>
+        <i>Body Type: </i>
+        external implementation
+      </p>
+      <p>
+        <i>Implementation Language: </i>
+        C
+      </p>
+      
+      <p>
+        <a href="http://127.0.0.1:63320/node?ref=r%3A3a7acda9-e9c9-4dad-8f9c-2c2ccb980636%28A_ACC._51_ImplementationDefinitionHomogeneousC%29%2F8321407184102458798">Open driverUserInterface__impl in ESD</a>
+      </p>
+      <hr />
+    </p>
+    <p>
+      <a name="sensorFusion__impl"></a>
+      <h3>
+        <b>AtomicBlock Name: </b>
+        <b>sensorFusion__impl</b>
+      </h3>
+      <b>sensorFusion__impl</b>
+      <i>
+        realizes 
+        <a href="ACC_Architecture.html#sensorFusion">sensorFusion</a>
+      </i>
+      <h4>
+        <u>Documentation</u>
+      </h4>
+      <table class="roundedCorners" width="95%">
+        <caption>Data Properties</caption>
+        <tr>
+          <th>Name</th>
+          <th>DD</th>
+          <th>DD Owner</th>
+          <th>Access</th>
+          <th>Usage</th>
+          <th>Datatype</th>
+          <th>Unit</th>
+          <th>Constraints</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td>fusedRange</td>
+          <td>fusedRange</td>
+          <td>ACCData</td>
+          <td>*fusedRange</td>
+          <td>outport</td>
+          <td>double </td>
+          <td>m</td>
+          <td>range 0 m..500 m</td>
+          <td>Distance to car in front, result from fusing all sensor sources</td>
+        </tr>
+        <tr>
+          <td>lidarMeasurement</td>
+          <td>lidarMeasurement</td>
+          <td>ACCData</td>
+          <td>lidarMeasurement</td>
+          <td>inport</td>
+          <td>double </td>
+          <td>m</td>
+          <td>range 0 m..150 m</td>
+          <td>Distance to car in front measured by Lidar</td>
+        </tr>
+        <tr>
+          <td>radarLRMeasurement</td>
+          <td>radarLRMeasurement</td>
+          <td>ACCData</td>
+          <td>radarLRMeasurement</td>
+          <td>inport</td>
+          <td>double </td>
+          <td>m</td>
+          <td>range 0 m..350 m</td>
+          <td>Distance to car in front measured by long range radar</td>
+        </tr>
+        <tr>
+          <td>radarSRMeasurement</td>
+          <td>radarSRMeasurement</td>
+          <td>ACCData</td>
+          <td>radarSRMeasurement</td>
+          <td>inport</td>
+          <td>double </td>
+          <td>cm</td>
+          <td>range 0 cm..790 cm</td>
+          <td>Distance to car in front measured by short range radar</td>
+        </tr>
+        <tr>
+          <td>LongRangeRadarUpperLimit</td>
+          <td>LongRangeRadarUpperLimit</td>
+          <td>ACCData</td>
+          <td>___id->LongRangeRadarUpperLimit</td>
+          <td>parameter</td>
+          <td>double </td>
+          <td>m</td>
+          <td>range 200 m..500 m</td>
+          <td>Upper limit of reliable operation of long range radar</td>
+        </tr>
+        <tr>
+          <td>ShortRangeRadarUpperLimit</td>
+          <td>ShortRangeRadarUpperLimit</td>
+          <td>ACCData</td>
+          <td>___id->ShortRangeRadarUpperLimit</td>
+          <td>parameter</td>
+          <td>double </td>
+          <td>cm</td>
+          <td>range 500 cm..1000 cm</td>
+          <td>Upper limit of reliable operation of short range radar</td>
+        </tr>
+      </table>
+      <table class="roundedCorners" width="95%">
+        <br />
+        <br />
+        <caption>Constant Values</caption>
+        <tr>
+          <th>Name</th>
+          <th>Group Owner</th>
+          <th>Datatype</th>
+          <th>Value</th>
+          <th>Unit</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td>RadarRanges.LongRangeRadarLowerLimit</td>
+          <td>ACC_Parameters</td>
+          <td>double </td>
+          <td>0.02 m</td>
+          <td>m</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>RadarRanges.LongRangeRadarUpperLimit</td>
+          <td>ACC_Parameters</td>
+          <td>double </td>
+          <td>300.0 m</td>
+          <td>m</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>RadarRanges.ShortRangeRadarLowerLimit</td>
+          <td>ACC_Parameters</td>
+          <td>double </td>
+          <td>1.0 cm</td>
+          <td>cm</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>RadarRanges.ShortRangeRadarUpperLimit</td>
+          <td>ACC_Parameters</td>
+          <td>double </td>
+          <td>800 cm</td>
+          <td>cm</td>
+          <td></td>
+        </tr>
+      </table>
+      
+      
+      <p>
+        <i>Body Type: </i>
+        external implementation
+      </p>
+      <p>
+        <i>Implementation Language: </i>
+        C
+      </p>
+      
+      <p>
+        <a href="http://127.0.0.1:63320/node?ref=r%3A3a7acda9-e9c9-4dad-8f9c-2c2ccb980636%28A_ACC._51_ImplementationDefinitionHomogeneousC%29%2F8321407184102458809">Open sensorFusion__impl in ESD</a>
+      </p>
+      <hr />
+    </p>
+    <p>
+      <a name="speedDistanceRegulator__impl"></a>
+      <h3>
+        <b>AtomicBlock Name: </b>
+        <b>speedDistanceRegulator__impl</b>
+      </h3>
+      <b>speedDistanceRegulator__impl</b>
+      <i>
+        realizes 
+        <a href="ACC_Architecture.html#speedDistanceRegulator">speedDistanceRegulator</a>
+      </i>
+      <h4>
+        <u>Documentation</u>
+      </h4>
+      <table class="roundedCorners" width="95%">
+        <caption>Data Properties</caption>
+        <tr>
+          <th>Name</th>
+          <th>DD</th>
+          <th>DD Owner</th>
+          <th>Access</th>
+          <th>Usage</th>
+          <th>Datatype</th>
+          <th>Unit</th>
+          <th>Constraints</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td>distanceMeasured</td>
+          <td></td>
+          <td></td>
+          <td>distanceMeasured</td>
+          <td>inport</td>
+          <td>double </td>
+          <td>m</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>enable</td>
+          <td></td>
+          <td></td>
+          <td>enable</td>
+          <td>inport</td>
+          <td>boolean </td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>speedMeasured</td>
+          <td></td>
+          <td></td>
+          <td>speedMeasured</td>
+          <td>inport</td>
+          <td>double </td>
+          <td>kmh</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>speedSetpoint</td>
+          <td></td>
+          <td></td>
+          <td>speedSetpoint</td>
+          <td>inport</td>
+          <td>double </td>
+          <td>kmh</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>torqueDemand</td>
+          <td></td>
+          <td></td>
+          <td>*torqueDemand</td>
+          <td>outport</td>
+          <td>double </td>
+          <td>Nm</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>kp</td>
+          <td></td>
+          <td></td>
+          <td>___id->kp</td>
+          <td>parameter</td>
+          <td>double </td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>kd</td>
+          <td></td>
+          <td></td>
+          <td>___id->kd</td>
+          <td>parameter</td>
+          <td>double </td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ki</td>
+          <td></td>
+          <td></td>
+          <td>___id->ki</td>
+          <td>parameter</td>
+          <td>double </td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>integrator</td>
+          <td></td>
+          <td></td>
+          <td>___id->integrator</td>
+          <td>statevariable</td>
+          <td>double </td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      
+      
+      <p>
+        <i>Body Type: </i>
+        external implementation
+      </p>
+      <p>
+        <i>Implementation Language: </i>
+        C
+      </p>
+      
+      <p>
+        <a href="http://127.0.0.1:63320/node?ref=r%3A3a7acda9-e9c9-4dad-8f9c-2c2ccb980636%28A_ACC._51_ImplementationDefinitionHomogeneousC%29%2F8321407184102458820">Open speedDistanceRegulator__impl in ESD</a>
+      </p>
+      <hr />
+    </p>
+    <p>
+      <a name="AnACC_System__impl_homogeneous"></a>
+      <h3>
+        <b>CompositeBlock Name: </b>
+        <b>AnACC_System__impl_homogeneous</b>
+      </h3>
+      <b>AnACC_System__impl_homogeneous</b>
+      <i>
+        realizes 
+        <a href="ACC_Architecture.html#ACC_SystemNoEnum_If">ACC_SystemNoEnum_If</a>
+      </i>
+      <h4>
+        <u>Documentation</u>
+      </h4>
+      <table class="roundedCorners" width="95%">
+        <caption>Data Properties</caption>
+        <tr>
+          <th>Name</th>
+          <th>DD</th>
+          <th>DD Owner</th>
+          <th>Access</th>
+          <th>Usage</th>
+          <th>Datatype</th>
+          <th>Unit</th>
+          <th>Constraints</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td>lidarMeasurement</td>
+          <td>lidarMeasurement</td>
+          <td>ACCData</td>
+          <td>lidarMeasurement</td>
+          <td>inport</td>
+          <td>double </td>
+          <td>m</td>
+          <td>range 0 m..150 m</td>
+          <td>Distance to car in front measured by Lidar</td>
+        </tr>
+        <tr>
+          <td>modeSelectionUser</td>
+          <td></td>
+          <td></td>
+          <td>modeSelectionUser</td>
+          <td>inport</td>
+          <td>boolean </td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>radarLRMeasurement</td>
+          <td>radarLRMeasurement</td>
+          <td>ACCData</td>
+          <td>radarLRMeasurement</td>
+          <td>inport</td>
+          <td>double </td>
+          <td>m</td>
+          <td>range 0 m..350 m</td>
+          <td>Distance to car in front measured by long range radar</td>
+        </tr>
+        <tr>
+          <td>radarSRMeasurement</td>
+          <td>radarSRMeasurement</td>
+          <td>ACCData</td>
+          <td>radarSRMeasurement</td>
+          <td>inport</td>
+          <td>double </td>
+          <td>cm</td>
+          <td>range 0 cm..790 cm</td>
+          <td>Distance to car in front measured by short range radar</td>
+        </tr>
+        <tr>
+          <td>speedMeasuredWheels</td>
+          <td>speedMeasuredWheels</td>
+          <td>ACCData</td>
+          <td>speedMeasuredWheels</td>
+          <td>inport</td>
+          <td>double </td>
+          <td>kmh</td>
+          <td>range -30 kmh..280 kmh</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>speedSetpointDriver</td>
+          <td>speedSetpointDriver</td>
+          <td>ACCData</td>
+          <td>speedSetpointDriver</td>
+          <td>inport</td>
+          <td>double </td>
+          <td>kmh</td>
+          <td>range 0 kmh..200.0 kmh</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>torqueDemandACC</td>
+          <td>torqueDemandACC</td>
+          <td>ACCData</td>
+          <td>*torqueDemandACC</td>
+          <td>outport</td>
+          <td>double </td>
+          <td>Nm</td>
+          <td>range 0 Nm..1000 Nm</td>
+          <td>Calculated torque demand from ACC function</td>
+        </tr>
+      </table>
+      <p>
+        This composite block has the following instances
+        <ul>
+          <li>
+            <i>
+              <a href="ACC_Architecture_Homo__impl.html#sensorFusion__impl">sensorFusion__impl</a>
+            </i>
+            :
+            <i>fusion</i>
+          </li>
+          <li>
+            <i>
+              <a href="ACC_Architecture_Homo__impl.html#speedDistanceRegulator__impl">speedDistanceRegulator__impl</a>
+            </i>
+            :
+            <i>regulatorInstance</i>
+          </li>
+          <li>
+            <i>
+              <a href="ACC_Architecture_Homo__impl.html#driverUIWOEnums__impl">driverUIWOEnums__impl</a>
+            </i>
+            :
+            <i>userInterface</i>
+          </li>
+        </ul>
+      </p>
+      
+      
+      <p>
+        <i>Body Type: </i>
+        Composite Block Body
+      </p>
+      
+      <p>
+        <a href="http://127.0.0.1:63320/node?ref=r%3A3a7acda9-e9c9-4dad-8f9c-2c2ccb980636%28A_ACC._51_ImplementationDefinitionHomogeneousC%29%2F8321407184102458831">Open AnACC_System__impl_homogeneous in ESD</a>
+      </p>
+      <hr />
+    </p>
+    <p>
+      <a name="ACC_SystemNoEnum_If__impl"></a>
+      <h3>
+        <b>AtomicBlock Name: </b>
+        <b>ACC_SystemNoEnum_If__impl</b>
+      </h3>
+      <b>ACC_SystemNoEnum_If__impl</b>
+      <i>
+        realizes 
+        <a href="ACC_Architecture.html#ACC_SystemNoEnum_If">ACC_SystemNoEnum_If</a>
+      </i>
+      <h4>
+        <u>Documentation</u>
+      </h4>
+      <table class="roundedCorners" width="95%">
+        <caption>Data Properties</caption>
+        <tr>
+          <th>Name</th>
+          <th>DD</th>
+          <th>DD Owner</th>
+          <th>Access</th>
+          <th>Usage</th>
+          <th>Datatype</th>
+          <th>Unit</th>
+          <th>Constraints</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td>lidarMeasurement</td>
+          <td>lidarMeasurement</td>
+          <td>ACCData</td>
+          <td>lidarMeasurement</td>
+          <td>inport</td>
+          <td>double </td>
+          <td>m</td>
+          <td>range 0 m..150 m</td>
+          <td>Distance to car in front measured by Lidar</td>
+        </tr>
+        <tr>
+          <td>modeSelectionUser</td>
+          <td></td>
+          <td></td>
+          <td>modeSelectionUser</td>
+          <td>inport</td>
+          <td>boolean </td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>radarLRMeasurement</td>
+          <td>radarLRMeasurement</td>
+          <td>ACCData</td>
+          <td>radarLRMeasurement</td>
+          <td>inport</td>
+          <td>double </td>
+          <td>m</td>
+          <td>range 0 m..350 m</td>
+          <td>Distance to car in front measured by long range radar</td>
+        </tr>
+        <tr>
+          <td>radarSRMeasurement</td>
+          <td>radarSRMeasurement</td>
+          <td>ACCData</td>
+          <td>radarSRMeasurement</td>
+          <td>inport</td>
+          <td>double </td>
+          <td>cm</td>
+          <td>range 0 cm..790 cm</td>
+          <td>Distance to car in front measured by short range radar</td>
+        </tr>
+        <tr>
+          <td>speedMeasuredWheels</td>
+          <td>speedMeasuredWheels</td>
+          <td>ACCData</td>
+          <td>speedMeasuredWheels</td>
+          <td>inport</td>
+          <td>double </td>
+          <td>kmh</td>
+          <td>range -30 kmh..280 kmh</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>speedSetpointDriver</td>
+          <td>speedSetpointDriver</td>
+          <td>ACCData</td>
+          <td>speedSetpointDriver</td>
+          <td>inport</td>
+          <td>double </td>
+          <td>kmh</td>
+          <td>range 0 kmh..200.0 kmh</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>torqueDemandACC</td>
+          <td>torqueDemandACC</td>
+          <td>ACCData</td>
+          <td>*torqueDemandACC</td>
+          <td>outport</td>
+          <td>double </td>
+          <td>Nm</td>
+          <td>range 0 Nm..1000 Nm</td>
+          <td>Calculated torque demand from ACC function</td>
+        </tr>
+      </table>
+      
+      
+      <p>
+        <i>Body Type: </i>
+        external implementation
+      </p>
+      <p>
+        <i>Implementation Language: </i>
+        C
+      </p>
+      
+      <p>
+        <a href="http://127.0.0.1:63320/node?ref=r%3A3a7acda9-e9c9-4dad-8f9c-2c2ccb980636%28A_ACC._51_ImplementationDefinitionHomogeneousC%29%2F8321407184104586733">Open ACC_SystemNoEnum_If__impl in ESD</a>
+      </p>
+      <hr />
+    </p>
+    <p>
+      <a name="driverUIWOEnums__impl"></a>
+      <h3>
+        <b>AtomicBlock Name: </b>
+        <b>driverUIWOEnums__impl</b>
+      </h3>
+      <b>driverUIWOEnums__impl</b>
+      <i>
+        realizes 
+        <a href="ACC_Architecture.html#driverUIWOEnums">driverUIWOEnums</a>
+      </i>
+      <h4>
+        <u>Documentation</u>
+      </h4>
+      <table class="roundedCorners" width="95%">
+        <caption>Data Properties</caption>
+        <tr>
+          <th>Name</th>
+          <th>DD</th>
+          <th>DD Owner</th>
+          <th>Access</th>
+          <th>Usage</th>
+          <th>Datatype</th>
+          <th>Unit</th>
+          <th>Constraints</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td>enable</td>
+          <td></td>
+          <td></td>
+          <td>*enable</td>
+          <td>outport</td>
+          <td>boolean </td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>mode</td>
+          <td></td>
+          <td></td>
+          <td>mode</td>
+          <td>inport</td>
+          <td>boolean </td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>speedSetpoint</td>
+          <td></td>
+          <td></td>
+          <td>speedSetpoint</td>
+          <td>inport</td>
+          <td>double </td>
+          <td>kmh</td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      
+      
+      <p>
+        <i>Body Type: </i>
+        external implementation
+      </p>
+      <p>
+        <i>Implementation Language: </i>
+        C
+      </p>
+      
+      <p>
+        <a href="http://127.0.0.1:63320/node?ref=r%3A3a7acda9-e9c9-4dad-8f9c-2c2ccb980636%28A_ACC._51_ImplementationDefinitionHomogeneousC%29%2F8321407184104586753">Open driverUIWOEnums__impl in ESD</a>
+      </p>
+      <hr />
+    </p>
+    <p>
+      <p>
+        <strong>NOTE:</strong>
+        <sup class="external">*</sup>
+         represents that the block has the corresponding functions in a separate file.
+      </p>
+      <div class="footer">
+        Last Generated by 
+        <i>eh6qym</i>
+         at 
+        <i>2020-03-16T14:36:53</i>
+      </div>
+    </p>
+  </body>
+</html>

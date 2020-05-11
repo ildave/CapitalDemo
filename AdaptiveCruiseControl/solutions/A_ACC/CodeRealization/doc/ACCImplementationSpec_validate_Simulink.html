@@ -1,0 +1,264 @@
+<html>
+  <head>
+    <title>Validation Report 
+        ACCImplementationSpec</title>
+    <style>
+        .footer{ 
+            position: fixed; 
+            text-align: center;
+            bottom: 0px;
+            width: 100%;
+        }
+        
+        html { font-family: Verdana, Arial, Helvetica, sans-serif; } h1 { color: #006487; } h2 { color: #147391; }
+        
+        added { color: #56a356;}
+        
+        removed { 
+            color: #FF00AB;
+            text-decoration: line-through;
+        }
+        
+        modified { color: #4076ed; }
+        
+        table.roundedCorners {
+            border: 2px solid;
+            border-color: #66b3ff;
+            border-radius: 13px;
+            border-spacing: 0px;
+        }
+        
+        table.roundedCorners td, 
+        table.roundedCorners th { 
+            border-bottom: 2px solid;
+            border-right: 2px solid;
+            border-color: #66b3ff;
+            padding: 10px; 
+        }
+        
+        tr:nth-child(even){background-color: #f2f2f2} 
+        
+        table.roundedCorners tr:last-child > td {
+            border-bottom: none;
+        }
+        
+        table.roundedCorners td:last-child {
+            border-right: none;
+        }
+        
+        table.roundedCorners th:last-child {
+            border-right: none;
+        }
+        
+        .underline {text-decoration: underline;}
+        </style>
+  </head>
+  <body>
+    <h2>Validation Report for 
+        ACCImplementationSpec</h2>
+    <table class="roundedCorners" width="95%" cellspacing="1">
+      <h3>Target - Simulink</h3>
+      <tr>
+        <th>File Name</th>
+        <th>Block Name</th>
+        <th>Expected Block Properties</th>
+        <th>Actual Block Properties</th>
+        <th>Status</th>
+        <th>Information about mismatch</th>
+      </tr>
+      <block>
+        <tr>
+          <td>
+            <a href="C:\WCs\Z028b-ESD\CSD_2020\10-DemoProjects\AdaptiveCruiseControl\solutions\A_ACC\CodeRealization\Internal_A\Simulink\ACC_Architecture__impl\ACC_System_If__impl.slx">ACC_System_If__impl.slx</a>
+          </td>
+          <td>ACC_System_If__impl</td>
+          <td>
+            <dummy>
+              <br>
+                <b>Inports</b>
+              </br>
+              <removed>double/m/ lidarMeasurement<br/></removed>
+              <removed>ACCUserMode modeSelectionUser<br/></removed>
+              <removed>double/m/ radarLRMeasurement<br/></removed>
+              <removed>double/cm/ radarSRMeasurement<br/></removed>
+              <removed>double/kmh/ speedMeasuredWheels<br/></removed>
+              <removed>double/kmh/ speedSetpointDriver<br/></removed>
+            </dummy>
+            <dummy>
+              <br>
+                <b>Outports</b>
+              </br>
+              <removed>double/Nm/ torqueDemandACC<br/></removed>
+            </dummy>
+            
+          </td>
+          <td></td>
+          <td>&#10005;</td>
+          <td>
+            <removed>InPort: lidar is removed<br/></removed>
+            <removed>InPort: modeSelectionUser is removed<br/></removed>
+            <removed>InPort: radarLR is removed<br/></removed>
+            <removed>InPort: radarSR is removed<br/></removed>
+            <removed>InPort: speedMeasuredWheels is removed<br/></removed>
+            <removed>InPort: speedSetpointDriver is removed<br/></removed>
+            <removed>OutPort: torqueDemand is removed<br/></removed>
+          </td>
+        </tr>
+      </block>
+      <block>
+        <tr>
+          <td>
+            <a href="C:\WCs\Z028b-ESD\CSD_2020\10-DemoProjects\AdaptiveCruiseControl\solutions\A_ACC\CodeRealization\Internal_A\Simulink\ACC_Architecture__impl\sensorFusion__impl_1.slx">sensorFusion__impl_1.slx</a>
+          </td>
+          <td>sensorFusion__impl_1</td>
+          <td>
+            <dummy>
+              <br>
+                <b>Inports</b>
+              </br>
+              <removed>double/m/ lidarMeasurement<br/></removed>
+              <removed>double/m/ radarLRMeasurement<br/></removed>
+              <removed>double/cm/ radarSRMeasurement<br/></removed>
+            </dummy>
+            <dummy>
+              <br>
+                <b>Outports</b>
+              </br>
+              <removed>double/m/ fusedRange<br/></removed>
+            </dummy>
+            <dummy>
+              <br>
+                <b>Parameters</b>
+              </br>
+              <removed>double/m/ LongRangeRadarUpperLimit<br/></removed>
+              <removed>double/cm/ ShortRangeRadarUpperLimit<br/></removed>
+            </dummy>
+            
+          </td>
+          <td></td>
+          <td>&#10005;</td>
+          <td>
+            <removed>Parameter: LongRangeRadarUpperLimit is removed<br/></removed>
+            <removed>Parameter: ShortRangeRadarUpperLimit is removed<br/></removed>
+            <removed>OutPort: fusedRange is removed<br/></removed>
+            <removed>InPort: lidarRange is removed<br/></removed>
+            <removed>InPort: radarRangeLongRange is removed<br/></removed>
+            <removed>InPort: radarRangeShortRange is removed<br/></removed>
+          </td>
+        </tr>
+      </block>
+      <block>
+        <tr>
+          <td>
+            <a href="C:\WCs\Z028b-ESD\CSD_2020\10-DemoProjects\AdaptiveCruiseControl\solutions\A_ACC\CodeRealization\Internal_A\Simulink\ACC_Architecture__impl\speedDistanceRegulator__impl.slx">speedDistanceRegulator__impl.slx</a>
+          </td>
+          <td>speedDistanceRegulator__impl</td>
+          <td>
+            <dummy>
+              <br>
+                <b>Inports</b>
+              </br>
+              <removed>double/m/ distanceMeasured<br/></removed>
+              <removed>boolean enable<br/></removed>
+              <removed>double/kmh/ speedMeasured<br/></removed>
+              <removed>double/kmh/ speedSetpoint<br/></removed>
+            </dummy>
+            <dummy>
+              <br>
+                <b>Outports</b>
+              </br>
+              <removed>double/Nm/ torqueDemand<br/></removed>
+            </dummy>
+            <dummy>
+              <br>
+                <b>Parameters</b>
+              </br>
+              <removed>double kp<br/></removed>
+              <removed>double kd<br/></removed>
+              <removed>double ki<br/></removed>
+            </dummy>
+            
+          </td>
+          <td></td>
+          <td>&#10005;</td>
+          <td>
+            <removed>InPort: distanceMeasured is removed<br/></removed>
+            <removed>InPort: enable is removed<br/></removed>
+            <removed>Parameter: kd is removed<br/></removed>
+            <removed>Parameter: ki is removed<br/></removed>
+            <removed>Parameter: kp is removed<br/></removed>
+            <removed>InPort: speedMeasured is removed<br/></removed>
+            <removed>InPort: speedSetpoint is removed<br/></removed>
+            <removed>OutPort: torqueDemand is removed<br/></removed>
+          </td>
+        </tr>
+      </block>
+      <block>
+        <tr>
+          <td>
+            <a href="C:\WCs\Z028b-ESD\CSD_2020\10-DemoProjects\AdaptiveCruiseControl\solutions\A_ACC\CodeRealization\Internal_A\Simulink\ACC_Architecture__impl\AnACC_System__impl.slx">AnACC_System__impl.slx</a>
+          </td>
+          <td>AnACC_System__impl</td>
+          <td>
+            <dummy>
+              <br>
+                <b>Inports</b>
+              </br>
+              <removed>double/m/ lidarMeasurement<br/></removed>
+              <removed>boolean modeSelectionUser<br/></removed>
+              <removed>double/m/ radarLRMeasurement<br/></removed>
+              <removed>double/cm/ radarSRMeasurement<br/></removed>
+              <removed>double/kmh/ speedMeasuredWheels<br/></removed>
+              <removed>double/kmh/ speedSetpointDriver<br/></removed>
+            </dummy>
+            <dummy>
+              <br>
+                <b>Outports</b>
+              </br>
+              <removed>double/Nm/ torqueDemandACC<br/></removed>
+            </dummy>
+            <dummy>
+              <br>
+                <b>Instances</b>
+              </br>
+              <removed>fusion<br/></removed>
+              <removed>regulatorInstance<br/></removed>
+              <removed>userInterface<br/></removed>
+            </dummy>
+            
+          </td>
+          <td></td>
+          <td>&#10005;</td>
+          <td>
+            <removed>BlockInstance: fusion is removed<br/></removed>
+            <removed>InPort: lidar is removed<br/></removed>
+            <removed>InPort: modeSelectionUser is removed<br/></removed>
+            <removed>InPort: radarLR is removed<br/></removed>
+            <removed>InPort: radarSR is removed<br/></removed>
+            <removed>BlockInstance: regulatorInstance is removed<br/></removed>
+            <removed>InPort: speedMeasuredWheels is removed<br/></removed>
+            <removed>InPort: speedSetpointDriver is removed<br/></removed>
+            <removed>OutPort: torqueDemand is removed<br/></removed>
+            <removed>BlockInstance: userInterface is removed<br/></removed>
+          </td>
+        </tr>
+      </block>
+    </table>
+    (Key: 
+    <i>
+      <added>Newly Added</added>
+      /
+      <removed>Removed entry</removed>
+      /
+      <modified>Modified/Renamed</modified>
+    </i>
+    )
+    
+    <div class="footer">
+      Last Validated by 
+      <i>eh6qym</i>
+       at 
+      <i>2020-03-16T14:39:59</i>
+    </div>
+  </body>
+</html>

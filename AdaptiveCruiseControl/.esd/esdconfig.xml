@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ESDConfiguration>
+  <ESDMajorVersion>2019</ESDMajorVersion>
+  <ESDMinorVersion>2</ESDMinorVersion>
+<PolarionProject>
+    <Name>jrichter</Name>
+  </PolarionProject>
+<SIGProject>
+    <SIGSystem>esdsample</SIGSystem>
+  </SIGProject>
+</ESDConfiguration>

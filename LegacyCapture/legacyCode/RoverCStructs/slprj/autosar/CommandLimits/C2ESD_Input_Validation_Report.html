@@ -1,0 +1,749 @@
+<html>
+<head>
+<title> C2ESD Input Validation Report</title>
+<style>
+.footer{ 
+ position: fixed; 
+ text-align: center; 
+ bottom: 0px; 
+ width: 100 % ; 
+}
+html { font-family: Verdana, Arial, Helvetica, sans-serif; } h1 { color: #006487; } h2 { color: #147391; }
+table.roundedCorners { 
+	border: 2px solid; 
+ border-color: #66b3ff; 
+ border-radius: 13px;
+ border-spacing: 0px; 
+ table-layout: fixed; 
+}
+table.roundedCorners td, 
+ table.roundedCorners th{ 
+ border-bottom: 2px solid; 
+ border-right: 2px solid; 
+ border-color: #66b3ff; 
+ padding: 10px; 
+ }
+tr:nth-child(even){background-color: #f2f2f2} 
+table.roundedCorners tr:last-child > td { 
+	border-bottom: none; 
+	}
+table.roundedCorners td:last-child { 
+ border-right: none; 
+ }
+table.roundedCorners th:last-child { 
+ border-right: none; 
+ } 
+.underline {text-decoration: underline;} 
+</style>
+</head>
+<body>
+<h2> C2ESD Input Validation Report </h2> 
+ <h3> Function Name : CommandLimits</h3>
+<table class="roundedCorners" width="95%" cellspacing="1">
+ <col style="width:40%"> 
+ <col style = "width:30%"> 
+ <col style = "width:30%"> 
+ <col style = "width:30%"><thead>
+<tr> 
+ <th>Code</th> 
+ <th>Location</th> 
+ <th>Rule</th>
+ <th>What can be done ? </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+ <td>if (*rtu_In1_Target_Driving > 0.0) {
+    /* Outputs for IfAction SubSystem: '<Root>/Drive forward' incorporates:
+     *  ActionPort: '<S2>/Action Port'
+     */
+    Merge2 = -1.0;
+
+    /* Lookup_n-D: '<S2>/Limit Characteristic Speed F' incorporates:
+     *  Constant: '<S2>/Constant'
+     */
+    Merge3 = look1_binlgpw(*rtu_In1_Load_Center, rtCP_LimitCharacteristicSpeed_e,
+      rtCP_LimitCharacteristicSpeedF_, Merge2);
+
+    /* End of Outputs for SubSystem: '<Root>/Drive forward' */
+  } else if (*rtu_In1_Target_Driving < 0.0) {
+    /* Outputs for IfAction SubSystem: '<Root>/Drive backward' incorporates:
+     *  ActionPort: '<S1>/Action Port'
+     */
+    /* Lookup_n-D: '<S1>/Limit Characteristic Speed B' */
+    Merge2 = look1_binlgpw(*rtu_In1_Load_Center, rtCP_LimitCharacteristicSpeed_a,
+      rtCP_LimitCharacteristicSpeedB_, 3U);
+    Merge3 = 1.0;
+
+    /* End of Outputs for SubSystem: '<Root>/Drive backward' */
+  } else {
+    /* Outputs for IfAction SubSystem: '<Root>/No drive' incorporates:
+     *  ActionPort: '<S3>/Action Port'
+     */
+    Merge2 = -1.0;
+    Merge3 = 1.0;
+
+    /* End of Outputs for SubSystem: '<Root>/No drive' */
+  }</td>
+<td><a href = "D:\accent\document\c2esd\code\Rover_Legacy\slprj\autosar\CommandLimits\CommandLimits.c">CommandLimits.c</a> [49:3] </td>
+ <td>Computations should not be present in top level function</td>
+ <td>Extract the computation statements into new function</td>
+</tr>
+<tr>
+ <td>*rtu_In1_Target_Driving > 0</td>
+<td><a href = "D:\accent\document\c2esd\code\Rover_Legacy\slprj\autosar\CommandLimits\CommandLimits.c">CommandLimits.c</a> [49:7] </td>
+ <td>Computations should not be present in top level function</td>
+ <td>Extract the computation statements into new function</td>
+</tr>
+<tr>
+ <td>-1</td>
+<td><a href = "D:\accent\document\c2esd\code\Rover_Legacy\slprj\autosar\CommandLimits\CommandLimits.c">CommandLimits.c</a> [53:14] </td>
+ <td>Computations should not be present in top level function</td>
+ <td>Extract the computation statements into new function</td>
+</tr>
+<tr>
+ <td>rtCP_pooled_gvgssRT8wmeK</td>
+<td><a href = "D:\accent\document\c2esd\code\Rover_Legacy\slprj\autosar\CommandLimits\CommandLimits.c:58:50 <Spelling=D:\accent\document\c2esd\code\Rover_Legacy\slprj\autosar\CommandLimits/CommandLimits_private.h">CommandLimits/CommandLimits_private.h</a> [57:41>] </td>
+ <td>Global variable access/delegation/updation cannot be done in top level function</td>
+ <td>Global variables can be directly accessed in child function instead of delegation</td>
+</tr>
+<tr>
+ <td>rtCP_pooled_89CwllXuKW7S</td>
+<td><a href = "D:\accent\document\c2esd\code\Rover_Legacy\slprj\autosar\CommandLimits\CommandLimits.c:59:7 <Spelling=D:\accent\document\c2esd\code\Rover_Legacy\slprj\autosar\CommandLimits/CommandLimits_private.h">CommandLimits/CommandLimits_private.h</a> [54:41>] </td>
+ <td>Global variable access/delegation/updation cannot be done in top level function</td>
+ <td>Global variables can be directly accessed in child function instead of delegation</td>
+</tr>
+<tr>
+ <td>if (*rtu_In1_Target_Driving < 0.0) {
+    /* Outputs for IfAction SubSystem: '<Root>/Drive backward' incorporates:
+     *  ActionPort: '<S1>/Action Port'
+     */
+    /* Lookup_n-D: '<S1>/Limit Characteristic Speed B' */
+    Merge2 = look1_binlgpw(*rtu_In1_Load_Center, rtCP_LimitCharacteristicSpeed_a,
+      rtCP_LimitCharacteristicSpeedB_, 3U);
+    Merge3 = 1.0;
+
+    /* End of Outputs for SubSystem: '<Root>/Drive backward' */
+  } else {
+    /* Outputs for IfAction SubSystem: '<Root>/No drive' incorporates:
+     *  ActionPort: '<S3>/Action Port'
+     */
+    Merge2 = -1.0;
+    Merge3 = 1.0;
+
+    /* End of Outputs for SubSystem: '<Root>/No drive' */
+  }</td>
+<td><a href = "D:\accent\document\c2esd\code\Rover_Legacy\slprj\autosar\CommandLimits\CommandLimits.c">CommandLimits.c</a> [62:10] </td>
+ <td>Computations should not be present in top level function</td>
+ <td>Extract the computation statements into new function</td>
+</tr>
+<tr>
+ <td>*rtu_In1_Target_Driving < 0</td>
+<td><a href = "D:\accent\document\c2esd\code\Rover_Legacy\slprj\autosar\CommandLimits\CommandLimits.c">CommandLimits.c</a> [62:14] </td>
+ <td>Computations should not be present in top level function</td>
+ <td>Extract the computation statements into new function</td>
+</tr>
+<tr>
+ <td>rtCP_pooled_gvgssRT8wmeK</td>
+<td><a href = "D:\accent\document\c2esd\code\Rover_Legacy\slprj\autosar\CommandLimits\CommandLimits.c:67:50 <Spelling=D:\accent\document\c2esd\code\Rover_Legacy\slprj\autosar\CommandLimits/CommandLimits_private.h">CommandLimits/CommandLimits_private.h</a> [63:41>] </td>
+ <td>Global variable access/delegation/updation cannot be done in top level function</td>
+ <td>Global variables can be directly accessed in child function instead of delegation</td>
+</tr>
+<tr>
+ <td>rtCP_pooled_OmPKMVk38Q7d</td>
+<td><a href = "D:\accent\document\c2esd\code\Rover_Legacy\slprj\autosar\CommandLimits\CommandLimits.c:68:7 <Spelling=D:\accent\document\c2esd\code\Rover_Legacy\slprj\autosar\CommandLimits/CommandLimits_private.h">CommandLimits/CommandLimits_private.h</a> [60:41>] </td>
+ <td>Global variable access/delegation/updation cannot be done in top level function</td>
+ <td>Global variables can be directly accessed in child function instead of delegation</td>
+</tr>
+<tr>
+ <td>-1</td>
+<td><a href = "D:\accent\document\c2esd\code\Rover_Legacy\slprj\autosar\CommandLimits\CommandLimits.c">CommandLimits.c</a> [76:14] </td>
+ <td>Computations should not be present in top level function</td>
+ <td>Extract the computation statements into new function</td>
+</tr>
+<tr>
+ <td>if (*rtu_In1_Target_Steering > 0.0) {
+    /* Outputs for IfAction SubSystem: '<Root>/Turn right' incorporates:
+     *  ActionPort: '<S6>/Action Port'
+     */
+    /* If: '<S6>/If' incorporates:
+     *  Constant: '<S13>/Constant'
+     *  Constant: '<S14>/Constant'
+     *  Constant: '<S6>/Constant'
+     *  Sum: '<S6>/Add'
+     */
+    if (0.05 + *rtu_In1_Load_Side > *rtu_In1_Load_Opposite) {
+      /* Outputs for IfAction SubSystem: '<S6>/If Action Subsystem1' incorporates:
+       *  ActionPort: '<S14>/Action Port'
+       */
+      /* Lookup_n-D: '<S14>/Limit turn rate' */
+      localB->Merge = look1_binlgpw(*rtu_In1_Load_Opposite,
+        rtCP_Limitturnrate_bp01Data, rtCP_Limitturnrate_tableData, 1U);
+      localB->Merge1 = 1.0;
+
+      /* End of Outputs for SubSystem: '<S6>/If Action Subsystem1' */
+    } else {
+      if (0.05 + *rtu_In1_Load_Side <= *rtu_In1_Load_Opposite) {
+        /* Outputs for IfAction SubSystem: '<S6>/If Action Subsystem' incorporates:
+         *  ActionPort: '<S13>/Action Port'
+         */
+        localB->Merge = -1.0;
+
+        /* Lookup_n-D: '<S13>/Limit turn rate' incorporates:
+         *  Constant: '<S13>/Constant'
+         */
+        localB->Merge1 = look1_binlgpw(*rtu_In1_Load_Side,
+          rtCP_Limitturnrate_bp01Data_j, rtCP_Limitturnrate_tableData_g, 2U);
+
+        /* End of Outputs for SubSystem: '<S6>/If Action Subsystem' */
+      }
+    }
+
+    /* End of If: '<S6>/If' */
+    /* End of Outputs for SubSystem: '<Root>/Turn right' */
+  } else if (*rtu_In1_Target_Steering < 0.0) {
+    /* Outputs for IfAction SubSystem: '<Root>/Turn left' incorporates:
+     *  ActionPort: '<S5>/Action Port'
+     */
+    /* If: '<S5>/If' incorporates:
+     *  Constant: '<S11>/Constant'
+     *  Constant: '<S12>/Constant'
+     *  Constant: '<S5>/Constant'
+     *  Sum: '<S5>/Add'
+     */
+    if (0.05 + *rtu_In1_Load_Side > *rtu_In1_Load_Opposite) {
+      /* Outputs for IfAction SubSystem: '<S5>/If Action Subsystem1' incorporates:
+       *  ActionPort: '<S12>/Action Port'
+       */
+      /* Lookup_n-D: '<S12>/Limit turn rate' */
+      localB->Merge1 = look1_binlgpw(*rtu_In1_Load_Opposite,
+        rtCP_Limitturnrate_bp01Data_e, rtCP_Limitturnrate_tableData_c, 1U);
+      localB->Merge = -1.0;
+
+      /* End of Outputs for SubSystem: '<S5>/If Action Subsystem1' */
+    } else {
+      if (0.05 + *rtu_In1_Load_Side <= *rtu_In1_Load_Opposite) {
+        /* Outputs for IfAction SubSystem: '<S5>/If Action Subsystem' incorporates:
+         *  ActionPort: '<S11>/Action Port'
+         */
+        localB->Merge1 = 1.0;
+
+        /* Lookup_n-D: '<S11>/Limit turn rate' incorporates:
+         *  Constant: '<S11>/Constant'
+         */
+        localB->Merge = look1_binlgpw(*rtu_In1_Load_Side,
+          rtCP_Limitturnrate_bp01Data_m, rtCP_Limitturnrate_tableData_i, 2U);
+
+        /* End of Outputs for SubSystem: '<S5>/If Action Subsystem' */
+      }
+    }
+
+    /* End of If: '<S5>/If' */
+    /* End of Outputs for SubSystem: '<Root>/Turn left' */
+  } else {
+    /* Outputs for IfAction SubSystem: '<Root>/No turn' incorporates:
+     *  ActionPort: '<S4>/Action Port'
+     */
+    localB->Merge = -1.0;
+    localB->Merge1 = 1.0;
+
+    /* End of Outputs for SubSystem: '<Root>/No turn' */
+  }</td>
+<td><a href = "D:\accent\document\c2esd\code\Rover_Legacy\slprj\autosar\CommandLimits\CommandLimits.c">CommandLimits.c</a> [88:3] </td>
+ <td>Computations should not be present in top level function</td>
+ <td>Extract the computation statements into new function</td>
+</tr>
+<tr>
+ <td>*rtu_In1_Target_Steering > 0</td>
+<td><a href = "D:\accent\document\c2esd\code\Rover_Legacy\slprj\autosar\CommandLimits\CommandLimits.c">CommandLimits.c</a> [88:7] </td>
+ <td>Computations should not be present in top level function</td>
+ <td>Extract the computation statements into new function</td>
+</tr>
+<tr>
+ <td>if (0.05 + *rtu_In1_Load_Side > *rtu_In1_Load_Opposite) {
+      /* Outputs for IfAction SubSystem: '<S6>/If Action Subsystem1' incorporates:
+       *  ActionPort: '<S14>/Action Port'
+       */
+      /* Lookup_n-D: '<S14>/Limit turn rate' */
+      localB->Merge = look1_binlgpw(*rtu_In1_Load_Opposite,
+        rtCP_Limitturnrate_bp01Data, rtCP_Limitturnrate_tableData, 1U);
+      localB->Merge1 = 1.0;
+
+      /* End of Outputs for SubSystem: '<S6>/If Action Subsystem1' */
+    } else {
+      if (0.05 + *rtu_In1_Load_Side <= *rtu_In1_Load_Opposite) {
+        /* Outputs for IfAction SubSystem: '<S6>/If Action Subsystem' incorporates:
+         *  ActionPort: '<S13>/Action Port'
+         */
+        localB->Merge = -1.0;
+
+        /* Lookup_n-D: '<S13>/Limit turn rate' incorporates:
+         *  Constant: '<S13>/Constant'
+         */
+        localB->Merge1 = look1_binlgpw(*rtu_In1_Load_Side,
+          rtCP_Limitturnrate_bp01Data_j, rtCP_Limitturnrate_tableData_g, 2U);
+
+        /* End of Outputs for SubSystem: '<S6>/If Action Subsystem' */
+      }
+    }</td>
+<td><a href = "D:\accent\document\c2esd\code\Rover_Legacy\slprj\autosar\CommandLimits\CommandLimits.c">CommandLimits.c</a> [98:5] </td>
+ <td>Computations should not be present in top level function</td>
+ <td>Extract the computation statements into new function</td>
+</tr>
+<tr>
+ <td>0.05 + *rtu_In1_Load_Side > *r</td>
+<td><a href = "D:\accent\document\c2esd\code\Rover_Legacy\slprj\autosar\CommandLimits\CommandLimits.c">CommandLimits.c</a> [98:9] </td>
+ <td>Computations should not be present in top level function</td>
+ <td>Extract the computation statements into new function</td>
+</tr>
+<tr>
+ <td>0.05 + *r</td>
+<td><a href = "D:\accent\document\c2esd\code\Rover_Legacy\slprj\autosar\CommandLimits\CommandLimits.c">CommandLimits.c</a> [98:9] </td>
+ <td>Computations should not be present in top level function</td>
+ <td>Extract the computation statements into new function</td>
+</tr>
+<tr>
+ <td>rtCP_pooled_bzKTYDyvAEj1</td>
+<td><a href = "D:\accent\document\c2esd\code\Rover_Legacy\slprj\autosar\CommandLimits\CommandLimits.c:104:9 <Spelling=D:\accent\document\c2esd\code\Rover_Legacy\slprj\autosar\CommandLimits/CommandLimits_private.h">CommandLimits/CommandLimits_private.h</a> [33:40>] </td>
+ <td>Global variable access/delegation/updation cannot be done in top level function</td>
+ <td>Global variables can be directly accessed in child function instead of delegation</td>
+</tr>
+<tr>
+ <td>rtCP_pooled_7xrlgPhp4Evg</td>
+<td><a href = "D:\accent\document\c2esd\code\Rover_Legacy\slprj\autosar\CommandLimits\CommandLimits.c:104:38 <Spelling=D:\accent\document\c2esd\code\Rover_Legacy\slprj\autosar\CommandLimits/CommandLimits_private.h">CommandLimits/CommandLimits_private.h</a> [30:40>] </td>
+ <td>Global variable access/delegation/updation cannot be done in top level function</td>
+ <td>Global variables can be directly accessed in child function instead of delegation</td>
+</tr>
+<tr>
+ <td>if (0.05 + *rtu_In1_Load_Side <= *rtu_In1_Load_Opposite) {
+        /* Outputs for IfAction SubSystem: '<S6>/If Action Subsystem' incorporates:
+         *  ActionPort: '<S13>/Action Port'
+         */
+        localB->Merge = -1.0;
+
+        /* Lookup_n-D: '<S13>/Limit turn rate' incorporates:
+         *  Constant: '<S13>/Constant'
+         */
+        localB->Merge1 = look1_binlgpw(*rtu_In1_Load_Side,
+          rtCP_Limitturnrate_bp01Data_j, rtCP_Limitturnrate_tableData_g, 2U);
+
+        /* End of Outputs for SubSystem: '<S6>/If Action Subsystem' */
+      }</td>
+<td><a href = "D:\accent\document\c2esd\code\Rover_Legacy\slprj\autosar\CommandLimits\CommandLimits.c">CommandLimits.c</a> [109:7] </td>
+ <td>Computations should not be present in top level function</td>
+ <td>Extract the computation statements into new function</td>
+</tr>
+<tr>
+ <td>0.05 + *rtu_In1_Load_Side <= *r</td>
+<td><a href = "D:\accent\document\c2esd\code\Rover_Legacy\slprj\autosar\CommandLimits\CommandLimits.c">CommandLimits.c</a> [109:11] </td>
+ <td>Computations should not be present in top level function</td>
+ <td>Extract the computation statements into new function</td>
+</tr>
+<tr>
+ <td>0.05 + *r</td>
+<td><a href = "D:\accent\document\c2esd\code\Rover_Legacy\slprj\autosar\CommandLimits\CommandLimits.c">CommandLimits.c</a> [109:11] </td>
+ <td>Computations should not be present in top level function</td>
+ <td>Extract the computation statements into new function</td>
+</tr>
+<tr>
+ <td>-1</td>
+<td><a href = "D:\accent\document\c2esd\code\Rover_Legacy\slprj\autosar\CommandLimits\CommandLimits.c">CommandLimits.c</a> [113:25] </td>
+ <td>Computations should not be present in top level function</td>
+ <td>Extract the computation statements into new function</td>
+</tr>
+<tr>
+ <td>rtCP_pooled_ZBstBWcDGHKK</td>
+<td><a href = "D:\accent\document\c2esd\code\Rover_Legacy\slprj\autosar\CommandLimits\CommandLimits.c:119:11 <Spelling=D:\accent\document\c2esd\code\Rover_Legacy\slprj\autosar\CommandLimits/CommandLimits_private.h">CommandLimits/CommandLimits_private.h</a> [39:40>] </td>
+ <td>Global variable access/delegation/updation cannot be done in top level function</td>
+ <td>Global variables can be directly accessed in child function instead of delegation</td>
+</tr>
+<tr>
+ <td>rtCP_pooled_QyxAABxqtgRb</td>
+<td><a href = "D:\accent\document\c2esd\code\Rover_Legacy\slprj\autosar\CommandLimits\CommandLimits.c:119:42 <Spelling=D:\accent\document\c2esd\code\Rover_Legacy\slprj\autosar\CommandLimits/CommandLimits_private.h">CommandLimits/CommandLimits_private.h</a> [36:40>] </td>
+ <td>Global variable access/delegation/updation cannot be done in top level function</td>
+ <td>Global variables can be directly accessed in child function instead of delegation</td>
+</tr>
+<tr>
+ <td>if (*rtu_In1_Target_Steering < 0.0) {
+    /* Outputs for IfAction SubSystem: '<Root>/Turn left' incorporates:
+     *  ActionPort: '<S5>/Action Port'
+     */
+    /* If: '<S5>/If' incorporates:
+     *  Constant: '<S11>/Constant'
+     *  Constant: '<S12>/Constant'
+     *  Constant: '<S5>/Constant'
+     *  Sum: '<S5>/Add'
+     */
+    if (0.05 + *rtu_In1_Load_Side > *rtu_In1_Load_Opposite) {
+      /* Outputs for IfAction SubSystem: '<S5>/If Action Subsystem1' incorporates:
+       *  ActionPort: '<S12>/Action Port'
+       */
+      /* Lookup_n-D: '<S12>/Limit turn rate' */
+      localB->Merge1 = look1_binlgpw(*rtu_In1_Load_Opposite,
+        rtCP_Limitturnrate_bp01Data_e, rtCP_Limitturnrate_tableData_c, 1U);
+      localB->Merge = -1.0;
+
+      /* End of Outputs for SubSystem: '<S5>/If Action Subsystem1' */
+    } else {
+      if (0.05 + *rtu_In1_Load_Side <= *rtu_In1_Load_Opposite) {
+        /* Outputs for IfAction SubSystem: '<S5>/If Action Subsystem' incorporates:
+         *  ActionPort: '<S11>/Action Port'
+         */
+        localB->Merge1 = 1.0;
+
+        /* Lookup_n-D: '<S11>/Limit turn rate' incorporates:
+         *  Constant: '<S11>/Constant'
+         */
+        localB->Merge = look1_binlgpw(*rtu_In1_Load_Side,
+          rtCP_Limitturnrate_bp01Data_m, rtCP_Limitturnrate_tableData_i, 2U);
+
+        /* End of Outputs for SubSystem: '<S5>/If Action Subsystem' */
+      }
+    }
+
+    /* End of If: '<S5>/If' */
+    /* End of Outputs for SubSystem: '<Root>/Turn left' */
+  } else {
+    /* Outputs for IfAction SubSystem: '<Root>/No turn' incorporates:
+     *  ActionPort: '<S4>/Action Port'
+     */
+    localB->Merge = -1.0;
+    localB->Merge1 = 1.0;
+
+    /* End of Outputs for SubSystem: '<Root>/No turn' */
+  }</td>
+<td><a href = "D:\accent\document\c2esd\code\Rover_Legacy\slprj\autosar\CommandLimits\CommandLimits.c">CommandLimits.c</a> [127:10] </td>
+ <td>Computations should not be present in top level function</td>
+ <td>Extract the computation statements into new function</td>
+</tr>
+<tr>
+ <td>*rtu_In1_Target_Steering < 0</td>
+<td><a href = "D:\accent\document\c2esd\code\Rover_Legacy\slprj\autosar\CommandLimits\CommandLimits.c">CommandLimits.c</a> [127:14] </td>
+ <td>Computations should not be present in top level function</td>
+ <td>Extract the computation statements into new function</td>
+</tr>
+<tr>
+ <td>if (0.05 + *rtu_In1_Load_Side > *rtu_In1_Load_Opposite) {
+      /* Outputs for IfAction SubSystem: '<S5>/If Action Subsystem1' incorporates:
+       *  ActionPort: '<S12>/Action Port'
+       */
+      /* Lookup_n-D: '<S12>/Limit turn rate' */
+      localB->Merge1 = look1_binlgpw(*rtu_In1_Load_Opposite,
+        rtCP_Limitturnrate_bp01Data_e, rtCP_Limitturnrate_tableData_c, 1U);
+      localB->Merge = -1.0;
+
+      /* End of Outputs for SubSystem: '<S5>/If Action Subsystem1' */
+    } else {
+      if (0.05 + *rtu_In1_Load_Side <= *rtu_In1_Load_Opposite) {
+        /* Outputs for IfAction SubSystem: '<S5>/If Action Subsystem' incorporates:
+         *  ActionPort: '<S11>/Action Port'
+         */
+        localB->Merge1 = 1.0;
+
+        /* Lookup_n-D: '<S11>/Limit turn rate' incorporates:
+         *  Constant: '<S11>/Constant'
+         */
+        localB->Merge = look1_binlgpw(*rtu_In1_Load_Side,
+          rtCP_Limitturnrate_bp01Data_m, rtCP_Limitturnrate_tableData_i, 2U);
+
+        /* End of Outputs for SubSystem: '<S5>/If Action Subsystem' */
+      }
+    }</td>
+<td><a href = "D:\accent\document\c2esd\code\Rover_Legacy\slprj\autosar\CommandLimits\CommandLimits.c">CommandLimits.c</a> [137:5] </td>
+ <td>Computations should not be present in top level function</td>
+ <td>Extract the computation statements into new function</td>
+</tr>
+<tr>
+ <td>0.05 + *rtu_In1_Load_Side > *r</td>
+<td><a href = "D:\accent\document\c2esd\code\Rover_Legacy\slprj\autosar\CommandLimits\CommandLimits.c">CommandLimits.c</a> [137:9] </td>
+ <td>Computations should not be present in top level function</td>
+ <td>Extract the computation statements into new function</td>
+</tr>
+<tr>
+ <td>0.05 + *r</td>
+<td><a href = "D:\accent\document\c2esd\code\Rover_Legacy\slprj\autosar\CommandLimits\CommandLimits.c">CommandLimits.c</a> [137:9] </td>
+ <td>Computations should not be present in top level function</td>
+ <td>Extract the computation statements into new function</td>
+</tr>
+<tr>
+ <td>rtCP_pooled_bzKTYDyvAEj1</td>
+<td><a href = "D:\accent\document\c2esd\code\Rover_Legacy\slprj\autosar\CommandLimits\CommandLimits.c:143:9 <Spelling=D:\accent\document\c2esd\code\Rover_Legacy\slprj\autosar\CommandLimits/CommandLimits_private.h">CommandLimits/CommandLimits_private.h</a> [45:40>] </td>
+ <td>Global variable access/delegation/updation cannot be done in top level function</td>
+ <td>Global variables can be directly accessed in child function instead of delegation</td>
+</tr>
+<tr>
+ <td>rtCP_pooled_iGgabUWT8gyJ</td>
+<td><a href = "D:\accent\document\c2esd\code\Rover_Legacy\slprj\autosar\CommandLimits\CommandLimits.c:143:40 <Spelling=D:\accent\document\c2esd\code\Rover_Legacy\slprj\autosar\CommandLimits/CommandLimits_private.h">CommandLimits/CommandLimits_private.h</a> [42:40>] </td>
+ <td>Global variable access/delegation/updation cannot be done in top level function</td>
+ <td>Global variables can be directly accessed in child function instead of delegation</td>
+</tr>
+<tr>
+ <td>-1</td>
+<td><a href = "D:\accent\document\c2esd\code\Rover_Legacy\slprj\autosar\CommandLimits\CommandLimits.c">CommandLimits.c</a> [144:23] </td>
+ <td>Computations should not be present in top level function</td>
+ <td>Extract the computation statements into new function</td>
+</tr>
+<tr>
+ <td>if (0.05 + *rtu_In1_Load_Side <= *rtu_In1_Load_Opposite) {
+        /* Outputs for IfAction SubSystem: '<S5>/If Action Subsystem' incorporates:
+         *  ActionPort: '<S11>/Action Port'
+         */
+        localB->Merge1 = 1.0;
+
+        /* Lookup_n-D: '<S11>/Limit turn rate' incorporates:
+         *  Constant: '<S11>/Constant'
+         */
+        localB->Merge = look1_binlgpw(*rtu_In1_Load_Side,
+          rtCP_Limitturnrate_bp01Data_m, rtCP_Limitturnrate_tableData_i, 2U);
+
+        /* End of Outputs for SubSystem: '<S5>/If Action Subsystem' */
+      }</td>
+<td><a href = "D:\accent\document\c2esd\code\Rover_Legacy\slprj\autosar\CommandLimits\CommandLimits.c">CommandLimits.c</a> [148:7] </td>
+ <td>Computations should not be present in top level function</td>
+ <td>Extract the computation statements into new function</td>
+</tr>
+<tr>
+ <td>0.05 + *rtu_In1_Load_Side <= *r</td>
+<td><a href = "D:\accent\document\c2esd\code\Rover_Legacy\slprj\autosar\CommandLimits\CommandLimits.c">CommandLimits.c</a> [148:11] </td>
+ <td>Computations should not be present in top level function</td>
+ <td>Extract the computation statements into new function</td>
+</tr>
+<tr>
+ <td>0.05 + *r</td>
+<td><a href = "D:\accent\document\c2esd\code\Rover_Legacy\slprj\autosar\CommandLimits\CommandLimits.c">CommandLimits.c</a> [148:11] </td>
+ <td>Computations should not be present in top level function</td>
+ <td>Extract the computation statements into new function</td>
+</tr>
+<tr>
+ <td>rtCP_pooled_ZBstBWcDGHKK</td>
+<td><a href = "D:\accent\document\c2esd\code\Rover_Legacy\slprj\autosar\CommandLimits\CommandLimits.c:158:11 <Spelling=D:\accent\document\c2esd\code\Rover_Legacy\slprj\autosar\CommandLimits/CommandLimits_private.h">CommandLimits/CommandLimits_private.h</a> [51:40>] </td>
+ <td>Global variable access/delegation/updation cannot be done in top level function</td>
+ <td>Global variables can be directly accessed in child function instead of delegation</td>
+</tr>
+<tr>
+ <td>rtCP_pooled_Bw7XY9CwUEgc</td>
+<td><a href = "D:\accent\document\c2esd\code\Rover_Legacy\slprj\autosar\CommandLimits\CommandLimits.c:158:42 <Spelling=D:\accent\document\c2esd\code\Rover_Legacy\slprj\autosar\CommandLimits/CommandLimits_private.h">CommandLimits/CommandLimits_private.h</a> [48:40>] </td>
+ <td>Global variable access/delegation/updation cannot be done in top level function</td>
+ <td>Global variables can be directly accessed in child function instead of delegation</td>
+</tr>
+<tr>
+ <td>-1</td>
+<td><a href = "D:\accent\document\c2esd\code\Rover_Legacy\slprj\autosar\CommandLimits\CommandLimits.c">CommandLimits.c</a> [170:21] </td>
+ <td>Computations should not be present in top level function</td>
+ <td>Extract the computation statements into new function</td>
+</tr>
+<tr>
+ <td>localB->Merge * 2.5 + 2</td>
+<td><a href = "D:\accent\document\c2esd\code\Rover_Legacy\slprj\autosar\CommandLimits\CommandLimits.c">CommandLimits.c</a> [183:8] </td>
+ <td>Computations should not be present in top level function</td>
+ <td>Extract the computation statements into new function</td>
+</tr>
+<tr>
+ <td>localB->Merge * 2</td>
+<td><a href = "D:\accent\document\c2esd\code\Rover_Legacy\slprj\autosar\CommandLimits\CommandLimits.c">CommandLimits.c</a> [183:8] </td>
+ <td>Computations should not be present in top level function</td>
+ <td>Extract the computation statements into new function</td>
+</tr>
+<tr>
+ <td>if (u0 > 5.0) {
+    *rty_Limited_TR_Left = 5.0;
+  } else if (u0 < 0.0) {
+    *rty_Limited_TR_Left = 0.0;
+  } else {
+    *rty_Limited_TR_Left = u0;
+  }</td>
+<td><a href = "D:\accent\document\c2esd\code\Rover_Legacy\slprj\autosar\CommandLimits\CommandLimits.c">CommandLimits.c</a> [186:3] </td>
+ <td>Computations should not be present in top level function</td>
+ <td>Extract the computation statements into new function</td>
+</tr>
+<tr>
+ <td>u0 > 5</td>
+<td><a href = "D:\accent\document\c2esd\code\Rover_Legacy\slprj\autosar\CommandLimits\CommandLimits.c">CommandLimits.c</a> [186:7] </td>
+ <td>Computations should not be present in top level function</td>
+ <td>Extract the computation statements into new function</td>
+</tr>
+<tr>
+ <td>if (u0 < 0.0) {
+    *rty_Limited_TR_Left = 0.0;
+  } else {
+    *rty_Limited_TR_Left = u0;
+  }</td>
+<td><a href = "D:\accent\document\c2esd\code\Rover_Legacy\slprj\autosar\CommandLimits\CommandLimits.c">CommandLimits.c</a> [188:10] </td>
+ <td>Computations should not be present in top level function</td>
+ <td>Extract the computation statements into new function</td>
+</tr>
+<tr>
+ <td>u0 < 0</td>
+<td><a href = "D:\accent\document\c2esd\code\Rover_Legacy\slprj\autosar\CommandLimits\CommandLimits.c">CommandLimits.c</a> [188:14] </td>
+ <td>Computations should not be present in top level function</td>
+ <td>Extract the computation statements into new function</td>
+</tr>
+<tr>
+ <td>*rty_Limited_TR_Left = u0;
+</td>
+<td><a href = "D:\accent\document\c2esd\code\Rover_Legacy\slprj\autosar\CommandLimits\CommandLimits.c">CommandLimits.c</a> [191:5] </td>
+ <td>Assignment statements can contain function calls in the right hand side</td>
+ <td>Extract the assignment statements into new function</td>
+</tr>
+<tr>
+ <td>Merge2 * 2.5 + 2</td>
+<td><a href = "D:\accent\document\c2esd\code\Rover_Legacy\slprj\autosar\CommandLimits\CommandLimits.c">CommandLimits.c</a> [201:8] </td>
+ <td>Computations should not be present in top level function</td>
+ <td>Extract the computation statements into new function</td>
+</tr>
+<tr>
+ <td>Merge2 * 2</td>
+<td><a href = "D:\accent\document\c2esd\code\Rover_Legacy\slprj\autosar\CommandLimits\CommandLimits.c">CommandLimits.c</a> [201:8] </td>
+ <td>Computations should not be present in top level function</td>
+ <td>Extract the computation statements into new function</td>
+</tr>
+<tr>
+ <td>if (u0 > 2.5) {
+    *rty_Limited_Speed_Backwards = 2.5;
+  } else if (u0 < 0.0) {
+    *rty_Limited_Speed_Backwards = 0.0;
+  } else {
+    *rty_Limited_Speed_Backwards = u0;
+  }</td>
+<td><a href = "D:\accent\document\c2esd\code\Rover_Legacy\slprj\autosar\CommandLimits\CommandLimits.c">CommandLimits.c</a> [204:3] </td>
+ <td>Computations should not be present in top level function</td>
+ <td>Extract the computation statements into new function</td>
+</tr>
+<tr>
+ <td>u0 > 2</td>
+<td><a href = "D:\accent\document\c2esd\code\Rover_Legacy\slprj\autosar\CommandLimits\CommandLimits.c">CommandLimits.c</a> [204:7] </td>
+ <td>Computations should not be present in top level function</td>
+ <td>Extract the computation statements into new function</td>
+</tr>
+<tr>
+ <td>if (u0 < 0.0) {
+    *rty_Limited_Speed_Backwards = 0.0;
+  } else {
+    *rty_Limited_Speed_Backwards = u0;
+  }</td>
+<td><a href = "D:\accent\document\c2esd\code\Rover_Legacy\slprj\autosar\CommandLimits\CommandLimits.c">CommandLimits.c</a> [206:10] </td>
+ <td>Computations should not be present in top level function</td>
+ <td>Extract the computation statements into new function</td>
+</tr>
+<tr>
+ <td>u0 < 0</td>
+<td><a href = "D:\accent\document\c2esd\code\Rover_Legacy\slprj\autosar\CommandLimits\CommandLimits.c">CommandLimits.c</a> [206:14] </td>
+ <td>Computations should not be present in top level function</td>
+ <td>Extract the computation statements into new function</td>
+</tr>
+<tr>
+ <td>*rty_Limited_Speed_Backwards = u0;
+</td>
+<td><a href = "D:\accent\document\c2esd\code\Rover_Legacy\slprj\autosar\CommandLimits\CommandLimits.c">CommandLimits.c</a> [209:5] </td>
+ <td>Assignment statements can contain function calls in the right hand side</td>
+ <td>Extract the assignment statements into new function</td>
+</tr>
+<tr>
+ <td>Merge3 * 2.5 + 2</td>
+<td><a href = "D:\accent\document\c2esd\code\Rover_Legacy\slprj\autosar\CommandLimits\CommandLimits.c">CommandLimits.c</a> [219:8] </td>
+ <td>Computations should not be present in top level function</td>
+ <td>Extract the computation statements into new function</td>
+</tr>
+<tr>
+ <td>Merge3 * 2</td>
+<td><a href = "D:\accent\document\c2esd\code\Rover_Legacy\slprj\autosar\CommandLimits\CommandLimits.c">CommandLimits.c</a> [219:8] </td>
+ <td>Computations should not be present in top level function</td>
+ <td>Extract the computation statements into new function</td>
+</tr>
+<tr>
+ <td>if (u0 > 5.0) {
+    *rty_Limited_Speed_Forward = 5.0;
+  } else if (u0 < 2.5) {
+    *rty_Limited_Speed_Forward = 2.5;
+  } else {
+    *rty_Limited_Speed_Forward = u0;
+  }</td>
+<td><a href = "D:\accent\document\c2esd\code\Rover_Legacy\slprj\autosar\CommandLimits\CommandLimits.c">CommandLimits.c</a> [222:3] </td>
+ <td>Computations should not be present in top level function</td>
+ <td>Extract the computation statements into new function</td>
+</tr>
+<tr>
+ <td>u0 > 5</td>
+<td><a href = "D:\accent\document\c2esd\code\Rover_Legacy\slprj\autosar\CommandLimits\CommandLimits.c">CommandLimits.c</a> [222:7] </td>
+ <td>Computations should not be present in top level function</td>
+ <td>Extract the computation statements into new function</td>
+</tr>
+<tr>
+ <td>if (u0 < 2.5) {
+    *rty_Limited_Speed_Forward = 2.5;
+  } else {
+    *rty_Limited_Speed_Forward = u0;
+  }</td>
+<td><a href = "D:\accent\document\c2esd\code\Rover_Legacy\slprj\autosar\CommandLimits\CommandLimits.c">CommandLimits.c</a> [224:10] </td>
+ <td>Computations should not be present in top level function</td>
+ <td>Extract the computation statements into new function</td>
+</tr>
+<tr>
+ <td>u0 < 2</td>
+<td><a href = "D:\accent\document\c2esd\code\Rover_Legacy\slprj\autosar\CommandLimits\CommandLimits.c">CommandLimits.c</a> [224:14] </td>
+ <td>Computations should not be present in top level function</td>
+ <td>Extract the computation statements into new function</td>
+</tr>
+<tr>
+ <td>*rty_Limited_Speed_Forward = u0;
+</td>
+<td><a href = "D:\accent\document\c2esd\code\Rover_Legacy\slprj\autosar\CommandLimits\CommandLimits.c">CommandLimits.c</a> [227:5] </td>
+ <td>Assignment statements can contain function calls in the right hand side</td>
+ <td>Extract the assignment statements into new function</td>
+</tr>
+<tr>
+ <td>localB->Merge1 * 2.5 + 2</td>
+<td><a href = "D:\accent\document\c2esd\code\Rover_Legacy\slprj\autosar\CommandLimits\CommandLimits.c">CommandLimits.c</a> [237:8] </td>
+ <td>Computations should not be present in top level function</td>
+ <td>Extract the computation statements into new function</td>
+</tr>
+<tr>
+ <td>localB->Merge1 * 2</td>
+<td><a href = "D:\accent\document\c2esd\code\Rover_Legacy\slprj\autosar\CommandLimits\CommandLimits.c">CommandLimits.c</a> [237:8] </td>
+ <td>Computations should not be present in top level function</td>
+ <td>Extract the computation statements into new function</td>
+</tr>
+<tr>
+ <td>if (u0 > 5.0) {
+    *rty_Limited_TR_Right = 5.0;
+  } else if (u0 < 0.0) {
+    *rty_Limited_TR_Right = 0.0;
+  } else {
+    *rty_Limited_TR_Right = u0;
+  }</td>
+<td><a href = "D:\accent\document\c2esd\code\Rover_Legacy\slprj\autosar\CommandLimits\CommandLimits.c">CommandLimits.c</a> [240:3] </td>
+ <td>Computations should not be present in top level function</td>
+ <td>Extract the computation statements into new function</td>
+</tr>
+<tr>
+ <td>u0 > 5</td>
+<td><a href = "D:\accent\document\c2esd\code\Rover_Legacy\slprj\autosar\CommandLimits\CommandLimits.c">CommandLimits.c</a> [240:7] </td>
+ <td>Computations should not be present in top level function</td>
+ <td>Extract the computation statements into new function</td>
+</tr>
+<tr>
+ <td>if (u0 < 0.0) {
+    *rty_Limited_TR_Right = 0.0;
+  } else {
+    *rty_Limited_TR_Right = u0;
+  }</td>
+<td><a href = "D:\accent\document\c2esd\code\Rover_Legacy\slprj\autosar\CommandLimits\CommandLimits.c">CommandLimits.c</a> [242:10] </td>
+ <td>Computations should not be present in top level function</td>
+ <td>Extract the computation statements into new function</td>
+</tr>
+<tr>
+ <td>u0 < 0</td>
+<td><a href = "D:\accent\document\c2esd\code\Rover_Legacy\slprj\autosar\CommandLimits\CommandLimits.c">CommandLimits.c</a> [242:14] </td>
+ <td>Computations should not be present in top level function</td>
+ <td>Extract the computation statements into new function</td>
+</tr>
+<tr>
+ <td>*rty_Limited_TR_Right = u0;
+</td>
+<td><a href = "D:\accent\document\c2esd\code\Rover_Legacy\slprj\autosar\CommandLimits\CommandLimits.c">CommandLimits.c</a> [245:5] </td>
+ <td>Assignment statements can contain function calls in the right hand side</td>
+ <td>Extract the assignment statements into new function</td>
+</tr>
+</tbody>
+</table></body>
+</html>

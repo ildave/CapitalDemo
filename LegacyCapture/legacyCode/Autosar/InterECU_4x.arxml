@@ -1,0 +1,953 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 autosar_4-2-2.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>PortInterfaces</SHORT-NAME>
+      <ELEMENTS>
+        <SENDER-RECEIVER-INTERFACE>
+          <SHORT-NAME>Current_SRI</SHORT-NAME>
+          <DATA-ELEMENTS>
+            <VARIABLE-DATA-PROTOTYPE>
+              <SHORT-NAME>DEP_Current</SHORT-NAME>
+              <TYPE-TREF DEST="APPLICATION-PRIMITIVE-DATA-TYPE">/Pkg_ApplicationPrimitiveDataType/Appl_SINT8</TYPE-TREF>
+            </VARIABLE-DATA-PROTOTYPE>
+          </DATA-ELEMENTS>
+        </SENDER-RECEIVER-INTERFACE>
+        <SENDER-RECEIVER-INTERFACE>
+          <SHORT-NAME>Debug_SRI</SHORT-NAME>
+          <DATA-ELEMENTS>
+            <VARIABLE-DATA-PROTOTYPE>
+              <SHORT-NAME>DEP_Debug_SINT8</SHORT-NAME>
+              <TYPE-TREF DEST="APPLICATION-PRIMITIVE-DATA-TYPE">/Pkg_ApplicationPrimitiveDataType/Appl_SINT8</TYPE-TREF>
+            </VARIABLE-DATA-PROTOTYPE>
+            <VARIABLE-DATA-PROTOTYPE>
+              <SHORT-NAME>DEP_Debug_SINT16</SHORT-NAME>
+              <TYPE-TREF DEST="APPLICATION-PRIMITIVE-DATA-TYPE">/Pkg_ApplicationPrimitiveDataType/Appl_SINT16</TYPE-TREF>
+            </VARIABLE-DATA-PROTOTYPE>
+            <VARIABLE-DATA-PROTOTYPE>
+              <SHORT-NAME>DEP_Debug_SINT32</SHORT-NAME>
+              <TYPE-TREF DEST="APPLICATION-PRIMITIVE-DATA-TYPE">/Pkg_ApplicationPrimitiveDataType/Appl_SINT32</TYPE-TREF>
+            </VARIABLE-DATA-PROTOTYPE>
+          </DATA-ELEMENTS>
+        </SENDER-RECEIVER-INTERFACE>
+        <SENDER-RECEIVER-INTERFACE>
+          <SHORT-NAME>Torque_SRI</SHORT-NAME>
+          <DATA-ELEMENTS>
+            <VARIABLE-DATA-PROTOTYPE>
+              <SHORT-NAME>DEP_Torque</SHORT-NAME>
+              <TYPE-TREF DEST="APPLICATION-PRIMITIVE-DATA-TYPE">/Pkg_ApplicationPrimitiveDataType/Appl_UINT16</TYPE-TREF>
+            </VARIABLE-DATA-PROTOTYPE>
+          </DATA-ELEMENTS>
+        </SENDER-RECEIVER-INTERFACE>
+      </ELEMENTS>
+    </AR-PACKAGE>
+    <AR-PACKAGE>
+      <SHORT-NAME>Pkg_ApplicationPrimitiveDataType</SHORT-NAME>
+      <ELEMENTS>
+        <APPLICATION-PRIMITIVE-DATA-TYPE>
+          <SHORT-NAME>Appl_SINT8</SHORT-NAME>
+          <CATEGORY>VALUE</CATEGORY>
+          <SW-DATA-DEF-PROPS>
+            <SW-DATA-DEF-PROPS-VARIANTS>
+              <SW-DATA-DEF-PROPS-CONDITIONAL>
+                <SW-CALIBRATION-ACCESS>NOT-ACCESSIBLE</SW-CALIBRATION-ACCESS>
+              </SW-DATA-DEF-PROPS-CONDITIONAL>
+            </SW-DATA-DEF-PROPS-VARIANTS>
+          </SW-DATA-DEF-PROPS>
+        </APPLICATION-PRIMITIVE-DATA-TYPE>
+        <APPLICATION-PRIMITIVE-DATA-TYPE>
+          <SHORT-NAME>Appl_SINT16</SHORT-NAME>
+          <CATEGORY>VALUE</CATEGORY>
+          <SW-DATA-DEF-PROPS>
+            <SW-DATA-DEF-PROPS-VARIANTS>
+              <SW-DATA-DEF-PROPS-CONDITIONAL>
+                <SW-CALIBRATION-ACCESS>NOT-ACCESSIBLE</SW-CALIBRATION-ACCESS>
+              </SW-DATA-DEF-PROPS-CONDITIONAL>
+            </SW-DATA-DEF-PROPS-VARIANTS>
+          </SW-DATA-DEF-PROPS>
+        </APPLICATION-PRIMITIVE-DATA-TYPE>
+        <APPLICATION-PRIMITIVE-DATA-TYPE>
+          <SHORT-NAME>Appl_SINT32</SHORT-NAME>
+          <CATEGORY>VALUE</CATEGORY>
+          <SW-DATA-DEF-PROPS>
+            <SW-DATA-DEF-PROPS-VARIANTS>
+              <SW-DATA-DEF-PROPS-CONDITIONAL>
+                <SW-CALIBRATION-ACCESS>NOT-ACCESSIBLE</SW-CALIBRATION-ACCESS>
+              </SW-DATA-DEF-PROPS-CONDITIONAL>
+            </SW-DATA-DEF-PROPS-VARIANTS>
+          </SW-DATA-DEF-PROPS>
+        </APPLICATION-PRIMITIVE-DATA-TYPE>
+        <APPLICATION-PRIMITIVE-DATA-TYPE>
+          <SHORT-NAME>Appl_UINT16</SHORT-NAME>
+          <CATEGORY>VALUE</CATEGORY>
+          <SW-DATA-DEF-PROPS>
+            <SW-DATA-DEF-PROPS-VARIANTS>
+              <SW-DATA-DEF-PROPS-CONDITIONAL>
+                <SW-CALIBRATION-ACCESS>NOT-ACCESSIBLE</SW-CALIBRATION-ACCESS>
+              </SW-DATA-DEF-PROPS-CONDITIONAL>
+            </SW-DATA-DEF-PROPS-VARIANTS>
+          </SW-DATA-DEF-PROPS>
+        </APPLICATION-PRIMITIVE-DATA-TYPE>
+        <APPLICATION-RECORD-DATA-TYPE>
+          <SHORT-NAME>ApplicationRecordDataType_0</SHORT-NAME>
+          <CATEGORY>STRUCTURE</CATEGORY>
+          <SW-DATA-DEF-PROPS>
+            <SW-DATA-DEF-PROPS-VARIANTS>
+              <SW-DATA-DEF-PROPS-CONDITIONAL />
+            </SW-DATA-DEF-PROPS-VARIANTS>
+          </SW-DATA-DEF-PROPS>
+          <ELEMENTS>
+            <APPLICATION-RECORD-ELEMENT>
+              <SHORT-NAME>ApplicationRecordElement_0</SHORT-NAME>
+              <CATEGORY>VALUE</CATEGORY>
+              <SW-DATA-DEF-PROPS>
+                <SW-DATA-DEF-PROPS-VARIANTS>
+                  <SW-DATA-DEF-PROPS-CONDITIONAL />
+                </SW-DATA-DEF-PROPS-VARIANTS>
+              </SW-DATA-DEF-PROPS>
+            </APPLICATION-RECORD-ELEMENT>
+          </ELEMENTS>
+        </APPLICATION-RECORD-DATA-TYPE>
+      </ELEMENTS>
+    </AR-PACKAGE>
+    <AR-PACKAGE>
+      <SHORT-NAME>Pkg_ImplementationDataTypes</SHORT-NAME>
+      <ELEMENTS>
+        <IMPLEMENTATION-DATA-TYPE>
+          <SHORT-NAME>Impl_SINT8</SHORT-NAME>
+          <CATEGORY>TYPE_REFERENCE</CATEGORY>
+          <SW-DATA-DEF-PROPS>
+            <SW-DATA-DEF-PROPS-VARIANTS>
+              <SW-DATA-DEF-PROPS-CONDITIONAL>
+                <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_PlatformTypes/ImplementationDataTypes/sint8</IMPLEMENTATION-DATA-TYPE-REF>
+              </SW-DATA-DEF-PROPS-CONDITIONAL>
+            </SW-DATA-DEF-PROPS-VARIANTS>
+          </SW-DATA-DEF-PROPS>
+        </IMPLEMENTATION-DATA-TYPE>
+        <IMPLEMENTATION-DATA-TYPE>
+          <SHORT-NAME>Impl_SINT16</SHORT-NAME>
+          <CATEGORY>TYPE_REFERENCE</CATEGORY>
+          <SW-DATA-DEF-PROPS>
+            <SW-DATA-DEF-PROPS-VARIANTS>
+              <SW-DATA-DEF-PROPS-CONDITIONAL>
+                <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_PlatformTypes/ImplementationDataTypes/sint16</IMPLEMENTATION-DATA-TYPE-REF>
+              </SW-DATA-DEF-PROPS-CONDITIONAL>
+            </SW-DATA-DEF-PROPS-VARIANTS>
+          </SW-DATA-DEF-PROPS>
+        </IMPLEMENTATION-DATA-TYPE>
+        <IMPLEMENTATION-DATA-TYPE>
+          <SHORT-NAME>Impl_SINT32</SHORT-NAME>
+          <CATEGORY>TYPE_REFERENCE</CATEGORY>
+          <SW-DATA-DEF-PROPS>
+            <SW-DATA-DEF-PROPS-VARIANTS>
+              <SW-DATA-DEF-PROPS-CONDITIONAL>
+                <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_PlatformTypes/ImplementationDataTypes/sint32</IMPLEMENTATION-DATA-TYPE-REF>
+              </SW-DATA-DEF-PROPS-CONDITIONAL>
+            </SW-DATA-DEF-PROPS-VARIANTS>
+          </SW-DATA-DEF-PROPS>
+        </IMPLEMENTATION-DATA-TYPE>
+        <IMPLEMENTATION-DATA-TYPE>
+          <SHORT-NAME>Impl_UINT16</SHORT-NAME>
+          <CATEGORY>TYPE_REFERENCE</CATEGORY>
+          <SW-DATA-DEF-PROPS>
+            <SW-DATA-DEF-PROPS-VARIANTS>
+              <SW-DATA-DEF-PROPS-CONDITIONAL>
+                <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_PlatformTypes/ImplementationDataTypes/uint16</IMPLEMENTATION-DATA-TYPE-REF>
+              </SW-DATA-DEF-PROPS-CONDITIONAL>
+            </SW-DATA-DEF-PROPS-VARIANTS>
+          </SW-DATA-DEF-PROPS>
+        </IMPLEMENTATION-DATA-TYPE>
+        <IMPLEMENTATION-DATA-TYPE>
+          <SHORT-NAME>Impl_UINT32</SHORT-NAME>
+          <CATEGORY>TYPE_REFERENCE</CATEGORY>
+          <SW-DATA-DEF-PROPS>
+            <SW-DATA-DEF-PROPS-VARIANTS>
+              <SW-DATA-DEF-PROPS-CONDITIONAL>
+                <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_PlatformTypes/ImplementationDataTypes/uint32</IMPLEMENTATION-DATA-TYPE-REF>
+              </SW-DATA-DEF-PROPS-CONDITIONAL>
+            </SW-DATA-DEF-PROPS-VARIANTS>
+          </SW-DATA-DEF-PROPS>
+        </IMPLEMENTATION-DATA-TYPE>
+      </ELEMENTS>
+    </AR-PACKAGE>
+	<AR-PACKAGE>
+      <SHORT-NAME>WiperControl_100us</SHORT-NAME>
+      <ELEMENTS>
+        <SENSOR-ACTUATOR-SW-COMPONENT-TYPE>
+          <SHORT-NAME>WiperControl_100us</SHORT-NAME>
+          <PORTS>
+            <R-PORT-PROTOTYPE>
+              <SHORT-NAME>R_Current</SHORT-NAME>
+              <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/PortInterfaces/Current_SRI</REQUIRED-INTERFACE-TREF>
+            </R-PORT-PROTOTYPE>
+          </PORTS>
+          <INTERNAL-BEHAVIORS>
+            <SWC-INTERNAL-BEHAVIOR UUID="03af1851-eb6c-4ee7-ab91-bfd44adddf93">
+              <SHORT-NAME>IB_WiperControl_100us</SHORT-NAME>
+              <DATA-TYPE-MAPPING-REFS>
+                <DATA-TYPE-MAPPING-REF DEST="DATA-TYPE-MAPPING-SET">/WiperControl_100us/DataTypeMappingSets/DTMS_WiperControl_100us</DATA-TYPE-MAPPING-REF>
+              </DATA-TYPE-MAPPING-REFS>
+              <EVENTS>
+                <TIMING-EVENT>
+                  <SHORT-NAME>TimingEvent_100us</SHORT-NAME>
+                  <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/WiperControl_100us/WiperControl_100us/IB_WiperControl_100us/RE_WiperControl_100us</START-ON-EVENT-REF>
+                  <PERIOD>1.0E-4</PERIOD>
+                </TIMING-EVENT>
+                <DATA-WRITE-COMPLETED-EVENT>
+                  <SHORT-NAME>DataWriteCompletedEvent_0</SHORT-NAME>
+                  <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/WiperControl_100us/WiperControl_100us/IB_WiperControl_100us/RE_WiperControl_100us</START-ON-EVENT-REF>
+                  <EVENT-SOURCE-REF DEST="VARIABLE-ACCESS">/WiperControl_100us/WiperControl_100us/IB_WiperControl_100us/RE_WiperControl_100us/DataWriteAccess_VariableAccess_0</EVENT-SOURCE-REF>
+                </DATA-WRITE-COMPLETED-EVENT>
+              </EVENTS>
+              <RUNNABLES>
+                <RUNNABLE-ENTITY>
+                  <SHORT-NAME>RE_WiperControl_100us</SHORT-NAME>
+                  <DATA-READ-ACCESSS>
+                    <VARIABLE-ACCESS>
+                      <SHORT-NAME>DataReadAccess_0</SHORT-NAME>
+                      <ACCESSED-VARIABLE>
+                        <AUTOSAR-VARIABLE-IREF>
+                          <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/WiperControl_100us/WiperControl_100us/R_Current</PORT-PROTOTYPE-REF>
+                          <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/PortInterfaces/Current_SRI/DEP_Current</TARGET-DATA-PROTOTYPE-REF>
+                        </AUTOSAR-VARIABLE-IREF>
+                      </ACCESSED-VARIABLE>
+                    </VARIABLE-ACCESS>
+                  </DATA-READ-ACCESSS>
+                  <DATA-RECEIVE-POINT-BY-ARGUMENTS>
+                    <VARIABLE-ACCESS>
+                      <SHORT-NAME>DataReceivePointByArguments_VariableAccess_0</SHORT-NAME>
+                    </VARIABLE-ACCESS>
+                  </DATA-RECEIVE-POINT-BY-ARGUMENTS>
+                  <DATA-RECEIVE-POINT-BY-VALUES>
+                    <VARIABLE-ACCESS>
+                      <SHORT-NAME>DataReceivePointByValues_VariableAccess_0</SHORT-NAME>
+                      <ACCESSED-VARIABLE>
+                        <AUTOSAR-VARIABLE-IREF>
+                          <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/WiperControl_100us/WiperControl_100us/R_Current</PORT-PROTOTYPE-REF>
+                          <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/PortInterfaces/Current_SRI/DEP_Current</TARGET-DATA-PROTOTYPE-REF>
+                        </AUTOSAR-VARIABLE-IREF>
+                      </ACCESSED-VARIABLE>
+                    </VARIABLE-ACCESS>
+                  </DATA-RECEIVE-POINT-BY-VALUES>
+                  <DATA-SEND-POINTS>
+                    <VARIABLE-ACCESS>
+                      <SHORT-NAME>DataSendPoints_VariableAccess_0</SHORT-NAME>
+                    </VARIABLE-ACCESS>
+                  </DATA-SEND-POINTS>
+                  <DATA-WRITE-ACCESSS>
+                    <VARIABLE-ACCESS>
+                      <SHORT-NAME>DataWriteAccess_VariableAccess_0</SHORT-NAME>
+                    </VARIABLE-ACCESS>
+                  </DATA-WRITE-ACCESSS>
+                  <SYMBOL>RE_WiperControl_100us_func</SYMBOL>
+                </RUNNABLE-ENTITY>
+              </RUNNABLES>
+            </SWC-INTERNAL-BEHAVIOR>
+          </INTERNAL-BEHAVIORS>
+        </SENSOR-ACTUATOR-SW-COMPONENT-TYPE>
+        <NV-DATA-INTERFACE>
+          <SHORT-NAME>NvDataInterface_0</SHORT-NAME>
+          <IS-SERVICE>false</IS-SERVICE>
+          <NV-DATAS>
+            <VARIABLE-DATA-PROTOTYPE>
+              <SHORT-NAME>NvDatas_VariableDataPrototype_0</SHORT-NAME>
+              <TYPE-TREF DEST="APPLICATION-PRIMITIVE-DATA-TYPE">/Pkg_ApplicationPrimitiveDataType/Appl_SINT16</TYPE-TREF>
+            </VARIABLE-DATA-PROTOTYPE>
+          </NV-DATAS>
+        </NV-DATA-INTERFACE>
+      </ELEMENTS>
+      <AR-PACKAGES>
+        <AR-PACKAGE>
+          <SHORT-NAME>DataTypeMappingSets</SHORT-NAME>
+          <ELEMENTS>
+            <DATA-TYPE-MAPPING-SET>
+              <SHORT-NAME>DTMS_WiperControl_100us</SHORT-NAME>
+              <DATA-TYPE-MAPS>
+                <DATA-TYPE-MAP>
+                  <APPLICATION-DATA-TYPE-REF DEST="APPLICATION-PRIMITIVE-DATA-TYPE">/Pkg_ApplicationPrimitiveDataType/Appl_SINT8</APPLICATION-DATA-TYPE-REF>
+                  <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/Pkg_ImplementationDataTypes/Impl_SINT8</IMPLEMENTATION-DATA-TYPE-REF>
+                </DATA-TYPE-MAP>
+              </DATA-TYPE-MAPS>
+            </DATA-TYPE-MAPPING-SET>
+          </ELEMENTS>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+	<AR-PACKAGE>
+      <SHORT-NAME>WiperControl_2ms</SHORT-NAME>
+      <ELEMENTS>
+        <APPLICATION-SW-COMPONENT-TYPE>
+          <SHORT-NAME>WiperControl_2ms</SHORT-NAME>
+          <PORTS>
+            <P-PORT-PROTOTYPE>
+              <SHORT-NAME>P_Current</SHORT-NAME>
+              <SENDER-RECEIVER-ANNOTATIONS>
+                <SENDER-ANNOTATION>
+                  <ANNOTATION-ORIGIN>origin1</ANNOTATION-ORIGIN>
+                  <COMPUTED>false</COMPUTED>
+                  <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/PortInterfaces/Current_SRI/DEP_Current</DATA-ELEMENT-REF>
+                  <LIMIT-KIND>MAX</LIMIT-KIND>
+                  <PROCESSING-KIND>FILTERED</PROCESSING-KIND>
+                </SENDER-ANNOTATION>
+              </SENDER-RECEIVER-ANNOTATIONS>
+              <PROVIDED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/PortInterfaces/Current_SRI</PROVIDED-INTERFACE-TREF>
+            </P-PORT-PROTOTYPE>
+            <P-PORT-PROTOTYPE>
+              <SHORT-NAME>P_Debug</SHORT-NAME>
+              <PROVIDED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/PortInterfaces/Debug_SRI</PROVIDED-INTERFACE-TREF>
+            </P-PORT-PROTOTYPE>
+            <R-PORT-PROTOTYPE>
+              <SHORT-NAME>R_Torque</SHORT-NAME>
+              <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/PortInterfaces/Torque_SRI</REQUIRED-INTERFACE-TREF>
+            </R-PORT-PROTOTYPE>
+            <P-PORT-PROTOTYPE>
+              <SHORT-NAME>PPortPrototype_0</SHORT-NAME>
+              <NV-DATA-PORT-ANNOTATIONS>
+                <NV-DATA-PORT-ANNOTATION>
+                  <VARIABLE-REF DEST="VARIABLE-DATA-PROTOTYPE">/WiperControl_100us/NvDataInterface_0/NvDatas_VariableDataPrototype_0</VARIABLE-REF>
+                </NV-DATA-PORT-ANNOTATION>
+              </NV-DATA-PORT-ANNOTATIONS>
+              <PROVIDED-INTERFACE-TREF DEST="NV-DATA-INTERFACE">/WiperControl_100us/NvDataInterface_0</PROVIDED-INTERFACE-TREF>
+            </P-PORT-PROTOTYPE>
+            <R-PORT-PROTOTYPE>
+              <SHORT-NAME>RPortPrototype_0</SHORT-NAME>
+              <MODE-PORT-ANNOTATIONS>
+                <MODE-PORT-ANNOTATION>
+                  <MODE-GROUP-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/Debug/ModeSwitchInterface_0/ModeDeclarationGroupPrototype_0</MODE-GROUP-REF>
+                </MODE-PORT-ANNOTATION>
+              </MODE-PORT-ANNOTATIONS>
+              <REQUIRED-INTERFACE-TREF DEST="MODE-SWITCH-INTERFACE">/Debug/ModeSwitchInterface_0</REQUIRED-INTERFACE-TREF>
+            </R-PORT-PROTOTYPE>
+            <R-PORT-PROTOTYPE>
+              <SHORT-NAME>RPortPrototype_1</SHORT-NAME>
+              <PARAMETER-PORT-ANNOTATIONS>
+                <PARAMETER-PORT-ANNOTATION>
+                  <PARAMETER-REF DEST="PARAMETER-DATA-PROTOTYPE">/Debug/ParameterInterface_0/Parameters_ParameterDataPrototype_0</PARAMETER-REF>
+                </PARAMETER-PORT-ANNOTATION>
+              </PARAMETER-PORT-ANNOTATIONS>
+              <REQUIRED-INTERFACE-TREF DEST="PARAMETER-INTERFACE">/Debug/ParameterInterface_0</REQUIRED-INTERFACE-TREF>
+            </R-PORT-PROTOTYPE>
+            <P-PORT-PROTOTYPE>
+              <SHORT-NAME>PPortPrototype_1</SHORT-NAME>
+              <CLIENT-SERVER-ANNOTATIONS>
+                <CLIENT-SERVER-ANNOTATION>
+                  <OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/Debug/ClientServerInterface_0/ClientServerOperation_0</OPERATION-REF>
+                </CLIENT-SERVER-ANNOTATION>
+              </CLIENT-SERVER-ANNOTATIONS>
+              <PROVIDED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/Debug/ClientServerInterface_0</PROVIDED-INTERFACE-TREF>
+            </P-PORT-PROTOTYPE>
+          </PORTS>
+          <INTERNAL-BEHAVIORS>
+            <SWC-INTERNAL-BEHAVIOR UUID="131a0731-f236-405d-ac24-8ad4c00c504d">
+              <SHORT-NAME>IB_WiperControl_2ms</SHORT-NAME>
+              <DATA-TYPE-MAPPING-REFS>
+                <DATA-TYPE-MAPPING-REF DEST="DATA-TYPE-MAPPING-SET">/WiperControl_2ms/DataTypeMappingSets/DTMS_WiperControl_2ms</DATA-TYPE-MAPPING-REF>
+              </DATA-TYPE-MAPPING-REFS>
+              <EVENTS>
+                <TIMING-EVENT>
+                  <SHORT-NAME>TimingEvent_0</SHORT-NAME>
+                  <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/WiperControl_2ms/WiperControl_2ms/IB_WiperControl_2ms/RE_WiperControl_2ms</START-ON-EVENT-REF>
+                  <PERIOD>1.0E-4</PERIOD>
+                </TIMING-EVENT>
+                <OPERATION-INVOKED-EVENT>
+                  <SHORT-NAME>OperationInvokedEvent_0</SHORT-NAME>
+                  <OPERATION-IREF />
+                </OPERATION-INVOKED-EVENT>
+                <DATA-RECEIVED-EVENT>
+                  <SHORT-NAME>DataReceivedEvent_0</SHORT-NAME>
+                  <DATA-IREF />
+                </DATA-RECEIVED-EVENT>
+              </EVENTS>
+              <RUNNABLES>
+                <RUNNABLE-ENTITY>
+                  <SHORT-NAME>RE_WiperControl_2ms</SHORT-NAME>
+                  <DATA-RECEIVE-POINT-BY-ARGUMENTS>
+                    <VARIABLE-ACCESS>
+                      <SHORT-NAME>DataReceivePointByArguments_0</SHORT-NAME>
+                      <ACCESSED-VARIABLE>
+                        <AUTOSAR-VARIABLE-IREF>
+                          <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/WiperControl_2ms/WiperControl_2ms/R_Torque</PORT-PROTOTYPE-REF>
+                          <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/PortInterfaces/Torque_SRI/DEP_Torque</TARGET-DATA-PROTOTYPE-REF>
+                        </AUTOSAR-VARIABLE-IREF>
+                      </ACCESSED-VARIABLE>
+                    </VARIABLE-ACCESS>
+                  </DATA-RECEIVE-POINT-BY-ARGUMENTS>
+                  <DATA-SEND-POINTS>
+                    <VARIABLE-ACCESS>
+                      <SHORT-NAME>DataSendPoints_0</SHORT-NAME>
+                      <ACCESSED-VARIABLE>
+                        <AUTOSAR-VARIABLE-IREF>
+                          <PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/WiperControl_2ms/WiperControl_2ms/P_Debug</PORT-PROTOTYPE-REF>
+                          <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/PortInterfaces/Debug_SRI/DEP_Debug_SINT8</TARGET-DATA-PROTOTYPE-REF>
+                        </AUTOSAR-VARIABLE-IREF>
+                      </ACCESSED-VARIABLE>
+                    </VARIABLE-ACCESS>
+                    <VARIABLE-ACCESS>
+                      <SHORT-NAME>DataSendPoints_1</SHORT-NAME>
+                      <ACCESSED-VARIABLE>
+                        <AUTOSAR-VARIABLE-IREF>
+                          <PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/WiperControl_2ms/WiperControl_2ms/P_Debug</PORT-PROTOTYPE-REF>
+                          <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/PortInterfaces/Debug_SRI/DEP_Debug_SINT16</TARGET-DATA-PROTOTYPE-REF>
+                        </AUTOSAR-VARIABLE-IREF>
+                      </ACCESSED-VARIABLE>
+                    </VARIABLE-ACCESS>
+                    <VARIABLE-ACCESS>
+                      <SHORT-NAME>DataSendPoints_2</SHORT-NAME>
+                      <ACCESSED-VARIABLE>
+                        <AUTOSAR-VARIABLE-IREF>
+                          <PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/WiperControl_2ms/WiperControl_2ms/P_Debug</PORT-PROTOTYPE-REF>
+                          <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/PortInterfaces/Debug_SRI/DEP_Debug_SINT32</TARGET-DATA-PROTOTYPE-REF>
+                        </AUTOSAR-VARIABLE-IREF>
+                      </ACCESSED-VARIABLE>
+                    </VARIABLE-ACCESS>
+                  </DATA-SEND-POINTS>
+                  <DATA-WRITE-ACCESSS>
+                    <VARIABLE-ACCESS>
+                      <SHORT-NAME>DataWriteAccess_0</SHORT-NAME>
+                      <ACCESSED-VARIABLE>
+                        <AUTOSAR-VARIABLE-IREF>
+                          <PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/WiperControl_2ms/WiperControl_2ms/P_Current</PORT-PROTOTYPE-REF>
+                          <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/PortInterfaces/Current_SRI/DEP_Current</TARGET-DATA-PROTOTYPE-REF>
+                        </AUTOSAR-VARIABLE-IREF>
+                      </ACCESSED-VARIABLE>
+                    </VARIABLE-ACCESS>
+                  </DATA-WRITE-ACCESSS>
+                  <SYMBOL>WiperControl_2ms_RE_func</SYMBOL>
+                </RUNNABLE-ENTITY>
+              </RUNNABLES>
+            </SWC-INTERNAL-BEHAVIOR>
+          </INTERNAL-BEHAVIORS>
+        </APPLICATION-SW-COMPONENT-TYPE>
+      </ELEMENTS>
+      <AR-PACKAGES>
+        <AR-PACKAGE>
+          <SHORT-NAME>DataTypeMappingSets</SHORT-NAME>
+          <ELEMENTS>
+            <DATA-TYPE-MAPPING-SET>
+              <SHORT-NAME>DTMS_WiperControl_2ms</SHORT-NAME>
+              <DATA-TYPE-MAPS>
+                <DATA-TYPE-MAP>
+                  <APPLICATION-DATA-TYPE-REF DEST="APPLICATION-PRIMITIVE-DATA-TYPE">/Pkg_ApplicationPrimitiveDataType/Appl_UINT16</APPLICATION-DATA-TYPE-REF>
+                  <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/Pkg_ImplementationDataTypes/Impl_UINT16</IMPLEMENTATION-DATA-TYPE-REF>
+                </DATA-TYPE-MAP>
+                <DATA-TYPE-MAP>
+                  <APPLICATION-DATA-TYPE-REF DEST="APPLICATION-PRIMITIVE-DATA-TYPE">/Pkg_ApplicationPrimitiveDataType/Appl_SINT32</APPLICATION-DATA-TYPE-REF>
+                  <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/Pkg_ImplementationDataTypes/Impl_SINT32</IMPLEMENTATION-DATA-TYPE-REF>
+                </DATA-TYPE-MAP>
+                <DATA-TYPE-MAP>
+                  <APPLICATION-DATA-TYPE-REF DEST="APPLICATION-PRIMITIVE-DATA-TYPE">/Pkg_ApplicationPrimitiveDataType/Appl_SINT16</APPLICATION-DATA-TYPE-REF>
+                  <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/Pkg_ImplementationDataTypes/Impl_SINT16</IMPLEMENTATION-DATA-TYPE-REF>
+                </DATA-TYPE-MAP>
+                <DATA-TYPE-MAP>
+                  <APPLICATION-DATA-TYPE-REF DEST="APPLICATION-PRIMITIVE-DATA-TYPE">/Pkg_ApplicationPrimitiveDataType/Appl_SINT8</APPLICATION-DATA-TYPE-REF>
+                  <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/Pkg_ImplementationDataTypes/Impl_SINT8</IMPLEMENTATION-DATA-TYPE-REF>
+                </DATA-TYPE-MAP>
+              </DATA-TYPE-MAPS>
+            </DATA-TYPE-MAPPING-SET>
+          </ELEMENTS>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+	<AR-PACKAGE>
+      <SHORT-NAME>Debug</SHORT-NAME>
+      <ELEMENTS>
+        <APPLICATION-SW-COMPONENT-TYPE>
+          <SHORT-NAME>Debug</SHORT-NAME>
+          <PORTS>
+            <P-PORT-PROTOTYPE UUID="af03240f-072d-424b-bb77-b214d177b18a">
+              <SHORT-NAME>P_Torque</SHORT-NAME>
+              <SENDER-RECEIVER-ANNOTATIONS>
+                <SENDER-ANNOTATION>
+                  <ANNOTATION-ORIGIN>ORIGIN</ANNOTATION-ORIGIN>
+                  <COMPUTED>true</COMPUTED>
+                  <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/PortInterfaces/Torque_SRI/DEP_Torque</DATA-ELEMENT-REF>
+                  <LIMIT-KIND>MIN</LIMIT-KIND>
+                  <PROCESSING-KIND>FILTERED</PROCESSING-KIND>
+                </SENDER-ANNOTATION>
+              </SENDER-RECEIVER-ANNOTATIONS>
+              <PROVIDED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/PortInterfaces/Torque_SRI</PROVIDED-INTERFACE-TREF>
+            </P-PORT-PROTOTYPE>
+            <R-PORT-PROTOTYPE UUID="8674cf3d-39d5-4443-bc93-fb4d5e7f704a">
+              <SHORT-NAME>R_Debug</SHORT-NAME>
+              <SENDER-RECEIVER-ANNOTATIONS>
+                <RECEIVER-ANNOTATION>
+                  <COMPUTED>false</COMPUTED>
+                  <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/PortInterfaces/Debug_SRI/DEP_Debug_SINT8</DATA-ELEMENT-REF>
+                  <LIMIT-KIND>MAX</LIMIT-KIND>
+                  <PROCESSING-KIND>RAW</PROCESSING-KIND>
+                </RECEIVER-ANNOTATION>
+              </SENDER-RECEIVER-ANNOTATIONS>
+              <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/PortInterfaces/Debug_SRI</REQUIRED-INTERFACE-TREF>
+            </R-PORT-PROTOTYPE>
+          </PORTS>
+          <INTERNAL-BEHAVIORS>
+            <SWC-INTERNAL-BEHAVIOR UUID="e5585674-5906-4f3d-8255-6a4bb4344df8">
+              <SHORT-NAME>Debug_IB</SHORT-NAME>
+              <DATA-TYPE-MAPPING-REFS>
+                <DATA-TYPE-MAPPING-REF DEST="DATA-TYPE-MAPPING-SET">/Debug/DataTypeMappingSets/DTMS_Debug</DATA-TYPE-MAPPING-REF>
+              </DATA-TYPE-MAPPING-REFS>
+              <RUNNABLES>
+                <RUNNABLE-ENTITY>
+                  <SHORT-NAME>Debug_Run</SHORT-NAME>
+                  <DATA-RECEIVE-POINT-BY-VALUES>
+                    <VARIABLE-ACCESS UUID="5848f2a3-9a8d-4cc5-825b-50fe7d0e110d">
+                      <SHORT-NAME>DataReceivePointByValues_0</SHORT-NAME>
+                      <ACCESSED-VARIABLE>
+                        <AUTOSAR-VARIABLE-IREF>
+                          <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/Debug/Debug/R_Debug</PORT-PROTOTYPE-REF>
+                          <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/PortInterfaces/Debug_SRI/DEP_Debug_SINT8</TARGET-DATA-PROTOTYPE-REF>
+                        </AUTOSAR-VARIABLE-IREF>
+                      </ACCESSED-VARIABLE>
+                    </VARIABLE-ACCESS>
+                    <VARIABLE-ACCESS UUID="2ac6ddca-ef41-49e1-afd3-27b2fcf86da4">
+                      <SHORT-NAME>DataReceivePointByValues_1</SHORT-NAME>
+                      <ACCESSED-VARIABLE>
+                        <AUTOSAR-VARIABLE-IREF>
+                          <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/Debug/Debug/R_Debug</PORT-PROTOTYPE-REF>
+                          <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/PortInterfaces/Debug_SRI/DEP_Debug_SINT16</TARGET-DATA-PROTOTYPE-REF>
+                        </AUTOSAR-VARIABLE-IREF>
+                      </ACCESSED-VARIABLE>
+                    </VARIABLE-ACCESS>
+                    <VARIABLE-ACCESS UUID="7a6ba71a-1400-49b9-af81-081dcc96fa4d">
+                      <SHORT-NAME>DataReceivePointByValues_2</SHORT-NAME>
+                      <ACCESSED-VARIABLE>
+                        <AUTOSAR-VARIABLE-IREF>
+                          <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/Debug/Debug/R_Debug</PORT-PROTOTYPE-REF>
+                          <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/PortInterfaces/Debug_SRI/DEP_Debug_SINT32</TARGET-DATA-PROTOTYPE-REF>
+                        </AUTOSAR-VARIABLE-IREF>
+                      </ACCESSED-VARIABLE>
+                    </VARIABLE-ACCESS>
+                  </DATA-RECEIVE-POINT-BY-VALUES>
+                  <DATA-SEND-POINTS>
+                    <VARIABLE-ACCESS UUID="6a322cc5-5d83-4149-b8d2-4d0ccd547196">
+                      <SHORT-NAME>DataSendPoints_0</SHORT-NAME>
+                      <ACCESSED-VARIABLE>
+                        <AUTOSAR-VARIABLE-IREF>
+                          <PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/Debug/Debug/P_Torque</PORT-PROTOTYPE-REF>
+                          <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/PortInterfaces/Torque_SRI/DEP_Torque</TARGET-DATA-PROTOTYPE-REF>
+                        </AUTOSAR-VARIABLE-IREF>
+                      </ACCESSED-VARIABLE>
+                    </VARIABLE-ACCESS>
+                  </DATA-SEND-POINTS>
+                  <SYMBOL>Debug_Run_func</SYMBOL>
+                </RUNNABLE-ENTITY>
+              </RUNNABLES>
+            </SWC-INTERNAL-BEHAVIOR>
+          </INTERNAL-BEHAVIORS>
+        </APPLICATION-SW-COMPONENT-TYPE>
+        <MODE-SWITCH-INTERFACE>
+          <SHORT-NAME>ModeSwitchInterface_0</SHORT-NAME>
+          <IS-SERVICE>false</IS-SERVICE>
+          <MODE-GROUP>
+            <SHORT-NAME>ModeDeclarationGroupPrototype_0</SHORT-NAME>
+          </MODE-GROUP>
+        </MODE-SWITCH-INTERFACE>
+        <PARAMETER-INTERFACE>
+          <SHORT-NAME>ParameterInterface_0</SHORT-NAME>
+          <IS-SERVICE>false</IS-SERVICE>
+          <PARAMETERS>
+            <PARAMETER-DATA-PROTOTYPE>
+              <SHORT-NAME>Parameters_ParameterDataPrototype_0</SHORT-NAME>
+              <TYPE-TREF DEST="APPLICATION-PRIMITIVE-DATA-TYPE">/Pkg_ApplicationPrimitiveDataType/Appl_SINT16</TYPE-TREF>
+            </PARAMETER-DATA-PROTOTYPE>
+          </PARAMETERS>
+        </PARAMETER-INTERFACE>
+        <CLIENT-SERVER-INTERFACE>
+          <SHORT-NAME>ClientServerInterface_0</SHORT-NAME>
+          <IS-SERVICE>false</IS-SERVICE>
+          <OPERATIONS>
+            <CLIENT-SERVER-OPERATION>
+              <SHORT-NAME>ClientServerOperation_0</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE>
+                  <SHORT-NAME>ArgumentDataPrototype_0</SHORT-NAME>
+				  <DIRECTION>IN</DIRECTION>
+                  <TYPE-TREF DEST="APPLICATION-PRIMITIVE-DATA-TYPE">/Pkg_ApplicationPrimitiveDataType/Appl_SINT16</TYPE-TREF>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+            </CLIENT-SERVER-OPERATION>
+          </OPERATIONS>
+        </CLIENT-SERVER-INTERFACE>
+      </ELEMENTS>
+      <AR-PACKAGES>
+        <AR-PACKAGE>
+          <SHORT-NAME>DataTypeMappingSets</SHORT-NAME>
+          <ELEMENTS>
+            <DATA-TYPE-MAPPING-SET>
+              <SHORT-NAME>DTMS_Debug</SHORT-NAME>
+              <DATA-TYPE-MAPS>
+                <DATA-TYPE-MAP>
+                  <APPLICATION-DATA-TYPE-REF DEST="APPLICATION-PRIMITIVE-DATA-TYPE">/Pkg_ApplicationPrimitiveDataType/Appl_SINT16</APPLICATION-DATA-TYPE-REF>
+                  <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/Pkg_ImplementationDataTypes/Impl_SINT16</IMPLEMENTATION-DATA-TYPE-REF>
+                </DATA-TYPE-MAP>
+                <DATA-TYPE-MAP>
+                  <APPLICATION-DATA-TYPE-REF DEST="APPLICATION-PRIMITIVE-DATA-TYPE">/Pkg_ApplicationPrimitiveDataType/Appl_SINT32</APPLICATION-DATA-TYPE-REF>
+                  <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/Pkg_ImplementationDataTypes/Impl_SINT32</IMPLEMENTATION-DATA-TYPE-REF>
+                </DATA-TYPE-MAP>
+                <DATA-TYPE-MAP>
+                  <APPLICATION-DATA-TYPE-REF DEST="APPLICATION-PRIMITIVE-DATA-TYPE">/Pkg_ApplicationPrimitiveDataType/Appl_SINT8</APPLICATION-DATA-TYPE-REF>
+                  <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/Pkg_ImplementationDataTypes/Impl_SINT8</IMPLEMENTATION-DATA-TYPE-REF>
+                </DATA-TYPE-MAP>
+                <DATA-TYPE-MAP>
+                  <APPLICATION-DATA-TYPE-REF DEST="APPLICATION-PRIMITIVE-DATA-TYPE">/Pkg_ApplicationPrimitiveDataType/Appl_UINT16</APPLICATION-DATA-TYPE-REF>
+                  <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/Pkg_ImplementationDataTypes/Impl_UINT16</IMPLEMENTATION-DATA-TYPE-REF>
+                </DATA-TYPE-MAP>
+              </DATA-TYPE-MAPS>
+            </DATA-TYPE-MAPPING-SET>
+          </ELEMENTS>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+	<AR-PACKAGE UUID="2e1b3bc9-f67e-4917-a329-39612105aff6">
+      <SHORT-NAME>AUTOSAR_PlatformTypes</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE UUID="ffa5ff50-c336-4daf-a023-cbdc4a007050">
+          <SHORT-NAME>ImplementationDataTypes</SHORT-NAME>
+          <LONG-NAME>
+            <L-4 L="EN">AUTOSAR platform types</L-4>
+          </LONG-NAME>
+          <ELEMENTS>
+            <IMPLEMENTATION-DATA-TYPE UUID="8af43dc3-d61c-4e12-b7cf-cabf0a810005">
+              <SHORT-NAME>boolean</SHORT-NAME>
+              <CATEGORY>VALUE</CATEGORY>
+              <SW-DATA-DEF-PROPS>
+                <SW-DATA-DEF-PROPS-VARIANTS>
+                  <SW-DATA-DEF-PROPS-CONDITIONAL>
+                    <BASE-TYPE-REF DEST="SW-BASE-TYPE">/AUTOSAR_PlatformTypes/SwBaseTypes/boolean</BASE-TYPE-REF>
+                    <DATA-CONSTR-REF DEST="DATA-CONSTR">/AUTOSAR_PlatformTypes/DataConstraints/DataConstr_boolean</DATA-CONSTR-REF>
+                  </SW-DATA-DEF-PROPS-CONDITIONAL>
+                </SW-DATA-DEF-PROPS-VARIANTS>
+              </SW-DATA-DEF-PROPS>
+            </IMPLEMENTATION-DATA-TYPE>
+            <IMPLEMENTATION-DATA-TYPE UUID="7cb63c73-43b7-4665-ab9b-f3697428e24f">
+              <SHORT-NAME>float32</SHORT-NAME>
+              <CATEGORY>VALUE</CATEGORY>
+              <SW-DATA-DEF-PROPS>
+                <SW-DATA-DEF-PROPS-VARIANTS>
+                  <SW-DATA-DEF-PROPS-CONDITIONAL>
+                    <BASE-TYPE-REF DEST="SW-BASE-TYPE">/AUTOSAR_PlatformTypes/SwBaseTypes/float32</BASE-TYPE-REF>
+                  </SW-DATA-DEF-PROPS-CONDITIONAL>
+                </SW-DATA-DEF-PROPS-VARIANTS>
+              </SW-DATA-DEF-PROPS>
+            </IMPLEMENTATION-DATA-TYPE>
+            <IMPLEMENTATION-DATA-TYPE UUID="8b51dc1f-56f2-43b8-b763-6f07506cf2bd">
+              <SHORT-NAME>float64</SHORT-NAME>
+              <CATEGORY>VALUE</CATEGORY>
+              <SW-DATA-DEF-PROPS>
+                <SW-DATA-DEF-PROPS-VARIANTS>
+                  <SW-DATA-DEF-PROPS-CONDITIONAL>
+                    <BASE-TYPE-REF DEST="SW-BASE-TYPE">/AUTOSAR_PlatformTypes/SwBaseTypes/float64</BASE-TYPE-REF>
+                  </SW-DATA-DEF-PROPS-CONDITIONAL>
+                </SW-DATA-DEF-PROPS-VARIANTS>
+              </SW-DATA-DEF-PROPS>
+            </IMPLEMENTATION-DATA-TYPE>
+            <IMPLEMENTATION-DATA-TYPE UUID="55963696-d7c3-4d16-9bff-f85546f02152">
+              <SHORT-NAME>sint16</SHORT-NAME>
+              <CATEGORY>VALUE</CATEGORY>
+              <SW-DATA-DEF-PROPS>
+                <SW-DATA-DEF-PROPS-VARIANTS>
+                  <SW-DATA-DEF-PROPS-CONDITIONAL>
+                    <BASE-TYPE-REF DEST="SW-BASE-TYPE">/AUTOSAR_PlatformTypes/SwBaseTypes/sint16</BASE-TYPE-REF>
+                    <DATA-CONSTR-REF DEST="DATA-CONSTR">/AUTOSAR_PlatformTypes/DataConstraints/DataConstr_sint16</DATA-CONSTR-REF>
+                  </SW-DATA-DEF-PROPS-CONDITIONAL>
+                </SW-DATA-DEF-PROPS-VARIANTS>
+              </SW-DATA-DEF-PROPS>
+            </IMPLEMENTATION-DATA-TYPE>
+            <IMPLEMENTATION-DATA-TYPE UUID="a362f573-0833-494d-af83-56510fe9eeec">
+              <SHORT-NAME>sint32</SHORT-NAME>
+              <CATEGORY>VALUE</CATEGORY>
+              <SW-DATA-DEF-PROPS>
+                <SW-DATA-DEF-PROPS-VARIANTS>
+                  <SW-DATA-DEF-PROPS-CONDITIONAL>
+                    <BASE-TYPE-REF DEST="SW-BASE-TYPE">/AUTOSAR_PlatformTypes/SwBaseTypes/sint32</BASE-TYPE-REF>
+                    <DATA-CONSTR-REF DEST="DATA-CONSTR">/AUTOSAR_PlatformTypes/DataConstraints/DataConstr_sint32</DATA-CONSTR-REF>
+                  </SW-DATA-DEF-PROPS-CONDITIONAL>
+                </SW-DATA-DEF-PROPS-VARIANTS>
+              </SW-DATA-DEF-PROPS>
+            </IMPLEMENTATION-DATA-TYPE>
+            <IMPLEMENTATION-DATA-TYPE UUID="11c153e4-3d39-4da3-a175-a8576c2822c7">
+              <SHORT-NAME>sint8</SHORT-NAME>
+              <CATEGORY>VALUE</CATEGORY>
+              <SW-DATA-DEF-PROPS>
+                <SW-DATA-DEF-PROPS-VARIANTS>
+                  <SW-DATA-DEF-PROPS-CONDITIONAL>
+                    <BASE-TYPE-REF DEST="SW-BASE-TYPE">/AUTOSAR_PlatformTypes/SwBaseTypes/sint8</BASE-TYPE-REF>
+                    <DATA-CONSTR-REF DEST="DATA-CONSTR">/AUTOSAR_PlatformTypes/DataConstraints/DataConstr_sint8</DATA-CONSTR-REF>
+                  </SW-DATA-DEF-PROPS-CONDITIONAL>
+                </SW-DATA-DEF-PROPS-VARIANTS>
+              </SW-DATA-DEF-PROPS>
+            </IMPLEMENTATION-DATA-TYPE>
+            <IMPLEMENTATION-DATA-TYPE UUID="bc971914-a2d6-4464-9fb3-1f59f9b1e415">
+              <SHORT-NAME>uint16</SHORT-NAME>
+              <CATEGORY>VALUE</CATEGORY>
+              <SW-DATA-DEF-PROPS>
+                <SW-DATA-DEF-PROPS-VARIANTS>
+                  <SW-DATA-DEF-PROPS-CONDITIONAL>
+                    <BASE-TYPE-REF DEST="SW-BASE-TYPE">/AUTOSAR_PlatformTypes/SwBaseTypes/uint16</BASE-TYPE-REF>
+                    <DATA-CONSTR-REF DEST="DATA-CONSTR">/AUTOSAR_PlatformTypes/DataConstraints/DataConstr_uint16</DATA-CONSTR-REF>
+                  </SW-DATA-DEF-PROPS-CONDITIONAL>
+                </SW-DATA-DEF-PROPS-VARIANTS>
+              </SW-DATA-DEF-PROPS>
+            </IMPLEMENTATION-DATA-TYPE>
+            <IMPLEMENTATION-DATA-TYPE UUID="31641511-9443-40e9-8e98-1c6b04432d31">
+              <SHORT-NAME>uint32</SHORT-NAME>
+              <CATEGORY>VALUE</CATEGORY>
+              <SW-DATA-DEF-PROPS>
+                <SW-DATA-DEF-PROPS-VARIANTS>
+                  <SW-DATA-DEF-PROPS-CONDITIONAL>
+                    <BASE-TYPE-REF DEST="SW-BASE-TYPE">/AUTOSAR_PlatformTypes/SwBaseTypes/uint32</BASE-TYPE-REF>
+                    <DATA-CONSTR-REF DEST="DATA-CONSTR">/AUTOSAR_PlatformTypes/DataConstraints/DataConstr_uint32</DATA-CONSTR-REF>
+                  </SW-DATA-DEF-PROPS-CONDITIONAL>
+                </SW-DATA-DEF-PROPS-VARIANTS>
+              </SW-DATA-DEF-PROPS>
+            </IMPLEMENTATION-DATA-TYPE>
+            <IMPLEMENTATION-DATA-TYPE UUID="c28da42e-a9e5-4a6e-b4cd-fa66956dfb06">
+              <SHORT-NAME>uint8</SHORT-NAME>
+              <CATEGORY>VALUE</CATEGORY>
+              <SW-DATA-DEF-PROPS>
+                <SW-DATA-DEF-PROPS-VARIANTS>
+                  <SW-DATA-DEF-PROPS-CONDITIONAL>
+                    <BASE-TYPE-REF DEST="SW-BASE-TYPE">/AUTOSAR_PlatformTypes/SwBaseTypes/uint8</BASE-TYPE-REF>
+                    <DATA-CONSTR-REF DEST="DATA-CONSTR">/AUTOSAR_PlatformTypes/DataConstraints/DataConstr_uint8</DATA-CONSTR-REF>
+                  </SW-DATA-DEF-PROPS-CONDITIONAL>
+                </SW-DATA-DEF-PROPS-VARIANTS>
+              </SW-DATA-DEF-PROPS>
+            </IMPLEMENTATION-DATA-TYPE>
+          </ELEMENTS>
+        </AR-PACKAGE>
+        <AR-PACKAGE UUID="3ff0ab3e-c78d-442a-9dcd-d1267b29a3d4">
+          <SHORT-NAME>SwBaseTypes</SHORT-NAME>
+          <LONG-NAME>
+            <L-4 L="EN">AUTOSAR platform types</L-4>
+          </LONG-NAME>
+          <ELEMENTS>
+            <SW-BASE-TYPE UUID="04eb121f-73ba-4a7e-89f6-fd281c54c41a">
+              <SHORT-NAME>boolean</SHORT-NAME>
+              <CATEGORY>FIXED_LENGTH</CATEGORY>
+              <BASE-TYPE-SIZE>8</BASE-TYPE-SIZE>
+              <BASE-TYPE-ENCODING>2C</BASE-TYPE-ENCODING>
+            </SW-BASE-TYPE>
+            <SW-BASE-TYPE UUID="eae766e9-2416-4a35-bc45-408f073b443e">
+              <SHORT-NAME>float32</SHORT-NAME>
+              <CATEGORY>FIXED_LENGTH</CATEGORY>
+              <BASE-TYPE-SIZE>32</BASE-TYPE-SIZE>
+              <BASE-TYPE-ENCODING>IEEE754</BASE-TYPE-ENCODING>
+            </SW-BASE-TYPE>
+            <SW-BASE-TYPE UUID="229748fc-c4aa-41b1-b135-dea771dbf698">
+              <SHORT-NAME>float64</SHORT-NAME>
+              <CATEGORY>FIXED_LENGTH</CATEGORY>
+              <BASE-TYPE-SIZE>64</BASE-TYPE-SIZE>
+              <BASE-TYPE-ENCODING>IEEE754</BASE-TYPE-ENCODING>
+            </SW-BASE-TYPE>
+            <SW-BASE-TYPE UUID="750ef2da-f7e7-43b8-ad22-624e09845eef">
+              <SHORT-NAME>sint16</SHORT-NAME>
+              <CATEGORY>FIXED_LENGTH</CATEGORY>
+              <BASE-TYPE-SIZE>16</BASE-TYPE-SIZE>
+              <BASE-TYPE-ENCODING>2C</BASE-TYPE-ENCODING>
+            </SW-BASE-TYPE>
+            <SW-BASE-TYPE UUID="a08aab17-f34e-4e13-8eb5-8ab91238f8dc">
+              <SHORT-NAME>sint32</SHORT-NAME>
+              <CATEGORY>FIXED_LENGTH</CATEGORY>
+              <BASE-TYPE-SIZE>32</BASE-TYPE-SIZE>
+              <BASE-TYPE-ENCODING>2C</BASE-TYPE-ENCODING>
+            </SW-BASE-TYPE>
+            <SW-BASE-TYPE UUID="536f073e-a421-4834-9f12-d0d47db22d06">
+              <SHORT-NAME>sint8</SHORT-NAME>
+              <CATEGORY>FIXED_LENGTH</CATEGORY>
+              <BASE-TYPE-SIZE>8</BASE-TYPE-SIZE>
+              <BASE-TYPE-ENCODING>2C</BASE-TYPE-ENCODING>
+            </SW-BASE-TYPE>
+            <SW-BASE-TYPE UUID="d993ea8d-c07e-42df-ae7a-258281f5b181">
+              <SHORT-NAME>uint16</SHORT-NAME>
+              <CATEGORY>FIXED_LENGTH</CATEGORY>
+              <BASE-TYPE-SIZE>16</BASE-TYPE-SIZE>
+              <BASE-TYPE-ENCODING>NONE</BASE-TYPE-ENCODING>
+            </SW-BASE-TYPE>
+            <SW-BASE-TYPE UUID="81a9d55b-5760-4b60-9d59-a45c766f3786">
+              <SHORT-NAME>uint32</SHORT-NAME>
+              <CATEGORY>FIXED_LENGTH</CATEGORY>
+              <BASE-TYPE-SIZE>32</BASE-TYPE-SIZE>
+              <BASE-TYPE-ENCODING>NONE</BASE-TYPE-ENCODING>
+            </SW-BASE-TYPE>
+            <SW-BASE-TYPE UUID="173e2645-ddb9-471d-bf5d-6baa84afc430">
+              <SHORT-NAME>uint8</SHORT-NAME>
+              <CATEGORY>FIXED_LENGTH</CATEGORY>
+              <BASE-TYPE-SIZE>8</BASE-TYPE-SIZE>
+              <BASE-TYPE-ENCODING>NONE</BASE-TYPE-ENCODING>
+            </SW-BASE-TYPE>
+          </ELEMENTS>
+        </AR-PACKAGE>
+        <AR-PACKAGE UUID="0b5a93d5-55a9-4025-801d-f03eb1372a76">
+          <SHORT-NAME>DataConstraints</SHORT-NAME>
+          <LONG-NAME>
+            <L-4 L="EN">AUTOSAR platform types</L-4>
+          </LONG-NAME>
+          <ELEMENTS>
+            <DATA-CONSTR UUID="13469372-fe37-4543-ab90-f76a2fa79110">
+              <SHORT-NAME>DataConstr_uint8</SHORT-NAME>
+              <DATA-CONSTR-RULES>
+                <DATA-CONSTR-RULE>
+                  <PHYS-CONSTRS>
+                    <LOWER-LIMIT>0</LOWER-LIMIT>
+                    <UPPER-LIMIT>255</UPPER-LIMIT>
+                  </PHYS-CONSTRS>
+                  <INTERNAL-CONSTRS>
+                    <LOWER-LIMIT>0</LOWER-LIMIT>
+                    <UPPER-LIMIT>255</UPPER-LIMIT>
+                  </INTERNAL-CONSTRS>
+                </DATA-CONSTR-RULE>
+              </DATA-CONSTR-RULES>
+            </DATA-CONSTR>
+            <DATA-CONSTR UUID="8232977a-7ac5-4c0b-b360-08fb9d9c8006">
+              <SHORT-NAME>DataConstr_uint16</SHORT-NAME>
+              <DATA-CONSTR-RULES>
+                <DATA-CONSTR-RULE>
+                  <PHYS-CONSTRS>
+                    <LOWER-LIMIT>0</LOWER-LIMIT>
+                    <UPPER-LIMIT>65535</UPPER-LIMIT>
+                  </PHYS-CONSTRS>
+                  <INTERNAL-CONSTRS>
+                    <LOWER-LIMIT>0</LOWER-LIMIT>
+                    <UPPER-LIMIT>65535</UPPER-LIMIT>
+                  </INTERNAL-CONSTRS>
+                </DATA-CONSTR-RULE>
+              </DATA-CONSTR-RULES>
+            </DATA-CONSTR>
+            <DATA-CONSTR UUID="460f51d4-0e14-47e7-8ab3-c03a5d677694">
+              <SHORT-NAME>DataConstr_uint32</SHORT-NAME>
+              <DATA-CONSTR-RULES>
+                <DATA-CONSTR-RULE>
+                  <PHYS-CONSTRS>
+                    <LOWER-LIMIT>0</LOWER-LIMIT>
+                    <UPPER-LIMIT>4294967295</UPPER-LIMIT>
+                  </PHYS-CONSTRS>
+                  <INTERNAL-CONSTRS>
+                    <LOWER-LIMIT>0</LOWER-LIMIT>
+                    <UPPER-LIMIT>4294967295</UPPER-LIMIT>
+                  </INTERNAL-CONSTRS>
+                </DATA-CONSTR-RULE>
+              </DATA-CONSTR-RULES>
+            </DATA-CONSTR>
+            <DATA-CONSTR UUID="1902c11f-ae7e-40c2-836c-f074dcd652b2">
+              <SHORT-NAME>DataConstr_sint8</SHORT-NAME>
+              <DATA-CONSTR-RULES>
+                <DATA-CONSTR-RULE>
+                  <PHYS-CONSTRS>
+                    <LOWER-LIMIT>-128</LOWER-LIMIT>
+                    <UPPER-LIMIT>127</UPPER-LIMIT>
+                  </PHYS-CONSTRS>
+                  <INTERNAL-CONSTRS>
+                    <LOWER-LIMIT>-128</LOWER-LIMIT>
+                    <UPPER-LIMIT>127</UPPER-LIMIT>
+                  </INTERNAL-CONSTRS>
+                </DATA-CONSTR-RULE>
+              </DATA-CONSTR-RULES>
+            </DATA-CONSTR>
+            <DATA-CONSTR UUID="b0072379-ca9a-4776-b9db-bdc6542616bd">
+              <SHORT-NAME>DataConstr_sint16</SHORT-NAME>
+              <DATA-CONSTR-RULES>
+                <DATA-CONSTR-RULE>
+                  <PHYS-CONSTRS>
+                    <LOWER-LIMIT>-32768</LOWER-LIMIT>
+                    <UPPER-LIMIT>32767</UPPER-LIMIT>
+                  </PHYS-CONSTRS>
+                  <INTERNAL-CONSTRS>
+                    <LOWER-LIMIT>-32768</LOWER-LIMIT>
+                    <UPPER-LIMIT>32767</UPPER-LIMIT>
+                  </INTERNAL-CONSTRS>
+                </DATA-CONSTR-RULE>
+              </DATA-CONSTR-RULES>
+            </DATA-CONSTR>
+            <DATA-CONSTR UUID="5f822502-5574-4d9c-a47c-15f8169f30be">
+              <SHORT-NAME>DataConstr_sint32</SHORT-NAME>
+              <DATA-CONSTR-RULES>
+                <DATA-CONSTR-RULE>
+                  <PHYS-CONSTRS>
+                    <LOWER-LIMIT>-2147483648</LOWER-LIMIT>
+                    <UPPER-LIMIT>2147483647</UPPER-LIMIT>
+                  </PHYS-CONSTRS>
+                  <INTERNAL-CONSTRS>
+                    <LOWER-LIMIT>-2147483648</LOWER-LIMIT>
+                    <UPPER-LIMIT>2147483647</UPPER-LIMIT>
+                  </INTERNAL-CONSTRS>
+                </DATA-CONSTR-RULE>
+              </DATA-CONSTR-RULES>
+            </DATA-CONSTR>
+            <DATA-CONSTR UUID="8491457c-1ddd-4beb-846c-0e0de58d51cb">
+              <SHORT-NAME>DataConstr_boolean</SHORT-NAME>
+              <DATA-CONSTR-RULES>
+                <DATA-CONSTR-RULE>
+                  <PHYS-CONSTRS>
+                    <LOWER-LIMIT>0</LOWER-LIMIT>
+                    <UPPER-LIMIT>1</UPPER-LIMIT>
+                  </PHYS-CONSTRS>
+                  <INTERNAL-CONSTRS>
+                    <LOWER-LIMIT>0</LOWER-LIMIT>
+                    <UPPER-LIMIT>1</UPPER-LIMIT>
+                  </INTERNAL-CONSTRS>
+                </DATA-CONSTR-RULE>
+              </DATA-CONSTR-RULES>
+            </DATA-CONSTR>
+          </ELEMENTS>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+	<AR-PACKAGE>
+      <SHORT-NAME>WiperControl_Composition</SHORT-NAME>
+      <ELEMENTS>
+        <COMPOSITION-SW-COMPONENT-TYPE>
+          <SHORT-NAME>WiperControl_SystemComposition</SHORT-NAME>
+          <COMPONENTS>
+            <SW-COMPONENT-PROTOTYPE>
+              <SHORT-NAME>CPT_Debug</SHORT-NAME>
+              <TYPE-TREF DEST="APPLICATION-SW-COMPONENT-TYPE">/Debug/Debug</TYPE-TREF>
+            </SW-COMPONENT-PROTOTYPE>
+            <SW-COMPONENT-PROTOTYPE>
+              <SHORT-NAME>CPT_WiperControl_100us</SHORT-NAME>
+              <TYPE-TREF DEST="SENSOR-ACTUATOR-SW-COMPONENT-TYPE">/WiperControl_100us/WiperControl_100us</TYPE-TREF>
+            </SW-COMPONENT-PROTOTYPE>
+            <SW-COMPONENT-PROTOTYPE>
+              <SHORT-NAME>CPT_WiperControl_2ms</SHORT-NAME>
+              <TYPE-TREF DEST="APPLICATION-SW-COMPONENT-TYPE">/WiperControl_2ms/WiperControl_2ms</TYPE-TREF>
+            </SW-COMPONENT-PROTOTYPE>
+          </COMPONENTS>
+          <CONNECTORS>
+            <ASSEMBLY-SW-CONNECTOR>
+              <SHORT-NAME>AssemblySwConnector_0</SHORT-NAME>
+              <PROVIDER-IREF>
+                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/WiperControl_Composition/WiperControl_SystemComposition/CPT_WiperControl_2ms</CONTEXT-COMPONENT-REF>
+                <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/WiperControl_2ms/WiperControl_2ms/P_Debug</TARGET-P-PORT-REF>
+              </PROVIDER-IREF>
+              <REQUESTER-IREF>
+                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/WiperControl_Composition/WiperControl_SystemComposition/CPT_Debug</CONTEXT-COMPONENT-REF>
+                <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/Debug/Debug/R_Debug</TARGET-R-PORT-REF>
+              </REQUESTER-IREF>
+            </ASSEMBLY-SW-CONNECTOR>
+            <ASSEMBLY-SW-CONNECTOR>
+              <SHORT-NAME>AssemblySwConnector_1</SHORT-NAME>
+              <PROVIDER-IREF>
+                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/WiperControl_Composition/WiperControl_SystemComposition/CPT_Debug</CONTEXT-COMPONENT-REF>
+                <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/Debug/Debug/P_Torque</TARGET-P-PORT-REF>
+              </PROVIDER-IREF>
+              <REQUESTER-IREF>
+                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/WiperControl_Composition/WiperControl_SystemComposition/CPT_WiperControl_2ms</CONTEXT-COMPONENT-REF>
+                <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/WiperControl_2ms/WiperControl_2ms/R_Torque</TARGET-R-PORT-REF>
+              </REQUESTER-IREF>
+            </ASSEMBLY-SW-CONNECTOR>
+            <ASSEMBLY-SW-CONNECTOR>
+              <SHORT-NAME>AssemblySwConnector_2</SHORT-NAME>
+              <PROVIDER-IREF>
+                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/WiperControl_Composition/WiperControl_SystemComposition/CPT_WiperControl_2ms</CONTEXT-COMPONENT-REF>
+                <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/WiperControl_2ms/WiperControl_2ms/P_Current</TARGET-P-PORT-REF>
+              </PROVIDER-IREF>
+              <REQUESTER-IREF>
+                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/WiperControl_Composition/WiperControl_SystemComposition/CPT_WiperControl_100us</CONTEXT-COMPONENT-REF>
+                <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/WiperControl_100us/WiperControl_100us/R_Current</TARGET-R-PORT-REF>
+              </REQUESTER-IREF>
+            </ASSEMBLY-SW-CONNECTOR>
+          </CONNECTORS>
+        </COMPOSITION-SW-COMPONENT-TYPE>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

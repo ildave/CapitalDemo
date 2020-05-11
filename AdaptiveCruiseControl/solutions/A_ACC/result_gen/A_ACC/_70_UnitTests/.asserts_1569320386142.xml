@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="A_ACC._70_UnitTests.HandWrittenUnitTests::handWrittenTestsSuite" tests="2" skipped="0" failures="0" errors="0" timestamp="2019-09-24T12:19:46" hostname="PL1BELVN0108NB">
+<properties />
+<testcase name="fusionTest_testCase_0" classname="handWrittenTestsSuite" modelId="r:85264605-c952-487b-9c9b-7577b3e74e3f(A_ACC._70_UnitTests)" nodeId="4154780055497899768">
+<system-out><![CDATA[
+runningTestCase: running test case (name=fusionTest_testCase_0, location=@HandWrittenUnitTests:fusionTest?r:85264605-c952-487b-9c9b-7577b3e74e3f(A_ACC._70_UnitTests)#4154780055497899768) 
+]]></system-out>
+<system-err><![CDATA[
+]]></system-err>
+</testcase>
+<testcase name="driverUIWOEnumsTest_testCase_1" classname="handWrittenTestsSuite" modelId="r:85264605-c952-487b-9c9b-7577b3e74e3f(A_ACC._70_UnitTests)" nodeId="7553481510858870198">
+<system-out><![CDATA[
+runningTestCase: running test case (name=driverUIWOEnumsTest_testCase_1, location=@HandWrittenUnitTests:driverUIWOEnumsTest?r:85264605-c952-487b-9c9b-7577b3e74e3f(A_ACC._70_UnitTests)#7553481510858870198) 
+Contract_Failed: Pre- or Post-condition failed (contractID=driverUIWOEnums__impl_driverUIWOEnums__impl_noACCIfSlow, location=@ACC_Architecture:driverUIWOEnums:2?r:b5e3b60d-9942-4df7-a0a8-46f3f7e3f541(A_ACC._40_SWArchitecture)#8321407184104355441) 
+enable=1
+speedSetpoint=30
+]]></system-out>
+<system-err><![CDATA[
+]]></system-err>
+</testcase>
+</testsuite>
