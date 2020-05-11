@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model ref="r:8ebf08bb-ab5f-40b3-bd0f-c4459b0a0b3c(C_Code.RoverCWithStructs)" content="root">
+  <persistence version="9" />
+  <imports />
+  <registry>
+    <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
+      </concept>
+      <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
+        <property id="1169194664001" name="name" index="TrG5h" />
+      </concept>
+    </language>
+    <language id="2522715a-71d2-4a9e-a81d-1572164e937a" name="com.lmsintl.accent.importer.c.callgraph">
+      <concept id="5673732946606092099" name="com.lmsintl.accent.importer.c.callgraph.structure.IFromAST" flags="ng" index="2InW_e">
+        <property id="8855501131538996432" name="uri" index="J_Dec" />
+      </concept>
+      <concept id="1344387950357430695" name="com.lmsintl.accent.importer.c.callgraph.structure.CFileModule" flags="ng" index="3vXJwg">
+        <property id="1286836298727992148" name="relativePath" index="2$6mAv" />
+        <property id="7887439043467768415" name="id" index="C1a9q" />
+      </concept>
+    </language>
+  </registry>
+  <node concept="3vXJwg" id="6QhzrjnheSq">
+    <property role="TrG5h" value="Input_Conversion_types.h" />
+    <property role="2$6mAv" value="ATRover_autosar_rtw\referenced_model_includes\Input_Conversion_types.h" />
+    <property role="3GE5qa" value="Rover_Import_with_Structures.RoverCStructs.ATRover_autosar_rtw.referenced_model_includes.Input_Conversion_types_h" />
+    <property role="J_Dec" value="http://siemens.com/project#36558467266772723" />
+    <property role="C1a9q" value="00000003-0076-0077-0083-001295569361" />
+  </node>
+</model>
+

@@ -1,0 +1,57 @@
+#include "Rte_IRead_Rover_NoSF_v1_Runnable_Step_r_Port6_Sensor_FR_imple.h"
+
+
+
+
+/**		ADDITIONAL HEADERS START		**/
+/**		ADDITIONAL HEADERS END		**/
+
+
+
+extern double Rte_IRead_Rover_NoSF_v1_Runnable_Step_r_Port6_Sensor_FR(int * self_out);
+
+
+
+/**		ADDITIONAL DECLARATIONS START		**/
+/**		ADDITIONAL DECLARATIONS END		**/
+
+/* 
+ * atomicblock: Rte_IRead_Rover_NoSF_v1_Runnable_Step_r_Port6_Sensor_FR_imple
+ * 
+ * URL: http://127.0.0.1:63320/node?ref=r%3A35ac4a8f-6005-4206-b26f-17b874b69274%28C_Code.RoverCWithStructsImportResult%29%2F7895247429602452154
+ * 
+ * 
+ * 
+ * 
+ * Data Properties
+ * ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ * Name                                                           DD    DD Owner    Access                                                          Usage      Datatype    Unit    Constraints    Description    
+ * ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ * Rte_IRead_Rover_NoSF_v1_Runnable_Step_r_Port6_Sensor_FR_out    -     -           *Rte_IRead_Rover_NoSF_v1_Runnable_Step_r_Port6_Sensor_FR_out    outport    double      -       -              -              
+ * self_in                                                        -     -           self_in                                                         inport     int32       -       -              -              
+ * self_out                                                       -     -           *self_out                                                       outport    int32       -       -              -              
+ * ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ */
+
+
+/* 
+ * Execution function for block Rte_IRead_Rover_NoSF_v1_Runnable_Step_r_Port6_Sensor_FR_imple
+ */
+void Rte_IRead_Rover_NoSF_v1_Runnable_Step_r_Port6_Sensor_FR_imple_execute(void *___nothing, int32_t self_in, double *Rte_IRead_Rover_NoSF_v1_Runnable_Step_r_Port6_Sensor_FR_out, int32_t *self_out) 
+{
+  /**		RTE_IREAD_ROVER_NOSF_V1_RUNNABLE_STEP_R_PORT6_SENSOR_FR_IMPLE_EXECUTE DECLARATIONS 	START		**/
+  /**		RTE_IREAD_ROVER_NOSF_V1_RUNNABLE_STEP_R_PORT6_SENSOR_FR_IMPLE_EXECUTE DECLARATIONS 	END		**/
+
+  /**		RTE_IREAD_ROVER_NOSF_V1_RUNNABLE_STEP_R_PORT6_SENSOR_FR_IMPLE_EXECUTE	START		**/
+  /**		RTE_IREAD_ROVER_NOSF_V1_RUNNABLE_STEP_R_PORT6_SENSOR_FR_IMPLE_EXECUTE	END		**/
+
+  *self_out = self_in;
+  *Rte_IRead_Rover_NoSF_v1_Runnable_Step_r_Port6_Sensor_FR_out = Rte_IRead_Rover_NoSF_v1_Runnable_Step_r_Port6_Sensor_FR(self_out);
+}
+
+
+
+
+/**		ADDITIONAL DEFINITIONS START		**/
+/**		ADDITIONAL DEFINITIONS END		**/
+

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model ref="r:8ebf08bb-ab5f-40b3-bd0f-c4459b0a0b3c(C_Code.RoverCWithStructs)" content="header">
+  <persistence version="9" />
+  <attribute name="content" value="header" />
+  <languages>
+    <devkit ref="29cdba7a-5b75-4c11-839f-333bd3149723(CImporter)" />
+    <devkit ref="84a6edcf-c6e8-49f1-af3b-05b24d2eec70(DataFlow)" />
+  </languages>
+  <imports />
+</model>
+

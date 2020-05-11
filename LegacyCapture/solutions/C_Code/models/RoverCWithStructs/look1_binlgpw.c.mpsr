@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model ref="r:8ebf08bb-ab5f-40b3-bd0f-c4459b0a0b3c(C_Code.RoverCWithStructs)" content="root">
+  <persistence version="9" />
+  <imports />
+  <registry>
+    <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
+      </concept>
+      <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
+        <property id="1169194664001" name="name" index="TrG5h" />
+      </concept>
+    </language>
+    <language id="2522715a-71d2-4a9e-a81d-1572164e937a" name="com.lmsintl.accent.importer.c.callgraph">
+      <concept id="1442417266701698129" name="com.lmsintl.accent.importer.c.callgraph.structure.Function" flags="ng" index="2bCnEd">
+        <reference id="2456953216648084684" name="cgmRef" index="3Y5Mky" />
+        <child id="4987689638466486703" name="arguments" index="2rxHjz" />
+        <child id="7887439043477898309" name="returnType" index="Futh0" />
+      </concept>
+      <concept id="8488853186918661596" name="com.lmsintl.accent.importer.c.callgraph.structure.IStorageContent" flags="ng" index="htcGz">
+        <property id="8488853186918527649" name="storage" index="htGhu" />
+      </concept>
+      <concept id="4987689638466486659" name="com.lmsintl.accent.importer.c.callgraph.structure.FunctionParameter" flags="ng" index="2rxHjf" />
+      <concept id="4987689638466486686" name="com.lmsintl.accent.importer.c.callgraph.structure.IType" flags="ng" index="2rxHji">
+        <property id="4987689638466486687" name="type" index="2rxHjj" />
+        <property id="7887439043470125843" name="actualType" index="CSbGm" />
+      </concept>
+      <concept id="4987689638467521255" name="com.lmsintl.accent.importer.c.callgraph.structure.ReturnType" flags="ng" index="2rXLYF" />
+      <concept id="5673732946606092099" name="com.lmsintl.accent.importer.c.callgraph.structure.IFromAST" flags="ng" index="2InW_e">
+        <property id="1219376943538339776" name="columnEnd" index="2e2Qsu" />
+        <property id="1219376943538339770" name="columnStart" index="2e2Qt$" />
+        <property id="5673732946606092100" name="usr" index="2InW_9" />
+        <property id="8855501131538996432" name="uri" index="J_Dec" />
+        <property id="587891737828198328" name="lineEnd" index="2ZyTJj" />
+        <property id="587891737828198325" name="lineStart" index="2ZyTJu" />
+      </concept>
+      <concept id="1344387950357430695" name="com.lmsintl.accent.importer.c.callgraph.structure.CFileModule" flags="ng" index="3vXJwg">
+        <property id="1286836298727992148" name="relativePath" index="2$6mAv" />
+        <property id="7887439043467768415" name="id" index="C1a9q" />
+        <child id="1344387950357430825" name="contents" index="3vXJIu" />
+      </concept>
+    </language>
+  </registry>
+  <node concept="3vXJwg" id="6QhzrjnheSt">
+    <property role="TrG5h" value="look1_binlgpw.c" />
+    <property role="2$6mAv" value="slprj\autosar\_sharedutils\look1_binlgpw.c" />
+    <property role="3GE5qa" value="Rover_Import_with_Structures.RoverCStructs.slprj.autosar._sharedutils.look1_binlgpw_c" />
+    <property role="J_Dec" value="http://siemens.com/project#15636152096490301" />
+    <property role="C1a9q" value="00000004-0076-0077-0083-001210397194" />
+    <node concept="2bCnEd" id="6QhzrjnheU7" role="3vXJIu">
+      <property role="2InW_9" value="c:@F@look1_binlgpw" />
+      <property role="J_Dec" value="http://siemens.com/project#39258914646490301" />
+      <property role="TrG5h" value="look1_binlgpw" />
+      <property role="htGhu" value="" />
+      <property role="3GE5qa" value="Rover_Import_with_Structures.RoverCStructs.slprj.autosar._sharedutils.look1_binlgpw_c" />
+      <property role="2ZyTJu" value="14" />
+      <property role="2e2Qt$" value="0" />
+      <property role="2ZyTJj" value="55" />
+      <property role="2e2Qsu" value="1" />
+      <ref role="3Y5Mky" node="6QhzrjnheU8" resolve="look1_binlgpw" />
+      <node concept="2rxHjf" id="6QhzrjnheUe" role="2rxHjz">
+        <property role="TrG5h" value="u0" />
+        <property role="2rxHjj" value="real_T" />
+        <property role="CSbGm" value="double" />
+      </node>
+      <node concept="2rxHjf" id="6QhzrjnheUh" role="2rxHjz">
+        <property role="TrG5h" value="bp0" />
+        <property role="2rxHjj" value="const real_T []" />
+        <property role="CSbGm" value="double const[]" />
+      </node>
+      <node concept="2rxHjf" id="6QhzrjnheUj" role="2rxHjz">
+        <property role="TrG5h" value="table" />
+        <property role="2rxHjj" value="const real_T []" />
+        <property role="CSbGm" value="double const[]" />
+      </node>
+      <node concept="2rxHjf" id="6QhzrjnheUl" role="2rxHjz">
+        <property role="TrG5h" value="maxIndex" />
+        <property role="2rxHjj" value="uint32_T" />
+        <property role="CSbGm" value="unsigned int" />
+      </node>
+      <node concept="2rXLYF" id="6QhzrjnheUm" role="Futh0">
+        <property role="2rxHjj" value="real_T" />
+        <property role="CSbGm" value="double" />
+      </node>
+    </node>
+  </node>
+</model>
+
