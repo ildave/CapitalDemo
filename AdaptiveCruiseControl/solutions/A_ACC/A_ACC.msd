@@ -9,6 +9,7 @@
   <dependencies>
     <dependency reexport="false">642f71f8-327a-425b-84f9-44ad58786d27(jetbrains.mps.lang.project.modules)</dependency>
     <dependency reexport="false">7a4badc7-f4a8-4be7-b415-d164240f29ba(com.lmsintl.accent.connectors.SIG)</dependency>
+    <dependency reexport="false">3c4eda0f-1c8d-4cd3-b50a-5e3b5354aa39(ClaStdLib)</dependency>
   </dependencies>
   <languageVersions>
     <language slang="l:7c8baff8-6b47-46a9-88cf-5e77056f3d91:com.lmsintl.accent.analyses.blocks" version="0" />
@@ -37,6 +38,7 @@
     <language slang="l:3e69b1ff-b264-422d-8dfa-681e167af189:com.lmsintl.accent.datadictionary" version="3" />
     <language slang="l:d080b55f-56b3-4656-8779-937ccce78837:com.lmsintl.accent.export.fmi" version="0" />
     <language slang="l:b5d0eca8-a047-46d6-8d5e-b8fa8b333b63:com.lmsintl.accent.importer" version="0" />
+    <language slang="l:9b0361c8-a74e-4cff-a0e4-2dfa3e9642c3:com.lmsintl.accent.importer.aadl" version="1" />
     <language slang="l:dbf3932e-d52d-4675-8e11-80e7b5ed60cc:com.lmsintl.accent.importer.simulink" version="2" />
     <language slang="l:a7602ae7-5a1d-4c52-ba78-6cd5301b831e:com.lmsintl.accent.lookuptable" version="0" />
     <language slang="l:4149fc95-5755-4656-bb5f-1766b7256548:com.lmsintl.accent.m2util" version="0" />
@@ -114,6 +116,7 @@
   <dependencyVersions>
     <module reference="251dd1aa-fd55-4b95-9df6-5713b309e809(A_ACC)" version="0" />
     <module reference="3f233e7f-b8a6-46d2-a57f-795d56775243(Annotations)" version="0" />
+    <module reference="3c4eda0f-1c8d-4cd3-b50a-5e3b5354aa39(ClaStdLib)" version="0" />
     <module reference="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" version="0" />
     <module reference="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea(MPS.Core)" version="0" />
     <module reference="1ed103c3-3aa6-49b7-9c21-6765ee11f224(MPS.Editor)" version="0" />

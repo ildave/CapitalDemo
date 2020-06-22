@@ -14,10 +14,10 @@
 extern "C" {
 #endif
 
-#define RadarRanges_ShortRangeRadarUpperLimit (((double )(1000)))
-#define RadarRanges_LongRangeRadarUpperLimit (((double )(350.0)))
+#define RadarRanges_ShortRangeRadarUpperLimit (((double )(800)))
+#define RadarRanges_LongRangeRadarUpperLimit (((double )(300.0)))
 #define RadarRanges_ShortRangeRadarLowerLimit (((double )(1.0)))
-#define RadarRanges_LongRangeRadarLowerLimit (((double )(0.2)))
+#define RadarRanges_LongRangeRadarLowerLimit (((double )(0.02)))
 
 #ifdef __cplusplus
 } /* extern "C" */

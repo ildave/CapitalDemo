@@ -14,6 +14,8 @@
 
 #include "___TriggerInfo.h"
 
+#include <stdio.h>
+
 
 
 /**		ADDITIONAL HEADERS START		**/
@@ -23,7 +25,15 @@
 extern "C" {
 #endif
 
-void driverUIWOEnums__impl_execute(void *___nothing, bool mode, double speedSetpoint, bool *enable);
+typedef struct driverUIWOEnums__impl_data driverUIWOEnums__impl_data_t;
+/* 
+ * instance data for block driverUIWOEnums__impl
+ */
+struct driverUIWOEnums__impl_data {
+  bool __preconditionFailed_setpoint;
+};
+
+void driverUIWOEnums__impl_execute(driverUIWOEnums__impl_data_t *___id, bool mode, double speedSetpoint, bool *enable);
 
 
 

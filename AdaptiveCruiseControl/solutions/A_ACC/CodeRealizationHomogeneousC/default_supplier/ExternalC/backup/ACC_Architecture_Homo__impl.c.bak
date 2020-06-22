@@ -4,6 +4,7 @@
 #include "Cla_CommonUnits.h"
 #include "ACC_Units.h"
 #include "ACC_Parameters.h"
+#include "___BlockMessages.h"
 
 
 /**		ADDITIONAL HEADERS START		**/
@@ -11,37 +12,28 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /**		ADDITIONAL DECLARATIONS START		**/
 /**		ADDITIONAL DECLARATIONS END		**/
 
-/* 
- * compositeblock: AnACC_System__impl_homogeneous
- * 
- * URL: http://127.0.0.1:63320/node?ref=r%3A3a7acda9-e9c9-4dad-8f9c-2c2ccb980636%28A_ACC._51_ImplementationDefinitionHomogeneousC%29%2F8321407184102458831
- * 
- * -> implements ESD-81 traced to compositeblock AnACC_System. https://athena.industrysoftware.automation.siemens.com/polarion/#/project/jrichter/workitem?id=ESD-81
- * 
- * 
- * 
- * Data Properties
- * ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
- * Name                   DD                     DD Owner    Access                 Usage      Datatype    Unit    Constraints               Description                                               
- * ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
- * lidarMeasurement       lidarMeasurement       ACCData     lidarMeasurement       inport     double      m       range 0 m..150 m          Distance to car in front measured by Lidar                
- * modeSelectionUser      -                      -           modeSelectionUser      inport     boolean     -       -                         -                                                         
- * radarLRMeasurement     radarLRMeasurement     ACCData     radarLRMeasurement     inport     double      m       range 0 m..350 m          Distance to car in front measured by long range radar     
- * radarSRMeasurement     radarSRMeasurement     ACCData     radarSRMeasurement     inport     double      cm      range 0 cm..790 cm        Distance to car in front measured by short range radar    
- * speedMeasuredWheels    speedMeasuredWheels    ACCData     speedMeasuredWheels    inport     double      kmh     range -30 kmh..280 kmh                                                              
- * speedSetpointDriver    speedSetpointDriver    ACCData     speedSetpointDriver    inport     double      kmh     range 0 kmh..200.0 kmh                                                              
- * torqueDemandACC        torqueDemandACC        ACCData     *torqueDemandACC       outport    double      Nm      range 0 Nm..1000 Nm       Calculated torque demand from ACC function                
- * ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
- */
-
-
-void AnACC_System__impl_homogeneous_flattened_init(AnACC_System__impl_homogeneous_flattened_data_t *___id) 
+void ACC_Architecture_Homo__impl_AnACC_System__impl_flattened_init(ACC_Architecture_Homo__impl_AnACC_System__impl_flattened_data_t *___id) 
 {
-  AnACC_System__impl_homogeneous_flattened_data_t *___data;
-  ___data = ___id;
+  ACC_Architecture_Homo__impl_AnACC_System__impl_flattened_data_t *___data = ___id;
   {
   }
 
@@ -74,53 +66,32 @@ void AnACC_System__impl_homogeneous_flattened_init(AnACC_System__impl_homogeneou
 }
 
 
-void AnACC_System__impl_homogeneous_flattened_execute(AnACC_System__impl_homogeneous_flattened_data_t *___id, double lidarMeasurement, bool modeSelectionUser, double radarLRMeasurement, double radarSRMeasurement, double speedMeasuredWheels, double speedSetpointDriver, double *torqueDemandACC) 
+void ACC_Architecture_Homo__impl_AnACC_System__impl_flattened_execute(ACC_Architecture_Homo__impl_AnACC_System__impl_flattened_data_t *___id, double lidarMeasurement, bool modeSelectionUser, double radarLRMeasurement, double radarSRMeasurement, double speedMeasuredWheels, double speedSetpointDriver, double *torqueDemandACC) 
 {
-  AnACC_System__impl_homogeneous_flattened_data_t *___data;
-  /* 
-   * Post conditions: 
-   * post(0) offImpliesNoTorqueDemand : (modeSelectionUser == false) -> (torqueDemandACC == 0)
-   */
-
-  ___data = ___id;
-  {
-  }
-
-  {
-  }
-
+  ACC_Architecture_Homo__impl_AnACC_System__impl_flattened_data_t *___data = ___id;
   {
     double fusion_fusedRange;
     bool userInterface_enable;
     double regulatorInstance_torqueDemand;
     {
       {
-        {
-          sensorFusion__impl_execute(&(___data->i_fusion), lidarMeasurement, radarLRMeasurement, radarSRMeasurement, &(fusion_fusedRange));
-        }
-;
+        ACC_Architecture_Homo__impl_sensorFusion__impl_execute(&(___data->i_fusion), lidarMeasurement, radarLRMeasurement, radarSRMeasurement, &(fusion_fusedRange));
       }
-
+;
     }
 
     {
       {
-        {
-          driverUIWOEnums__impl_execute(NULL, modeSelectionUser, speedSetpointDriver, &(userInterface_enable));
-        }
-;
+        ACC_Architecture_Homo__impl_driverUIWOEnums__impl_execute(&(___data->i_userInterface), modeSelectionUser, speedSetpointDriver, &(userInterface_enable));
       }
-
+;
     }
 
     {
       {
-        {
-          speedDistanceRegulator__impl_execute(&(___data->i_regulatorInstance), fusion_fusedRange, userInterface_enable, speedMeasuredWheels, speedSetpointDriver, &(regulatorInstance_torqueDemand));
-        }
-;
+        ACC_Architecture_Homo__impl_speedDistanceRegulator__impl_execute(&(___data->i_regulatorInstance), fusion_fusedRange, userInterface_enable, speedMeasuredWheels, speedSetpointDriver, &(regulatorInstance_torqueDemand));
       }
-
+;
     }
 
     *torqueDemandACC = regulatorInstance_torqueDemand;;
@@ -129,47 +100,26 @@ void AnACC_System__impl_homogeneous_flattened_execute(AnACC_System__impl_homogen
   end:
 
   (void)0;
+  {
+    bool __assertCondition = !((modeSelectionUser == false)) || ((*torqueDemandACC) == 0);
+    if (!__assertCondition) 
+    {
+      ___block_messagelist_Contract_Failed("ACC_Architecture_Homo__impl_AnACC_System__impl_flattened_offImpliesNoTorqueDemand", "ACC_Architecture:ACC_SystemNoEnum_If?r:b5e3b60d-9942-4df7-a0a8-46f3f7e3f541(A_ACC._40_SWArchitecture)#4785657477832512263");
+      printf("torqueDemandACC=%g\n",(*torqueDemandACC));;
+      printf("modeSelectionUser=%d\n",modeSelectionUser);;
+    }
+  }
+
 }
-
-
-/* 
- * atomicblock: ACC_System_If__impl
- * 
- * URL: http://127.0.0.1:63320/node?ref=r%3A3a7acda9-e9c9-4dad-8f9c-2c2ccb980636%28A_ACC._51_ImplementationDefinitionHomogeneousC%29%2F8321407184102458786
- * 
- * 
- * The inport(s)[lidar, modeSelectionUser, radarLR, radarSR, speedMeasuredWheels, speedSetpointDriver] is/are defined in the structure ACC_System_If__impl_data_t in ACC_Architecture_Homo__impl.h
- * 
- * 
- * 
- * Data Properties
- * ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
- * Name                   DD                     DD Owner    Access                 Usage      Datatype    Unit    Constraints               Description                                               
- * ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
- * lidarMeasurement       lidarMeasurement       ACCData     lidarMeasurement       inport     double      m       range 0 m..150 m          Distance to car in front measured by Lidar                
- * modeSelectionUser      -                      -           modeSelectionUser      inport     enum        -       -                         -                                                         
- * radarLRMeasurement     radarLRMeasurement     ACCData     radarLRMeasurement     inport     double      m       range 0 m..350 m          Distance to car in front measured by long range radar     
- * radarSRMeasurement     radarSRMeasurement     ACCData     radarSRMeasurement     inport     double      cm      range 0 cm..790 cm        Distance to car in front measured by short range radar    
- * speedMeasuredWheels    speedMeasuredWheels    ACCData     speedMeasuredWheels    inport     double      kmh     range -30 kmh..280 kmh                                                              
- * speedSetpointDriver    speedSetpointDriver    ACCData     speedSetpointDriver    inport     double      kmh     range 0 kmh..200.0 kmh                                                              
- * torqueDemandACC        torqueDemandACC        ACCData     *torqueDemandACC       outport    double      Nm      range 0 Nm..1000 Nm       Calculated torque demand from ACC function                
- * ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
- */
 
 
 /* 
  * Execution function for block ACC_System_If__impl
  */
-void ACC_System_If__impl_execute(void *___nothing, double lidarMeasurement, ACCUserMode_t modeSelectionUser, double radarLRMeasurement, double radarSRMeasurement, double speedMeasuredWheels, double speedSetpointDriver, double *torqueDemandACC) 
+void ACC_Architecture_Homo__impl_ACC_System_If__impl_execute(void *___nothing, double lidarMeasurement, ACCUserMode_t modeSelectionUser, double radarLRMeasurement, double radarSRMeasurement, double speedMeasuredWheels, double speedSetpointDriver, double *torqueDemandACC) 
 {
   /**		ACC_SYSTEM_IF__IMPL_EXECUTE DECLARATIONS 	START		**/
   /**		ACC_SYSTEM_IF__IMPL_EXECUTE DECLARATIONS 	END		**/
-
-  {
-  }
-
-  {
-  }
 
   /**		ACC_SYSTEM_IF__IMPL_EXECUTE	START		**/
   /**		ACC_SYSTEM_IF__IMPL_EXECUTE	END		**/
@@ -180,114 +130,91 @@ void ACC_System_If__impl_execute(void *___nothing, double lidarMeasurement, ACCU
 
 
 /* 
- * atomicblock: driverUserInterface__impl
- * 
- * URL: http://127.0.0.1:63320/node?ref=r%3A3a7acda9-e9c9-4dad-8f9c-2c2ccb980636%28A_ACC._51_ImplementationDefinitionHomogeneousC%29%2F8321407184102458798
- * 
- * 
- * The inport(s)[mode, speedSetpoint] is/are defined in the structure driverUserInterface__impl_data_t in ACC_Architecture_Homo__impl.h
- * 
- * 
- * 
- * Data Properties
- * -------------------------------------------------------------------------------------------------------------
- * Name             DD    DD Owner    Access           Usage      Datatype    Unit    Constraints    Description    
- * -------------------------------------------------------------------------------------------------------------
- * enable           -     -           *enable          outport    boolean     -       -              -              
- * mode             -     -           mode             inport     enum        -       -              -              
- * speedSetpoint    -     -           speedSetpoint    inport     double      kmh     -              -              
- * -------------------------------------------------------------------------------------------------------------
- */
-
-
-/* 
  * Execution function for block driverUserInterface__impl
  */
-void driverUserInterface__impl_execute(void *___nothing, ACCUserMode_t mode, double speedSetpoint, bool *enable) 
+void driverUserInterface__impl_execute(driverUserInterface__impl_data_t *___id, ACCUserMode_t mode, double speedSetpoint, bool *enable) 
 {
+  {
+    bool __assertCondition = speedSetpoint >= 10.0 && speedSetpoint <= 250;
+    if (!__assertCondition) 
+    {
+      ___block_messagelist_Contract_Failed("ACC_Architecture_Homo__impl_driverUserInterface__impl_setpoint", "ACC_Architecture:driverUserInterface?r:b5e3b60d-9942-4df7-a0a8-46f3f7e3f541(A_ACC._40_SWArchitecture)#2537182134637017679");
+      printf("speedSetpoint=%g\n",speedSetpoint);;
+    }
+  }
+
   /**		DRIVERUSERINTERFACE__IMPL_EXECUTE DECLARATIONS 	START		**/
   /**		DRIVERUSERINTERFACE__IMPL_EXECUTE DECLARATIONS 	END		**/
-
-  /* 
-   * Pre conditions: 
-   * pre(0) setpoint : speedSetpoint >= 10.0 && speedSetpoint <= 250
-   *  
-   * Post conditions: 
-   * post(1) modeRules : (mode == OFF) -> (enable == false)
-   * post(2) noACCIfSlow : (speedSetpoint <= 30) -> (enable == false)
-   */
-
-  {
-  }
-
-  {
-  }
 
   /**		DRIVERUSERINTERFACE__IMPL_EXECUTE	START		**/
   /**		DRIVERUSERINTERFACE__IMPL_EXECUTE	END		**/
 
   
   
+  {
+    bool __assertCondition = !((mode == OFF)) || ((*enable) == false);
+    if (!__assertCondition) 
+    {
+      ___block_messagelist_Contract_Failed("ACC_Architecture_Homo__impl_driverUserInterface__impl_modeRules", "ACC_Architecture:driverUserInterface:1?r:b5e3b60d-9942-4df7-a0a8-46f3f7e3f541(A_ACC._40_SWArchitecture)#2537182134637024399");
+      printf("mode=%d\n",mode);;
+      printf("enable=%d\n",(*enable));;
+    }
+  }
+
+  {
+    bool __assertCondition = !((speedSetpoint <= 30)) || ((*enable) == false);
+    if (!__assertCondition) 
+    {
+      ___block_messagelist_Contract_Failed("ACC_Architecture_Homo__impl_driverUserInterface__impl_noACCIfSlow", "ACC_Architecture:driverUserInterface:2?r:b5e3b60d-9942-4df7-a0a8-46f3f7e3f541(A_ACC._40_SWArchitecture)#2537182134637026084");
+      printf("speedSetpoint=%g\n",speedSetpoint);;
+      printf("enable=%d\n",(*enable));;
+    }
+  }
+
 }
-
-
-/* 
- * atomicblock: sensorFusion__impl
- * 
- * URL: http://127.0.0.1:63320/node?ref=r%3A3a7acda9-e9c9-4dad-8f9c-2c2ccb980636%28A_ACC._51_ImplementationDefinitionHomogeneousC%29%2F8321407184102458809
- * 
- * Note that this BI is variant-aware.
- * 
- * 
- * 
- * 
- * The parameter/state variable(s) [LongRangeRadarUpperLimit, ShortRangeRadarUpperLimit] is/are defined in the structure sensorFusion__impl_data_t in ACC_Architecture_Homo__impl.h
- * 
- * Data Properties
- * -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
- * Name                         DD                           DD Owner    Access                              Usage        Datatype    Unit    Constraints              Description                                                        
- * -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
- * fusedRange                   fusedRange                   ACCData     *fusedRange                         outport      double      m       range 0 m..500 m         Distance to car in front, result from fusing all sensor sources    
- * lidarMeasurement             lidarMeasurement             ACCData     lidarMeasurement                    inport       double      m       range 0 m..150 m         Distance to car in front measured by Lidar                         
- * radarLRMeasurement           radarLRMeasurement           ACCData     radarLRMeasurement                  inport       double      m       range 0 m..350 m         Distance to car in front measured by long range radar              
- * radarSRMeasurement           radarSRMeasurement           ACCData     radarSRMeasurement                  inport       double      cm      range 0 cm..790 cm       Distance to car in front measured by short range radar             
- * LongRangeRadarUpperLimit     LongRangeRadarUpperLimit     ACCData     ___id->LongRangeRadarUpperLimit     parameter    double      m       range 200 m..500 m       Upper limit of reliable operation of long range radar              
- * ShortRangeRadarUpperLimit    ShortRangeRadarUpperLimit    ACCData     ___id->ShortRangeRadarUpperLimit    parameter    double      cm      range 500 cm..1000 cm    Upper limit of reliable operation of short range radar             
- * -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
- */
 
 
 /* 
  * Execution function for block sensorFusion__impl
  */
-void sensorFusion__impl_execute(sensorFusion__impl_data_t *___id, double lidarMeasurement, double radarLRMeasurement, double radarSRMeasurement, double *fusedRange) 
+void ACC_Architecture_Homo__impl_sensorFusion__impl_execute(ACC_Architecture_Homo__impl_sensorFusion__impl_data_t *___id, double lidarMeasurement, double radarLRMeasurement, double radarSRMeasurement, double *fusedRange) 
 {
+  {
+    bool __assertCondition = radarLRMeasurement >= 0.2 && radarLRMeasurement <= 350.0;
+    if (!__assertCondition) 
+    {
+      ___block_messagelist_Contract_Failed("ACC_Architecture_Homo__impl_sensorFusion__impl_rLRRange", "ACC_Architecture:sensorFusion?r:b5e3b60d-9942-4df7-a0a8-46f3f7e3f541(A_ACC._40_SWArchitecture)#3930406153836361907");
+      printf("radarLRMeasurement=%g\n",radarLRMeasurement);;
+    }
+  }
+
+  {
+    bool __assertCondition = radarSRMeasurement >= 1.0 && radarSRMeasurement <= 1000;
+    if (!__assertCondition) 
+    {
+      ___block_messagelist_Contract_Failed("ACC_Architecture_Homo__impl_sensorFusion__impl_rSRRange", "ACC_Architecture:sensorFusion:1?r:b5e3b60d-9942-4df7-a0a8-46f3f7e3f541(A_ACC._40_SWArchitecture)#3930406153836366855");
+      printf("radarSRMeasurement=%g\n",radarSRMeasurement);;
+    }
+  }
+
+  {
+    bool __assertCondition = lidarMeasurement >= 0.00 && lidarMeasurement <= 160;
+    if (!__assertCondition) 
+    {
+      ___block_messagelist_Contract_Failed("ACC_Architecture_Homo__impl_sensorFusion__impl_lidRange", "ACC_Architecture:sensorFusion:2?r:b5e3b60d-9942-4df7-a0a8-46f3f7e3f541(A_ACC._40_SWArchitecture)#3930406153836371348");
+      printf("lidarMeasurement=%g\n",lidarMeasurement);;
+    }
+  }
+
   /**		SENSORFUSION__IMPL_EXECUTE DECLARATIONS 	START		**/
-   /** #include "assert.h" **/
+  //#include "assert.h"
   /**		SENSORFUSION__IMPL_EXECUTE DECLARATIONS 	END		**/
-
-  /* 
-   * Pre conditions: 
-   * pre(0) rLRRange : radarLRMeasurement >= 0.2 && radarLRMeasurement <= 350.0
-   * pre(1) rSRRange : radarSRMeasurement >= 1.0 && radarSRMeasurement <= 1000
-   * pre(2) lidRange : lidarMeasurement >= 0.00 && lidarMeasurement <= 160
-   *  
-   * Post conditions: 
-   * post(3) fusRng : fusedRange >= 0.0 && fusedRange <= 300.0
-   */
-
-  {
-  }
-
-  {
-  }
 
   /**		SENSORFUSION__IMPL_EXECUTE	START		**/
    *fusedRange = 0.0;
   
-    /** __CPROVER_assert(radarSRMeasurement >= 0.0);
-      assert(radarSRMeasurement <=___id->ShortRangeRadarUpperLimit);
-	**/
+     //__CPROVER_assert(radarSRMeasurement >= 0.0);
+   //assert(radarSRMeasurement <=___id->ShortRangeRadarUpperLimit);
       if ((100*radarLRMeasurement)>=(___id->ShortRangeRadarUpperLimit)) {
 	   *fusedRange = radarLRMeasurement;
    } else {
@@ -297,90 +224,78 @@ void sensorFusion__impl_execute(sensorFusion__impl_data_t *___id, double lidarMe
 
   
   
+  {
+    bool __assertCondition = (*fusedRange) >= 0.0 && (*fusedRange) <= 300.0;
+    if (!__assertCondition) 
+    {
+      ___block_messagelist_Contract_Failed("ACC_Architecture_Homo__impl_sensorFusion__impl_fusRng", "ACC_Architecture:sensorFusion:3?r:b5e3b60d-9942-4df7-a0a8-46f3f7e3f541(A_ACC._40_SWArchitecture)#4154780055497645787");
+      printf("fusedRange=%g\n",(*fusedRange));;
+    }
+  }
+
 }
-
-
-/* 
- * atomicblock: speedDistanceRegulator__impl
- * 
- * URL: http://127.0.0.1:63320/node?ref=r%3A3a7acda9-e9c9-4dad-8f9c-2c2ccb980636%28A_ACC._51_ImplementationDefinitionHomogeneousC%29%2F8321407184102458820
- * 
- * -> implements ESD-81 traced to blockinterface speedDistanceRegulator. https://athena.industrysoftware.automation.siemens.com//polarion/#/project/jrichter/workitem?id=ESD-81
- * 
- * 
- * 
- * The parameter/state variable(s) [kp, kd, ki] is/are defined in the structure speedDistanceRegulator__impl_data_t in ACC_Architecture_Homo__impl.h
- * 
- * Data Properties
- * ---------------------------------------------------------------------------------------------------------------------
- * Name                DD    DD Owner    Access              Usage        Datatype    Unit    Constraints    Description    
- * ---------------------------------------------------------------------------------------------------------------------
- * distanceMeasured    -     -           distanceMeasured    inport       double      m       -              -              
- * enable              -     -           enable              inport       boolean     -       -              -              
- * speedMeasured       -     -           speedMeasured       inport       double      kmh     -              -              
- * speedSetpoint       -     -           speedSetpoint       inport       double      kmh     -              -              
- * torqueDemand        -     -           *torqueDemand       outport      double      Nm      -              -              
- * kp                  -     -           ___id->kp           parameter    double      -       -              -              
- * kd                  -     -           ___id->kd           parameter    double      -       -              -              
- * ki                  -     -           ___id->ki           parameter    double      -       -              -              
- * ---------------------------------------------------------------------------------------------------------------------
- */
 
 
 /* 
  * Execution function for block speedDistanceRegulator__impl
  */
-void speedDistanceRegulator__impl_execute(speedDistanceRegulator__impl_data_t *___id, double distanceMeasured, bool enable, double speedMeasured, double speedSetpoint, double *torqueDemand) 
+void ACC_Architecture_Homo__impl_speedDistanceRegulator__impl_execute(ACC_Architecture_Homo__impl_speedDistanceRegulator__impl_data_t *___id, double distanceMeasured, bool enable, double speedMeasured, double speedSetpoint, double *torqueDemand) 
 {
+  {
+    bool __assertCondition = speedSetpoint <= 200.0 && speedSetpoint >= 30.0;
+    if (!__assertCondition) 
+    {
+      ___block_messagelist_Contract_Failed("ACC_Architecture_Homo__impl_speedDistanceRegulator__impl_setpointRange", "ACC_Architecture:speedDistanceRegulator?r:b5e3b60d-9942-4df7-a0a8-46f3f7e3f541(A_ACC._40_SWArchitecture)#3930406153836323392");
+      printf("speedSetpoint=%g\n",speedSetpoint);;
+    }
+  }
+
+  {
+    bool __assertCondition = speedMeasured >= -35.0 && speedMeasured <= 280.0;
+    if (!__assertCondition) 
+    {
+      ___block_messagelist_Contract_Failed("ACC_Architecture_Homo__impl_speedDistanceRegulator__impl_speedMeasuredRange", "ACC_Architecture:speedDistanceRegulator:1?r:b5e3b60d-9942-4df7-a0a8-46f3f7e3f541(A_ACC._40_SWArchitecture)#3930406153836330887");
+      printf("speedMeasured=%g\n",speedMeasured);;
+    }
+  }
+
+  {
+    bool __assertCondition = distanceMeasured >= 0.0 && distanceMeasured <= 300.0;
+    if (!__assertCondition) 
+    {
+      ___block_messagelist_Contract_Failed("ACC_Architecture_Homo__impl_speedDistanceRegulator__impl_distRange", "ACC_Architecture:speedDistanceRegulator:2?r:b5e3b60d-9942-4df7-a0a8-46f3f7e3f541(A_ACC._40_SWArchitecture)#3930406153836343814");
+      printf("distanceMeasured=%g\n",distanceMeasured);;
+    }
+  }
+
   /**		SPEEDDISTANCEREGULATOR__IMPL_EXECUTE DECLARATIONS 	START		**/
   /**		SPEEDDISTANCEREGULATOR__IMPL_EXECUTE DECLARATIONS 	END		**/
-
-  /* 
-   * Pre conditions: 
-   * pre(0) setpointRange : speedSetpoint <= 200.0 && speedSetpoint >= 30.0
-   * pre(1) speedMeasuredRange : speedMeasured >= -35.0 && speedMeasured <= 280.0
-   * pre(2) distRange : distanceMeasured >= 0.0 && distanceMeasured <= 300.0
-   *  
-   * Post conditions: 
-   * post(3) trqRange : torqueDemand >= 0.0 && torqueDemand <= 635.0
-   * post(4) offImpliesZeroTorqueDemand : (enable == false) -> (torqueDemand == 0)
-   */
-
-  {
-  }
-
-  {
-  }
 
   /**		SPEEDDISTANCEREGULATOR__IMPL_EXECUTE	START		**/
   /**		SPEEDDISTANCEREGULATOR__IMPL_EXECUTE	END		**/
 
   
   
+  {
+    bool __assertCondition = (*torqueDemand) >= 0.0 && (*torqueDemand) <= 635.0;
+    if (!__assertCondition) 
+    {
+      ___block_messagelist_Contract_Failed("ACC_Architecture_Homo__impl_speedDistanceRegulator__impl_trqRange", "ACC_Architecture:speedDistanceRegulator:3?r:b5e3b60d-9942-4df7-a0a8-46f3f7e3f541(A_ACC._40_SWArchitecture)#3930406153836348430");
+      printf("torqueDemand=%g\n",(*torqueDemand));;
+    }
+  }
+
+  {
+    bool __assertCondition = !((enable == false)) || ((*torqueDemand) == 0);
+    if (!__assertCondition) 
+    {
+      ___block_messagelist_Contract_Failed("ACC_Architecture_Homo__impl_speedDistanceRegulator__impl_offImpliesZeroTorqueDemand", "ACC_Architecture:speedDistanceRegulator:4?r:b5e3b60d-9942-4df7-a0a8-46f3f7e3f541(A_ACC._40_SWArchitecture)#4785657477832526382");
+      printf("enable=%d\n",enable);;
+      printf("torqueDemand=%g\n",(*torqueDemand));;
+    }
+  }
+
 }
-
-
-/* 
- * atomicblock: ACC_SystemNoEnum_If__impl
- * 
- * URL: http://127.0.0.1:63320/node?ref=r%3A3a7acda9-e9c9-4dad-8f9c-2c2ccb980636%28A_ACC._51_ImplementationDefinitionHomogeneousC%29%2F8321407184104586733
- * 
- * 
- * 
- * 
- * Data Properties
- * ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
- * Name                   DD                     DD Owner    Access                 Usage      Datatype    Unit    Constraints               Description                                               
- * ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
- * lidarMeasurement       lidarMeasurement       ACCData     lidarMeasurement       inport     double      m       range 0 m..150 m          Distance to car in front measured by Lidar                
- * modeSelectionUser      -                      -           modeSelectionUser      inport     boolean     -       -                         -                                                         
- * radarLRMeasurement     radarLRMeasurement     ACCData     radarLRMeasurement     inport     double      m       range 0 m..350 m          Distance to car in front measured by long range radar     
- * radarSRMeasurement     radarSRMeasurement     ACCData     radarSRMeasurement     inport     double      cm      range 0 cm..790 cm        Distance to car in front measured by short range radar    
- * speedMeasuredWheels    speedMeasuredWheels    ACCData     speedMeasuredWheels    inport     double      kmh     range -30 kmh..280 kmh                                                              
- * speedSetpointDriver    speedSetpointDriver    ACCData     speedSetpointDriver    inport     double      kmh     range 0 kmh..200.0 kmh                                                              
- * torqueDemandACC        torqueDemandACC        ACCData     *torqueDemandACC       outport    double      Nm      range 0 Nm..1000 Nm       Calculated torque demand from ACC function                
- * ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
- */
 
 
 /* 
@@ -391,73 +306,66 @@ void ACC_SystemNoEnum_If__impl_execute(void *___nothing, double lidarMeasurement
   /**		ACC_SYSTEMNOENUM_IF__IMPL_EXECUTE DECLARATIONS 	START		**/
   /**		ACC_SYSTEMNOENUM_IF__IMPL_EXECUTE DECLARATIONS 	END		**/
 
-  /* 
-   * Post conditions: 
-   * post(0) offImpliesNoTorqueDemand : (modeSelectionUser == false) -> (torqueDemandACC == 0)
-   */
-
-  {
-  }
-
-  {
-  }
-
   /**		ACC_SYSTEMNOENUM_IF__IMPL_EXECUTE	START		**/
   /**		ACC_SYSTEMNOENUM_IF__IMPL_EXECUTE	END		**/
 
   
   
+  {
+    bool __assertCondition = !((modeSelectionUser == false)) || ((*torqueDemandACC) == 0);
+    if (!__assertCondition) 
+    {
+      ___block_messagelist_Contract_Failed("ACC_Architecture_Homo__impl_ACC_SystemNoEnum_If__impl_offImpliesNoTorqueDemand", "ACC_Architecture:ACC_SystemNoEnum_If?r:b5e3b60d-9942-4df7-a0a8-46f3f7e3f541(A_ACC._40_SWArchitecture)#4785657477832512263");
+      printf("torqueDemandACC=%g\n",(*torqueDemandACC));;
+      printf("modeSelectionUser=%d\n",modeSelectionUser);;
+    }
+  }
+
 }
-
-
-/* 
- * atomicblock: driverUIWOEnums__impl
- * 
- * URL: http://127.0.0.1:63320/node?ref=r%3A3a7acda9-e9c9-4dad-8f9c-2c2ccb980636%28A_ACC._51_ImplementationDefinitionHomogeneousC%29%2F8321407184104586753
- * 
- * -> implements Q14-70 traced to blockinterface driverUIWOEnums. https://athena.industrysoftware.automation.siemens.com/polarion/#/project/jrichter/workitem?id=Q14-70
- * 
- * 
- * 
- * Data Properties
- * -------------------------------------------------------------------------------------------------------------
- * Name             DD    DD Owner    Access           Usage      Datatype    Unit    Constraints    Description    
- * -------------------------------------------------------------------------------------------------------------
- * enable           -     -           *enable          outport    boolean     -       -              -              
- * mode             -     -           mode             inport     boolean     -       -              -              
- * speedSetpoint    -     -           speedSetpoint    inport     double      kmh     -              -              
- * -------------------------------------------------------------------------------------------------------------
- */
 
 
 /* 
  * Execution function for block driverUIWOEnums__impl
  */
-void driverUIWOEnums__impl_execute(void *___nothing, bool mode, double speedSetpoint, bool *enable) 
+void ACC_Architecture_Homo__impl_driverUIWOEnums__impl_execute(ACC_Architecture_Homo__impl_driverUIWOEnums__impl_data_t *___id, bool mode, double speedSetpoint, bool *enable) 
 {
+  {
+    bool __assertCondition = speedSetpoint >= 10.0 && speedSetpoint <= 250;
+    if (!__assertCondition) 
+    {
+      ___block_messagelist_Contract_Failed("ACC_Architecture_Homo__impl_driverUIWOEnums__impl_setpoint", "ACC_Architecture:driverUIWOEnums?r:b5e3b60d-9942-4df7-a0a8-46f3f7e3f541(A_ACC._40_SWArchitecture)#8321407184104355417");
+      printf("speedSetpoint=%g\n",speedSetpoint);;
+    }
+  }
+
   /**		DRIVERUIWOENUMS__IMPL_EXECUTE DECLARATIONS 	START		**/
   /**		DRIVERUIWOENUMS__IMPL_EXECUTE DECLARATIONS 	END		**/
-
-  /* 
-   * Pre conditions: 
-   * pre(0) setpoint : speedSetpoint >= 10.0 && speedSetpoint <= 250
-   *  
-   * Post conditions: 
-   * post(1) modeRules : (mode == false) -> (enable == false)
-   * post(2) noACCIfSlow : (speedSetpoint <= 30) -> (enable == false)
-   */
-
-  {
-  }
-
-  {
-  }
 
   /**		DRIVERUIWOENUMS__IMPL_EXECUTE	START		**/
   /**		DRIVERUIWOENUMS__IMPL_EXECUTE	END		**/
 
   
   
+  {
+    bool __assertCondition = !((mode == false)) || ((*enable) == false);
+    if (!__assertCondition) 
+    {
+      ___block_messagelist_Contract_Failed("ACC_Architecture_Homo__impl_driverUIWOEnums__impl_modeRules", "ACC_Architecture:driverUIWOEnums:1?r:b5e3b60d-9942-4df7-a0a8-46f3f7e3f541(A_ACC._40_SWArchitecture)#8321407184104355431");
+      printf("enable=%d\n",(*enable));;
+      printf("mode=%d\n",mode);;
+    }
+  }
+
+  {
+    bool __assertCondition = !((speedSetpoint <= 30)) || ((*enable) == false);
+    if (!__assertCondition) 
+    {
+      ___block_messagelist_Contract_Failed("ACC_Architecture_Homo__impl_driverUIWOEnums__impl_noACCIfSlow", "ACC_Architecture:driverUIWOEnums:2?r:b5e3b60d-9942-4df7-a0a8-46f3f7e3f541(A_ACC._40_SWArchitecture)#8321407184104355441");
+      printf("enable=%d\n",(*enable));;
+      printf("speedSetpoint=%g\n",speedSetpoint);;
+    }
+  }
+
 }
 
 

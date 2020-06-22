@@ -22,7 +22,13 @@
 extern "C" {
 #endif
 
+/* 
+ * Note that this BI is variant-aware.
+ */
 typedef void ((*(ACC_Architecture_sensorFusion_executeTypedef))(void *,double ,double ,double ,double *));
+/* 
+ * Note that this BI is variant-aware.
+ */
 typedef void ((*(ACC_Architecture_sensorFusion_updateTypedef))(void *,double ,double ,double ));
 typedef void ((*(ACC_Architecture_speedDistanceRegulator_executeTypedef))(void *,double ,bool ,double ,double ,double *));
 typedef void ((*(ACC_Architecture_speedDistanceRegulator_updateTypedef))(void *,double ,bool ,double ,double ));

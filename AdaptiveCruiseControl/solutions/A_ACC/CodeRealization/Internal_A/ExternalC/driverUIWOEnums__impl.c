@@ -4,6 +4,7 @@
 #include "Cla_CommonUnits.h"
 #include "ACC_Units.h"
 #include "ACC_Parameters.h"
+#include "___BlockMessages.h"
 
 
 /**		ADDITIONAL HEADERS START		**/
@@ -17,47 +18,21 @@
 /**		ADDITIONAL DECLARATIONS END		**/
 
 /* 
- * atomicblock: driverUIWOEnums__impl
- * 
- * URL: http://127.0.0.1:63320/node?ref=r%3Af6839c77-5b9d-441b-9a46-8668f7352d69%28A_ACC._50_ImplementationDefinitionHeterogeneous%29%2F8321407184104421194
- * 
- * -> implements Q14-70 traced to blockinterface driverUIWOEnums. https://athena.industrysoftware.automation.siemens.com/polarion/#/project/jrichter/workitem?id=Q14-70
- * 
- * 
- * 
- * Data Properties
- * -------------------------------------------------------------------------------------------------------------
- * Name             DD    DD Owner    Access           Usage      Datatype    Unit    Constraints    Description    
- * -------------------------------------------------------------------------------------------------------------
- * enable           -     -           *enable          outport    boolean     -       -              -              
- * mode             -     -           mode             inport     boolean     -       -              -              
- * speedSetpoint    -     -           speedSetpoint    inport     double      kmh     -              -              
- * -------------------------------------------------------------------------------------------------------------
- */
-
-
-/* 
  * Execution function for block driverUIWOEnums__impl
  */
-void driverUIWOEnums__impl_execute(void *___nothing, bool mode, double speedSetpoint, bool *enable) 
+void driverUIWOEnums__impl_execute(driverUIWOEnums__impl_data_t *___id, bool mode, double speedSetpoint, bool *enable) 
 {
+  {
+    bool __assertCondition = speedSetpoint >= 10.0 && speedSetpoint <= 250;
+    if (!__assertCondition) 
+    {
+      ___block_messagelist_Contract_Failed("driverUIWOEnums__impl_driverUIWOEnums__impl_setpoint", "ACC_Architecture:driverUIWOEnums?r:b5e3b60d-9942-4df7-a0a8-46f3f7e3f541(A_ACC._40_SWArchitecture)#8321407184104355417");
+      printf("speedSetpoint=%g\n",speedSetpoint);;
+    }
+  }
+
   /**		DRIVERUIWOENUMS__IMPL_EXECUTE DECLARATIONS 	START		**/
   /**		DRIVERUIWOENUMS__IMPL_EXECUTE DECLARATIONS 	END		**/
-
-  /* 
-   * Pre conditions: 
-   * pre(0) setpoint : speedSetpoint >= 10.0 && speedSetpoint <= 250
-   *  
-   * Post conditions: 
-   * post(1) modeRules : (mode == false) -> (enable == false)
-   * post(2) noACCIfSlow : (speedSetpoint <= 30) -> (enable == false)
-   */
-
-  {
-  }
-
-  {
-  }
 
   /**		DRIVERUIWOENUMS__IMPL_EXECUTE	START		**/
    	if ((mode == ENGAGED) && (speedSetpoint >= 30.0)) {
@@ -70,6 +45,26 @@ void driverUIWOEnums__impl_execute(void *___nothing, bool mode, double speedSetp
 
   
   
+  {
+    bool __assertCondition = !((mode == false)) || ((*enable) == false);
+    if (!__assertCondition) 
+    {
+      ___block_messagelist_Contract_Failed("driverUIWOEnums__impl_driverUIWOEnums__impl_modeRules", "ACC_Architecture:driverUIWOEnums:1?r:b5e3b60d-9942-4df7-a0a8-46f3f7e3f541(A_ACC._40_SWArchitecture)#8321407184104355431");
+      printf("mode=%d\n",mode);;
+      printf("enable=%d\n",(*enable));;
+    }
+  }
+
+  {
+    bool __assertCondition = !((speedSetpoint <= 30)) || ((*enable) == false);
+    if (!__assertCondition) 
+    {
+      ___block_messagelist_Contract_Failed("driverUIWOEnums__impl_driverUIWOEnums__impl_noACCIfSlow", "ACC_Architecture:driverUIWOEnums:2?r:b5e3b60d-9942-4df7-a0a8-46f3f7e3f541(A_ACC._40_SWArchitecture)#8321407184104355441");
+      printf("speedSetpoint=%g\n",speedSetpoint);;
+      printf("enable=%d\n",(*enable));;
+    }
+  }
+
 }
 
 

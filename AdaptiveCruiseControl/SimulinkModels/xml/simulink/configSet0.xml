@@ -95,7 +95,7 @@
         <P Name="BlockReduction">on</P>
         <P Name="BooleanDataType">on</P>
         <P Name="ConditionallyExecuteInputs">on</P>
-        <P Name="DefaultParameterBehavior">Inlined</P>
+        <P Name="DefaultParameterBehavior">Tunable</P>
         <P Name="UseDivisionForNetSlopeComputation">off</P>
         <P Name="UseFloatMulNetSlope">off</P>
         <P Name="DefaultUnderspecifiedDataType">double</P>
@@ -146,7 +146,7 @@
         <P Name="ConsistencyChecking">none</P>
         <P Name="ArrayBoundsChecking">none</P>
         <P Name="SignalInfNanChecking">none</P>
-        <P Name="SignalRangeChecking">error</P>
+        <P Name="SignalRangeChecking">none</P>
         <P Name="ReadBeforeWriteMsg">UseLocalSettings</P>
         <P Name="WriteAfterWriteMsg">UseLocalSettings</P>
         <P Name="WriteAfterReadMsg">UseLocalSettings</P>
@@ -167,7 +167,7 @@
         <P Name="MaskedZcDiagnostic">warning</P>
         <P Name="IgnoredZcDiagnostic">warning</P>
         <P Name="SolverPrmCheckMsg">none</P>
-        <P Name="InheritedTsInSrcMsg">none</P>
+        <P Name="InheritedTsInSrcMsg">warning</P>
         <P Name="MultiTaskDSMMsg">error</P>
         <P Name="MultiTaskCondExecSysMsg">error</P>
         <P Name="MultiTaskRateTransMsg">error</P>

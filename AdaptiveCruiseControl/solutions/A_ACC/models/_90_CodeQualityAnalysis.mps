@@ -21,7 +21,7 @@
     </language>
   </registry>
   <node concept="3iQ1XQ" id="7Ry$FNXTiJj">
-    <property role="mI$tJ" value="C:\WCs\Z028b-ESD\CSD_2020\10-DemoProjects\AdaptiveCruiseControl\solutions\A_ACC\CodeRealizationHomogeneousC\default_supplier\ExternalC" />
+    <property role="mI$tJ" value="C:\WCs\capitalsoftwaredesignerprojects\AdaptiveCruiseControl\solutions\A_ACC\CodeRealizationHomogeneousC" />
     <property role="TrG5h" value="Homogeneous" />
     <property role="mI$tF" value="esd-sample" />
     <property role="1R15mL" value="https://sigrid-says.com/system-overview/siemens/esd-sample/components" />

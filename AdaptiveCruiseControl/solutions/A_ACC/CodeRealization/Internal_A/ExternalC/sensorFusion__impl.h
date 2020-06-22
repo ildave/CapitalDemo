@@ -14,6 +14,8 @@
 
 #include "___TriggerInfo.h"
 
+#include <stdio.h>
+
 
 
 /**		ADDITIONAL HEADERS START		**/
@@ -30,6 +32,9 @@ typedef struct sensorFusion__impl_data sensorFusion__impl_data_t;
 struct sensorFusion__impl_data {
   double LongRangeRadarUpperLimit;
   double ShortRangeRadarUpperLimit;
+  bool __preconditionFailed_rLRRange;
+  bool __preconditionFailed_rSRRange;
+  bool __preconditionFailed_lidRange;
 };
 
 void sensorFusion__impl_execute(sensorFusion__impl_data_t *___id, double lidarMeasurement, double radarLRMeasurement, double radarSRMeasurement, double *fusedRange);
