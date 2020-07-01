@@ -20,7 +20,7 @@
 /* 
  * Execution function for block driverUIWOEnums__impl
  */
-void driverUIWOEnums__impl_execute(driverUIWOEnums__impl_data_t *___id, bool mode, double speedSetpoint, bool *enable) 
+void driverUIWOEnums__impl_driverUIWOEnums__impl_execute(driverUIWOEnums__impl_driverUIWOEnums__impl_data_t *___id, bool mode, double speedSetpoint, bool *enable) 
 {
   {
     bool __assertCondition = speedSetpoint >= 10.0 && speedSetpoint <= 250;
@@ -50,8 +50,8 @@ void driverUIWOEnums__impl_execute(driverUIWOEnums__impl_data_t *___id, bool mod
     if (!__assertCondition) 
     {
       ___block_messagelist_Contract_Failed("driverUIWOEnums__impl_driverUIWOEnums__impl_modeRules", "ACC_Architecture:driverUIWOEnums:1?r:b5e3b60d-9942-4df7-a0a8-46f3f7e3f541(A_ACC._40_SWArchitecture)#8321407184104355431");
-      printf("mode=%d\n",mode);;
       printf("enable=%d\n",(*enable));;
+      printf("mode=%d\n",mode);;
     }
   }
 
@@ -60,8 +60,8 @@ void driverUIWOEnums__impl_execute(driverUIWOEnums__impl_data_t *___id, bool mod
     if (!__assertCondition) 
     {
       ___block_messagelist_Contract_Failed("driverUIWOEnums__impl_driverUIWOEnums__impl_noACCIfSlow", "ACC_Architecture:driverUIWOEnums:2?r:b5e3b60d-9942-4df7-a0a8-46f3f7e3f541(A_ACC._40_SWArchitecture)#8321407184104355441");
-      printf("speedSetpoint=%g\n",speedSetpoint);;
       printf("enable=%d\n",(*enable));;
+      printf("speedSetpoint=%g\n",speedSetpoint);;
     }
   }
 

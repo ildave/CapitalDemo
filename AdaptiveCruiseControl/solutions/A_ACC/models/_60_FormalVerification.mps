@@ -111,7 +111,6 @@
         <property id="2711621784026951428" name="pointOnlyToExistingFile" index="1RwFax" />
       </concept>
       <concept id="6156524541423588207" name="com.mbeddr.mpsutil.filepicker.structure.SolutionRelativeFilePicker" flags="ng" index="3NXOOs" />
-      <concept id="4881264737620519319" name="com.mbeddr.mpsutil.filepicker.structure.FileSystemDirPicker" flags="ng" index="3RfPnX" />
     </language>
     <language id="5d09074f-babf-4f2b-b78b-e9929af0f3be" name="com.mbeddr.analyses.base">
       <concept id="6472990431939580591" name="com.mbeddr.analyses.base.structure.AnalysisConfiguration" flags="ng" index="3V_BKJ">
@@ -195,8 +194,10 @@
         <property role="3kgbRO" value="false" />
         <property role="3N1Lgt" value="CodeRealization/Internal_A/ExternalC/sensorFusion__impl.c" />
       </node>
-      <node concept="3RfPnX" id="50YVGmH7Qgu" role="1L$uGl">
-        <property role="3N1Lgt" value="C:/WCs/Z028b-ESD/ESD_19_2/DemoProjects/AdaptiveCruiseControl/solutions/A_ACC/source_gen/A_ACC/_60_FormalVerification" />
+      <node concept="9PVaO" id="ch2LyEzEId" role="1L$uGl">
+        <property role="1RwFax" value="true" />
+        <property role="3kgbRO" value="true" />
+        <property role="3N1Lgt" value="source_gen/A_ACC/_60_FormalVerification/" />
       </node>
       <node concept="9PVaO" id="50YVGmH8N7e" role="1L$uGl">
         <property role="1RwFax" value="true" />

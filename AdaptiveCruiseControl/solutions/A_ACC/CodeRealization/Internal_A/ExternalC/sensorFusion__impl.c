@@ -20,10 +20,10 @@
 /* 
  * Execution function for block sensorFusion__impl
  */
-void sensorFusion__impl_execute(sensorFusion__impl_data_t *___id, double lidarMeasurement, double radarLRMeasurement, double radarSRMeasurement, double *fusedRange) 
+void sensorFusion__impl_sensorFusion__impl_execute(sensorFusion__impl_sensorFusion__impl_data_t *___id, double lidarMeasurement, double radarLRMeasurement, double radarSRMeasurement, double *fusedRange) 
 {
   {
-    bool __assertCondition = radarLRMeasurement >= 0.02 && radarLRMeasurement <= 300.0;
+    bool __assertCondition = radarLRMeasurement >= 0.2 && radarLRMeasurement <= 350.0;
     if (!__assertCondition) 
     {
       ___block_messagelist_Contract_Failed("sensorFusion__impl_sensorFusion__impl_rLRRange", "ACC_Architecture:sensorFusion?r:b5e3b60d-9942-4df7-a0a8-46f3f7e3f541(A_ACC._40_SWArchitecture)#3930406153836361907");
@@ -32,7 +32,7 @@ void sensorFusion__impl_execute(sensorFusion__impl_data_t *___id, double lidarMe
   }
 
   {
-    bool __assertCondition = radarSRMeasurement >= 1.0 && radarSRMeasurement <= 800;
+    bool __assertCondition = radarSRMeasurement >= 1.0 && radarSRMeasurement <= 1000;
     if (!__assertCondition) 
     {
       ___block_messagelist_Contract_Failed("sensorFusion__impl_sensorFusion__impl_rSRRange", "ACC_Architecture:sensorFusion:1?r:b5e3b60d-9942-4df7-a0a8-46f3f7e3f541(A_ACC._40_SWArchitecture)#3930406153836366855");

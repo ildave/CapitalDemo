@@ -156,8 +156,8 @@ void driverUserInterface__impl_execute(driverUserInterface__impl_data_t *___id, 
     if (!__assertCondition) 
     {
       ___block_messagelist_Contract_Failed("ACC_Architecture_Homo__impl_driverUserInterface__impl_modeRules", "ACC_Architecture:driverUserInterface:1?r:b5e3b60d-9942-4df7-a0a8-46f3f7e3f541(A_ACC._40_SWArchitecture)#2537182134637024399");
-      printf("enable=%d\n",(*enable));;
       printf("mode=%d\n",mode);;
+      printf("enable=%d\n",(*enable));;
     }
   }
 
@@ -290,8 +290,8 @@ void ACC_Architecture_Homo__impl_speedDistanceRegulator__impl_execute(ACC_Archit
     if (!__assertCondition) 
     {
       ___block_messagelist_Contract_Failed("ACC_Architecture_Homo__impl_speedDistanceRegulator__impl_offImpliesZeroTorqueDemand", "ACC_Architecture:speedDistanceRegulator:4?r:b5e3b60d-9942-4df7-a0a8-46f3f7e3f541(A_ACC._40_SWArchitecture)#4785657477832526382");
-      printf("torqueDemand=%g\n",(*torqueDemand));;
       printf("enable=%d\n",enable);;
+      printf("torqueDemand=%g\n",(*torqueDemand));;
     }
   }
 
@@ -351,8 +351,8 @@ void ACC_Architecture_Homo__impl_driverUIWOEnums__impl_execute(ACC_Architecture_
     if (!__assertCondition) 
     {
       ___block_messagelist_Contract_Failed("ACC_Architecture_Homo__impl_driverUIWOEnums__impl_modeRules", "ACC_Architecture:driverUIWOEnums:1?r:b5e3b60d-9942-4df7-a0a8-46f3f7e3f541(A_ACC._40_SWArchitecture)#8321407184104355431");
-      printf("mode=%d\n",mode);;
       printf("enable=%d\n",(*enable));;
+      printf("mode=%d\n",mode);;
     }
   }
 

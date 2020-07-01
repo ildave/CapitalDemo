@@ -25,11 +25,11 @@
 extern "C" {
 #endif
 
-typedef struct sensorFusion__impl_data sensorFusion__impl_data_t;
+typedef struct sensorFusion__impl_sensorFusion__impl_data sensorFusion__impl_sensorFusion__impl_data_t;
 /* 
  * instance data for block sensorFusion__impl
  */
-struct sensorFusion__impl_data {
+struct sensorFusion__impl_sensorFusion__impl_data {
   double LongRangeRadarUpperLimit;
   double ShortRangeRadarUpperLimit;
   bool __preconditionFailed_rLRRange;
@@ -37,7 +37,7 @@ struct sensorFusion__impl_data {
   bool __preconditionFailed_lidRange;
 };
 
-void sensorFusion__impl_execute(sensorFusion__impl_data_t *___id, double lidarMeasurement, double radarLRMeasurement, double radarSRMeasurement, double *fusedRange);
+void sensorFusion__impl_sensorFusion__impl_execute(sensorFusion__impl_sensorFusion__impl_data_t *___id, double lidarMeasurement, double radarLRMeasurement, double radarSRMeasurement, double *fusedRange);
 
 
 
