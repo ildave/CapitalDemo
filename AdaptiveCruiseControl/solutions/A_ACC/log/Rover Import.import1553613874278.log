@@ -1,8 +1,0 @@
-2019/03/26 16:24:34 CET Importing files from project directory C:/WCs/ESDBusinessDevelopment/Product_Input/DemoModels/AdaptiveCruiseControl/legacyCode/Rover
-2019/03/26 16:24:39 CET ERROR:clangrdf.logger:C:\WCs\ESDBusinessDevelopment\Product_Input\DemoModels\AdaptiveCruiseControl\legacyCode\Rover\ATRover_autosar_rtw\ATRover.c:95:49: error: too many arguments to function call, expected 8, have 9
-2019/03/26 16:24:42 CET Import completed
-2019/03/26 16:24:42 CET Total number of files 35
-2019/03/26 16:24:42 CET Total number of functions 11
-2019/03/26 16:24:42 CET Total number of global variables 12
-2019/03/26 16:24:42 CET Total number of static variables 0
-2019/03/26 16:24:42 CET Total time (in hh:mm:ss) 00:00:07
