@@ -1,0 +1,185 @@
+<html>
+  <head>
+    <title>Validation Report 
+        A_Export_Template</title>
+    <style>
+        .footer{ 
+            position: fixed; 
+            text-align: center;
+            bottom: 0px;
+            width: 100%;
+        }
+        
+        html { font-family: Verdana, Arial, Helvetica, sans-serif; } h1 { color: #006487; } h2 { color: #147391; }
+        
+        added { color: #56a356;}
+        
+        removed { 
+            color: #FF00AB;
+            text-decoration: line-through;
+        }
+        
+        modified { color: #4076ed; }
+        
+        table.roundedCorners {
+            border: 2px solid;
+            border-color: #66b3ff;
+            border-radius: 13px;
+            border-spacing: 0px;
+        }
+        
+        table.roundedCorners td, 
+        table.roundedCorners th { 
+            border-bottom: 2px solid;
+            border-right: 2px solid;
+            border-color: #66b3ff;
+            padding: 10px; 
+        }
+        
+        tr:nth-child(even){background-color: #f2f2f2} 
+        
+        table.roundedCorners tr:last-child > td {
+            border-bottom: none;
+        }
+        
+        table.roundedCorners td:last-child {
+            border-right: none;
+        }
+        
+        table.roundedCorners th:last-child {
+            border-right: none;
+        }
+        
+        .underline {text-decoration: underline;}
+        </style>
+  </head>
+  <body>
+    <h2>Validation Report for 
+        A_Export_Template</h2>
+    <table class="roundedCorners" width="95%" cellspacing="1">
+      <h3>Target - Simulink</h3>
+      <tr>
+        <th>File Name</th>
+        <th>Block Name</th>
+        <th>Expected Block Properties</th>
+        <th>Actual Block Properties</th>
+        <th>Status</th>
+        <th>Information about mismatch</th>
+      </tr>
+      <block>
+        <tr>
+          <td>
+            <a href="C:\repo_ccc\trunk\BusinessDevelopment\Product_Input\DemoModels\AHCDemo\solutions\AHCDemo\Implementations\supplierA\Simulink\B_Atomic_Blocks\at_slx_CarDetection.slx">at_slx_CarDetection.slx</a>
+          </td>
+          <td>at_slx_CarDetection</td>
+          <td>
+            <dummy>
+              <br>
+                <b>Inports</b>
+              </br>
+              <removed>uint8 [320][240] Camera_Out<br/></removed>
+            </dummy>
+            <dummy>
+              <br>
+                <b>Outports</b>
+              </br>
+              <removed>boolean Car_Detected<br/></removed>
+            </dummy>
+            <dummy>
+              <br>
+                <b>Parameters</b>
+              </br>
+              <removed>uint8 Threshold_Grayscale<br/></removed>
+              <removed>uint8 Threshold_Pixels<br/></removed>
+            </dummy>
+            
+          </td>
+          <td></td>
+          <td>&#10005;</td>
+          <td>
+            <removed>InPort: Camera_Out is removed<br/></removed>
+            <removed>Parameter: Threshold_Grayscale is removed<br/></removed>
+            <removed>OutPort: Car_Detected is removed<br/></removed>
+            <removed>Parameter: Threshold_Pixels is removed<br/></removed>
+          </td>
+        </tr>
+      </block>
+      <block>
+        <tr>
+          <td>
+            <a href="C:\repo_ccc\trunk\BusinessDevelopment\Product_Input\DemoModels\AHCDemo\solutions\AHCDemo\Implementations\supplierA\Simulink\B_Atomic_Blocks\at_slk_HBA.slx">at_slk_HBA.slx</a>
+          </td>
+          <td>at_slk_HBA</td>
+          <td>
+            <dummy>
+              <br>
+                <b>Inports</b>
+              </br>
+              <removed>boolean Car_Detected<br/></removed>
+              <removed>double Vehicle_Speed<br/></removed>
+            </dummy>
+            <dummy>
+              <br>
+                <b>Outports</b>
+              </br>
+              <removed>eBeamState HBA_Signal<br/></removed>
+            </dummy>
+            
+          </td>
+          <td></td>
+          <td>&#10005;</td>
+          <td>
+            <removed>InPort: Car_Detected is removed<br/></removed>
+            <removed>OutPort: HBA_Signal is removed<br/></removed>
+            <removed>InPort: Vehicle_Speed is removed<br/></removed>
+          </td>
+        </tr>
+      </block>
+      <block>
+        <tr>
+          <td>
+            <a href="C:\repo_ccc\trunk\BusinessDevelopment\Product_Input\DemoModels\AHCDemo\solutions\AHCDemo\Implementations\supplierA\Simulink\B_Atomic_Blocks\at_slk_Sensor2Phy.slx">at_slk_Sensor2Phy.slx</a>
+          </td>
+          <td>at_slk_Sensor2Phy</td>
+          <td>
+            <dummy>
+              <br>
+                <b>Inports</b>
+              </br>
+              <removed>double Dash_Sensor_Out<br/></removed>
+            </dummy>
+            <dummy>
+              <br>
+                <b>Outports</b>
+              </br>
+              <removed>double Dash_Illuminance<br/></removed>
+            </dummy>
+            
+          </td>
+          <td></td>
+          <td>&#10005;</td>
+          <td>
+            <removed>OutPort: Dash_Illuminance is removed<br/></removed>
+            <removed>InPort: Dash_Sensor_Out is removed<br/></removed>
+          </td>
+        </tr>
+      </block>
+    </table>
+    (Key: 
+    <i>
+      <added>Newly Added</added>
+      /
+      <removed>Removed entry</removed>
+      /
+      <modified>Modified/Renamed</modified>
+    </i>
+    )
+    
+    <div class="footer">
+      Last Validated by 
+      <i>ohm9xd</i>
+       at 
+      <i>2019-04-12T12:03:59</i>
+    </div>
+  </body>
+</html>

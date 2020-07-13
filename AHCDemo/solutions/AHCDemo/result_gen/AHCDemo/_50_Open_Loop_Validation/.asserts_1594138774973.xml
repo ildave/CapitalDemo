@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="AHCDemo._50_Open_Loop_Validation.A_Block_Tests::unit_tests" tests="3" skipped="0" failures="1" errors="1" timestamp="2020-07-07T21:49:34" hostname="INCNI6P016">
+<properties />
+<testcase name="External_C_Sensor2Phy_testCase_0" classname="unit_tests" modelId="r:8cacce0b-3796-4ae2-aee3-836eaee7575a(AHCDemo._50_Open_Loop_Validation)" nodeId="6499409138675381337">
+<failure message="assert-equals failure (id: 0): expected: == [1514], but was: [1513.64]" type="assert-equals failure" modelId="r:8cacce0b-3796-4ae2-aee3-836eaee7575a(AHCDemo._50_Open_Loop_Validation)" nodeId="6499409138675383243"></failure>
+<failure message="assert-equals failure (id: 1): expected: == [756], but was: [756.061]" type="assert-equals failure" modelId="r:8cacce0b-3796-4ae2-aee3-836eaee7575a(AHCDemo._50_Open_Loop_Validation)" nodeId="6499409138675390143"></failure>
+<system-out><![CDATA[
+runningTestCase: running test case (name=External_C_Sensor2Phy_testCase_0, location=@A_Block_Tests:External_C_Sensor2Phy?r:8cacce0b-3796-4ae2-aee3-836eaee7575a(AHCDemo._50_Open_Loop_Validation)#6499409138675381337) 
+FAILURE_DOUBLE_INT: ***FAILURE*** (assertId=0, act=1513.64, op=assert-equals, exp=1514, location=@A_Block_Tests:External_C_Sensor2Phy?r:8cacce0b-3796-4ae2-aee3-836eaee7575a(AHCDemo._50_Open_Loop_Validation)#6499409138675383243) 
+FAILURE_DOUBLE_INT: ***FAILURE*** (assertId=1, act=756.061, op=assert-equals, exp=756, location=@A_Block_Tests:External_C_Sensor2Phy:1?r:8cacce0b-3796-4ae2-aee3-836eaee7575a(AHCDemo._50_Open_Loop_Validation)#6499409138675390143) 
+]]></system-out>
+<system-err><![CDATA[
+]]></system-err>
+</testcase>
+<testcase name="Unit_Test_HBA_testCase_1" classname="unit_tests" modelId="r:8cacce0b-3796-4ae2-aee3-836eaee7575a(AHCDemo._50_Open_Loop_Validation)" nodeId="3407086732357059209">
+<system-out><![CDATA[
+runningTestCase: running test case (name=Unit_Test_HBA_testCase_1, location=@A_Block_Tests:Unit_Test_HBA?r:8cacce0b-3796-4ae2-aee3-836eaee7575a(AHCDemo._50_Open_Loop_Validation)#3407086732357059209) 
+]]></system-out>
+<system-err><![CDATA[
+]]></system-err>
+</testcase>
+<testcase name="Unit_Test_HLC_testCase_2" classname="unit_tests" modelId="r:8cacce0b-3796-4ae2-aee3-836eaee7575a(AHCDemo._50_Open_Loop_Validation)" nodeId="3407086732357067740">
+<system-out><![CDATA[
+runningTestCase: running test case (name=Unit_Test_HLC_testCase_2, location=@A_Block_Tests:Unit_Test_HLC?r:8cacce0b-3796-4ae2-aee3-836eaee7575a(AHCDemo._50_Open_Loop_Validation)#3407086732357067740) 
+]]></system-out>
+<system-err><![CDATA[
+]]></system-err>
+</testcase>
+</testsuite>

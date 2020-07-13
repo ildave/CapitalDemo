@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="AHCDemo._50_Open_Loop_Validation.B_Simulation_Test::simulation_test" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-07-07T21:52:16" hostname="INCNI6P016">
+<properties />
+<testcase name="ControlLogicTestSimulation_testCase_0" classname="simulation_test" modelId="r:8cacce0b-3796-4ae2-aee3-836eaee7575a(AHCDemo._50_Open_Loop_Validation)" nodeId="3407086732357311461">
+<system-out><![CDATA[
+runningTestCase: running test case (name=ControlLogicTestSimulation_testCase_0, location=@B_Simulation_Test:ControlLogicTestSimulation?r:8cacce0b-3796-4ae2-aee3-836eaee7575a(AHCDemo._50_Open_Loop_Validation)#3407086732357311461) 
+Contract_Failed: Pre- or Post-condition failed (contractID=Cla_Sources_PulseGeneratorTimeInternal_IntegralMultiples, location=@Cla_Sources:PulseGeneratorTimeInternal?r:0ca882c3-0e34-41b1-9106-a8c077327ab1(ClaStdLib)#6366159810906930735) 
+PulseWidthSec=9
+Contract_Failed: Pre- or Post-condition failed (contractID=Cla_Sources_PulseGeneratorTimeInternal_IntegralMultiples, location=@Cla_Sources:PulseGeneratorTimeInternal?r:0ca882c3-0e34-41b1-9106-a8c077327ab1(ClaStdLib)#6366159810906930735) 
+PulseWidthSec=9
+Contract_Failed: Pre- or Post-condition failed (contractID=Cla_Sources_PulseGeneratorTimeInternal_IntegralMultiples, location=@Cla_Sources:PulseGeneratorTimeInternal?r:0ca882c3-0e34-41b1-9106-a8c077327ab1(ClaStdLib)#6366159810906930735) 
+PulseWidthSec=9
+Contract_Failed: Pre- or Post-condition failed (contractID=Cla_Sources_PulseGeneratorTimeInternal_IntegralMultiples, location=@Cla_Sources:PulseGeneratorTimeInternal?r:0ca882c3-0e34-41b1-9106-a8c077327ab1(ClaStdLib)#6366159810906930735) 
+PulseWidthSec=9
+Contract_Failed: Pre- or Post-condition failed (contractID=Cla_Sources_PulseGeneratorTimeInternal_IntegralMultiples, location=@Cla_Sources:PulseGeneratorTimeInternal?r:0ca882c3-0e34-41b1-9106-a8c077327ab1(ClaStdLib)#6366159810906930735) 
+PulseWidthSec=9
+Contract_Failed: Pre- or Post-condition failed (contractID=Cla_Sources_PulseGeneratorTimeInternal_IntegralMultiples, location=@Cla_Sources:PulseGeneratorTimeInternal?r:0ca882c3-0e34-41b1-9106-a8c077327ab1(ClaStdLib)#6366159810906930735) 
+PulseWidthSec=9
+Contract_Failed: Pre- or Post-condition failed (contractID=Cla_Sources_PulseGeneratorTimeInternal_IntegralMultiples, location=@Cla_Sources:PulseGeneratorTimeInternal?r:0ca882c3-0e34-41b1-9106-a8c077327ab1(ClaStdLib)#6366159810906930735) 
+PulseWidthSec=9
+Contract_Failed: Pre- or Post-condition failed (contractID=Cla_Sources_PulseGeneratorTimeInternal_IntegralMultiples, location=@Cla_Sources:PulseGeneratorTimeInternal?r:0ca882c3-0e34-41b1-9106-a8c077327ab1(ClaStdLib)#6366159810906930735) 
+PulseWidthSec=9
+Contract_Failed: Pre- or Post-condition failed (contractID=Cla_Sources_PulseGeneratorTimeInternal_IntegralMultiples, location=@Cla_Sources:PulseGeneratorTimeInternal?r:0ca882c3-0e34-41b1-9106-a8c077327ab1(ClaStdLib)#6366159810906930735) 
+PulseWidthSec=9
+Contract_Failed: Pre- or Post-condition failed (contractID=Cla_Sources_PulseGeneratorTimeInternal_IntegralMultiples, location=@Cla_Sources:PulseGeneratorTimeInternal?r:0ca882c3-0e34-41b1-9106-a8c077327ab1(ClaStdLib)#6366159810906930735) 
+PulseWidthSec=9
+Contract_Failed: Pre- or Post-condition failed (contractID=Cla_Sources_PulseGeneratorTimeInternal_IntegralMultiples, location=@Cla_Sources:PulseGeneratorTimeInternal?r:0ca882c3-0e34-41b1-9106-a8c077327ab1(ClaStdLib)#6366159810906930735) 
+PulseWidthSec=9
+Contract_Failed: Pre- or Post-condition failed (contractID=Cla_Sources_PulseGeneratorTimeInternal_IntegralMultiples, location=@Cla_Sources:PulseGeneratorTimeInternal?r:0ca882c3-0e34-41b1-9106-a8c077327ab1(ClaStdLib)#6366159810906930735) 
+PulseWidthSec=9
+Contract_Failed: Pre- or Post-condition failed (contractID=Cla_Sources_PulseGeneratorTimeInternal_IntegralMultiples, location=@Cla_Sources:PulseGeneratorTimeInternal?r:0ca882c3-0e34-41b1-9106-a8c077327ab1(ClaStdLib)#6366159810906930735) 
+PulseWidthSec=9
+Contract_Failed: Pre- or Post-condition failed (contractID=Cla_Sources_PulseGeneratorTimeInternal_IntegralMultiples, location=@Cla_Sources:PulseGeneratorTimeInternal?r:0ca882c3-0e34-41b1-9106-a8c077327ab1(ClaStdLib)#6366159810906930735) 
+PulseWidthSec=9
+Contract_Failed: Pre- or Post-condition failed (contractID=Cla_Sources_PulseGeneratorTimeInternal_IntegralMultiples, location=@Cla_Sources:PulseGeneratorTimeInternal?r:0ca882c3-0e34-41b1-9106-a8c077327ab1(ClaStdLib)#6366159810906930735) 
+PulseWidthSec=9
+Contract_Failed: Pre- or Post-condition failed (contractID=Cla_Sources_PulseGeneratorTimeInternal_IntegralMultiples, location=@Cla_Sources:PulseGeneratorTimeInternal?r:0ca882c3-0e34-41b1-9106-a8c077327ab1(ClaStdLib)#6366159810906930735) 
+PulseWidthSec=9
+Contract_Failed: Pre- or Post-condition failed (contractID=Cla_Sources_PulseGeneratorTimeInternal_IntegralMultiples, location=@Cla_Sources:PulseGeneratorTimeInternal?r:0ca882c3-0e34-41b1-9106-a8c077327ab1(ClaStdLib)#6366159810906930735) 
+PulseWidthSec=9
+Contract_Failed: Pre- or Post-condition failed (contractID=Cla_Sources_PulseGeneratorTimeInternal_IntegralMultiples, location=@Cla_Sources:PulseGeneratorTimeInternal?r:0ca882c3-0e34-41b1-9106-a8c077327ab1(ClaStdLib)#6366159810906930735) 
+PulseWidthSec=9
+Contract_Failed: Pre- or Post-condition failed (contractID=Cla_Sources_PulseGeneratorTimeInternal_IntegralMultiples, location=@Cla_Sources:PulseGeneratorTimeInternal?r:0ca882c3-0e34-41b1-9106-a8c077327ab1(ClaStdLib)#6366159810906930735) 
+PulseWidthSec=9
+Contract_Failed: Pre- or Post-condition failed (contractID=Cla_Sources_PulseGeneratorTimeInternal_IntegralMultiples, location=@Cla_Sources:PulseGeneratorTimeInternal?r:0ca882c3-0e34-41b1-9106-a8c077327ab1(ClaStdLib)#6366159810906930735) 
+PulseWidthSec=9
+Contract_Failed: Pre- or Post-condition failed (contractID=Cla_Sources_PulseGeneratorTimeInternal_IntegralMultiples, location=@Cla_Sources:PulseGeneratorTimeInternal?r:0ca882c3-0e34-41b1-9106-a8c077327ab1(ClaStdLib)#6366159810906930735) 
+PulseWidthSec=9
+Contract_Failed: Pre- or Post-condition failed (contractID=Cla_Sources_PulseGeneratorTimeInternal_IntegralMultiples, location=@Cla_Sources:PulseGeneratorTimeInternal?r:0ca882c3-0e34-41b1-9106-a8c077327ab1(ClaStdLib)#6366159810906930735) 
+PulseWidthSec=9
+Contract_Failed: Pre- or Post-condition failed (contractID=Cla_Sources_PulseGeneratorTimeInternal_IntegralMultiples, location=@Cla_Sources:PulseGeneratorTimeInternal?r:0ca882c3-0e34-41b1-9106-a8c077327ab1(ClaStdLib)#6366159810906930735) 
+PulseWidthSec=9
+Contract_Failed: Pre- or Post-condition failed (contractID=Cla_Sources_PulseGeneratorTimeInternal_IntegralMultiples, location=@Cla_Sources:PulseGeneratorTimeInternal?r:0ca882c3-0e34-41b1-9106-a8c077327ab1(ClaStdLib)#6366159810906930735) 
+PulseWidthSec=9
+Contract_Failed: Pre- or Post-condition failed (contractID=Cla_Sources_PulseGeneratorTimeInternal_IntegralMultiples, location=@Cla_Sources:PulseGeneratorTimeInternal?r:0ca882c3-0e34-41b1-9106-a8c077327ab1(ClaStdLib)#6366159810906930735) 
+PulseWidthSec=9
+Contract_Failed: Pre- or Post-condition failed (contractID=Cla_Sources_PulseGeneratorTimeInternal_IntegralMultiples, location=@Cla_Sources:PulseGeneratorTimeInternal?r:0ca882c3-0e34-41b1-9106-a8c077327ab1(ClaStdLib)#6366159810906930735) 
+PulseWidthSec=9
+Contract_Failed: Pre- or Post-condition failed (contractID=Cla_Sources_PulseGeneratorTimeInternal_IntegralMultiples, location=@Cla_Sources:PulseGeneratorTimeInternal?r:0ca882c3-0e34-41b1-9106-a8c077327ab1(ClaStdLib)#6366159810906930735) 
+PulseWidthSec=9
+Contract_Failed: Pre- or Post-condition failed (contractID=Cla_Sources_PulseGeneratorTimeInternal_IntegralMultiples, location=@Cla_Sources:PulseGeneratorTimeInternal?r:0ca882c3-0e34-41b1-9106-a8c077327ab1(ClaStdLib)#6366159810906930735) 
+PulseWidthSec=9
+Contract_Failed: Pre- or Post-condition failed (contractID=Cla_Sources_PulseGeneratorTimeInternal_IntegralMultiples, location=@Cla_Sources:PulseGeneratorTimeInternal?r:0ca882c3-0e34-41b1-9106-a8c077327ab1(ClaStdLib)#6366159810906930735) 
+PulseWidthSec=9
+Contract_Failed: Pre- or Post-condition failed (contractID=Cla_Sources_PulseGeneratorTimeInternal_IntegralMultiples, location=@Cla_Sources:PulseGeneratorTimeInternal?r:0ca882c3-0e34-41b1-9106-a8c077327ab1(ClaStdLib)#6366159810906930735) 
+PulseWidthSec=9
+Contract_Failed: Pre- or Post-condition failed (contractID=Cla_Sources_PulseGeneratorTimeInternal_IntegralMultiples, location=@Cla_Sources:PulseGeneratorTimeInternal?r:0ca882c3-0e34-41b1-9106-a8c077327ab1(ClaStdLib)#6366159810906930735) 
+PulseWidthSec=9
+Contract_Failed: Pre- or Post-condition failed (contractID=Cla_Sources_PulseGeneratorTimeInternal_IntegralMultiples, location=@Cla_Sources:PulseGeneratorTimeInternal?r:0ca882c3-0e34-41b1-9106-a8c077327ab1(ClaStdLib)#6366159810906930735) 
+PulseWidthSec=9
+Contract_Failed: Pre- or Post-condition failed (contractID=Cla_Sources_PulseGeneratorTimeInternal_IntegralMultiples, location=@Cla_Sources:PulseGeneratorTimeInternal?r:0ca882c3-0e34-41b1-9106-a8c077327ab1(ClaStdLib)#6366159810906930735) 
+PulseWidthSec=9
+Contract_Failed: Pre- or Post-condition failed (contractID=Cla_Sources_PulseGeneratorTimeInternal_IntegralMultiples, location=@Cla_Sources:PulseGeneratorTimeInternal?r:0ca882c3-0e34-41b1-9106-a8c077327ab1(ClaStdLib)#6366159810906930735) 
+PulseWidthSec=9
+Contract_Failed: Pre- or Post-condition failed (contractID=Cla_Sources_PulseGeneratorTimeInternal_IntegralMultiples, location=@Cla_Sources:PulseGeneratorTimeInternal?r:0ca882c3-0e34-41b1-9106-a8c077327ab1(ClaStdLib)#6366159810906930735) 
+PulseWidthSec=9
+Contract_Failed: Pre- or Post-condition failed (contractID=Cla_Sources_PulseGeneratorTimeInternal_IntegralMultiples, location=@Cla_Sources:PulseGeneratorTimeInternal?r:0ca882c3-0e34-41b1-9106-a8c077327ab1(ClaStdLib)#6366159810906930735) 
+PulseWidthSec=9
+Contract_Failed: Pre- or Post-condition failed (contractID=Cla_Sources_PulseGeneratorTimeInternal_IntegralMultiples, location=@Cla_Sources:PulseGeneratorTimeInternal?r:0ca882c3-0e34-41b1-9106-a8c077327ab1(ClaStdLib)#6366159810906930735) 
+PulseWidthSec=9
+Contract_Failed: Pre- or Post-condition failed (contractID=Cla_Sources_PulseGeneratorTimeInternal_IntegralMultiples, location=@Cla_Sources:PulseGeneratorTimeInternal?r:0ca882c3-0e34-41b1-9106-a8c077327ab1(ClaStdLib)#6366159810906930735) 
+PulseWidthSec=9
+Contract_Failed: Pre- or Post-condition failed (contractID=Cla_Sources_PulseGeneratorTimeInternal_IntegralMultiples, location=@Cla_Sources:PulseGeneratorTimeInternal?r:0ca882c3-0e34-41b1-9106-a8c077327ab1(ClaStdLib)#6366159810906930735) 
+PulseWidthSec=9
+Contract_Failed: Pre- or Post-condition failed (contractID=Cla_Sources_PulseGeneratorTimeInternal_IntegralMultiples, location=@Cla_Sources:PulseGeneratorTimeInternal?r:0ca882c3-0e34-41b1-9106-a8c077327ab1(ClaStdLib)#6366159810906930735) 
+PulseWidthSec=9
+Contract_Failed: Pre- or Post-condition failed (contractID=Cla_Sources_PulseGeneratorTimeInternal_IntegralMultiples, location=@Cla_Sources:PulseGeneratorTimeInternal?r:0ca882c3-0e34-41b1-9106-a8c077327ab1(ClaStdLib)#6366159810906930735) 
+PulseWidthSec=9
+Contract_Failed: Pre- or Post-condition failed (contractID=Cla_Sources_PulseGeneratorTimeInternal_IntegralMultiples, location=@Cla_Sources:PulseGeneratorTimeInternal?r:0ca882c3-0e34-41b1-9106-a8c077327ab1(ClaStdLib)#6366159810906930735) 
+PulseWidthSec=9
+Contract_Failed: Pre- or Post-condition failed (contractID=Cla_Sources_PulseGeneratorTimeInternal_IntegralMultiples, location=@Cla_Sources:PulseGeneratorTimeInternal?r:0ca882c3-0e34-41b1-9106-a8c077327ab1(ClaStdLib)#6366159810906930735) 
+PulseWidthSec=9
+Contract_Failed: Pre- or Post-condition failed (contractID=Cla_Sources_PulseGeneratorTimeInternal_IntegralMultiples, location=@Cla_Sources:PulseGeneratorTimeInternal?r:0ca882c3-0e34-41b1-9106-a8c077327ab1(ClaStdLib)#6366159810906930735) 
+PulseWidthSec=9
+Contract_Failed: Pre- or Post-condition failed (contractID=Cla_Sources_PulseGeneratorTimeInternal_IntegralMultiples, location=@Cla_Sources:PulseGeneratorTimeInternal?r:0ca882c3-0e34-41b1-9106-a8c077327ab1(ClaStdLib)#6366159810906930735) 
+PulseWidthSec=9
+]]></system-out>
+<system-err><![CDATA[
+]]></system-err>
+</testcase>
+</testsuite>

@@ -1,0 +1,211 @@
+<html>
+  <head>
+    <title>Validation Report 
+        A_Export_Template</title>
+    <style>
+        .footer{ 
+            position: fixed; 
+            text-align: center;
+            bottom: 0px;
+            width: 100%;
+        }
+        
+        html { font-family: Verdana, Arial, Helvetica, sans-serif; } h1 { color: #006487; } h2 { color: #147391; }
+        
+        added { color: #56a356;}
+        
+        removed { 
+            color: #FF00AB;
+            text-decoration: line-through;
+        }
+        
+        modified { color: #4076ed; }
+        
+        table.roundedCorners {
+            border: 2px solid;
+            border-color: #66b3ff;
+            border-radius: 13px;
+            border-spacing: 0px;
+        }
+        
+        table.roundedCorners td, 
+        table.roundedCorners th { 
+            border-bottom: 2px solid;
+            border-right: 2px solid;
+            border-color: #66b3ff;
+            padding: 10px; 
+        }
+        
+        tr:nth-child(even){background-color: #f2f2f2} 
+        
+        table.roundedCorners tr:last-child > td {
+            border-bottom: none;
+        }
+        
+        table.roundedCorners td:last-child {
+            border-right: none;
+        }
+        
+        table.roundedCorners th:last-child {
+            border-right: none;
+        }
+        
+        .underline {text-decoration: underline;}
+        </style>
+  </head>
+  <body>
+    <h2>Validation Report for 
+        A_Export_Template</h2>
+    <table class="roundedCorners" width="95%" cellspacing="1">
+      <h3>Target - C</h3>
+      <tr>
+        <th>File Name</th>
+        <th>Block Name</th>
+        <th>Expected Function Signature</th>
+        <th>Actual Function Signature</th>
+        <th>Status</th>
+        <th>Information about mismatch</th>
+      </tr>
+      <block>
+        <tr>
+          <td rowspan="1">
+            <a href="C:/Users/oezqk7/ESDSamples_19.1/AHCDemo/solutions/AHCDemo/Implementations\supplierA\ExternalC\B_Atomic_Blocks.c">B_Atomic_Blocks.c</a>
+          </td>
+          <td rowspan="1">at_CarDetection</td>
+          <td>void at_CarDetection_execute(at_CarDetection_data_t *___id, uint8_t Camera_Out[240][320 ], bool *Car_Detected)</td>
+          <td>void at_CarDetection_execute( at_CarDetection_data_t *___id,  uint8_t Camera_Out[240][320],  bool *Car_Detected)</td>
+          <td>&#10004;</td>
+          <td></td>
+        </tr>
+        
+        
+      </block>
+      <block>
+        <tr>
+          <td rowspan="1">
+            <a href="C:/Users/oezqk7/ESDSamples_19.1/AHCDemo/solutions/AHCDemo/Implementations\supplierA\ExternalC\B_Atomic_Blocks.c">B_Atomic_Blocks.c</a>
+          </td>
+          <td rowspan="1">at_Fuser</td>
+          <td>void at_Fuser_execute(void *___nothing, eBeamState_t HBA_Signal, sLightState_t HLC_Signal, eLeverPosition_t Lever_Position, bool *High_Beam, bool *Low_Beam, bool *Park_Lights)</td>
+          <td>void at_Fuser_execute( at_Fuser_data_t *___id,  eBeamState_t HBA_Signal,  sLightState_t HLC_Signal,  eLeverPosition_t Lever_Position,  bool *High_Beam,  bool *Low_Beam,  bool *Park_Lights)</td>
+          <td>&#10005;</td>
+          <td> at_Fuser_data_t *___id found, while expected argument is void *___nothing. </td>
+        </tr>
+        
+        
+      </block>
+      <block>
+        <tr>
+          <td rowspan="1">
+            <a href="C:/Users/oezqk7/ESDSamples_19.1/AHCDemo/solutions/AHCDemo/Implementations\supplierA\ExternalC\B_Atomic_Blocks.c">B_Atomic_Blocks.c</a>
+          </td>
+          <td rowspan="1">at_HBA</td>
+          <td>void at_HBA_execute(void *___nothing, bool Car_Detected, double Vehicle_Speed, eBeamState_t *HBA_Signal)</td>
+          <td>void at_HBA_execute(void *___nothing, bool Car_Detected, double Vehicle_Speed, eBeamState_t *HBA_Signal)</td>
+          <td>&#10004;</td>
+          <td></td>
+        </tr>
+        
+        
+      </block>
+      <block>
+        <tr>
+          <td rowspan="1">
+            <a href="C:/Users/oezqk7/ESDSamples_19.1/AHCDemo/solutions/AHCDemo/Implementations\supplierA\ExternalC\B_Atomic_Blocks.c">B_Atomic_Blocks.c</a>
+          </td>
+          <td rowspan="1">at_HLC</td>
+          <td>void at_HLC_execute(void *___nothing, double Dash_Illuminance, eKnobPosition_t Knob_Position, sLightState_t *HLC_Signal)</td>
+          <td>void at_HLC_execute(void *___nothing, double Dash_Illuminance, eKnobPosition_t Knob_Position, sLightState_t *HLC_Signal)</td>
+          <td>&#10004;</td>
+          <td></td>
+        </tr>
+        
+        
+      </block>
+      <block>
+        <tr>
+          <td rowspan="1">
+            <a href="C:/Users/oezqk7/ESDSamples_19.1/AHCDemo/solutions/AHCDemo/Implementations\supplierA\ExternalC\B_Atomic_Blocks.c">B_Atomic_Blocks.c</a>
+          </td>
+          <td rowspan="1">at_Sensor2Phy</td>
+          <td>void at_Sensor2Phy_execute(void *___nothing, double Dash_Sensor_Out, double *Dash_Illuminance)</td>
+          <td>void at_Sensor2Phy_execute(void *___nothing, double Dash_Sensor_Out, double *Dash_Illuminance)</td>
+          <td>&#10004;</td>
+          <td></td>
+        </tr>
+        
+        
+      </block>
+      <block>
+        <tr>
+          <td rowspan="1">
+            <a href="C:/Users/oezqk7/ESDSamples_19.1/AHCDemo/solutions/AHCDemo/Implementations\supplierA\ExternalC\B_Atomic_Blocks.c">B_Atomic_Blocks.c</a>
+          </td>
+          <td rowspan="1">at_ControlLogic</td>
+          <td>void at_ControlLogic_flattened_execute(at_ControlLogic_flattened_data_t *___id, bool Car_Detected, double Dash_Illuminance, eKnobPosition_t Knob_Position, eLeverPosition_t Lever_Position, double Vehicle_Speed, bool *High_Beam, bool *Low_Beam, bool *Park_Lights)</td>
+          <td>void at_ControlLogic_flattened_execute(at_ControlLogic_flattened_data_t *___id, bool Car_Detected, double Dash_Illuminance, eKnobPosition_t Knob_Position, eLeverPosition_t Lever_Position, double Vehicle_Speed, bool *High_Beam, bool *Low_Beam, bool *Park_Lights)</td>
+          <td>&#10004;</td>
+          <td></td>
+        </tr>
+        
+        
+      </block>
+      <block>
+        <tr>
+          <td rowspan="2">
+            <a href="C:/Users/oezqk7/ESDSamples_19.1/AHCDemo/solutions/AHCDemo/Implementations\supplierA\ExternalC\B_Atomic_Blocks.c">B_Atomic_Blocks.c</a>
+          </td>
+          <td rowspan="2">at_slk_ControlLogic</td>
+          <td>void at_slk_ControlLogic_flattened_init(at_slk_ControlLogic_flattened_data_t *___id)</td>
+          <td>void at_slk_ControlLogic_flattened_init(at_slk_ControlLogic_flattened_data_t *___id)</td>
+          <td>&#10004;</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>void at_slk_ControlLogic_flattened_execute(at_slk_ControlLogic_flattened_data_t *___id, bool Car_Detected, double Dash_Illuminance, eKnobPosition_t Knob_Position, eLeverPosition_t Lever_Position, double Vehicle_Speed, bool *High_Beam, bool *Low_Beam, bool *Park_Lights)</td>
+          <td>void at_slk_ControlLogic_flattened_execute(at_slk_ControlLogic_flattened_data_t *___id, bool Car_Detected, double Dash_Illuminance, eKnobPosition_t Knob_Position, eLeverPosition_t Lever_Position, double Vehicle_Speed, bool *High_Beam, bool *Low_Beam, bool *Park_Lights)</td>
+          <td>&#10004;</td>
+          <td></td>
+        </tr>
+        
+        
+      </block>
+      <block>
+        <tr>
+          <td rowspan="2">
+            <a href="C:/Users/oezqk7/ESDSamples_19.1/AHCDemo/solutions/AHCDemo/Implementations\supplierA\ExternalC\B_Atomic_Blocks.c">B_Atomic_Blocks.c</a>
+          </td>
+          <td rowspan="2">at_Controller</td>
+          <td>void at_Controller_flattened_init(at_Controller_flattened_data_t *___id)</td>
+          <td>void at_Controller_flattened_init(at_Controller_flattened_data_t *___id)</td>
+          <td>&#10004;</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>void at_Controller_flattened_execute(at_Controller_flattened_data_t *___id, uint8_t Camera_Out[240][320 ], double Dash_Sensor_Out, eKnobPosition_t Knob_Position, eLeverPosition_t Lever_Position, double Vehicle_Speed, bool *High_Beam, bool *Low_Beam, bool *Park_Lights)</td>
+          <td>void at_Controller_flattened_execute( at_Controller_flattened_data_t *___id,  uint8_t Camera_Out[240][320],  double Dash_Sensor_Out,  eKnobPosition_t Knob_Position,  eLeverPosition_t Lever_Position,  double Vehicle_Speed,  bool *High_Beam,  bool *Low_Beam,  bool *Park_Lights)</td>
+          <td>&#10004;</td>
+          <td></td>
+        </tr>
+        
+        
+      </block>
+    </table>
+    (Key: 
+    <i>
+      <added>Newly Added</added>
+      /
+      <removed>Removed entry</removed>
+      /
+      <modified>Modified/Renamed</modified>
+    </i>
+    )
+    
+    <div class="footer">
+      Last Validated by 
+      <i>oezqk7</i>
+       at 
+      <i>2020-07-07T20:36:10</i>
+    </div>
+  </body>
+</html>

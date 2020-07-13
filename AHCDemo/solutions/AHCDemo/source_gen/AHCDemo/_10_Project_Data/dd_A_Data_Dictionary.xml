@@ -1,0 +1,154 @@
+<dataDictionary name="A_Data_Dictionary">
+  <entry name="High_Beam">
+    <type>boolean </type>
+    <quantity></quantity>
+    <description><![CDATA[This is the actuation signal for the headlight high beam state]]></description>
+  </entry>
+  <entry name="Low_Beam">
+    <type>boolean </type>
+    <quantity></quantity>
+    <description><![CDATA[This is the actuation signal for the headlight low beam state]]></description>
+  </entry>
+  <entry name="Park_Lights">
+    <type>boolean </type>
+    <quantity></quantity>
+    <description><![CDATA[This is the actuation signal for the headlight park lights state]]></description>
+  </entry>
+  <entry name="Vehicle_Speed">
+    <type>double </type>
+    <unit>kmph</unit>
+    <quantity></quantity>
+    <description><![CDATA[The ego vehicle speed in kilometer per hour]]></description>
+    <constraints>
+      <range>
+        <min>0</min>
+        <max>200</max>
+      </range>
+    </constraints>
+  </entry>
+  <entry name="Car_Detected">
+    <type>boolean </type>
+    <quantity></quantity>
+    <description><![CDATA[If a car from the opposite direction is detected, this signal is True, otherwise, it is False]]></description>
+  </entry>
+  <entry name="HBA_Signal">
+    <type>null </type>
+    <quantity></quantity>
+    <description><![CDATA[This is the output signal of the HBA SWC]]></description>
+  </entry>
+  <entry name="Lever_Position">
+    <type>null </type>
+    <quantity></quantity>
+    <description><![CDATA[This signal is an enumeration representing the different positions of the Lever at the steering wheel]]></description>
+  </entry>
+  <entry name="Knob_Position">
+    <type>null </type>
+    <quantity></quantity>
+    <description><![CDATA[This signal is an enumeration representing the different positions of the Knob at the dashboard]]></description>
+  </entry>
+  <entry name="HLC_Signal">
+    <type>null </type>
+    <quantity></quantity>
+    <description><![CDATA[This is the output signal of the HLC SWC]]></description>
+  </entry>
+  <entry name="Dash_Illuminance">
+    <type>double </type>
+    <unit>lx</unit>
+    <quantity></quantity>
+    <description><![CDATA[This is the value of the calculated illuminance (in lux) determined based on the output voltage of the illuminance sensor]]></description>
+    <constraints>
+      <min>0</min>
+    </constraints>
+  </entry>
+  <entry name="Dash_Sensor_Out">
+    <type>double </type>
+    <unit>V</unit>
+    <quantity></quantity>
+    <description><![CDATA[This is the output of the illuminance sensor in volts]]></description>
+    <constraints>
+      <range>
+        <min>0</min>
+        <max>5</max>
+      </range>
+    </constraints>
+  </entry>
+  <entry name="Camera_Out">
+    <type>uint8 [320][240]</type>
+    <quantity></quantity>
+    <description><![CDATA[This is the output of the 240-by-320 pixel, 8 bit, monochrome camera located at the rear view mirror]]></description>
+  </entry>
+  <entry name="Threshold_Speed">
+    <type>double </type>
+    <constant quantity="Vehicle_Speed"></constant>
+    <description><![CDATA[This is the minimum speed at which the high beam can be automatically enabled in automatic headlight operation mode]]></description>
+    <constraints>
+      <range>
+        <min>0</min>
+        <max>200</max>
+      </range>
+      <range>
+        <min>30</min>
+        <max>40</max>
+      </range>
+    </constraints>
+  </entry>
+  <entry name="Threshold_Illuminance">
+    <type>double </type>
+    <constant quantity="Dash_Illuminance"></constant>
+    <description><![CDATA[Everything above this value is considered daytime, everything below it is considered nighttime.]]></description>
+    <constraints>
+      <min>0</min>
+      <range>
+        <min>7000</min>
+        <max>11000</max>
+      </range>
+    </constraints>
+  </entry>
+  <entry name="Grayscale_Value">
+    <type>uint8 </type>
+    <quantity></quantity>
+    <description><![CDATA[An unsigned, 8 bit integer representing a grayscale value]]></description>
+    <constraints>
+      <range>
+        <min>0</min>
+        <max>255</max>
+      </range>
+    </constraints>
+  </entry>
+  <entry name="Threshold_Grayscale">
+    <type>double </type>
+    <constant quantity="Grayscale_Value"></constant>
+    <description><![CDATA[This is the grayscale threshold value. Every grayscale value above this threshold value is considered as bright]]></description>
+    <constraints>
+      <range>
+        <min>0</min>
+        <max>255</max>
+      </range>
+      <range>
+        <min>210</min>
+        <max>255</max>
+      </range>
+    </constraints>
+  </entry>
+  <entry name="Threshold_Pixels">
+    <type>uint8 </type>
+    <constant></constant>
+    <description><![CDATA[This is the amount of bright pixels in one image. If the amount of bright pixels is above this threshold value, a car has been detected]]></description>
+    <constraints>
+      <range>
+        <min>0</min>
+        <max>60</max>
+      </range>
+    </constraints>
+  </entry>
+  <entry name="X_Pixel">
+    <type>uint16 </type>
+    <constant></constant>
+    <description><![CDATA[This is the height of the image produced by the monochrome camera in pixels]]></description>
+  </entry>
+  <entry name="Y_Pixel">
+    <type>uint16 </type>
+    <constant></constant>
+    <description><![CDATA[This is the width of the image produced by the monochrome camera in pixels]]></description>
+  </entry>
+</dataDictionary>
