@@ -1115,6 +1115,13 @@
             </node>
           </node>
         </node>
+        <node concept="3HmicQ" id="1Wmu2kGHHX1" role="lGtFl">
+          <node concept="CoHyQ" id="1Wmu2kGHHX2" role="CptJW">
+            <property role="CoHyR" value="VC-58" />
+            <property role="Cp4WS" value="http://capital-test.polarion.live/polarion/#/project/VehicleComp/workitem?id=VC-58" />
+          </node>
+          <node concept="3HmicZ" id="1Wmu2kGHHX3" role="CptJN" />
+        </node>
       </node>
     </node>
     <node concept="2NXPZ9" id="1M2hRKq56MX" role="N3F5h">
@@ -1735,7 +1742,7 @@
             <node concept="gqqVs" id="2$7gFtgIwFi" role="37mO4d">
               <property role="gqqTZ" value="456.0" />
               <property role="gqqTW" value="121.89902966014847" />
-              <property role="gqqTX" value="153.0" />
+              <property role="gqqTX" value="155.0" />
               <property role="gqqTy" value="108.13592270374987" />
               <property role="TgtnS" value="1.0;0.0;0.0;1.0;0.0;0.0" />
             </node>
@@ -1745,8 +1752,8 @@
             <node concept="gqqVs" id="2$7gFtgIwFl" role="37mO4d">
               <property role="gqqTZ" value="232.0" />
               <property role="gqqTW" value="86.0" />
-              <property role="gqqTX" value="136.0" />
-              <property role="gqqTy" value="54.0" />
+              <property role="gqqTX" value="138.0" />
+              <property role="gqqTy" value="56.0" />
               <property role="TgtnS" value="1.0;0.0;0.0;1.0;0.0;0.0" />
             </node>
           </node>
@@ -1755,7 +1762,7 @@
             <node concept="gqqVs" id="2$7gFtgIwFn" role="37mO4d">
               <property role="gqqTZ" value="12.0" />
               <property role="gqqTW" value="98.00000005960464" />
-              <property role="gqqTX" value="172.0" />
+              <property role="gqqTX" value="174.0" />
               <property role="gqqTy" value="31.999999940395355" />
               <property role="TgtnS" value="1.0;0.0;0.0;1.0;0.0;0.0" />
               <node concept="1pa3jb" id="2$7gFtgIwFp" role="1pap1a">
@@ -1769,7 +1776,7 @@
             <node concept="gqqVs" id="2$7gFtgIwFq" role="37mO4d">
               <property role="gqqTZ" value="218.0" />
               <property role="gqqTW" value="160.0" />
-              <property role="gqqTX" value="154.0" />
+              <property role="gqqTX" value="156.0" />
               <property role="gqqTy" value="31.999999940395355" />
               <property role="TgtnS" value="1.0;0.0;0.0;1.0;0.0;0.0" />
               <node concept="1pa3jb" id="2$7gFtgIwFs" role="1pap1a">
@@ -1783,7 +1790,7 @@
             <node concept="gqqVs" id="2$7gFtgIwFt" role="37mO4d">
               <property role="gqqTZ" value="218.0" />
               <property role="gqqTW" value="211.99999994039536" />
-              <property role="gqqTX" value="154.0" />
+              <property role="gqqTX" value="156.0" />
               <property role="gqqTy" value="31.999999940395355" />
               <property role="TgtnS" value="1.0;0.0;0.0;1.0;0.0;0.0" />
               <node concept="1pa3jb" id="2$7gFtgIwFv" role="1pap1a">
@@ -1797,7 +1804,7 @@
             <node concept="gqqVs" id="2$7gFtgIwFw" role="37mO4d">
               <property role="gqqTZ" value="217.0" />
               <property role="gqqTW" value="263.9999998807907" />
-              <property role="gqqTX" value="155.0" />
+              <property role="gqqTX" value="157.0" />
               <property role="gqqTy" value="31.999999940395355" />
               <property role="TgtnS" value="1.0;0.0;0.0;1.0;0.0;0.0" />
               <node concept="1pa3jb" id="2$7gFtgIwFy" role="1pap1a">
@@ -1811,7 +1818,7 @@
             <node concept="gqqVs" id="2$7gFtgIwFz" role="37mO4d">
               <property role="gqqTZ" value="693.0" />
               <property role="gqqTW" value="132.93301010222686" />
-              <property role="gqqTX" value="144.0" />
+              <property role="gqqTX" value="146.0" />
               <property role="gqqTy" value="31.999999940395355" />
               <property role="TgtnS" value="1.0;0.0;0.0;1.0;0.0;0.0" />
               <node concept="1pa3jb" id="2$7gFtgIwF_" role="1pap1a">
@@ -1825,7 +1832,7 @@
             <node concept="gqqVs" id="2$7gFtgIwFA" role="37mO4d">
               <property role="gqqTZ" value="693.0" />
               <property role="gqqTW" value="184.93301004262221" />
-              <property role="gqqTX" value="140.0" />
+              <property role="gqqTX" value="142.0" />
               <property role="gqqTy" value="31.999999940395355" />
               <property role="TgtnS" value="1.0;0.0;0.0;1.0;0.0;0.0" />
               <node concept="1pa3jb" id="2$7gFtgIwFC" role="1pap1a">
@@ -1839,7 +1846,7 @@
             <node concept="gqqVs" id="2$7gFtgIwFD" role="37mO4d">
               <property role="gqqTZ" value="693.0" />
               <property role="gqqTW" value="236.93300998301757" />
-              <property role="gqqTX" value="144.0" />
+              <property role="gqqTX" value="146.0" />
               <property role="gqqTy" value="31.999999940395355" />
               <property role="TgtnS" value="1.0;0.0;0.0;1.0;0.0;0.0" />
               <node concept="1pa3jb" id="2$7gFtgIwFF" role="1pap1a">
@@ -2245,8 +2252,8 @@
             <node concept="gqqVs" id="2$7gFtgIQvF" role="37mO4d">
               <property role="gqqTZ" value="228.0" />
               <property role="gqqTW" value="12.0" />
-              <property role="gqqTX" value="144.0" />
-              <property role="gqqTy" value="54.0" />
+              <property role="gqqTX" value="146.0" />
+              <property role="gqqTy" value="56.0" />
               <property role="TgtnS" value="1.0;0.0;0.0;1.0;0.0;0.0" />
             </node>
           </node>
@@ -2255,7 +2262,7 @@
             <node concept="gqqVs" id="2$7gFtgIVlV" role="37mO4d">
               <property role="gqqTZ" value="41.0" />
               <property role="gqqTW" value="24.000000059604645" />
-              <property role="gqqTX" value="143.0" />
+              <property role="gqqTX" value="145.0" />
               <property role="gqqTy" value="31.999999940395355" />
               <property role="TgtnS" value="1.0;0.0;0.0;1.0;0.0;0.0" />
               <node concept="1pa3jb" id="2$7gFtgIYHF" role="1pap1a">
@@ -3899,6 +3906,27 @@
           <node concept="hyuPU" id="5yUB$INnZbx" role="BULBh">
             <ref role="hyuPT" node="2$7gFtgIvku" resolve="Park_Lights" />
           </node>
+        </node>
+      </node>
+      <node concept="hykJU" id="1Wmu2kGGBTm" role="hygeH">
+        <property role="TrG5h" value="NoBlinding" />
+        <node concept="1EIBX2" id="1Wmu2kGGF0W" role="hyjoB">
+          <node concept="3TlM44" id="1Wmu2kGGNeu" role="3TlMhJ">
+            <node concept="hyuPU" id="1Wmu2kGGFzZ" role="3TlMhI">
+              <ref role="hyuPT" node="2$7gFtgIvks" resolve="High_Beam" />
+            </node>
+            <node concept="3TlMhd" id="1Wmu2kGGNLM" role="3TlMhJ" />
+          </node>
+          <node concept="hyuOw" id="1Wmu2kGGDjj" role="3TlMhI">
+            <ref role="hyuOZ" node="2$7gFtgIVPV" resolve="Car_Detected" />
+          </node>
+        </node>
+        <node concept="3HmicQ" id="1Wmu2kGHwzQ" role="lGtFl">
+          <node concept="CoHyQ" id="1Wmu2kGHwzR" role="CptJW">
+            <property role="CoHyR" value="VC-58" />
+            <property role="Cp4WS" value="http://capital-test.polarion.live/polarion/#/project/VehicleComp/workitem?id=VC-58" />
+          </node>
+          <node concept="3HmicZ" id="1Wmu2kGHwzS" role="CptJN" />
         </node>
       </node>
     </node>

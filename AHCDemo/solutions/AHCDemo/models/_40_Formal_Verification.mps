@@ -5,6 +5,7 @@
     <devkit ref="84a6edcf-c6e8-49f1-af3b-05b24d2eec70(DataFlow)" />
     <devkit ref="277935d2-18de-4304-b853-7770de1fb32c(Analyses)" />
     <devkit ref="a2812605-e334-464d-acc7-8fb864755ed7(FeatureModels)" />
+    <devkit ref="7cb7a2e0-fff0-4922-bf5e-ec095e163238(PolarionRM)" />
   </languages>
   <imports>
     <import index="e765" ref="r:92f02917-2939-4625-878a-0cf4bf3cdc0b(AHCDemo._30_Implementation)" />
@@ -121,6 +122,17 @@
         <child id="559958203687603517" name="imports" index="3W6d8T" />
       </concept>
     </language>
+    <language id="264d4799-1c45-47d7-9e67-2d176982240d" name="com.lmsintl.accent.requirements.polarion">
+      <concept id="4681974405521960540" name="com.lmsintl.accent.requirements.polarion.structure.PolarionTraceItem" flags="ng" index="CoHyQ">
+        <property id="4681974405521960541" name="workItemID" index="CoHyR" />
+        <property id="4681974405522127314" name="workItemLink" index="Cp4WS" />
+      </concept>
+      <concept id="439567521322928994" name="com.lmsintl.accent.requirements.polarion.structure.PolarionTraceAnnotation" flags="ng" index="3HmicQ">
+        <child id="4681974405522025753" name="traceKind" index="CptJN" />
+        <child id="4681974405522025750" name="items" index="CptJW" />
+      </concept>
+      <concept id="439567521322929003" name="com.lmsintl.accent.requirements.polarion.structure.ImplementsTraceKind" flags="ng" index="3HmicZ" />
+    </language>
     <language id="b574d547-b77e-4fed-9f60-c349c4410765" name="com.mbeddr.ext.math">
       <concept id="666324024671982185" name="com.mbeddr.ext.math.structure.MathConfigurationItem" flags="ng" index="22RD12" />
     </language>
@@ -153,6 +165,9 @@
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
+      </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
@@ -252,6 +267,30 @@
         <property role="1RwFax" value="true" />
         <property role="3kgbRO" value="false" />
         <property role="3N1Lgt" value="Implementations/supplierA/ExternalC/B_Atomic_Blocks.c" />
+      </node>
+    </node>
+    <node concept="3BUAGY" id="1Wmu2kGH$bR" role="3V$2$K">
+      <property role="2l50Ka" value="none" />
+      <property role="2l50Km" value="none" />
+      <property role="2lUGeZ" value="true" />
+      <property role="2lUHrg" value="25" />
+      <property role="2lUGe1" value="true" />
+      <property role="2lUGbD" value="none" />
+      <property role="3E3C9V" value="1" />
+      <property role="2l50Mm" value="true" />
+      <property role="jrfCZ" value="true" />
+      <property role="1Bxwel" value="true" />
+      <ref role="3UTmx2" to="e765:2X8pPjx7HEB" resolve="at_HBA" />
+      <node concept="3NXOOs" id="1Wmu2kGH$d2" role="1Byen_">
+        <property role="1RwFax" value="true" />
+        <property role="3N1Lgt" value="Implementations/supplierA/ExternalC/B_Atomic_Blocks.c" />
+      </node>
+      <node concept="3HmicQ" id="1Wmu2kGHIK5" role="lGtFl">
+        <node concept="CoHyQ" id="1Wmu2kGHIK6" role="CptJW">
+          <property role="CoHyR" value="VC-59" />
+          <property role="Cp4WS" value="http://capital-test.polarion.live/polarion/#/project/VehicleComp/workitem?id=VC-59" />
+        </node>
+        <node concept="3HmicZ" id="1Wmu2kGHIK7" role="CptJN" />
       </node>
     </node>
   </node>

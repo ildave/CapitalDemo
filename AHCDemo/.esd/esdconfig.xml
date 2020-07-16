@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <ESDConfiguration>
-  <ESDMajorVersion>19</ESDMajorVersion>
-  <ESDMinorVersion>1</ESDMinorVersion>
+  <ESDMajorVersion>2020</ESDMajorVersion>
+  <ESDMinorVersion>0</ESDMinorVersion>
 <PolarionProject>
     <Name>VehicleComp</Name>
   </PolarionProject>

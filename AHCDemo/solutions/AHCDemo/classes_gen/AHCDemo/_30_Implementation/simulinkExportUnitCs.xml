@@ -1,4 +1,14 @@
 <simulinkExportUnitCs>
+  <unit name="SIUnits" model="AHCDemo._30_Implementation">
+    <derive name="m" specification=""></derive>
+    <derive name="s" specification=""></derive>
+    <derive name="kg" specification=""></derive>
+    <derive name="mol" specification=""></derive>
+    <derive name="K" specification=""></derive>
+    <derive name="A" specification=""></derive>
+    <derive name="cd" specification=""></derive>
+    <derive name="nounit" specification="m.m^(-1)"></derive>
+  </unit>
   <unit name="Cla_CommonUnits" model="AHCDemo._30_Implementation">
     <derive name="min" specification=""></derive>
     <derive name="radpss" specification="radps.s^(-1)"></derive>
@@ -38,16 +48,6 @@
   <unit name="B_Units" model="AHCDemo._30_Implementation">
     <derive name="kmph" specification="mps"></derive>
     <derive name="lx" specification=""></derive>
-  </unit>
-  <unit name="SIUnits" model="AHCDemo._30_Implementation">
-    <derive name="m" specification=""></derive>
-    <derive name="s" specification=""></derive>
-    <derive name="kg" specification=""></derive>
-    <derive name="mol" specification=""></derive>
-    <derive name="K" specification=""></derive>
-    <derive name="A" specification=""></derive>
-    <derive name="cd" specification=""></derive>
-    <derive name="nounit" specification="m.m^(-1)"></derive>
   </unit>
   <unitConversion name="Cla_CommonUnits" model="AHCDemo._30_Implementation">
     <convert sourceUnit="ms" targetUnit="s" formula="val / 1000"></convert>

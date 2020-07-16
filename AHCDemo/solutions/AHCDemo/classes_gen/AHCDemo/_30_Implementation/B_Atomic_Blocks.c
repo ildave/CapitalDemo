@@ -17,9 +17,47 @@
 /**		ADDITIONAL DECLARATIONS START		**/
 /**		ADDITIONAL DECLARATIONS END		**/
 
+/* 
+ * compositeblock: at_ControlLogic
+ * 
+ * URL: http://127.0.0.1:63320/node?ref=r%3A92f02917-2939-4625-878a-0cf4bf3cdc0b%28AHCDemo._30_Implementation%29%2F9097460227744280194
+ * 
+ * 
+ * The inport(s)[Car_Detected, Dash_Illuminance, Knob_Position, Lever_Position, Vehicle_Speed] is/are defined in the structure at_ControlLogic_flattened_data_t in B_Atomic_Blocks.h
+ * 
+ * 
+ * 
+ * Data Properties
+ * -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ * Name                DD                  DD Owner             Access              Usage      Datatype    Unit    Constraints               Description                                                                                                                  
+ * -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ * Car_Detected        Car_Detected        A_Data_Dictionary    Car_Detected        inport     boolean     -       -                         If a car from the opposite direction is detected, this signal is True, otherwise, it is False                                
+ * Dash_Illuminance    Dash_Illuminance    A_Data_Dictionary    Dash_Illuminance    inport     double      lx      min 0 lx                  This is the value of the calculated illuminance (in lux) determined based on the output voltage of the illuminance sensor    
+ * High_Beam           High_Beam           A_Data_Dictionary    *High_Beam          outport    boolean     -       -                         This is the actuation signal for the headlight high beam state                                                               
+ * Knob_Position       Knob_Position       A_Data_Dictionary    Knob_Position       inport     enum        -       -                         This signal is an enumeration representing the different positions of the Knob at the dashboard                              
+ * Lever_Position      Lever_Position      A_Data_Dictionary    Lever_Position      inport     enum        -       -                         This signal is an enumeration representing the different positions of the Lever at the steering wheel                        
+ * Low_Beam            Low_Beam            A_Data_Dictionary    *Low_Beam           outport    boolean     -       -                         This is the actuation signal for the headlight low beam state                                                                
+ * Park_Lights         Park_Lights         A_Data_Dictionary    *Park_Lights        outport    boolean     -       -                         This is the actuation signal for the headlight park lights state                                                             
+ * Vehicle_Speed       Vehicle_Speed       A_Data_Dictionary    Vehicle_Speed       inport     double      kmph    range 0 kmph..200 kmph    The ego vehicle speed in kilometer per hour                                                                                  
+ * -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ */
+
+
 void at_ControlLogic_flattened_execute(at_ControlLogic_flattened_data_t *___id, bool Car_Detected, double Dash_Illuminance, eKnobPosition_t Knob_Position, eLeverPosition_t Lever_Position, double Vehicle_Speed, bool *High_Beam, bool *Low_Beam, bool *Park_Lights) 
 {
   at_ControlLogic_flattened_data_t *___data;
+  /* 
+   * Post conditions: 
+   * post(0) FixedOff : Knob_Position == OFF && Lever_Position != OPTICAL_HORN -> NOR3(High_Beam, Low_Beam, Park_Lights)
+   * post(1) AutoOff : Lever_Position == HEADLIGHT_AUTO && Knob_Position == HEADLIGHT_AUTO && Dash_Illuminance >= 10000 -> NOR3(High_Beam, Low_Beam, Park_Lights)
+   * post(2) AutoLowBeam : Lever_Position == HEADLIGHT_AUTO && Knob_Position == HEADLIGHT_AUTO && (Car_Detected == true || Vehicle_Speed < 36) && Dash_Illuminance < 10000 -> Low_Beam == true
+   * post(3) FixedLowBeam : Lever_Position == LOW_BEAM && Knob_Position == HEADLIGHT_ON -> Low_Beam == true
+   * post(4) OpticalHorn : Lever_Position == OPTICAL_HORN -> High_Beam == true
+   * post(5) AutoHighBeam : (Car_Detected == false && Vehicle_Speed >= 36 && Dash_Illuminance < 10000 && Knob_Position == HEADLIGHT_AUTO && Lever_Position == HEADLIGHT_AUTO) -> High_Beam == true
+   * post(6) ParkLights : Knob_Position == PARK_ON && Lever_Position != OPTICAL_HORN -> Park_Lights == true
+   * post(7) IndependenceLightStates : NAND3(High_Beam, Low_Beam, Park_Lights)
+   */
+
   ___data = ___id;
   {
   }
@@ -74,6 +112,32 @@ void at_ControlLogic_flattened_execute(at_ControlLogic_flattened_data_t *___id, 
 }
 
 
+/* 
+ * compositeblock: at_Controller
+ * 
+ * URL: http://127.0.0.1:63320/node?ref=r%3A92f02917-2939-4625-878a-0cf4bf3cdc0b%28AHCDemo._30_Implementation%29%2F771542968808092359
+ * 
+ * 
+ * The inport(s)[Camera_Out, Dash_Sensor_Out, Knob_Position, Lever_Position, Vehicle_Speed] is/are defined in the structure at_Controller_flattened_data_t in B_Atomic_Blocks.h
+ * 
+ * 
+ * 
+ * Data Properties
+ * ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ * Name               DD                 DD Owner             Access             Usage      Datatype            Unit    Constraints               Description                                                                                              
+ * ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ * Camera_Out         Camera_Out         A_Data_Dictionary    Camera_Out         inport     uint8 [320][240]    -       -                         This is the output of the 240-by-320 pixel, 8 bit, monochrome camera located at the rear view mirror     
+ * Dash_Sensor_Out    Dash_Sensor_Out    A_Data_Dictionary    Dash_Sensor_Out    inport     double              V       range 0 V..5 V            This is the output of the illuminance sensor in volts                                                    
+ * High_Beam          High_Beam          A_Data_Dictionary    *High_Beam         outport    boolean             -       -                         This is the actuation signal for the headlight high beam state                                           
+ * Knob_Position      Knob_Position      A_Data_Dictionary    Knob_Position      inport     enum                -       -                         This signal is an enumeration representing the different positions of the Knob at the dashboard          
+ * Lever_Position     Lever_Position     A_Data_Dictionary    Lever_Position     inport     enum                -       -                         This signal is an enumeration representing the different positions of the Lever at the steering wheel    
+ * Low_Beam           Low_Beam           A_Data_Dictionary    *Low_Beam          outport    boolean             -       -                         This is the actuation signal for the headlight low beam state                                            
+ * Park_Lights        Park_Lights        A_Data_Dictionary    *Park_Lights       outport    boolean             -       -                         This is the actuation signal for the headlight park lights state                                         
+ * Vehicle_Speed      Vehicle_Speed      A_Data_Dictionary    Vehicle_Speed      inport     double              kmph    range 0 kmph..200 kmph    The ego vehicle speed in kilometer per hour                                                              
+ * ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ */
+
+
 void at_Controller_flattened_init(at_Controller_flattened_data_t *___id) 
 {
   at_Controller_flattened_data_t *___data;
@@ -103,6 +167,12 @@ void at_Controller_flattened_init(at_Controller_flattened_data_t *___id)
 void at_Controller_flattened_execute(at_Controller_flattened_data_t *___id, uint8_t Camera_Out[240][320], double Dash_Sensor_Out, eKnobPosition_t Knob_Position, eLeverPosition_t Lever_Position, double Vehicle_Speed, bool *High_Beam, bool *Low_Beam, bool *Park_Lights) 
 {
   at_Controller_flattened_data_t *___data;
+  /* 
+   * Post conditions: 
+   * post(0) FixedOff : Knob_Position == OFF && Lever_Position != OPTICAL_HORN -> NOR3(High_Beam, Low_Beam, Park_Lights)
+   * post(1) IndependenceLightStates : NAND3(High_Beam, Low_Beam, Park_Lights)
+   */
+
   ___data = ___id;
   {
   }
@@ -157,6 +227,32 @@ void at_Controller_flattened_execute(at_Controller_flattened_data_t *___id, uint
 }
 
 
+/* 
+ * compositeblock: at_slk_ControlLogic
+ * 
+ * URL: http://127.0.0.1:63320/node?ref=r%3A92f02917-2939-4625-878a-0cf4bf3cdc0b%28AHCDemo._30_Implementation%29%2F458597115438837043
+ * 
+ * 
+ * The inport(s)[Car_Detected, Dash_Illuminance, Knob_Position, Lever_Position, Vehicle_Speed] is/are defined in the structure at_slk_ControlLogic_flattened_data_t in B_Atomic_Blocks.h
+ * 
+ * 
+ * 
+ * Data Properties
+ * -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ * Name                DD                  DD Owner             Access              Usage      Datatype    Unit    Constraints               Description                                                                                                                  
+ * -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ * Car_Detected        Car_Detected        A_Data_Dictionary    Car_Detected        inport     boolean     -       -                         If a car from the opposite direction is detected, this signal is True, otherwise, it is False                                
+ * Dash_Illuminance    Dash_Illuminance    A_Data_Dictionary    Dash_Illuminance    inport     double      lx      min 0 lx                  This is the value of the calculated illuminance (in lux) determined based on the output voltage of the illuminance sensor    
+ * High_Beam           High_Beam           A_Data_Dictionary    *High_Beam          outport    boolean     -       -                         This is the actuation signal for the headlight high beam state                                                               
+ * Knob_Position       Knob_Position       A_Data_Dictionary    Knob_Position       inport     enum        -       -                         This signal is an enumeration representing the different positions of the Knob at the dashboard                              
+ * Lever_Position      Lever_Position      A_Data_Dictionary    Lever_Position      inport     enum        -       -                         This signal is an enumeration representing the different positions of the Lever at the steering wheel                        
+ * Low_Beam            Low_Beam            A_Data_Dictionary    *Low_Beam           outport    boolean     -       -                         This is the actuation signal for the headlight low beam state                                                                
+ * Park_Lights         Park_Lights         A_Data_Dictionary    *Park_Lights        outport    boolean     -       -                         This is the actuation signal for the headlight park lights state                                                             
+ * Vehicle_Speed       Vehicle_Speed       A_Data_Dictionary    Vehicle_Speed       inport     double      kmph    range 0 kmph..200 kmph    The ego vehicle speed in kilometer per hour                                                                                  
+ * -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ */
+
+
 void at_slk_ControlLogic_flattened_init(at_slk_ControlLogic_flattened_data_t *___id) 
 {
   at_slk_ControlLogic_flattened_data_t *___data;
@@ -176,6 +272,18 @@ void at_slk_ControlLogic_flattened_init(at_slk_ControlLogic_flattened_data_t *__
 void at_slk_ControlLogic_flattened_execute(at_slk_ControlLogic_flattened_data_t *___id, bool Car_Detected, double Dash_Illuminance, eKnobPosition_t Knob_Position, eLeverPosition_t Lever_Position, double Vehicle_Speed, bool *High_Beam, bool *Low_Beam, bool *Park_Lights) 
 {
   at_slk_ControlLogic_flattened_data_t *___data;
+  /* 
+   * Post conditions: 
+   * post(0) FixedOff : Knob_Position == OFF && Lever_Position != OPTICAL_HORN -> NOR3(High_Beam, Low_Beam, Park_Lights)
+   * post(1) AutoOff : Lever_Position == HEADLIGHT_AUTO && Knob_Position == HEADLIGHT_AUTO && Dash_Illuminance >= 10000 -> NOR3(High_Beam, Low_Beam, Park_Lights)
+   * post(2) AutoLowBeam : Lever_Position == HEADLIGHT_AUTO && Knob_Position == HEADLIGHT_AUTO && (Car_Detected == true || Vehicle_Speed < 36) && Dash_Illuminance < 10000 -> Low_Beam == true
+   * post(3) FixedLowBeam : Lever_Position == LOW_BEAM && Knob_Position == HEADLIGHT_ON -> Low_Beam == true
+   * post(4) OpticalHorn : Lever_Position == OPTICAL_HORN -> High_Beam == true
+   * post(5) AutoHighBeam : (Car_Detected == false && Vehicle_Speed >= 36 && Dash_Illuminance < 10000 && Knob_Position == HEADLIGHT_AUTO && Lever_Position == HEADLIGHT_AUTO) -> High_Beam == true
+   * post(6) ParkLights : Knob_Position == PARK_ON && Lever_Position != OPTICAL_HORN -> Park_Lights == true
+   * post(7) IndependenceLightStates : NAND3(High_Beam, Low_Beam, Park_Lights)
+   */
+
   ___data = ___id;
   {
   }
@@ -231,6 +339,30 @@ void at_slk_ControlLogic_flattened_execute(at_slk_ControlLogic_flattened_data_t 
 
 
 /* 
+ * atomicblock: at_Fuser
+ * 
+ * URL: http://127.0.0.1:63320/node?ref=r%3A92f02917-2939-4625-878a-0cf4bf3cdc0b%28AHCDemo._30_Implementation%29%2F3407086732357589662
+ * 
+ * 
+ * The inport(s)[HBA_Signal, HLC_Signal, Lever_Position] is/are defined in the structure at_Fuser_data_t in B_Atomic_Blocks.h
+ * 
+ * 
+ * 
+ * Data Properties
+ * ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ * Name              DD                DD Owner             Access            Usage      Datatype    Unit    Constraints    Description                                                                                              
+ * ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ * HBA_Signal        HBA_Signal        A_Data_Dictionary    HBA_Signal        inport     enum        -       -              This is the output signal of the HBA SWC                                                                 
+ * HLC_Signal        HLC_Signal        A_Data_Dictionary    HLC_Signal        inport     struct      -       -              This is the output signal of the HLC SWC                                                                 
+ * High_Beam         High_Beam         A_Data_Dictionary    *High_Beam        outport    boolean     -       -              This is the actuation signal for the headlight high beam state                                           
+ * Lever_Position    Lever_Position    A_Data_Dictionary    Lever_Position    inport     enum        -       -              This signal is an enumeration representing the different positions of the Lever at the steering wheel    
+ * Low_Beam          Low_Beam          A_Data_Dictionary    *Low_Beam         outport    boolean     -       -              This is the actuation signal for the headlight low beam state                                            
+ * Park_Lights       Park_Lights       A_Data_Dictionary    *Park_Lights      outport    boolean     -       -              This is the actuation signal for the headlight park lights state                                         
+ * ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ */
+
+
+/* 
  * Execution function for block at_Fuser
  */
 void at_Fuser_execute(void *___nothing, eBeamState_t HBA_Signal, sLightState_t HLC_Signal, eLeverPosition_t Lever_Position, bool *High_Beam, bool *Low_Beam, bool *Park_Lights) 
@@ -240,6 +372,22 @@ void at_Fuser_execute(void *___nothing, eBeamState_t HBA_Signal, sLightState_t H
   bool relayLow=false;
   bool relayPark=false;
   /**		AT_FUSER_EXECUTE DECLARATIONS 	END		**/
+
+  /* 
+   * Pre conditions: 
+   * pre(0) IndependenceOfStates : NAND(HLC_Signal.headlightOn, HLC_Signal.parkOn)
+   *  
+   * Post conditions: 
+   * post(1) FixedOff : NOR(HLC_Signal.headlightOn, HLC_Signal.parkOn) && Lever_Position != OPTICAL_HORN -> NOR3(High_Beam, Low_Beam, Park_Lights)
+   * post(2) AutoOff : NOR(HLC_Signal.headlightOn, HLC_Signal.parkOn) && Lever_Position == HEADLIGHT_AUTO -> NOR3(High_Beam, Low_Beam, Park_Lights)
+   * post(3) AutoLowBeam : HLC_Signal.headlightOn == true && HBA_Signal == LOW && Lever_Position == HEADLIGHT_AUTO -> Low_Beam == true
+   * post(4) FixedLowBeam : HLC_Signal.headlightOn == true && Lever_Position == LOW_BEAM -> Low_Beam == true
+   * post(5) OpticalHorn : Lever_Position == OPTICAL_HORN -> High_Beam == true
+   * post(6) AutoHighBeam : HLC_Signal.headlightOn == true && HBA_Signal == HIGH && Lever_Position == HEADLIGHT_AUTO -> High_Beam == true
+   * post(7) FixedHighBeam : HLC_Signal.headlightOn == true && Lever_Position == HIGH_BEAM -> High_Beam == true
+   * post(8) ParkLights : HLC_Signal.parkOn == true && Lever_Position != OPTICAL_HORN -> Park_Lights == true
+   * post(9) IndependenceLightStates : NAND3(High_Beam, Low_Beam, Park_Lights)
+   */
 
   {
   }
@@ -262,7 +410,7 @@ else {
 		else if(Lever_Position==LOW_BEAM) {
 			relayLow=true;
 		}
-		else if(Lever_Position==eLeverPosition__HEADLIGHT_AUTO) {
+		else if(Lever_Position==C_Complex_Data_eLeverPosition__HEADLIGHT_AUTO) {
 			if(HBA_Signal==LOW) {
 				relayLow=true;
 			}
@@ -289,12 +437,41 @@ else {
 
 
 /* 
+ * atomicblock: at_HBA
+ * 
+ * URL: http://127.0.0.1:63320/node?ref=r%3A92f02917-2939-4625-878a-0cf4bf3cdc0b%28AHCDemo._30_Implementation%29%2F3407086732357589671
+ * 
+ * 
+ * 
+ * The outport(s)[HBA_Signal] is/are defined in the structure at_HBA_data_t in B_Atomic_Blocks.h
+ * 
+ * 
+ * Data Properties
+ * ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ * Name             DD               DD Owner             Access           Usage      Datatype    Unit    Constraints               Description                                                                                      
+ * ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ * Car_Detected     Car_Detected     A_Data_Dictionary    Car_Detected     inport     boolean     -       -                         If a car from the opposite direction is detected, this signal is True, otherwise, it is False    
+ * HBA_Signal       HBA_Signal       A_Data_Dictionary    *HBA_Signal      outport    enum        -       -                         This is the output signal of the HBA SWC                                                         
+ * Vehicle_Speed    Vehicle_Speed    A_Data_Dictionary    Vehicle_Speed    inport     double      kmph    range 0 kmph..200 kmph    The ego vehicle speed in kilometer per hour                                                      
+ * ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ */
+
+
+/* 
  * Execution function for block at_HBA
  */
 void at_HBA_execute(void *___nothing, bool Car_Detected, double Vehicle_Speed, eBeamState_t *HBA_Signal) 
 {
   /**		AT_HBA_EXECUTE DECLARATIONS 	START		**/
   /**		AT_HBA_EXECUTE DECLARATIONS 	END		**/
+
+  /* 
+   * Post conditions: 
+   * post(0) AutoLowBeam : (Car_Detected == true || Vehicle_Speed < 36) -> HBA_Signal == LOW
+   * post(1) AutoHighBeam : (Car_Detected == false && Vehicle_Speed >= 36) -> HBA_Signal == HIGH
+   * post(2) FuSa_TSR_MaitainVisibility : (Vehicle_Speed >= (2 * 36)) && (Car_Detected != true) -> (HBA_Signal != LOW)
+   * post(3) FuSa_TSR_NoBlinding : (Car_Detected) -> HBA_Signal != HIGH
+   */
 
   {
   }
@@ -325,6 +502,29 @@ void at_HBA_execute(void *___nothing, bool Car_Detected, double Vehicle_Speed, e
 
 
 /* 
+ * atomicblock: at_HLC
+ * 
+ * URL: http://127.0.0.1:63320/node?ref=r%3A92f02917-2939-4625-878a-0cf4bf3cdc0b%28AHCDemo._30_Implementation%29%2F3407086732357589680
+ * 
+ * 
+ * The inport(s)[Dash_Illuminance, Knob_Position] is/are defined in the structure at_HLC_data_t in B_Atomic_Blocks.h
+ * 
+ * 
+ * The outport(s)[HLC_Signal] is/are defined in the structure at_HLC_data_t in B_Atomic_Blocks.h
+ * 
+ * 
+ * Data Properties
+ * --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ * Name                DD                  DD Owner             Access              Usage      Datatype    Unit    Constraints    Description                                                                                                                  
+ * --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ * Dash_Illuminance    Dash_Illuminance    A_Data_Dictionary    Dash_Illuminance    inport     double      lx      min 0 lx       This is the value of the calculated illuminance (in lux) determined based on the output voltage of the illuminance sensor    
+ * HLC_Signal          HLC_Signal          A_Data_Dictionary    *HLC_Signal         outport    struct      -       -              This is the output signal of the HLC SWC                                                                                     
+ * Knob_Position       Knob_Position       A_Data_Dictionary    Knob_Position       inport     enum        -       -              This signal is an enumeration representing the different positions of the Knob at the dashboard                              
+ * --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ */
+
+
+/* 
  * Execution function for block at_HLC
  */
 void at_HLC_execute(void *___nothing, double Dash_Illuminance, eKnobPosition_t Knob_Position, sLightState_t *HLC_Signal) 
@@ -333,6 +533,18 @@ void at_HLC_execute(void *___nothing, double Dash_Illuminance, eKnobPosition_t K
   bool headlight=false;
   bool park=false;
   /**		AT_HLC_EXECUTE DECLARATIONS 	END		**/
+
+  /* 
+   * Post conditions: 
+   * post(0) FixedOff : (Knob_Position == OFF) -> NOR(HLC_Signal.headlightOn, HLC_Signal.parkOn)
+   * post(1) AutoOff : Knob_Position == HEADLIGHT_AUTO && Dash_Illuminance >= 10000 -> NOR(HLC_Signal.headlightOn, HLC_Signal.parkOn)
+   * post(2) AutoLowBeam : Knob_Position == HEADLIGHT_AUTO && Dash_Illuminance < 10000 -> HLC_Signal.headlightOn == true
+   * post(3) FixedLowBeam : Knob_Position == HEADLIGHT_ON -> HLC_Signal.headlightOn == true
+   * post(4) AutoHighBeam : Knob_Position == HEADLIGHT_AUTO && Dash_Illuminance < 10000 -> HLC_Signal.headlightOn == true
+   * post(5) FixedHighBeam : Knob_Position == HEADLIGHT_ON -> HLC_Signal.headlightOn
+   * post(6) ParkLights : Knob_Position == PARK_ON -> HLC_Signal.parkOn == true
+   * post(7) IndependenceOfStates : NAND(HLC_Signal.headlightOn, HLC_Signal.parkOn)
+   */
 
   {
   }
@@ -350,7 +562,7 @@ void at_HLC_execute(void *___nothing, double Dash_Illuminance, eKnobPosition_t K
 	  headlight=false;
 	  park=true;
   }
-  else if(Knob_Position==eKnobPosition__HEADLIGHT_AUTO) {
+  else if(Knob_Position==C_Complex_Data_eKnobPosition__HEADLIGHT_AUTO) {
 	  if(Dash_Illuminance>=GlobalConstants_Threshold_Illuminance) {
 		 headlight=false;
 		 park=false;
@@ -379,6 +591,24 @@ void at_HLC_execute(void *___nothing, double Dash_Illuminance, eKnobPosition_t K
 
 
 /* 
+ * atomicblock: at_Sensor2Phy
+ * 
+ * URL: http://127.0.0.1:63320/node?ref=r%3A92f02917-2939-4625-878a-0cf4bf3cdc0b%28AHCDemo._30_Implementation%29%2F3407086732357589689
+ * 
+ * 
+ * 
+ * 
+ * Data Properties
+ * ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ * Name                DD                  DD Owner             Access               Usage      Datatype    Unit    Constraints       Description                                                                                                                  
+ * ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ * Dash_Illuminance    Dash_Illuminance    A_Data_Dictionary    *Dash_Illuminance    outport    double      lx      min 0 lx          This is the value of the calculated illuminance (in lux) determined based on the output voltage of the illuminance sensor    
+ * Dash_Sensor_Out     Dash_Sensor_Out     A_Data_Dictionary    Dash_Sensor_Out      inport     double      V       range 0 V..5 V    This is the output of the illuminance sensor in volts                                                                        
+ * ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ */
+
+
+/* 
  * Execution function for block at_Sensor2Phy
  */
 void at_Sensor2Phy_execute(void *___nothing, double Dash_Sensor_Out, double *Dash_Illuminance) 
@@ -399,6 +629,24 @@ void at_Sensor2Phy_execute(void *___nothing, double Dash_Sensor_Out, double *Das
   
   
 }
+
+
+/* 
+ * atomicblock: at_slk_Sensor2Phy
+ * 
+ * URL: http://127.0.0.1:63320/node?ref=r%3A92f02917-2939-4625-878a-0cf4bf3cdc0b%28AHCDemo._30_Implementation%29%2F6499409138675363509
+ * 
+ * 
+ * 
+ * 
+ * Data Properties
+ * ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ * Name                DD                  DD Owner             Access               Usage      Datatype    Unit    Constraints       Description                                                                                                                  
+ * ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ * Dash_Illuminance    Dash_Illuminance    A_Data_Dictionary    *Dash_Illuminance    outport    double      lx      min 0 lx          This is the value of the calculated illuminance (in lux) determined based on the output voltage of the illuminance sensor    
+ * Dash_Sensor_Out     Dash_Sensor_Out     A_Data_Dictionary    Dash_Sensor_Out      inport     double      V       range 0 V..5 V    This is the output of the illuminance sensor in volts                                                                        
+ * ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ */
 
 
 /* 
@@ -430,11 +678,36 @@ void at_slk_Sensor2Phy_execute(void *___nothing, double Dash_Sensor_Out, double 
 
 
 /* 
+ * atomicblock: at_CarDetection
+ * 
+ * URL: http://127.0.0.1:63320/node?ref=r%3A92f02917-2939-4625-878a-0cf4bf3cdc0b%28AHCDemo._30_Implementation%29%2F8470303110274500320
+ * 
+ * 
+ * 
+ * 
+ * The parameter/state variable(s) [Threshold_Grayscale, Threshold_Pixels] is/are defined in the structure at_CarDetection_data_t in B_Atomic_Blocks.h
+ * 
+ * Data Properties
+ * -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ * Name                   DD                     DD Owner             Access                        Usage        Datatype            Unit    Constraints                     Description                                                                                                                                
+ * -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ * Camera_Out             Camera_Out             A_Data_Dictionary    Camera_Out                    inport       uint8 [320][240]    -       -                               This is the output of the 240-by-320 pixel, 8 bit, monochrome camera located at the rear view mirror                                       
+ * Car_Detected           Car_Detected           A_Data_Dictionary    *Car_Detected                 outport      boolean             -       -                               If a car from the opposite direction is detected, this signal is True, otherwise, it is False                                              
+ * Threshold_Grayscale    Threshold_Grayscale    A_Data_Dictionary    ___id->Threshold_Grayscale    parameter    uint8               -       range 0..255, range 210..255    This is the grayscale threshold value. Every grayscale value above this threshold value is considered as bright                            
+ * Threshold_Pixels       Threshold_Pixels       A_Data_Dictionary    ___id->Threshold_Pixels       parameter    uint8               -       range 0..60                     This is the amount of bright pixels in one image. If the amount of bright pixels is above this threshold value, a car has been detected    
+ * -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ */
+
+
+/* 
  * Execution function for block at_CarDetection
  */
 void at_CarDetection_execute(at_CarDetection_data_t *___id, uint8_t Camera_Out[240][320], bool *Car_Detected) 
 {
   /**		AT_CARDETECTION_EXECUTE DECLARATIONS 	START		**/
+    int brightPixels = 0;
+  int i = 0;
+  int j = 0;
   /**		AT_CARDETECTION_EXECUTE DECLARATIONS 	END		**/
 
   {
@@ -468,6 +741,27 @@ void at_CarDetection_execute(at_CarDetection_data_t *___id, uint8_t Camera_Out[2
 
 
 /* 
+ * atomicblock: at_slk_HBA
+ * 
+ * URL: http://127.0.0.1:63320/node?ref=r%3A92f02917-2939-4625-878a-0cf4bf3cdc0b%28AHCDemo._30_Implementation%29%2F458597115437889651
+ * 
+ * 
+ * 
+ * The outport(s)[HBA_Signal] is/are defined in the structure at_slk_HBA_data_t in B_Atomic_Blocks.h
+ * 
+ * 
+ * Data Properties
+ * ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ * Name             DD               DD Owner             Access           Usage      Datatype    Unit    Constraints               Description                                                                                      
+ * ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ * Car_Detected     Car_Detected     A_Data_Dictionary    Car_Detected     inport     boolean     -       -                         If a car from the opposite direction is detected, this signal is True, otherwise, it is False    
+ * HBA_Signal       HBA_Signal       A_Data_Dictionary    *HBA_Signal      outport    enum        -       -                         This is the output signal of the HBA SWC                                                         
+ * Vehicle_Speed    Vehicle_Speed    A_Data_Dictionary    Vehicle_Speed    inport     double      kmph    range 0 kmph..200 kmph    The ego vehicle speed in kilometer per hour                                                      
+ * ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ */
+
+
+/* 
  * Initialization function for block at_slk_HBA
  */
 void at_slk_HBA_init(void *___nothing) 
@@ -486,6 +780,14 @@ void at_slk_HBA_init(void *___nothing)
  */
 void at_slk_HBA_execute(void *___nothing, bool Car_Detected, double Vehicle_Speed, eBeamState_t *HBA_Signal) 
 {
+  /* 
+   * Post conditions: 
+   * post(0) AutoLowBeam : (Car_Detected == true || Vehicle_Speed < 36) -> HBA_Signal == LOW
+   * post(1) AutoHighBeam : (Car_Detected == false && Vehicle_Speed >= 36) -> HBA_Signal == HIGH
+   * post(2) FuSa_TSR_MaitainVisibility : (Vehicle_Speed >= (2 * 36)) && (Car_Detected != true) -> (HBA_Signal != LOW)
+   * post(3) FuSa_TSR_NoBlinding : (Car_Detected) -> HBA_Signal != HIGH
+   */
+
   {
   }
 

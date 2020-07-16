@@ -15,7 +15,7 @@ else
 endif
 
 
-TARGET_temp_generation = Win32
+TARGET_tmp = Win32
 
 ifdef VERBOSE
 Q = 
@@ -28,7 +28,7 @@ vecho = @echo
 export CC = gcc
 export AR = ar
 
-CFLAGS = -std=c90
+CFLAGS = -std=c99
 ARFLAGS = rcs
 
 INCDIRS = 
@@ -43,23 +43,23 @@ else
 	TEST_EXEC_OPTS = --build-dir=$(OROOT) --isolated
 endif
 
-ifeq ($(HOST),$(TARGET_temp_generation))
+ifeq ($(HOST),$(TARGET_tmp))
 	#  
-	# Begin Library temp_generation
+	# Begin Library tmp
 	#  
 	
-	ALL_CFLAGS_temp_generation = $(CFLAGS) -DWINVER=0x0601 -D_WIN32_WINNT=0x0601
+	ALL_CFLAGS_tmp = $(CFLAGS) -DWINVER=0x0601 -D_WIN32_WINNT=0x0601
 	
-	EXT_INCDIRS_temp_generation = 
-	ALL_INCDIR_FLAGS_temp_generation = $(addprefix -I,$(INCDIRS)) $(addprefix -I,$(EXT_INCDIRS_temp_generation))
-	ALL_INCS_temp_generation = B_Atomic_Blocks.h C_Complex_Data.h C_LL_Components.h B_Subsystem_Architecture.h A_System_Architecture.h ___SimulationRuntime.h E_Global_Constants.h $(foreach idir,$(INCDIRS),$(wildcard $(idir)/*.h)) $(foreach eidir,$(EXT_INCDIRS_temp_generation),$(wildcard $(eidir)/*.h))
+	EXT_INCDIRS_tmp = 
+	ALL_INCDIR_FLAGS_tmp = $(addprefix -I,$(INCDIRS)) $(addprefix -I,$(EXT_INCDIRS_tmp))
+	ALL_INCS_tmp = B_Atomic_Blocks.h A_System_Architecture.h C_LL_Components.h B_Subsystem_Architecture.h C_Complex_Data.h ___SimulationRuntime.h E_Global_Constants.h $(foreach idir,$(INCDIRS),$(wildcard $(idir)/*.h)) $(foreach eidir,$(EXT_INCDIRS_tmp),$(wildcard $(eidir)/*.h))
 	
-	ALL_SRCS_temp_generation = B_Atomic_Blocks.c C_Complex_Data.c C_LL_Components.c B_Subsystem_Architecture.c A_System_Architecture.c ___SimulationRuntime.c E_Global_Constants.c
+	ALL_SRCS_tmp = B_Atomic_Blocks.c A_System_Architecture.c C_LL_Components.c B_Subsystem_Architecture.c C_Complex_Data.c ___SimulationRuntime.c E_Global_Constants.c
 	
-	ALL_OBJS_temp_generation = $(patsubst %.c,$(OBJODIR)/%.o,$(notdir $(ALL_SRCS_temp_generation)))
+	ALL_OBJS_tmp = $(patsubst %.c,$(OBJODIR)/%.o,$(notdir $(ALL_SRCS_tmp)))
 	
 	#  
-	# End Library temp_generation
+	# End Library tmp
 	#  
 endif
 
@@ -67,15 +67,15 @@ endif
 .PHONY: all debug clean
 debug: CFLAGS +=-g
 debug: all
-all: libtemp_generation.a
+all: libtmp.a
 
 clean: 
 	$(if $(wildcard $(OBJODIR)), $(vecho) "RM $(notdir $(OBJODIR))")
 	$(Q) $(RM) -r $(OBJODIR)
 	$(Q) $(RM) -r $(OROOT)
-ifeq ($(HOST),$(TARGET_temp_generation))
-	$(if libtemp_generation.a, $(vecho) "RM libtemp_generation.a")
-	$(Q) $(RM) libtemp_generation.a
+ifeq ($(HOST),$(TARGET_tmp))
+	$(if libtmp.a, $(vecho) "RM libtmp.a")
+	$(Q) $(RM) libtmp.a
 endif
 
 
@@ -87,16 +87,16 @@ $$(patsubst %.c,$(OBJODIR)/%.o,$$(notdir $(1))): $(1) $$(ALL_INCS_$(2)) Makefile
 	$(vecho) "CC $$<"
 	$(Q) $(CC) $$(ALL_CFLAGS_$(2)) $$(ALL_INCDIR_FLAGS_$(2)) -c -o $$@ $$<
 endef 
-$(foreach asrc, $(sort $(ALL_SRCS_temp_generation)), $(eval $(call CompileSources,$(asrc),temp_generation)))
+$(foreach asrc, $(sort $(ALL_SRCS_tmp)), $(eval $(call CompileSources,$(asrc),tmp)))
 
-$(ALL_OBJS_temp_generation): | $(OBJODIR)
+$(ALL_OBJS_tmp): | $(OBJODIR)
 
-libtemp_generation.a: $(ALL_OBJS_temp_generation)
-ifeq ($(HOST),$(TARGET_temp_generation))
+libtmp.a: $(ALL_OBJS_tmp)
+ifeq ($(HOST),$(TARGET_tmp))
 	$(vecho) "AR $(notdir $@)"
 	$(Q) $(AR) $(ARFLAGS) $@ $^
 else
-	$(vecho) "Cannot build $(TARGET_temp_generation)-specific 'libtemp_generation.a' library under $(HOST)."
+	$(vecho) "Cannot build $(TARGET_tmp)-specific 'libtmp.a' library under $(HOST)."
 endif
 
 
