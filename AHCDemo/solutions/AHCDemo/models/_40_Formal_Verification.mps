@@ -42,7 +42,7 @@
       </concept>
     </language>
     <language id="2d7fadf5-33f6-4e80-a78f-0f739add2bde" name="com.mbeddr.core.buildconfig">
-      <concept id="2671893947946158498" name="com.mbeddr.core.buildconfig.structure.StaticLibrary" flags="ng" index="29Nb31" />
+      <concept id="2671893947946158498" name="com.mbeddr.core.buildconfig.structure.Library" flags="ng" index="29Nb31" />
       <concept id="5046689135693761556" name="com.mbeddr.core.buildconfig.structure.Binary" flags="ng" index="2eOfOj">
         <reference id="2504745233808502246" name="target" index="3oK8_y" />
         <child id="5046689135693761559" name="referencedModules" index="2eOfOg" />
@@ -178,6 +178,10 @@
       <property role="3GEa6x" value="true" />
       <ref role="3GEb4d" to="e765:4JTzIyk_zbO" resolve="B_Atomic_Blocks" />
     </node>
+    <node concept="3GEVxB" id="4rmc78x0wCy" role="3W6d8T">
+      <property role="3GEa6x" value="true" />
+      <ref role="3GEb4d" to="l83u:2$7gFtgIzv5" resolve="C_Complex_Data" />
+    </node>
     <node concept="1COqqU" id="2X8pPjx4ZVu" role="3V$2$K">
       <property role="2lelRm" value="false" />
       <property role="2lUGe1" value="true" />
@@ -199,7 +203,7 @@
       <node concept="3NXOOs" id="64CSyXDSp3T" role="1Byen_">
         <property role="1RwFax" value="true" />
         <property role="3kgbRO" value="false" />
-        <property role="3N1Lgt" value="Implementations/B_Atomic_Blocks.c" />
+        <property role="3N1Lgt" value="Implementations/supplierA/ExternalC/B_Atomic_Blocks.c" />
       </node>
     </node>
     <node concept="3BUAGY" id="2X8pPjx502r" role="3V$2$K">
@@ -223,7 +227,7 @@
       <node concept="3NXOOs" id="64CSyXDSp7S" role="1Byen_">
         <property role="1RwFax" value="true" />
         <property role="3kgbRO" value="false" />
-        <property role="3N1Lgt" value="Implementations/B_Atomic_Blocks.c" />
+        <property role="3N1Lgt" value="Implementations/supplierA/ExternalC/B_Atomic_Blocks.c" />
       </node>
     </node>
     <node concept="3BUAGY" id="2X8pPjx50nF" role="3V$2$K">
@@ -247,7 +251,7 @@
       <node concept="3NXOOs" id="64CSyXDSp9k" role="1Byen_">
         <property role="1RwFax" value="true" />
         <property role="3kgbRO" value="false" />
-        <property role="3N1Lgt" value="Implementations/B_Atomic_Blocks.c" />
+        <property role="3N1Lgt" value="Implementations/supplierA/ExternalC/B_Atomic_Blocks.c" />
       </node>
     </node>
   </node>
@@ -256,13 +260,19 @@
       <property role="TrG5h" value="def_lib" />
       <ref role="3oK8_y" to="n70o:5TIW0i7tzhb" resolve="portable" />
       <node concept="2v9HqM" id="2X8pPjx4Yz_" role="2eOfOg">
-        <ref role="2v9HqP" to="l83u:2$7gFtgIzv5" resolve="C_Components" />
+        <ref role="2v9HqP" to="l83u:2$7gFtgIzv5" resolve="C_Complex_Data" />
       </node>
       <node concept="2v9HqM" id="2X8pPjx4YzA" role="2eOfOg">
         <ref role="2v9HqP" to="e765:4JTzIyk_zbO" resolve="B_Atomic_Blocks" />
       </node>
       <node concept="2v9HqM" id="2X8pPjx4YzB" role="2eOfOg">
-        <ref role="2v9HqP" to="q2jd:2$7gFtgIrxU" resolve="A_Simulink_Architecture" />
+        <ref role="2v9HqP" to="q2jd:2$7gFtgIrxU" resolve="C_LL_Components" />
+      </node>
+      <node concept="2v9HqM" id="4rmc78wY_CD" role="2eOfOg">
+        <ref role="2v9HqP" to="q2jd:3G4Dxzx26IR" resolve="A_System_Architecture" />
+      </node>
+      <node concept="2v9HqM" id="4rmc78wY_CE" role="2eOfOg">
+        <ref role="2v9HqP" to="q2jd:3G4Dxzx29Pz" resolve="B_Subsystem_Architecture" />
       </node>
     </node>
     <node concept="2Q9Fgs" id="2X8pPjx4Yzp" role="2Q9xDr">

@@ -16,8 +16,6 @@
 
 #include "E_Global_Constants.h"
 
-#include <stdio.h>
-
 
 
 /**		ADDITIONAL HEADERS START		**/
@@ -28,21 +26,7 @@ extern "C" {
 #endif
 
 typedef struct at_ControlLogic_flattened_data at_ControlLogic_flattened_data_t;
-typedef struct at_Fuser_data at_Fuser_data_t;
-/* 
- * instance data for block at_Fuser
- */
-struct at_Fuser_data {
-  bool __preconditionFailed_IndependenceOfStates;
-};
-
 struct at_ControlLogic_flattened_data {
-  at_Fuser_data_t i_Fuser;
-  bool Fuser_High_Beam;
-  bool Fuser_Low_Beam;
-  bool Fuser_Park_Lights;
-  eBeamState_t HBA_HBA_Signal;
-  sLightState_t HLC_HLC_Signal;
   bool __anyPreconditionFailed;
 };
 
@@ -59,22 +43,11 @@ struct at_CarDetection_data {
 struct at_Controller_flattened_data {
   at_ControlLogic_flattened_data_t i_ControlLogic;
   at_CarDetection_data_t i_CarDetection;
-  bool ControlLogic_High_Beam;
-  bool ControlLogic_Low_Beam;
-  bool ControlLogic_Park_Lights;
-  double Sensor2Phy_Dash_Illuminance;
-  bool CarDetection_Car_Detected;
   bool __anyPreconditionFailed;
 };
 
 typedef struct at_slk_ControlLogic_flattened_data at_slk_ControlLogic_flattened_data_t;
 struct at_slk_ControlLogic_flattened_data {
-  at_Fuser_data_t i_Fuser;
-  bool Fuser_High_Beam;
-  bool Fuser_Low_Beam;
-  bool Fuser_Park_Lights;
-  eBeamState_t HBA_HBA_Signal;
-  sLightState_t HLC_HLC_Signal;
   bool __anyPreconditionFailed;
 };
 
@@ -88,7 +61,7 @@ void at_slk_ControlLogic_flattened_init(at_slk_ControlLogic_flattened_data_t *__
 
 void at_slk_ControlLogic_flattened_execute(at_slk_ControlLogic_flattened_data_t *___id, bool Car_Detected, double Dash_Illuminance, eKnobPosition_t Knob_Position, eLeverPosition_t Lever_Position, double Vehicle_Speed, bool *High_Beam, bool *Low_Beam, bool *Park_Lights);
 
-void at_Fuser_execute(at_Fuser_data_t *___id, eBeamState_t HBA_Signal, sLightState_t HLC_Signal, eLeverPosition_t Lever_Position, bool *High_Beam, bool *Low_Beam, bool *Park_Lights);
+void at_Fuser_execute(void *___nothing, eBeamState_t HBA_Signal, sLightState_t HLC_Signal, eLeverPosition_t Lever_Position, bool *High_Beam, bool *Low_Beam, bool *Park_Lights);
 
 void at_HBA_execute(void *___nothing, bool Car_Detected, double Vehicle_Speed, eBeamState_t *HBA_Signal);
 

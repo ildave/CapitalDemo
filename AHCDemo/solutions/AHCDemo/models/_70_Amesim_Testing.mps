@@ -3428,6 +3428,12 @@
       <node concept="2v9HqM" id="2qH0IjPJYxe" role="2eOfOg">
         <ref role="2v9HqP" to="e765:4JTzIyk_zbO" resolve="B_Atomic_Blocks" />
       </node>
+      <node concept="2v9HqM" id="4rmc78x0ly_" role="2eOfOg">
+        <ref role="2v9HqP" to="q2jd:3G4Dxzx26IR" resolve="A_System_Architecture" />
+      </node>
+      <node concept="2v9HqM" id="4rmc78x0lyA" role="2eOfOg">
+        <ref role="2v9HqP" to="q2jd:3G4Dxzx29Pz" resolve="B_Subsystem_Architecture" />
+      </node>
     </node>
     <node concept="2Q9Fgs" id="2qH0IjPJYwU" role="2Q9xDr">
       <node concept="2Q9FjX" id="2qH0IjPJYwV" role="2Q9FjI" />

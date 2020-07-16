@@ -42,6 +42,11 @@
         <child id="8337440621611401032" name="specification" index="CIVlq" />
       </concept>
     </language>
+    <language id="31f70732-7f14-4aa0-abff-6f50f7e5fbf2" name="com.lmsintl.accent.analyses.datadictionary">
+      <concept id="221948837289890044" name="com.lmsintl.accent.analyses.datadictionary.structure.AnalysesDataDictionaryConstraintCheck" flags="ng" index="2BVhmQ">
+        <property id="221948837289890293" name="enabled" index="2BVhiZ" />
+      </concept>
+    </language>
     <language id="3e69b1ff-b264-422d-8dfa-681e167af189" name="com.lmsintl.accent.datadictionary">
       <concept id="7106149303796447443" name="com.lmsintl.accent.datadictionary.structure.DoNothingConstraintCheck" flags="ng" index="JcMnR" />
       <concept id="2313746784473239840" name="com.lmsintl.accent.datadictionary.structure.DataDictionaryConstraintsItem" flags="ng" index="ODGlh">
@@ -465,6 +470,9 @@
           <node concept="JcMnR" id="1jz$Hoa_pJA" role="3t9H5Y" />
         </node>
         <node concept="1683D2" id="7XH0b4w4XDx" role="JcMnF" />
+        <node concept="2BVhmQ" id="4rmc78wZoOs" role="JcMnF">
+          <property role="2BVhiZ" value="true" />
+        </node>
       </node>
     </node>
     <node concept="aeBiC" id="7XH0b4w5c5l" role="2Q9xDr">
@@ -1451,8 +1459,7 @@
       <ref role="3GEb4d" node="3G4Dxzx26IR" resolve="A_System_Architecture" />
     </node>
     <node concept="3TgkW9" id="7XH0b4w5ceg" role="3V$2$K">
-      <property role="2lelRm" value="false" />
-      <property role="2lUGe1" value="true" />
+      <property role="2lelRm" value="true" />
       <property role="2l50Lc" value="false" />
       <property role="22uFEx" value="false" />
       <property role="1Bxwel" value="false" />
@@ -1463,11 +1470,11 @@
       <property role="2lUGdP" value="false" />
       <property role="2lUHrg" value="25" />
       <property role="2lUGbD" value="none" />
-      <property role="2lUGcN" value="false" />
-      <property role="2l50Mm" value="false" />
       <property role="3zAPig" value="false" />
       <property role="2SJSsF" value="false" />
       <property role="2P77FJ" value="true" />
+      <property role="2l50Mm" value="true" />
+      <property role="2lUGcN" value="true" />
       <ref role="3UTmx2" node="2$7gFtgIvk0" resolve="abController" />
     </node>
   </node>

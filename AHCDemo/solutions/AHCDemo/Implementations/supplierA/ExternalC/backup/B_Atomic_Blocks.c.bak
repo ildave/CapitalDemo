@@ -2,7 +2,6 @@
 
 
 #include "C_Complex_Data.h"
-#include "___BlockMessages.h"
 
 
 /**		ADDITIONAL HEADERS START		**/
@@ -52,133 +51,40 @@ void at_ControlLogic_flattened_execute(at_ControlLogic_flattened_data_t *___id, 
 {
   at_ControlLogic_flattened_data_t *___data = ___id;
   {
+    eBeamState_t HBA_HBA_Signal;
+    sLightState_t HLC_HLC_Signal;
+    bool Fuser_High_Beam;
+    bool Fuser_Low_Beam;
+    bool Fuser_Park_Lights;
     {
       {
-        at_HBA_execute(NULL, Car_Detected, Vehicle_Speed, &((___data->HBA_HBA_Signal)));
+        at_HBA_execute(NULL, Car_Detected, Vehicle_Speed, &(HBA_HBA_Signal));
       }
 ;
     }
 
     {
       {
-        at_HLC_execute(NULL, Dash_Illuminance, Knob_Position, &((___data->HLC_HLC_Signal)));
+        at_HLC_execute(NULL, Dash_Illuminance, Knob_Position, &(HLC_HLC_Signal));
       }
 ;
     }
 
     {
       {
-        at_Fuser_execute(&(___data->i_Fuser), (___data->HBA_HBA_Signal), (___data->HLC_HLC_Signal), Lever_Position, &((___data->Fuser_High_Beam)), &((___data->Fuser_Low_Beam)), &((___data->Fuser_Park_Lights)));
+        at_Fuser_execute(NULL, HBA_HBA_Signal, HLC_HLC_Signal, Lever_Position, &(Fuser_High_Beam), &(Fuser_Low_Beam), &(Fuser_Park_Lights));
       }
 ;
     }
 
-    *High_Beam = ___data->Fuser_High_Beam;;
-    *Low_Beam = ___data->Fuser_Low_Beam;;
-    *Park_Lights = ___data->Fuser_Park_Lights;;
+    *High_Beam = Fuser_High_Beam;;
+    *Low_Beam = Fuser_Low_Beam;;
+    *Park_Lights = Fuser_Park_Lights;;
   }
 
   end:
 
   (void)0;
-  {
-    bool __assertCondition = !(Knob_Position == OFF && Lever_Position != OPTICAL_HORN) || NOR3((*High_Beam),(*Low_Beam),(*Park_Lights));
-    if (!__assertCondition) 
-    {
-      ___block_messagelist_Contract_Failed("B_Atomic_Blocks_at_ControlLogic_flattened_FixedOff", "B_Atomic_Blocks:at_ControlLogic_flattened?r:dd4fbb2e-8a6b-438d-9e3c-1bd3fda3be29(AHCDemo._20_SW_Architecture)#6393596668974660986");
-      printf("Knob_Position=%d\n",Knob_Position);;
-      printf("Lever_Position=%d\n",Lever_Position);;
-      printf("Park_Lights=%d\n",(*Park_Lights));;
-      printf("Low_Beam=%d\n",(*Low_Beam));;
-      printf("High_Beam=%d\n",(*High_Beam));;
-    }
-  }
-
-  {
-    bool __assertCondition = !(Lever_Position == C_Complex_Data_eLeverPosition__HEADLIGHT_AUTO && Knob_Position == C_Complex_Data_eKnobPosition__HEADLIGHT_AUTO && Dash_Illuminance >= 10000) || NOR3((*High_Beam),(*Low_Beam),(*Park_Lights));
-    if (!__assertCondition) 
-    {
-      ___block_messagelist_Contract_Failed("B_Atomic_Blocks_at_ControlLogic_flattened_AutoOff", "B_Atomic_Blocks:at_ControlLogic_flattened:1?r:dd4fbb2e-8a6b-438d-9e3c-1bd3fda3be29(AHCDemo._20_SW_Architecture)#6393596668974709244");
-      printf("Knob_Position=%d\n",Knob_Position);;
-      printf("High_Beam=%d\n",(*High_Beam));;
-      printf("Dash_Illuminance=%g\n",Dash_Illuminance);;
-      printf("Low_Beam=%d\n",(*Low_Beam));;
-      printf("Park_Lights=%d\n",(*Park_Lights));;
-      printf("Lever_Position=%d\n",Lever_Position);;
-    }
-  }
-
-  {
-    bool __assertCondition = !(Lever_Position == C_Complex_Data_eLeverPosition__HEADLIGHT_AUTO && Knob_Position == C_Complex_Data_eKnobPosition__HEADLIGHT_AUTO && (Car_Detected == true || Vehicle_Speed < 36) && Dash_Illuminance < 10000) || (*Low_Beam) == true;
-    if (!__assertCondition) 
-    {
-      ___block_messagelist_Contract_Failed("B_Atomic_Blocks_at_ControlLogic_flattened_AutoLowBeam", "B_Atomic_Blocks:at_ControlLogic_flattened:2?r:dd4fbb2e-8a6b-438d-9e3c-1bd3fda3be29(AHCDemo._20_SW_Architecture)#6393596668974773838");
-      printf("Lever_Position=%d\n",Lever_Position);;
-      printf("Car_Detected=%d\n",Car_Detected);;
-      printf("Vehicle_Speed=%g\n",Vehicle_Speed);;
-      printf("Dash_Illuminance=%g\n",Dash_Illuminance);;
-      printf("Low_Beam=%d\n",(*Low_Beam));;
-      printf("Knob_Position=%d\n",Knob_Position);;
-    }
-  }
-
-  {
-    bool __assertCondition = !(Lever_Position == LOW_BEAM && Knob_Position == HEADLIGHT_ON) || (*Low_Beam) == true;
-    if (!__assertCondition) 
-    {
-      ___block_messagelist_Contract_Failed("B_Atomic_Blocks_at_ControlLogic_flattened_FixedLowBeam", "B_Atomic_Blocks:at_ControlLogic_flattened:3?r:dd4fbb2e-8a6b-438d-9e3c-1bd3fda3be29(AHCDemo._20_SW_Architecture)#6393596668974865181");
-      printf("Low_Beam=%d\n",(*Low_Beam));;
-      printf("Lever_Position=%d\n",Lever_Position);;
-      printf("Knob_Position=%d\n",Knob_Position);;
-    }
-  }
-
-  {
-    bool __assertCondition = !(Lever_Position == OPTICAL_HORN) || (*High_Beam) == true;
-    if (!__assertCondition) 
-    {
-      ___block_messagelist_Contract_Failed("B_Atomic_Blocks_at_ControlLogic_flattened_OpticalHorn", "B_Atomic_Blocks:at_ControlLogic_flattened:4?r:dd4fbb2e-8a6b-438d-9e3c-1bd3fda3be29(AHCDemo._20_SW_Architecture)#6393596668974919443");
-      printf("Lever_Position=%d\n",Lever_Position);;
-      printf("High_Beam=%d\n",(*High_Beam));;
-    }
-  }
-
-  {
-    bool __assertCondition = !((Car_Detected == false && Vehicle_Speed >= 36 && Dash_Illuminance < 10000 && Knob_Position == C_Complex_Data_eKnobPosition__HEADLIGHT_AUTO && Lever_Position == C_Complex_Data_eLeverPosition__HEADLIGHT_AUTO)) || (*High_Beam) == true;
-    if (!__assertCondition) 
-    {
-      ___block_messagelist_Contract_Failed("B_Atomic_Blocks_at_ControlLogic_flattened_AutoHighBeam", "B_Atomic_Blocks:at_ControlLogic_flattened:5?r:dd4fbb2e-8a6b-438d-9e3c-1bd3fda3be29(AHCDemo._20_SW_Architecture)#9181995976025707413");
-      printf("Vehicle_Speed=%g\n",Vehicle_Speed);;
-      printf("Knob_Position=%d\n",Knob_Position);;
-      printf("Car_Detected=%d\n",Car_Detected);;
-      printf("High_Beam=%d\n",(*High_Beam));;
-      printf("Dash_Illuminance=%g\n",Dash_Illuminance);;
-      printf("Lever_Position=%d\n",Lever_Position);;
-    }
-  }
-
-  {
-    bool __assertCondition = !(Knob_Position == PARK_ON && Lever_Position != OPTICAL_HORN) || (*Park_Lights) == true;
-    if (!__assertCondition) 
-    {
-      ___block_messagelist_Contract_Failed("B_Atomic_Blocks_at_ControlLogic_flattened_ParkLights", "B_Atomic_Blocks:at_ControlLogic_flattened:6?r:dd4fbb2e-8a6b-438d-9e3c-1bd3fda3be29(AHCDemo._20_SW_Architecture)#6393596668974942081");
-      printf("Lever_Position=%d\n",Lever_Position);;
-      printf("Knob_Position=%d\n",Knob_Position);;
-      printf("Park_Lights=%d\n",(*Park_Lights));;
-    }
-  }
-
-  {
-    bool __assertCondition = NAND3((*High_Beam),(*Low_Beam),(*Park_Lights));
-    if (!__assertCondition) 
-    {
-      ___block_messagelist_Contract_Failed("B_Atomic_Blocks_at_ControlLogic_flattened_IndependenceLightStates", "B_Atomic_Blocks:at_ControlLogic_flattened:7?r:dd4fbb2e-8a6b-438d-9e3c-1bd3fda3be29(AHCDemo._20_SW_Architecture)#6393596668974982908");
-      printf("Park_Lights=%d\n",(*Park_Lights));;
-      printf("Low_Beam=%d\n",(*Low_Beam));;
-      printf("High_Beam=%d\n",(*High_Beam));;
-    }
-  }
-
 }
 
 
@@ -211,59 +117,40 @@ void at_Controller_flattened_execute(at_Controller_flattened_data_t *___id, uint
 {
   at_Controller_flattened_data_t *___data = ___id;
   {
+    bool CarDetection_Car_Detected;
+    double Sensor2Phy_Dash_Illuminance;
+    bool ControlLogic_High_Beam;
+    bool ControlLogic_Low_Beam;
+    bool ControlLogic_Park_Lights;
     {
       {
-        at_CarDetection_execute(&(___data->i_CarDetection), Camera_Out, &((___data->CarDetection_Car_Detected)));
+        at_CarDetection_execute(&(___data->i_CarDetection), Camera_Out, &(CarDetection_Car_Detected));
       }
 ;
     }
 
     {
       {
-        at_slk_Sensor2Phy_execute(NULL, Dash_Sensor_Out, &((___data->Sensor2Phy_Dash_Illuminance)));
+        at_slk_Sensor2Phy_execute(NULL, Dash_Sensor_Out, &(Sensor2Phy_Dash_Illuminance));
       }
 ;
     }
 
     {
       {
-        at_ControlLogic_flattened_execute(&(___data->i_ControlLogic), (___data->CarDetection_Car_Detected), (___data->Sensor2Phy_Dash_Illuminance), Knob_Position, Lever_Position, Vehicle_Speed, &((___data->ControlLogic_High_Beam)), &((___data->ControlLogic_Low_Beam)), &((___data->ControlLogic_Park_Lights)));
+        at_ControlLogic_flattened_execute(&(___data->i_ControlLogic), CarDetection_Car_Detected, Sensor2Phy_Dash_Illuminance, Knob_Position, Lever_Position, Vehicle_Speed, &(ControlLogic_High_Beam), &(ControlLogic_Low_Beam), &(ControlLogic_Park_Lights));
       }
 ;
     }
 
-    *High_Beam = ___data->ControlLogic_High_Beam;;
-    *Low_Beam = ___data->ControlLogic_Low_Beam;;
-    *Park_Lights = ___data->ControlLogic_Park_Lights;;
+    *High_Beam = ControlLogic_High_Beam;;
+    *Low_Beam = ControlLogic_Low_Beam;;
+    *Park_Lights = ControlLogic_Park_Lights;;
   }
 
   end:
 
   (void)0;
-  {
-    bool __assertCondition = !(Knob_Position == OFF && Lever_Position != OPTICAL_HORN) || NOR3((*High_Beam),(*Low_Beam),(*Park_Lights));
-    if (!__assertCondition) 
-    {
-      ___block_messagelist_Contract_Failed("B_Atomic_Blocks_at_Controller_flattened_FixedOff", "B_Atomic_Blocks:at_Controller_flattened?r:dd4fbb2e-8a6b-438d-9e3c-1bd3fda3be29(AHCDemo._20_SW_Architecture)#6393596668974987005");
-      printf("Knob_Position=%d\n",Knob_Position);;
-      printf("Park_Lights=%d\n",(*Park_Lights));;
-      printf("Lever_Position=%d\n",Lever_Position);;
-      printf("Low_Beam=%d\n",(*Low_Beam));;
-      printf("High_Beam=%d\n",(*High_Beam));;
-    }
-  }
-
-  {
-    bool __assertCondition = NAND3((*High_Beam),(*Low_Beam),(*Park_Lights));
-    if (!__assertCondition) 
-    {
-      ___block_messagelist_Contract_Failed("B_Atomic_Blocks_at_Controller_flattened_IndependenceLightStates", "B_Atomic_Blocks:at_Controller_flattened:1?r:dd4fbb2e-8a6b-438d-9e3c-1bd3fda3be29(AHCDemo._20_SW_Architecture)#6393596668975031524");
-      printf("High_Beam=%d\n",(*High_Beam));;
-      printf("Low_Beam=%d\n",(*Low_Beam));;
-      printf("Park_Lights=%d\n",(*Park_Lights));;
-    }
-  }
-
 }
 
 
@@ -286,150 +173,48 @@ void at_slk_ControlLogic_flattened_execute(at_slk_ControlLogic_flattened_data_t 
 {
   at_slk_ControlLogic_flattened_data_t *___data = ___id;
   {
+    eBeamState_t HBA_HBA_Signal;
+    sLightState_t HLC_HLC_Signal;
+    bool Fuser_High_Beam;
+    bool Fuser_Low_Beam;
+    bool Fuser_Park_Lights;
     {
       {
-        at_slk_HBA_execute(NULL, Car_Detected, Vehicle_Speed, &((___data->HBA_HBA_Signal)));
+        at_slk_HBA_execute(NULL, Car_Detected, Vehicle_Speed, &(HBA_HBA_Signal));
       }
 ;
     }
 
     {
       {
-        at_HLC_execute(NULL, Dash_Illuminance, Knob_Position, &((___data->HLC_HLC_Signal)));
+        at_HLC_execute(NULL, Dash_Illuminance, Knob_Position, &(HLC_HLC_Signal));
       }
 ;
     }
 
     {
       {
-        at_Fuser_execute(&(___data->i_Fuser), (___data->HBA_HBA_Signal), (___data->HLC_HLC_Signal), Lever_Position, &((___data->Fuser_High_Beam)), &((___data->Fuser_Low_Beam)), &((___data->Fuser_Park_Lights)));
+        at_Fuser_execute(NULL, HBA_HBA_Signal, HLC_HLC_Signal, Lever_Position, &(Fuser_High_Beam), &(Fuser_Low_Beam), &(Fuser_Park_Lights));
       }
 ;
     }
 
-    *High_Beam = ___data->Fuser_High_Beam;;
-    *Low_Beam = ___data->Fuser_Low_Beam;;
-    *Park_Lights = ___data->Fuser_Park_Lights;;
+    *High_Beam = Fuser_High_Beam;;
+    *Low_Beam = Fuser_Low_Beam;;
+    *Park_Lights = Fuser_Park_Lights;;
   }
 
   end:
 
   (void)0;
-  {
-    bool __assertCondition = !(Knob_Position == OFF && Lever_Position != OPTICAL_HORN) || NOR3((*High_Beam),(*Low_Beam),(*Park_Lights));
-    if (!__assertCondition) 
-    {
-      ___block_messagelist_Contract_Failed("B_Atomic_Blocks_at_slk_ControlLogic_flattened_FixedOff", "B_Atomic_Blocks:at_slk_ControlLogic_flattened?r:dd4fbb2e-8a6b-438d-9e3c-1bd3fda3be29(AHCDemo._20_SW_Architecture)#6393596668974660986");
-      printf("Lever_Position=%d\n",Lever_Position);;
-      printf("Low_Beam=%d\n",(*Low_Beam));;
-      printf("Park_Lights=%d\n",(*Park_Lights));;
-      printf("Knob_Position=%d\n",Knob_Position);;
-      printf("High_Beam=%d\n",(*High_Beam));;
-    }
-  }
-
-  {
-    bool __assertCondition = !(Lever_Position == C_Complex_Data_eLeverPosition__HEADLIGHT_AUTO && Knob_Position == C_Complex_Data_eKnobPosition__HEADLIGHT_AUTO && Dash_Illuminance >= 10000) || NOR3((*High_Beam),(*Low_Beam),(*Park_Lights));
-    if (!__assertCondition) 
-    {
-      ___block_messagelist_Contract_Failed("B_Atomic_Blocks_at_slk_ControlLogic_flattened_AutoOff", "B_Atomic_Blocks:at_slk_ControlLogic_flattened:1?r:dd4fbb2e-8a6b-438d-9e3c-1bd3fda3be29(AHCDemo._20_SW_Architecture)#6393596668974709244");
-      printf("High_Beam=%d\n",(*High_Beam));;
-      printf("Lever_Position=%d\n",Lever_Position);;
-      printf("Dash_Illuminance=%g\n",Dash_Illuminance);;
-      printf("Knob_Position=%d\n",Knob_Position);;
-      printf("Low_Beam=%d\n",(*Low_Beam));;
-      printf("Park_Lights=%d\n",(*Park_Lights));;
-    }
-  }
-
-  {
-    bool __assertCondition = !(Lever_Position == C_Complex_Data_eLeverPosition__HEADLIGHT_AUTO && Knob_Position == C_Complex_Data_eKnobPosition__HEADLIGHT_AUTO && (Car_Detected == true || Vehicle_Speed < 36) && Dash_Illuminance < 10000) || (*Low_Beam) == true;
-    if (!__assertCondition) 
-    {
-      ___block_messagelist_Contract_Failed("B_Atomic_Blocks_at_slk_ControlLogic_flattened_AutoLowBeam", "B_Atomic_Blocks:at_slk_ControlLogic_flattened:2?r:dd4fbb2e-8a6b-438d-9e3c-1bd3fda3be29(AHCDemo._20_SW_Architecture)#6393596668974773838");
-      printf("Car_Detected=%d\n",Car_Detected);;
-      printf("Low_Beam=%d\n",(*Low_Beam));;
-      printf("Vehicle_Speed=%g\n",Vehicle_Speed);;
-      printf("Lever_Position=%d\n",Lever_Position);;
-      printf("Knob_Position=%d\n",Knob_Position);;
-      printf("Dash_Illuminance=%g\n",Dash_Illuminance);;
-    }
-  }
-
-  {
-    bool __assertCondition = !(Lever_Position == LOW_BEAM && Knob_Position == HEADLIGHT_ON) || (*Low_Beam) == true;
-    if (!__assertCondition) 
-    {
-      ___block_messagelist_Contract_Failed("B_Atomic_Blocks_at_slk_ControlLogic_flattened_FixedLowBeam", "B_Atomic_Blocks:at_slk_ControlLogic_flattened:3?r:dd4fbb2e-8a6b-438d-9e3c-1bd3fda3be29(AHCDemo._20_SW_Architecture)#6393596668974865181");
-      printf("Lever_Position=%d\n",Lever_Position);;
-      printf("Low_Beam=%d\n",(*Low_Beam));;
-      printf("Knob_Position=%d\n",Knob_Position);;
-    }
-  }
-
-  {
-    bool __assertCondition = !(Lever_Position == OPTICAL_HORN) || (*High_Beam) == true;
-    if (!__assertCondition) 
-    {
-      ___block_messagelist_Contract_Failed("B_Atomic_Blocks_at_slk_ControlLogic_flattened_OpticalHorn", "B_Atomic_Blocks:at_slk_ControlLogic_flattened:4?r:dd4fbb2e-8a6b-438d-9e3c-1bd3fda3be29(AHCDemo._20_SW_Architecture)#6393596668974919443");
-      printf("High_Beam=%d\n",(*High_Beam));;
-      printf("Lever_Position=%d\n",Lever_Position);;
-    }
-  }
-
-  {
-    bool __assertCondition = !((Car_Detected == false && Vehicle_Speed >= 36 && Dash_Illuminance < 10000 && Knob_Position == C_Complex_Data_eKnobPosition__HEADLIGHT_AUTO && Lever_Position == C_Complex_Data_eLeverPosition__HEADLIGHT_AUTO)) || (*High_Beam) == true;
-    if (!__assertCondition) 
-    {
-      ___block_messagelist_Contract_Failed("B_Atomic_Blocks_at_slk_ControlLogic_flattened_AutoHighBeam", "B_Atomic_Blocks:at_slk_ControlLogic_flattened:5?r:dd4fbb2e-8a6b-438d-9e3c-1bd3fda3be29(AHCDemo._20_SW_Architecture)#9181995976025707413");
-      printf("Dash_Illuminance=%g\n",Dash_Illuminance);;
-      printf("Vehicle_Speed=%g\n",Vehicle_Speed);;
-      printf("Lever_Position=%d\n",Lever_Position);;
-      printf("High_Beam=%d\n",(*High_Beam));;
-      printf("Knob_Position=%d\n",Knob_Position);;
-      printf("Car_Detected=%d\n",Car_Detected);;
-    }
-  }
-
-  {
-    bool __assertCondition = !(Knob_Position == PARK_ON && Lever_Position != OPTICAL_HORN) || (*Park_Lights) == true;
-    if (!__assertCondition) 
-    {
-      ___block_messagelist_Contract_Failed("B_Atomic_Blocks_at_slk_ControlLogic_flattened_ParkLights", "B_Atomic_Blocks:at_slk_ControlLogic_flattened:6?r:dd4fbb2e-8a6b-438d-9e3c-1bd3fda3be29(AHCDemo._20_SW_Architecture)#6393596668974942081");
-      printf("Knob_Position=%d\n",Knob_Position);;
-      printf("Lever_Position=%d\n",Lever_Position);;
-      printf("Park_Lights=%d\n",(*Park_Lights));;
-    }
-  }
-
-  {
-    bool __assertCondition = NAND3((*High_Beam),(*Low_Beam),(*Park_Lights));
-    if (!__assertCondition) 
-    {
-      ___block_messagelist_Contract_Failed("B_Atomic_Blocks_at_slk_ControlLogic_flattened_IndependenceLightStates", "B_Atomic_Blocks:at_slk_ControlLogic_flattened:7?r:dd4fbb2e-8a6b-438d-9e3c-1bd3fda3be29(AHCDemo._20_SW_Architecture)#6393596668974982908");
-      printf("Park_Lights=%d\n",(*Park_Lights));;
-      printf("High_Beam=%d\n",(*High_Beam));;
-      printf("Low_Beam=%d\n",(*Low_Beam));;
-    }
-  }
-
 }
 
 
 /* 
  * Execution function for block at_Fuser
  */
-void at_Fuser_execute(at_Fuser_data_t *___id, eBeamState_t HBA_Signal, sLightState_t HLC_Signal, eLeverPosition_t Lever_Position, bool *High_Beam, bool *Low_Beam, bool *Park_Lights) 
+void at_Fuser_execute(void *___nothing, eBeamState_t HBA_Signal, sLightState_t HLC_Signal, eLeverPosition_t Lever_Position, bool *High_Beam, bool *Low_Beam, bool *Park_Lights) 
 {
-  {
-    bool __assertCondition = NAND(HLC_Signal.headlightOn,HLC_Signal.parkOn);
-    if (!__assertCondition) 
-    {
-      ___block_messagelist_Contract_Failed("B_Atomic_Blocks_at_Fuser_IndependenceOfStates", "C_LL_Components:iFuser:8?r:dd4fbb2e-8a6b-438d-9e3c-1bd3fda3be29(AHCDemo._20_SW_Architecture)#6393596668974370563");
-      printf("HLC_Signal.headlightOn=%d\n",HLC_Signal.headlightOn);;
-    }
-  }
-
   /**		AT_FUSER_EXECUTE DECLARATIONS 	START		**/
   bool relayHigh=false;
   bool relayLow=false;
@@ -474,110 +259,6 @@ else {
 
   
   
-  {
-    bool __assertCondition = !(NOR(HLC_Signal.headlightOn,HLC_Signal.parkOn) && Lever_Position != OPTICAL_HORN) || NOR3((*High_Beam),(*Low_Beam),(*Park_Lights));
-    if (!__assertCondition) 
-    {
-      ___block_messagelist_Contract_Failed("B_Atomic_Blocks_at_Fuser_FixedOff", "C_LL_Components:iFuser?r:dd4fbb2e-8a6b-438d-9e3c-1bd3fda3be29(AHCDemo._20_SW_Architecture)#6393596668974132836");
-      printf("Low_Beam=%d\n",(*Low_Beam));;
-      printf("Park_Lights=%d\n",(*Park_Lights));;
-      printf("HLC_Signal.headlightOn=%d\n",HLC_Signal.headlightOn);;
-      printf("Lever_Position=%d\n",Lever_Position);;
-      printf("High_Beam=%d\n",(*High_Beam));;
-    }
-  }
-
-  {
-    bool __assertCondition = !(NOR(HLC_Signal.headlightOn,HLC_Signal.parkOn) && Lever_Position == C_Complex_Data_eLeverPosition__HEADLIGHT_AUTO) || NOR3((*High_Beam),(*Low_Beam),(*Park_Lights));
-    if (!__assertCondition) 
-    {
-      ___block_messagelist_Contract_Failed("B_Atomic_Blocks_at_Fuser_AutoOff", "C_LL_Components:iFuser:1?r:dd4fbb2e-8a6b-438d-9e3c-1bd3fda3be29(AHCDemo._20_SW_Architecture)#6393596668974195916");
-      printf("HLC_Signal.headlightOn=%d\n",HLC_Signal.headlightOn);;
-      printf("Park_Lights=%d\n",(*Park_Lights));;
-      printf("Lever_Position=%d\n",Lever_Position);;
-      printf("Low_Beam=%d\n",(*Low_Beam));;
-      printf("High_Beam=%d\n",(*High_Beam));;
-    }
-  }
-
-  {
-    bool __assertCondition = !(HLC_Signal.headlightOn == true && HBA_Signal == LOW && Lever_Position == C_Complex_Data_eLeverPosition__HEADLIGHT_AUTO) || (*Low_Beam) == true;
-    if (!__assertCondition) 
-    {
-      ___block_messagelist_Contract_Failed("B_Atomic_Blocks_at_Fuser_AutoLowBeam", "C_LL_Components:iFuser:2?r:dd4fbb2e-8a6b-438d-9e3c-1bd3fda3be29(AHCDemo._20_SW_Architecture)#6393596668974213361");
-      printf("Low_Beam=%d\n",(*Low_Beam));;
-      printf("HLC_Signal.headlightOn=%d\n",HLC_Signal.headlightOn);;
-      printf("HBA_Signal=%d\n",HBA_Signal);;
-      printf("Lever_Position=%d\n",Lever_Position);;
-    }
-  }
-
-  {
-    bool __assertCondition = !(HLC_Signal.headlightOn == true && Lever_Position == LOW_BEAM) || (*Low_Beam) == true;
-    if (!__assertCondition) 
-    {
-      ___block_messagelist_Contract_Failed("B_Atomic_Blocks_at_Fuser_FixedLowBeam", "C_LL_Components:iFuser:3?r:dd4fbb2e-8a6b-438d-9e3c-1bd3fda3be29(AHCDemo._20_SW_Architecture)#6393596668974230044");
-      printf("Low_Beam=%d\n",(*Low_Beam));;
-      printf("Lever_Position=%d\n",Lever_Position);;
-      printf("HLC_Signal.headlightOn=%d\n",HLC_Signal.headlightOn);;
-    }
-  }
-
-  {
-    bool __assertCondition = !(Lever_Position == OPTICAL_HORN) || (*High_Beam) == true;
-    if (!__assertCondition) 
-    {
-      ___block_messagelist_Contract_Failed("B_Atomic_Blocks_at_Fuser_OpticalHorn", "C_LL_Components:iFuser:4?r:dd4fbb2e-8a6b-438d-9e3c-1bd3fda3be29(AHCDemo._20_SW_Architecture)#6393596668974253795");
-      printf("High_Beam=%d\n",(*High_Beam));;
-      printf("Lever_Position=%d\n",Lever_Position);;
-    }
-  }
-
-  {
-    bool __assertCondition = !(HLC_Signal.headlightOn == true && HBA_Signal == HIGH && Lever_Position == C_Complex_Data_eLeverPosition__HEADLIGHT_AUTO) || (*High_Beam) == true;
-    if (!__assertCondition) 
-    {
-      ___block_messagelist_Contract_Failed("B_Atomic_Blocks_at_Fuser_AutoHighBeam", "C_LL_Components:iFuser:5?r:dd4fbb2e-8a6b-438d-9e3c-1bd3fda3be29(AHCDemo._20_SW_Architecture)#6393596668974270323");
-      printf("High_Beam=%d\n",(*High_Beam));;
-      printf("Lever_Position=%d\n",Lever_Position);;
-      printf("HBA_Signal=%d\n",HBA_Signal);;
-      printf("HLC_Signal.headlightOn=%d\n",HLC_Signal.headlightOn);;
-    }
-  }
-
-  {
-    bool __assertCondition = !(HLC_Signal.headlightOn == true && Lever_Position == HIGH_BEAM) || (*High_Beam) == true;
-    if (!__assertCondition) 
-    {
-      ___block_messagelist_Contract_Failed("B_Atomic_Blocks_at_Fuser_FixedHighBeam", "C_LL_Components:iFuser:6?r:dd4fbb2e-8a6b-438d-9e3c-1bd3fda3be29(AHCDemo._20_SW_Architecture)#6393596668974306266");
-      printf("High_Beam=%d\n",(*High_Beam));;
-      printf("Lever_Position=%d\n",Lever_Position);;
-      printf("HLC_Signal.headlightOn=%d\n",HLC_Signal.headlightOn);;
-    }
-  }
-
-  {
-    bool __assertCondition = !(HLC_Signal.parkOn == true && Lever_Position != OPTICAL_HORN) || (*Park_Lights) == true;
-    if (!__assertCondition) 
-    {
-      ___block_messagelist_Contract_Failed("B_Atomic_Blocks_at_Fuser_ParkLights", "C_LL_Components:iFuser:7?r:dd4fbb2e-8a6b-438d-9e3c-1bd3fda3be29(AHCDemo._20_SW_Architecture)#6393596668974335015");
-      printf("Lever_Position=%d\n",Lever_Position);;
-      printf("HLC_Signal.parkOn=%d\n",HLC_Signal.parkOn);;
-      printf("Park_Lights=%d\n",(*Park_Lights));;
-    }
-  }
-
-  {
-    bool __assertCondition = NAND3((*High_Beam),(*Low_Beam),(*Park_Lights));
-    if (!__assertCondition) 
-    {
-      ___block_messagelist_Contract_Failed("B_Atomic_Blocks_at_Fuser_IndependenceLightStates", "C_LL_Components:iFuser:9?r:dd4fbb2e-8a6b-438d-9e3c-1bd3fda3be29(AHCDemo._20_SW_Architecture)#6393596668974380918");
-      printf("Low_Beam=%d\n",(*Low_Beam));;
-      printf("Park_Lights=%d\n",(*Park_Lights));;
-      printf("High_Beam=%d\n",(*High_Beam));;
-    }
-  }
-
 }
 
 
@@ -608,49 +289,6 @@ void at_HBA_execute(void *___nothing, bool Car_Detected, double Vehicle_Speed, e
 
   
   
-  {
-    bool __assertCondition = !((Car_Detected == true || Vehicle_Speed < 36)) || (*HBA_Signal) == LOW;
-    if (!__assertCondition) 
-    {
-      ___block_messagelist_Contract_Failed("B_Atomic_Blocks_at_HBA_AutoLowBeam", "C_LL_Components:iHBA?r:dd4fbb2e-8a6b-438d-9e3c-1bd3fda3be29(AHCDemo._20_SW_Architecture)#6393596668974384091");
-      printf("HBA_Signal=%d\n",(*HBA_Signal));;
-      printf("Vehicle_Speed=%g\n",Vehicle_Speed);;
-      printf("Car_Detected=%d\n",Car_Detected);;
-    }
-  }
-
-  {
-    bool __assertCondition = !((Car_Detected == false && Vehicle_Speed >= 36)) || (*HBA_Signal) == HIGH;
-    if (!__assertCondition) 
-    {
-      ___block_messagelist_Contract_Failed("B_Atomic_Blocks_at_HBA_AutoHighBeam", "C_LL_Components:iHBA:1?r:dd4fbb2e-8a6b-438d-9e3c-1bd3fda3be29(AHCDemo._20_SW_Architecture)#6393596668974400900");
-      printf("HBA_Signal=%d\n",(*HBA_Signal));;
-      printf("Vehicle_Speed=%g\n",Vehicle_Speed);;
-      printf("Car_Detected=%d\n",Car_Detected);;
-    }
-  }
-
-  {
-    bool __assertCondition = !((Vehicle_Speed >= (2 * 36)) && (Car_Detected != true)) || ((*HBA_Signal) != LOW);
-    if (!__assertCondition) 
-    {
-      ___block_messagelist_Contract_Failed("B_Atomic_Blocks_at_HBA_FuSa_TSR_MaitainVisibility", "C_LL_Components:iHBA:2?r:dd4fbb2e-8a6b-438d-9e3c-1bd3fda3be29(AHCDemo._20_SW_Architecture)#4154628084873864150");
-      printf("HBA_Signal=%d\n",(*HBA_Signal));;
-      printf("Vehicle_Speed=%g\n",Vehicle_Speed);;
-      printf("Car_Detected=%d\n",Car_Detected);;
-    }
-  }
-
-  {
-    bool __assertCondition = !((Car_Detected)) || (*HBA_Signal) != HIGH;
-    if (!__assertCondition) 
-    {
-      ___block_messagelist_Contract_Failed("B_Atomic_Blocks_at_HBA_FuSa_TSR_NoBlinding", "C_LL_Components:iHBA:3?r:dd4fbb2e-8a6b-438d-9e3c-1bd3fda3be29(AHCDemo._20_SW_Architecture)#4154628084874037654");
-      printf("(Car_Detected)=%d\n",(Car_Detected));;
-      printf("HBA_Signal=%d\n",(*HBA_Signal));;
-    }
-  }
-
 }
 
 
@@ -699,88 +337,6 @@ void at_HLC_execute(void *___nothing, double Dash_Illuminance, eKnobPosition_t K
 
   
   
-  {
-    bool __assertCondition = !((Knob_Position == OFF)) || NOR((*HLC_Signal).headlightOn,(*HLC_Signal).parkOn);
-    if (!__assertCondition) 
-    {
-      ___block_messagelist_Contract_Failed("B_Atomic_Blocks_at_HLC_FixedOff", "C_LL_Components:iHLC?r:dd4fbb2e-8a6b-438d-9e3c-1bd3fda3be29(AHCDemo._20_SW_Architecture)#6393596668974427482");
-      printf("HLC_Signal.headlightOn=%d\n",(*HLC_Signal).headlightOn);;
-      printf("Knob_Position=%d\n",Knob_Position);;
-    }
-  }
-
-  {
-    bool __assertCondition = !(Knob_Position == C_Complex_Data_eKnobPosition__HEADLIGHT_AUTO && Dash_Illuminance >= 10000) || NOR((*HLC_Signal).headlightOn,(*HLC_Signal).parkOn);
-    if (!__assertCondition) 
-    {
-      ___block_messagelist_Contract_Failed("B_Atomic_Blocks_at_HLC_AutoOff", "C_LL_Components:iHLC:1?r:dd4fbb2e-8a6b-438d-9e3c-1bd3fda3be29(AHCDemo._20_SW_Architecture)#6393596668974442158");
-      printf("HLC_Signal.headlightOn=%d\n",(*HLC_Signal).headlightOn);;
-      printf("Dash_Illuminance=%g\n",Dash_Illuminance);;
-      printf("Knob_Position=%d\n",Knob_Position);;
-    }
-  }
-
-  {
-    bool __assertCondition = !(Knob_Position == C_Complex_Data_eKnobPosition__HEADLIGHT_AUTO && Dash_Illuminance < 10000) || (*HLC_Signal).headlightOn == true;
-    if (!__assertCondition) 
-    {
-      ___block_messagelist_Contract_Failed("B_Atomic_Blocks_at_HLC_AutoLowBeam", "C_LL_Components:iHLC:2?r:dd4fbb2e-8a6b-438d-9e3c-1bd3fda3be29(AHCDemo._20_SW_Architecture)#6393596668974480275");
-      printf("Dash_Illuminance=%g\n",Dash_Illuminance);;
-      printf("HLC_Signal.headlightOn=%d\n",(*HLC_Signal).headlightOn);;
-      printf("Knob_Position=%d\n",Knob_Position);;
-    }
-  }
-
-  {
-    bool __assertCondition = !(Knob_Position == HEADLIGHT_ON) || (*HLC_Signal).headlightOn == true;
-    if (!__assertCondition) 
-    {
-      ___block_messagelist_Contract_Failed("B_Atomic_Blocks_at_HLC_FixedLowBeam", "C_LL_Components:iHLC:3?r:dd4fbb2e-8a6b-438d-9e3c-1bd3fda3be29(AHCDemo._20_SW_Architecture)#6393596668974517256");
-      printf("HLC_Signal.headlightOn=%d\n",(*HLC_Signal).headlightOn);;
-      printf("Knob_Position=%d\n",Knob_Position);;
-    }
-  }
-
-  {
-    bool __assertCondition = !(Knob_Position == C_Complex_Data_eKnobPosition__HEADLIGHT_AUTO && Dash_Illuminance < 10000) || (*HLC_Signal).headlightOn == true;
-    if (!__assertCondition) 
-    {
-      ___block_messagelist_Contract_Failed("B_Atomic_Blocks_at_HLC_AutoHighBeam", "C_LL_Components:iHLC:4?r:dd4fbb2e-8a6b-438d-9e3c-1bd3fda3be29(AHCDemo._20_SW_Architecture)#6393596668974548864");
-      printf("HLC_Signal.headlightOn=%d\n",(*HLC_Signal).headlightOn);;
-      printf("Dash_Illuminance=%g\n",Dash_Illuminance);;
-      printf("Knob_Position=%d\n",Knob_Position);;
-    }
-  }
-
-  {
-    bool __assertCondition = !(Knob_Position == HEADLIGHT_ON) || (*HLC_Signal).headlightOn;
-    if (!__assertCondition) 
-    {
-      ___block_messagelist_Contract_Failed("B_Atomic_Blocks_at_HLC_FixedHighBeam", "C_LL_Components:iHLC:5?r:dd4fbb2e-8a6b-438d-9e3c-1bd3fda3be29(AHCDemo._20_SW_Architecture)#6393596668974588195");
-      printf("HLC_Signal.headlightOn=%d\n",(*HLC_Signal).headlightOn);;
-      printf("Knob_Position=%d\n",Knob_Position);;
-    }
-  }
-
-  {
-    bool __assertCondition = !(Knob_Position == PARK_ON) || (*HLC_Signal).parkOn == true;
-    if (!__assertCondition) 
-    {
-      ___block_messagelist_Contract_Failed("B_Atomic_Blocks_at_HLC_ParkLights", "C_LL_Components:iHLC:6?r:dd4fbb2e-8a6b-438d-9e3c-1bd3fda3be29(AHCDemo._20_SW_Architecture)#6393596668974608697");
-      printf("HLC_Signal.parkOn=%d\n",(*HLC_Signal).parkOn);;
-      printf("Knob_Position=%d\n",Knob_Position);;
-    }
-  }
-
-  {
-    bool __assertCondition = NAND((*HLC_Signal).headlightOn,(*HLC_Signal).parkOn);
-    if (!__assertCondition) 
-    {
-      ___block_messagelist_Contract_Failed("B_Atomic_Blocks_at_HLC_IndependenceOfStates", "C_LL_Components:iHLC:7?r:dd4fbb2e-8a6b-438d-9e3c-1bd3fda3be29(AHCDemo._20_SW_Architecture)#6393596668974639469");
-      printf("HLC_Signal.headlightOn=%d\n",(*HLC_Signal).headlightOn);;
-    }
-  }
-
 }
 
 
@@ -865,49 +421,6 @@ void at_slk_HBA_init(void *___nothing)
  */
 void at_slk_HBA_execute(void *___nothing, bool Car_Detected, double Vehicle_Speed, eBeamState_t *HBA_Signal) 
 {
-  {
-    bool __assertCondition = !((Car_Detected == true || Vehicle_Speed < 36)) || (*HBA_Signal) == LOW;
-    if (!__assertCondition) 
-    {
-      ___block_messagelist_Contract_Failed("B_Atomic_Blocks_at_slk_HBA_AutoLowBeam", "C_LL_Components:iHBA?r:dd4fbb2e-8a6b-438d-9e3c-1bd3fda3be29(AHCDemo._20_SW_Architecture)#6393596668974384091");
-      printf("Car_Detected=%d\n",Car_Detected);;
-      printf("HBA_Signal=%d\n",(*HBA_Signal));;
-      printf("Vehicle_Speed=%g\n",Vehicle_Speed);;
-    }
-  }
-
-  {
-    bool __assertCondition = !((Car_Detected == false && Vehicle_Speed >= 36)) || (*HBA_Signal) == HIGH;
-    if (!__assertCondition) 
-    {
-      ___block_messagelist_Contract_Failed("B_Atomic_Blocks_at_slk_HBA_AutoHighBeam", "C_LL_Components:iHBA:1?r:dd4fbb2e-8a6b-438d-9e3c-1bd3fda3be29(AHCDemo._20_SW_Architecture)#6393596668974400900");
-      printf("HBA_Signal=%d\n",(*HBA_Signal));;
-      printf("Car_Detected=%d\n",Car_Detected);;
-      printf("Vehicle_Speed=%g\n",Vehicle_Speed);;
-    }
-  }
-
-  {
-    bool __assertCondition = !((Vehicle_Speed >= (2 * 36)) && (Car_Detected != true)) || ((*HBA_Signal) != LOW);
-    if (!__assertCondition) 
-    {
-      ___block_messagelist_Contract_Failed("B_Atomic_Blocks_at_slk_HBA_FuSa_TSR_MaitainVisibility", "C_LL_Components:iHBA:2?r:dd4fbb2e-8a6b-438d-9e3c-1bd3fda3be29(AHCDemo._20_SW_Architecture)#4154628084873864150");
-      printf("Vehicle_Speed=%g\n",Vehicle_Speed);;
-      printf("HBA_Signal=%d\n",(*HBA_Signal));;
-      printf("Car_Detected=%d\n",Car_Detected);;
-    }
-  }
-
-  {
-    bool __assertCondition = !((Car_Detected)) || (*HBA_Signal) != HIGH;
-    if (!__assertCondition) 
-    {
-      ___block_messagelist_Contract_Failed("B_Atomic_Blocks_at_slk_HBA_FuSa_TSR_NoBlinding", "C_LL_Components:iHBA:3?r:dd4fbb2e-8a6b-438d-9e3c-1bd3fda3be29(AHCDemo._20_SW_Architecture)#4154628084874037654");
-      printf("HBA_Signal=%d\n",(*HBA_Signal));;
-      printf("(Car_Detected)=%d\n",(Car_Detected));;
-    }
-  }
-
 }
 
 
