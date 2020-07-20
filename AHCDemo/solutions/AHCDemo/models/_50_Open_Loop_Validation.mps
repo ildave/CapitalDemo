@@ -1879,7 +1879,7 @@
       <property role="TrG5h" value="fusaVal" />
       <ref role="3oK8_y" to="n70o:5TIW0i7tzhb" resolve="portable" />
       <node concept="2v9HqM" id="7mv3TTmo2Zb" role="2eOfOg">
-        <ref role="2v9HqP" node="3ACd3G$L98z" resolve="C_FuSa_Validations" />
+        <ref role="2v9HqP" node="3ACd3G$L98z" resolve="C_FuSa_Tests" />
       </node>
       <node concept="2v9HqM" id="7mv3TTmo2Zd" role="2eOfOg">
         <ref role="2v9HqP" to="q2jd:2$7gFtgIrxU" resolve="C_LL_Components" />
@@ -1944,12 +1944,12 @@
     <node concept="1XkOQz" id="3a3oca_fx7G" role="2Q9xDr" />
     <node concept="aeBiC" id="7mv3TTmsbbw" role="2Q9xDr">
       <node concept="3p_7fT" id="7mv3TTmsbbx" role="3p_7cz">
-        <ref role="3p_7cA" node="7mv3TTmsbaS" resolve="D_FuSa_analyses" />
+        <ref role="3p_7cA" node="7mv3TTmsbaS" resolve="D_FuSa_FormalVerification" />
       </node>
     </node>
   </node>
   <node concept="N3F5e" id="3ACd3G$L98z">
-    <property role="TrG5h" value="C_FuSa_Validations" />
+    <property role="TrG5h" value="C_FuSa_Tests" />
     <node concept="hx$k$" id="3ACd3G$Ly63" role="N3F5h">
       <property role="TrG5h" value="HBA_TSR_MaintainVisibility" />
       <node concept="2KsLtj" id="7mv3TTmo3NM" role="2MBy1N">
@@ -2153,7 +2153,7 @@
     <property role="2lUHrg" value="25" />
     <property role="2lUGe1" value="true" />
     <property role="2lUGbD" value="none" />
-    <property role="TrG5h" value="D_FuSa_analyses" />
+    <property role="TrG5h" value="D_FuSa_FormalVerification" />
     <node concept="3GEVxB" id="7mv3TTmsbaT" role="3W6d8T">
       <ref role="3GEb4d" to="e765:4JTzIyk_zbO" resolve="B_Atomic_Blocks" />
     </node>

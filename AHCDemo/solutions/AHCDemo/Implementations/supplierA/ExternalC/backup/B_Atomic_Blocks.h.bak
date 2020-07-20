@@ -38,6 +38,11 @@ struct at_Fuser_data {
 
 struct at_ControlLogic_flattened_data {
   at_Fuser_data_t i_Fuser;
+  bool Fuser_High_Beam;
+  bool Fuser_Low_Beam;
+  bool Fuser_Park_Lights;
+  eBeamState_t HBA_HBA_Signal;
+  sLightState_t HLC_HLC_Signal;
   bool __anyPreconditionFailed;
 };
 
@@ -54,12 +59,22 @@ struct at_CarDetection_data {
 struct at_Controller_flattened_data {
   at_ControlLogic_flattened_data_t i_ControlLogic;
   at_CarDetection_data_t i_CarDetection;
+  bool ControlLogic_High_Beam;
+  bool ControlLogic_Low_Beam;
+  bool ControlLogic_Park_Lights;
+  double Sensor2Phy_Dash_Illuminance;
+  bool CarDetection_Car_Detected;
   bool __anyPreconditionFailed;
 };
 
 typedef struct at_slk_ControlLogic_flattened_data at_slk_ControlLogic_flattened_data_t;
 struct at_slk_ControlLogic_flattened_data {
   at_Fuser_data_t i_Fuser;
+  bool Fuser_High_Beam;
+  bool Fuser_Low_Beam;
+  bool Fuser_Park_Lights;
+  eBeamState_t HBA_HBA_Signal;
+  sLightState_t HLC_HLC_Signal;
   bool __anyPreconditionFailed;
 };
 
