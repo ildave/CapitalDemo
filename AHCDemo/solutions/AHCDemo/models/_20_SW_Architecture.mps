@@ -2599,6 +2599,13 @@
             <property role="2c7vTL" value="false" />
           </node>
         </node>
+        <node concept="3HmicQ" id="2yRDgTzIEnT" role="lGtFl">
+          <node concept="CoHyQ" id="2yRDgTzIEnU" role="CptJW">
+            <property role="CoHyR" value="VC-63" />
+            <property role="Cp4WS" value="http://capital-test.polarion.live//polarion/#/project/VehicleComp/workitem?id=VC-63" />
+          </node>
+          <node concept="3HmicZ" id="2yRDgTzIEnV" role="CptJN" />
+        </node>
       </node>
     </node>
     <node concept="3GEVxB" id="3a3oca_6Q2q" role="2OODSX">
