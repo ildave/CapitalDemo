@@ -51,6 +51,17 @@
         <child id="5778906858803960917" name="kind" index="3t9H5Y" />
       </concept>
     </language>
+    <language id="7c8baff8-6b47-46a9-88cf-5e77056f3d91" name="com.lmsintl.accent.analyses.blocks">
+      <concept id="2331667280820295309" name="com.lmsintl.accent.analyses.blocks.structure.AnalysisConfiguration" flags="ng" index="3BUAA4" />
+      <concept id="2331667280820294711" name="com.lmsintl.accent.analyses.blocks.structure.WhiteboxBlockAnalysisConfig" flags="ng" index="3BUAGY">
+        <property id="4377340277003884021" name="checkPostconditions" index="jrfCZ" />
+        <property id="4377340277003650453" name="checkRobustness" index="jrQDv" />
+        <property id="8781594031140437829" name="stepsNumber" index="3E3C9V" />
+      </concept>
+      <concept id="4655187301461056347" name="com.lmsintl.accent.analyses.blocks.structure.BlockAnalysisConfigBase" flags="ng" index="3UT5tO">
+        <reference id="4655187301461124205" name="analyzedBlock" index="3UTmx2" />
+      </concept>
+    </language>
     <language id="a9d69647-0840-491e-bf39-2eb0805d2011" name="com.mbeddr.core.statements">
       <concept id="8850915533694634145" name="com.mbeddr.core.statements.structure.InitExpression" flags="ng" index="3o3WLD">
         <child id="8850915533694634146" name="elements" index="3o3WLE" />
@@ -85,6 +96,25 @@
     </language>
     <language id="d7c39d58-3682-4eac-83d5-8d20c49b7c6f" name="com.lmsintl.accent.closedloopsimulation">
       <concept id="3477861963019938917" name="com.lmsintl.accent.closedloopsimulation.structure.CLSMConfigItem" flags="ng" index="1jTFly" />
+    </language>
+    <language id="42270baf-e92c-4c32-b263-d617b3fce239" name="com.mbeddr.analyses.cbmc">
+      <concept id="4355827153833266" name="com.mbeddr.analyses.cbmc.structure.AnalysisConfigItem" flags="ng" index="aeBiC">
+        <child id="7633344798597539205" name="configs" index="3p_7cz" />
+      </concept>
+      <concept id="8327535879610131181" name="com.mbeddr.analyses.cbmc.structure.ICbmcSettings" flags="ng" index="2lUzGJ">
+        <property id="8327535879610783176" name="timeoutInSeconds" index="2l50Ka" />
+        <property id="8327535879610783188" name="timeoutForSingleAnalysis" index="2l50Km" />
+        <property id="8327535879610783060" name="sliceFormula" index="2l50Mm" />
+        <property id="8327535879610145579" name="analysisDepth" index="2lUGbD" />
+        <property id="8327535879610145347" name="hasUnwindingDepth" index="2lUGe1" />
+        <property id="8327535879610145405" name="unwindingAssertions" index="2lUGeZ" />
+        <property id="8327535879610142482" name="unwindingDepth" index="2lUHrg" />
+        <property id="3246959727582218046" name="hasExternalFilesSettings" index="1Bxwel" />
+        <child id="3246959727582077262" name="externalFiles" index="1Byen_" />
+      </concept>
+      <concept id="7633344798597539167" name="com.mbeddr.analyses.cbmc.structure.CBMCAnalysisConfigurationRef" flags="ng" index="3p_7fT">
+        <reference id="7633344798597539200" name="config" index="3p_7cA" />
+      </concept>
     </language>
     <language id="a36521e3-962e-4039-9b1a-6ca98078bc89" name="com.lmsintl.accent.blocks.simulation">
       <concept id="3011344261416841532" name="com.lmsintl.accent.blocks.simulation.structure.DenseTimeSpec" flags="ng" index="2fSK2q">
@@ -208,6 +238,9 @@
       <concept id="8934095934011938595" name="com.mbeddr.core.modules.structure.EmptyModuleContent" flags="ng" index="2NXPZ9" />
     </language>
     <language id="84247009-5205-4266-8ff3-42de1125506d" name="com.lmsintl.accent.blocks.ext">
+      <concept id="1299791745234878620" name="com.lmsintl.accent.blocks.ext.structure.PathFromConfig" flags="ng" index="2UJ0$C">
+        <reference id="1299791745234878621" name="pathRef" index="2UJ0$D" />
+      </concept>
       <concept id="4076650064325131382" name="com.lmsintl.accent.blocks.ext.structure.ExternalIMConfig" flags="ng" index="1lfLvk" />
     </language>
     <language id="1c0775f7-0b6b-40c6-b8d3-521fe642b38d" name="com.lmsintl.accent.blocks.test">
@@ -222,9 +255,6 @@
       <concept id="6647461755827702359" name="com.lmsintl.accent.blocks.test.structure.OutPortValueSpec" flags="ng" index="qm$PC">
         <reference id="6647461755827702360" name="port" index="qm$PB" />
       </concept>
-      <concept id="3411780537800065460" name="com.lmsintl.accent.blocks.test.structure.InterfaceSubject" flags="ng" index="2KsLnA">
-        <reference id="3411780537800065461" name="intf" index="2KsLnB" />
-      </concept>
       <concept id="3411780537800065793" name="com.lmsintl.accent.blocks.test.structure.BlockSubject" flags="ng" index="2KsLtj" />
       <concept id="5149698356471727838" name="com.lmsintl.accent.blocks.test.structure.ExecuteBlockTestStatement" flags="ng" index="2MBA60">
         <reference id="5149698356471727840" name="test" index="2MBA6Y" />
@@ -235,6 +265,17 @@
       </concept>
       <concept id="1720297823044588574" name="com.lmsintl.accent.blocks.test.structure.BlockUnitTestConfigItems" flags="ng" index="1XFeRv">
         <child id="3477861963023318171" name="simulation" index="1jAMms" />
+      </concept>
+    </language>
+    <language id="d3a0fd26-445a-466c-900e-10444ddfed52" name="com.mbeddr.mpsutil.filepicker">
+      <concept id="6156524541422549000" name="com.mbeddr.mpsutil.filepicker.structure.AbstractPicker" flags="ng" index="3N1QpV">
+        <property id="2711621784026951428" name="pointOnlyToExistingFile" index="1RwFax" />
+      </concept>
+    </language>
+    <language id="5d09074f-babf-4f2b-b78b-e9929af0f3be" name="com.mbeddr.analyses.base">
+      <concept id="6472990431939580591" name="com.mbeddr.analyses.base.structure.AnalysisConfiguration" flags="ng" index="3V_BKJ">
+        <child id="6472990431939692464" name="analyses" index="3V$2$K" />
+        <child id="559958203687603517" name="imports" index="3W6d8T" />
       </concept>
     </language>
     <language id="264d4799-1c45-47d7-9e67-2d176982240d" name="com.lmsintl.accent.requirements.polarion">
@@ -914,9 +955,6 @@
     <node concept="3GEVxB" id="2X8pPjx5Ga7" role="2OODSX">
       <property role="3GEa6x" value="true" />
       <ref role="3GEb4d" to="e765:4JTzIyk_zbO" resolve="B_Atomic_Blocks" />
-    </node>
-    <node concept="3GEVxB" id="3ACd3G$M2xp" role="2OODSX">
-      <ref role="3GEb4d" node="3ACd3G$L98z" resolve="C_FuSa_Validations" />
     </node>
     <node concept="3jffJm" id="4axqbaR$TDd" role="N3F5h">
       <property role="TrG5h" value="unit_tests" />
@@ -1798,9 +1836,6 @@
       <node concept="2v9HqM" id="3a3oca_7euo" role="2eOfOg">
         <ref role="2v9HqP" to="q2jd:3G4Dxzx26IR" resolve="A_System_Architecture" />
       </node>
-      <node concept="2v9HqM" id="3ACd3G$MJno" role="2eOfOg">
-        <ref role="2v9HqP" node="3ACd3G$L98z" resolve="C_FuSa_Validations" />
-      </node>
     </node>
     <node concept="2eOfOl" id="WocEIA8NFB" role="2ePNbc">
       <property role="iO3LB" value="false" />
@@ -1837,6 +1872,28 @@
         <ref role="2v9HqP" to="q2jd:3G4Dxzx29Pz" resolve="B_Subsystem_Architecture" />
       </node>
       <node concept="2v9HqM" id="3a3oca_7euw" role="2eOfOg">
+        <ref role="2v9HqP" to="q2jd:3G4Dxzx26IR" resolve="A_System_Architecture" />
+      </node>
+    </node>
+    <node concept="2eOfOl" id="7mv3TTmo2YO" role="2ePNbc">
+      <property role="TrG5h" value="fusaVal" />
+      <ref role="3oK8_y" to="n70o:5TIW0i7tzhb" resolve="portable" />
+      <node concept="2v9HqM" id="7mv3TTmo2Zb" role="2eOfOg">
+        <ref role="2v9HqP" node="3ACd3G$L98z" resolve="C_FuSa_Validations" />
+      </node>
+      <node concept="2v9HqM" id="7mv3TTmo2Zd" role="2eOfOg">
+        <ref role="2v9HqP" to="q2jd:2$7gFtgIrxU" resolve="C_LL_Components" />
+      </node>
+      <node concept="2v9HqM" id="7mv3TTmo2Ze" role="2eOfOg">
+        <ref role="2v9HqP" to="e765:4JTzIyk_zbO" resolve="B_Atomic_Blocks" />
+      </node>
+      <node concept="2v9HqM" id="7mv3TTmo2Zf" role="2eOfOg">
+        <ref role="2v9HqP" to="q2jd:3G4Dxzx29Pz" resolve="B_Subsystem_Architecture" />
+      </node>
+      <node concept="2v9HqM" id="7mv3TTmo2Zg" role="2eOfOg">
+        <ref role="2v9HqP" to="l83u:2$7gFtgIzv5" resolve="C_Complex_Data" />
+      </node>
+      <node concept="2v9HqM" id="7mv3TTmo2Zh" role="2eOfOg">
         <ref role="2v9HqP" to="q2jd:3G4Dxzx26IR" resolve="A_System_Architecture" />
       </node>
     </node>
@@ -1885,13 +1942,18 @@
       <ref role="2xfifS" to="n70o:5TIW0i7tzhd" resolve="Desktop Platform" />
     </node>
     <node concept="1XkOQz" id="3a3oca_fx7G" role="2Q9xDr" />
+    <node concept="aeBiC" id="7mv3TTmsbbw" role="2Q9xDr">
+      <node concept="3p_7fT" id="7mv3TTmsbbx" role="3p_7cz">
+        <ref role="3p_7cA" node="7mv3TTmsbaS" resolve="D_FuSa_analyses" />
+      </node>
+    </node>
   </node>
   <node concept="N3F5e" id="3ACd3G$L98z">
     <property role="TrG5h" value="C_FuSa_Validations" />
     <node concept="hx$k$" id="3ACd3G$Ly63" role="N3F5h">
       <property role="TrG5h" value="HBA_TSR_MaintainVisibility" />
-      <node concept="2KsLnA" id="3ACd3G$P4iv" role="2MBy1N">
-        <ref role="2KsLnB" to="q2jd:2$7gFtgIvjD" resolve="iHBA" />
+      <node concept="2KsLtj" id="7mv3TTmo3NM" role="2MBy1N">
+        <ref role="h$ZuZ" to="e765:2X8pPjx7HEB" resolve="at_HBA" />
       </node>
       <node concept="hx$kO" id="3ACd3G$LAgE" role="hx$kN">
         <node concept="2MBLFf" id="3ACd3G$LAgF" role="2MBY2k">
@@ -1983,8 +2045,8 @@
     </node>
     <node concept="hx$k$" id="3ACd3G$LJW$" role="N3F5h">
       <property role="TrG5h" value="HBA_TSR_NoBlinding" />
-      <node concept="2KsLnA" id="3ACd3G$P3Z_" role="2MBy1N">
-        <ref role="2KsLnB" to="q2jd:2$7gFtgIvjD" resolve="iHBA" />
+      <node concept="2KsLtj" id="7mv3TTmo46n" role="2MBy1N">
+        <ref role="h$ZuZ" to="e765:2X8pPjx7HEB" resolve="at_HBA" />
       </node>
       <node concept="hx$kO" id="3ACd3G$LK6z" role="hx$kN">
         <node concept="2MBLFf" id="3ACd3G$LK6$" role="2MBY2k">
@@ -2071,8 +2133,54 @@
         <node concept="3HmicX" id="3ACd3G$LOz_" role="CptJN" />
       </node>
     </node>
+    <node concept="3jffJm" id="7mv3TTmo3xL" role="N3F5h">
+      <property role="TrG5h" value="val_fusa" />
+      <node concept="2MBA60" id="7mv3TTmo3Nz" role="3jffJq">
+        <ref role="2MBA6Y" node="3ACd3G$Ly63" resolve="HBA_TSR_MaintainVisibility" />
+      </node>
+      <node concept="2MBA60" id="7mv3TTmo3NF" role="3jffJq">
+        <ref role="2MBA6Y" node="3ACd3G$LJW$" resolve="HBA_TSR_NoBlinding" />
+      </node>
+    </node>
     <node concept="3GEVxB" id="3ACd3G$Ly65" role="2OODSX">
       <ref role="3GEb4d" to="e765:4JTzIyk_zbO" resolve="B_Atomic_Blocks" />
+    </node>
+  </node>
+  <node concept="3BUAA4" id="7mv3TTmsbaS">
+    <property role="2l50Ka" value="none" />
+    <property role="2l50Km" value="none" />
+    <property role="2lUGeZ" value="true" />
+    <property role="2lUHrg" value="25" />
+    <property role="2lUGe1" value="true" />
+    <property role="2lUGbD" value="none" />
+    <property role="TrG5h" value="D_FuSa_analyses" />
+    <node concept="3GEVxB" id="7mv3TTmsbaT" role="3W6d8T">
+      <ref role="3GEb4d" to="e765:4JTzIyk_zbO" resolve="B_Atomic_Blocks" />
+    </node>
+    <node concept="3BUAGY" id="7mv3TTmsbaV" role="3V$2$K">
+      <property role="2l50Ka" value="none" />
+      <property role="2l50Km" value="none" />
+      <property role="2lUGeZ" value="true" />
+      <property role="2lUHrg" value="25" />
+      <property role="2lUGe1" value="true" />
+      <property role="2lUGbD" value="none" />
+      <property role="3E3C9V" value="1" />
+      <property role="2l50Mm" value="true" />
+      <property role="jrQDv" value="true" />
+      <property role="jrfCZ" value="true" />
+      <property role="1Bxwel" value="true" />
+      <ref role="3UTmx2" to="e765:2X8pPjx7HEB" resolve="at_HBA" />
+      <node concept="2UJ0$C" id="7mv3TTmsbbj" role="1Byen_">
+        <property role="1RwFax" value="true" />
+        <ref role="2UJ0$D" to="e765:2X8pPjx7CmD" />
+      </node>
+      <node concept="3HmicQ" id="7mv3TTmtAXv" role="lGtFl">
+        <node concept="CoHyQ" id="7mv3TTmtAXw" role="CptJW">
+          <property role="CoHyR" value="VC-61" />
+          <property role="Cp4WS" value="http://capital-test.polarion.live//polarion/#/project/VehicleComp/workitem?id=VC-61" />
+        </node>
+        <node concept="3HmicX" id="7mv3TTmtAXL" role="CptJN" />
+      </node>
     </node>
   </node>
 </model>

@@ -31,6 +31,7 @@
       <concept id="2331667280820295309" name="com.lmsintl.accent.analyses.blocks.structure.AnalysisConfiguration" flags="ng" index="3BUAA4" />
       <concept id="2331667280820294711" name="com.lmsintl.accent.analyses.blocks.structure.WhiteboxBlockAnalysisConfig" flags="ng" index="3BUAGY">
         <property id="4377340277003884021" name="checkPostconditions" index="jrfCZ" />
+        <property id="4377340277003650453" name="checkRobustness" index="jrQDv" />
         <property id="8781594031140437829" name="stepsNumber" index="3E3C9V" />
       </concept>
       <concept id="7907509686560929936" name="com.lmsintl.accent.analyses.blocks.structure.BlockDeadCodeAnalysisConfig" flags="ng" index="1COqqU" />
@@ -106,7 +107,10 @@
       <concept id="408641808351444898" name="com.lmsintl.accent.blocks.execution.structure.Blocks2CGenerationStrategy" flags="ng" index="16wJoH" />
     </language>
     <language id="84247009-5205-4266-8ff3-42de1125506d" name="com.lmsintl.accent.blocks.ext">
-      <concept id="4076650064325131382" name="com.lmsintl.accent.blocks.ext.structure.ExternalIMConfig" flags="ng" index="1lfLvk" />
+      <concept id="2282217486343417844" name="com.lmsintl.accent.blocks.ext.structure.ExternalC" flags="ng" index="1i0NX2" />
+      <concept id="4076650064325131382" name="com.lmsintl.accent.blocks.ext.structure.ExternalIMConfig" flags="ng" index="1lfLvk">
+        <child id="133122295705629917" name="source" index="3aVKro" />
+      </concept>
     </language>
     <language id="d3a0fd26-445a-466c-900e-10444ddfed52" name="com.mbeddr.mpsutil.filepicker">
       <concept id="6156524541422549000" name="com.mbeddr.mpsutil.filepicker.structure.AbstractPicker" flags="ng" index="3N1QpV">
@@ -121,17 +125,6 @@
         <child id="6472990431939692464" name="analyses" index="3V$2$K" />
         <child id="559958203687603517" name="imports" index="3W6d8T" />
       </concept>
-    </language>
-    <language id="264d4799-1c45-47d7-9e67-2d176982240d" name="com.lmsintl.accent.requirements.polarion">
-      <concept id="4681974405521960540" name="com.lmsintl.accent.requirements.polarion.structure.PolarionTraceItem" flags="ng" index="CoHyQ">
-        <property id="4681974405521960541" name="workItemID" index="CoHyR" />
-        <property id="4681974405522127314" name="workItemLink" index="Cp4WS" />
-      </concept>
-      <concept id="439567521322928994" name="com.lmsintl.accent.requirements.polarion.structure.PolarionTraceAnnotation" flags="ng" index="3HmicQ">
-        <child id="4681974405522025753" name="traceKind" index="CptJN" />
-        <child id="4681974405522025750" name="items" index="CptJW" />
-      </concept>
-      <concept id="439567521322929003" name="com.lmsintl.accent.requirements.polarion.structure.ImplementsTraceKind" flags="ng" index="3HmicZ" />
     </language>
     <language id="b574d547-b77e-4fed-9f60-c349c4410765" name="com.mbeddr.ext.math">
       <concept id="666324024671982185" name="com.mbeddr.ext.math.structure.MathConfigurationItem" flags="ng" index="22RD12" />
@@ -165,9 +158,6 @@
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
-      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
-        <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
-      </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
@@ -280,17 +270,11 @@
       <property role="2l50Mm" value="true" />
       <property role="jrfCZ" value="true" />
       <property role="1Bxwel" value="true" />
+      <property role="jrQDv" value="true" />
       <ref role="3UTmx2" to="e765:2X8pPjx7HEB" resolve="at_HBA" />
       <node concept="3NXOOs" id="1Wmu2kGH$d2" role="1Byen_">
         <property role="1RwFax" value="true" />
         <property role="3N1Lgt" value="Implementations/supplierA/ExternalC/B_Atomic_Blocks.c" />
-      </node>
-      <node concept="3HmicQ" id="1Wmu2kGHIK5" role="lGtFl">
-        <node concept="CoHyQ" id="1Wmu2kGHIK6" role="CptJW">
-          <property role="CoHyR" value="VC-59" />
-          <property role="Cp4WS" value="http://capital-test.polarion.live/polarion/#/project/VehicleComp/workitem?id=VC-59" />
-        </node>
-        <node concept="3HmicZ" id="1Wmu2kGHIK7" role="CptJN" />
       </node>
     </node>
   </node>
@@ -338,7 +322,9 @@
     <node concept="nEoHD" id="2X8pPjx4Y$k" role="2Q9xDr" />
     <node concept="NoLkM" id="2X8pPjx4Yzu" role="2Q9xDr">
       <node concept="16wJoH" id="2X8pPjx4Yzv" role="16wJov" />
-      <node concept="1lfLvk" id="2X8pPjx4YAe" role="16wJov" />
+      <node concept="1lfLvk" id="2X8pPjx4YAe" role="16wJov">
+        <node concept="1i0NX2" id="7mv3TTmrFly" role="3aVKro" />
+      </node>
     </node>
     <node concept="35TzUN" id="2X8pPjx4YBq" role="2Q9xDr">
       <node concept="IjAfM" id="2X8pPjx4YCz" role="19yoJo">
